@@ -1,3 +1,5 @@
+import { PipelineNode, RepositoryItem, RepositoryFile } from "..";
+
 export interface DynamicServiceBody {
     plugin: {
       name: string
@@ -8,17 +10,17 @@ export interface DynamicServiceBody {
       pipelineId: string
       pipelineJobId: string
       pipelineNodeId: string
-      pipelineNode: Record<string, any>
+      pipelineNode: PipelineNode
     }
     site: {
       site?: Record<string, any>
       category?: Record<string, any>
     }
     input: {
-      itemsFromParent?: Record<string, any>[]
-      filesFromParent?: Record<string, any>[]
+      itemsFromParent?: RepositoryItem[]
+      filesFromParent?: RepositoryFile[]
       tokensFromParent?: Record<string, any>[]
-      repositoryItems?: Record<string, any>[]
+      repositoryItems?: RepositoryItem[]
       repositoryItemIds?: string[]
       repositoryItemCount?: number
     }
