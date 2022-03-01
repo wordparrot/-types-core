@@ -1,0 +1,11 @@
+{
+    "name": "@types/core",
+    "version": "1.0.0",
+    "description": "Types for the Wordparrot platform.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+      "/dist"
+    ]
+  }
+  
