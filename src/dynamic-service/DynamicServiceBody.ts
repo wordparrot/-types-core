@@ -3,13 +3,15 @@ import {
   DynamicServiceBodyPipeline,
   DynamicServiceBodyInput,
   DynamicServiceBodyParameters,
+  DynamicServiceBodyRun,
   DynamicServiceBodySite
 } from ".";
 
 export interface DynamicServiceBody {
-    plugin: DynamicServiceBodyPlugin
-    pipeline: DynamicServiceBodyPipeline
-    site: DynamicServiceBodySite
-    input: DynamicServiceBodyInput
-    parameters: DynamicServiceBodyParameters
+  run: DynamicServiceBodyRun
+  plugin: DynamicServiceBodyPlugin
+  pipeline: DynamicServiceBodyPipeline
+  site: DynamicServiceBodySite
+  input: DynamicServiceBodyInput
+  parameters: DynamicServiceBodyParameters
 }
