@@ -1,5 +1,6 @@
 import { Pipeline, PipelineNodeCondition } from ".";
-import { FeaturedThread } from "../featured-group/FeaturedThread";
+import { Repository, RepositoryTag } from "..";
+import { FeaturedThread } from "..";
 export interface PipelineNode {
     id?: string;
     title?: string;
@@ -37,11 +38,15 @@ export interface PipelineNode {
     date?: number;
     whitelistCSV?: string;
     blacklistCSV?: string;
+    repository?: Repository;
     repositoryId?: string;
+    repositoryTags?: RepositoryTag[];
     repositoryTagIds?: string[];
+    credential?: Credential;
     credentialId?: string;
     pipelineId: string;
     pipeline?: Pipeline;
+    parentNode?: PipelineNode;
     parentNodeId?: string;
     conditions?: PipelineNodeCondition[];
     createdAt?: string;
