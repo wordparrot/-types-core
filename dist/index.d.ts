@@ -11,6 +11,7 @@ export * from './plugin';
 export * from './repository';
 export * from './role';
 export * from './site';
+export * from './storage';
 export * from './tile';
 export * from './trending';
 export * from './user';
