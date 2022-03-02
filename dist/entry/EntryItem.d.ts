@@ -1,3 +1,4 @@
+import { Credential } from '..';
 export interface EntryItem {
     id?: string;
     corsDisabled: boolean;

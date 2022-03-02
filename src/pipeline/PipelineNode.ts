@@ -1,7 +1,7 @@
 import { Pipeline, PipelineNodeCondition } from ".";
 import { Repository, RepositoryTag } from "..";
 import { FeaturedThread } from "..";
-
+import { Credential } from '..'
 
 export interface PipelineNode {
     id?: string
