@@ -2,6 +2,7 @@ import { Dns, Seo, Social, Theme } from '.'
 import { Role } from '..'
 import { Banner } from '..'
 import { Category } from '..'
+import { Storage } from '../storage/Storage'
 
 export interface Site {
     id: string
