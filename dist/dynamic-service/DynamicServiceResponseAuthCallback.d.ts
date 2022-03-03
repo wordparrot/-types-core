@@ -1,8 +1,6 @@
-export interface DynamicServiceResponseAuthCallbackBase {
-    message: string;
-    status?: string;
+import { DynamicServiceResponseOutput } from ".";
+export interface DynamicServiceResponseOutputAuthCallback extends DynamicServiceResponseOutput {
     accessToken?: string;
     refreshToken?: string;
     secret?: string;
 }
-export declare type DynamicServiceResponseAuthCallback = Partial<DynamicServiceResponseAuthCallbackBase>;

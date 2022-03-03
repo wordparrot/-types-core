@@ -1,5 +1,4 @@
-export interface DynamicServiceResponseListenerBase {
-    message: string;
+import { DynamicServiceResponseOutput } from ".";
+export interface DynamicServiceResponseOutputListener extends DynamicServiceResponseOutput {
     passEvent: boolean;
 }
-export declare type DynamicServiceResponseListener = Partial<DynamicServiceResponseListenerBase>;

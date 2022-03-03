@@ -1,6 +1,7 @@
 import { RepositoryFile, RepositoryItem } from "..";
 export interface DynamicServiceResponseOutputBase {
     message: string;
+    status?: string;
     messagesToPassOn: any[];
     itemsToPassOn: RepositoryItem[];
     itemsDeleted: RepositoryItem[];
