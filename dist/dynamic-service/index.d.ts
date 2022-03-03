@@ -7,3 +7,6 @@ export * from './DynamicServiceBodyPlugin';
 export * from './DynamicServiceBodyRun';
 export * from './DynamicServiceBodySite';
 export * from './DynamicServiceResponse';
+export * from './DynamicServiceResponseAuthCallback';
+export * from './DynamicServiceResponseListener';
+export * from './DynamicServiceResponseOutput';

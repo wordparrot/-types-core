@@ -1,3 +1,5 @@
+import { DynamicServiceResponseOutput } from ".";
+
 export interface DynamicServiceResponse {
     result: boolean
     data: {
@@ -7,7 +9,7 @@ export interface DynamicServiceResponse {
         statusCode?: number
         url?: string
         error?: any
-        output?: any
+        output?: DynamicServiceResponseOutput
         createdAt?: string
     }
 }

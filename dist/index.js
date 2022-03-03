@@ -20,6 +20,7 @@ __exportStar(require("./image"), exports);
 __exportStar(require("./listener"), exports);
 __exportStar(require("./pipeline"), exports);
 __exportStar(require("./plugin"), exports);
+__exportStar(require("./plugin-module"), exports);
 __exportStar(require("./repository"), exports);
 __exportStar(require("./role"), exports);
 __exportStar(require("./site"), exports);
