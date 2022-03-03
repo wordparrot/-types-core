@@ -18,3 +18,4 @@ __exportStar(require("./DynamicServiceBodyPipeline"), exports);
 __exportStar(require("./DynamicServiceBodyPlugin"), exports);
 __exportStar(require("./DynamicServiceBodyRun"), exports);
 __exportStar(require("./DynamicServiceBodySite"), exports);
+__exportStar(require("./DynamicServiceResponse"), exports);
