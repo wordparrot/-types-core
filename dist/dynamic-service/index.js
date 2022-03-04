@@ -11,6 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./DynamicServiceBody"), exports);
+__exportStar(require("./DynamicServiceBodyAuth"), exports);
 __exportStar(require("./DynamicServiceBodyConfig"), exports);
 __exportStar(require("./DynamicServiceBodyInput"), exports);
 __exportStar(require("./DynamicServiceBodyParameters"), exports);

@@ -1,4 +1,5 @@
 export * from './DynamicServiceBody'
+export * from './DynamicServiceBodyAuth'
 export * from './DynamicServiceBodyConfig'
 export * from './DynamicServiceBodyInput'
 export * from './DynamicServiceBodyParameters'

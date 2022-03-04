@@ -1,4 +1,5 @@
 import { 
+  DynamicServiceBodyAuth,
   DynamicServiceBodyPlugin, 
   DynamicServiceBodyPipeline,
   DynamicServiceBodyInput,
@@ -11,6 +12,7 @@ export interface DynamicServiceBody {
   run: DynamicServiceBodyRun
   plugin: DynamicServiceBodyPlugin
   pipeline: DynamicServiceBodyPipeline
+  auth: DynamicServiceBodyAuth
   site: DynamicServiceBodySite
   input: DynamicServiceBodyInput
   parameters: DynamicServiceBodyParameters

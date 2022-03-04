@@ -11,6 +11,7 @@ export * from './plugin';
 export * from './plugin-module';
 export * from './repository';
 export * from './role';
+export * from './sandbox';
 export * from './site';
 export * from './storage';
 export * from './tile';
