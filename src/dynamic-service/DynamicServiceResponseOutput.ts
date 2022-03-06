@@ -2,7 +2,9 @@ import { RepositoryFile, RepositoryItem } from "..";
 
 export interface DynamicServiceResponseOutputBase {
     message: string
-    status?: string
+    status: string
+    errors: Record<string, any>
+    pipelineCount: number
     messagesToPassOn: any[]
     itemsToPassOn: RepositoryItem[]
     itemsDeleted: RepositoryItem[]
