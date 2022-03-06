@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { WriteFileOptions } from 'fs';
 import { FileOperation } from './file-utility.interface';
-import { PipelineFile } from '..';
+import { FileMetadata } from '..';
 export declare class FileUtility {
     pipelineJobId: string;
     pipelineNodeId: string;
@@ -33,7 +33,7 @@ export declare class FileUtility {
     get filePath(): string;
     get repositoriesPath(): string;
     get repositoriesFilePath(): string;
-    saveToTemp(encoding?: WriteFileOptions): Promise<PipelineFile>;
+    saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata>;
     private createNodeTempFolders;
     private writeToTempFolder;
     createRepositoryFolder(): Promise<void>;

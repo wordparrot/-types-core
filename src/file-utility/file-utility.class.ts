@@ -11,7 +11,7 @@ import { isInteger } from 'lodash'
 import { promisify } from 'util'
 
 import { FileOperation } from './file-utility.interface'
-import { PipelineFile } from '..'
+import { FileMetadata } from '..'
 import {
   getExtension,
   getFilenameBase,
@@ -92,7 +92,7 @@ export class FileUtility {
     return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`
   }
 
-  async saveToTemp(encoding: WriteFileOptions = 'utf8'): Promise<PipelineFile> {
+  async saveToTemp(encoding: WriteFileOptions = 'utf8'): Promise<FileMetadata> {
     await this.createNodeTempFolders()
     await this.writeToTempFolder(encoding)
     return {

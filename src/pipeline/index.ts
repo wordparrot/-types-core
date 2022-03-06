@@ -1,5 +1,5 @@
 export * from './Pipeline'
-export * from './PipelineFile'
+export * from './FileMetadata'
 export * from './PipelineFlow'
 export * from './PipelineGroup'
 export * from './PipelineJob'

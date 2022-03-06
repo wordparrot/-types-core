@@ -11,7 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Pipeline"), exports);
-__exportStar(require("./PipelineFile"), exports);
+__exportStar(require("./FileMetadata"), exports);
 __exportStar(require("./PipelineFlow"), exports);
 __exportStar(require("./PipelineGroup"), exports);
 __exportStar(require("./PipelineJob"), exports);
