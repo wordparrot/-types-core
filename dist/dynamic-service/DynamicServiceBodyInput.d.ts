@@ -1,7 +1,7 @@
-import { RepositoryItem, RepositoryFile } from "..";
+import { RepositoryItem, FileMetadata } from "..";
 export interface DynamicServiceBodyInput {
     itemsFromParent?: RepositoryItem[];
-    filesFromParent?: RepositoryFile[];
+    filesFromParent?: FileMetadata[];
     tokensFromParent?: Record<string, any>[];
     repositoryItems?: RepositoryItem[];
     repositoryItemIds?: string[];
