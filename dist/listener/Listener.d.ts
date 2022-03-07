@@ -9,7 +9,7 @@ export interface Listener {
     provider: string;
     status: string;
     queueStatus: string;
-    pollDelay: string;
+    pollDelay: number;
     recordJobs: boolean;
     values: Record<string, any>;
     user: User;

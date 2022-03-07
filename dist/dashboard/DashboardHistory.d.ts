@@ -1,9 +1,9 @@
+import { Site } from "..";
 export interface DashboardHistory {
     id: string;
     operation: string;
     values: Record<string, any>;
-    pipelineId: string;
-    repositoryId: string;
+    site: Site;
     createdAt: string;
     updatedAt: string;
 }

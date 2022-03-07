@@ -1,33 +1,35 @@
 import { EntryItem, EntryLink } from ".";
 import { RepositoryItem } from "..";
 import { Role } from '..';
-import { Image } from "../image";
-import { Site } from '../site'
+import { Image } from "..";
+import { Site } from '..'
 import { Category, Subcategory } from "..";
+import { Bookmark } from ".";
+import { PipelineNode, PipelineJob } from "..";
 
 export interface Entry {
-    id?: string
+    id: string
     title: string
     subtitle?: string
     content?: string
     body?: string
-    youtubeURL?: string
-    imageId?: string
-    image?: Image
     status: string
     tags?: string
-    sites?: Site[]
+    youtubeURL: string
+
+    site: Site
+    image: Image
     items: EntryItem[]
-    links?: EntryLink[]
-    category?: Category
-    categoryId?: string
-    subcategory?: Subcategory
-    subcategoryId?: string
-    repositoryItems?: RepositoryItem[]
-    roles?: Role[]
-    roleIds?: string[]
-    bookmarks?: any[]
+    links: EntryLink[]
+    category: Category
+    subcategory: Subcategory
+    bookmarks: Bookmark[]
+    pipelineJob: PipelineJob
+    pipelineNode: PipelineNode
+    roles: Role[]
+    repositoryItems: RepositoryItem[]
+
     date: number
-    createdAt?: string
-    updatedAt?: string
+    createdAt: string
+    updatedAt: string
 }

@@ -1,9 +1,10 @@
+import { Entry } from '.';
 export interface EntryLink {
-    id?: string;
-    uniqId?: string;
+    id: string;
     title: string;
     url: string;
     status: string;
-    createdAt?: string;
-    updatedAt?: string;
+    entry: Entry;
+    createdAt: string;
+    updatedAt: string;
 }

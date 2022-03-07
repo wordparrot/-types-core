@@ -1,5 +1,5 @@
 import { Listener } from ".";
-import { PluginError } from "../plugin";
+import { PluginError } from "..";
 
 export interface ListenerJob {
     id: string
