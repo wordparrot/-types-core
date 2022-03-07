@@ -6,9 +6,9 @@ import { FeaturedImage } from '..';
 export declare type ImageType = 'hosted' | 'external';
 export interface Image {
     id: string;
-    uniqId?: number;
-    title?: string;
-    subtitle?: string;
+    uniqId: string;
+    title: string;
+    subtitle: string;
     url: string;
     size: number;
     height: number;
