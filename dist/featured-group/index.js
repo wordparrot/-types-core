@@ -12,7 +12,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./FeaturedGroup"), exports);
 __exportStar(require("./FeaturedImage"), exports);
+__exportStar(require("./FeaturedInvitation"), exports);
 __exportStar(require("./FeaturedSubscription"), exports);
 __exportStar(require("./FeaturedThread"), exports);
 __exportStar(require("./FeaturedThreadPreference"), exports);
+__exportStar(require("./FeaturedThreadPushNotification"), exports);
 __exportStar(require("./FeaturedThreadRelease"), exports);

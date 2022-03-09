@@ -1,14 +1,14 @@
 import { FeaturedGroup } from ".."
 import { User } from '..'
 
-export interface FeaturedSubscription {
+export interface FeaturedInvitation {
     id: string
-    type: string
     status: string
 
     featuredGroup: FeaturedGroup
     user: User
-
+    invitee: User
+    
     createdAt: string
     updatedAt: string
 }

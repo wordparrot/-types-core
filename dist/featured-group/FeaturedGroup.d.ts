@@ -1,15 +1,19 @@
 import { FeaturedThread, FeaturedImage, FeaturedSubscription } from ".";
 import { Profile } from "..";
+import { Site } from '..';
+import { User } from '..';
 export interface FeaturedGroup {
     id: string;
     title: string;
     content?: string;
+    body?: string;
     subscriptionScheme: string;
     itemLimit?: number;
+    user: User;
+    site?: Site;
+    profile?: Profile;
     featuredImages?: FeaturedImage[];
     featuredThreads?: FeaturedThread[];
-    userId: string;
-    profile?: Profile;
     featuredSubscriptions: FeaturedSubscription[];
     startedAt: number;
     endedAt: number;

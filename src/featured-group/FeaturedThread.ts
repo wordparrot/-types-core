@@ -1,19 +1,25 @@
-import { FeaturedGroup, FeaturedThreadPreference, FeaturedThreadRelease } from ".";
+import { FeaturedGroup, FeaturedThreadPreference, FeaturedThreadRelease, FeaturedThreadPushNotification } from ".";
+import { PipelineNode } from '..'
 
 export interface FeaturedThread {
     id: string
-    featuredGroupId: string
-    featuredGroup?: FeaturedGroup
     title: string
-    content: string
-    body: string
+    content?: string
+    body?: string
     itemLimit?: number
     timezone?: string
     timezoneDelay?: boolean
-    platforms: string[]
-    featuredThreadPreferences: FeaturedThreadPreference[]
     preferenceTypes: string[]
-    releases: FeaturedThreadRelease[]
-    createdAt?: string
-    updatedAt?: string
+    platforms: string[]
+
+    featuredGroup?: FeaturedGroup
+    featuredThreadPreferences?: FeaturedThreadPreference[]
+    featuredThreadReleases?: FeaturedThreadRelease[]
+    featuredThreadPushNotifications?: FeaturedThreadPushNotification[]
+    pipelineNodes?: PipelineNode[]
+
+    startedAt: string
+    endedAt: string
+    createdAt: string
+    updatedAt: string
 }
