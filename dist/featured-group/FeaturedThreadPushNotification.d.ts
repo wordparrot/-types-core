@@ -5,7 +5,7 @@ export interface FeaturedThreadPushNotification {
     content?: string;
     trackingId: string;
     status: string;
-    featuredThread?: FeaturedThread;
+    featuredThread: FeaturedThread;
     createdAt: string;
     updatedAt: string;
 }

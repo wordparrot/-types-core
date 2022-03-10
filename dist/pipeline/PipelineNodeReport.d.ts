@@ -1,4 +1,6 @@
+import { PipelineNode, PipelineJob } from ".";
 export interface PipelineNodeReport {
+    id: string;
     status: string;
     errorMessage: string;
     pipelineNodeId: string;
@@ -34,4 +36,8 @@ export interface PipelineNodeReport {
         files: string[];
         filesTotal: number;
     };
+    pipelineNode: PipelineNode;
+    pipelineJob: PipelineJob;
+    createdAt: string;
+    updatedAt: string;
 }

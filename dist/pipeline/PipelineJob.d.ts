@@ -1,16 +1,18 @@
-import { Pipeline, PipelineNodeReport } from '.';
 import { RepositoryItem } from '..';
 import { Entry } from '..';
+import { Pipeline, PipelineNodeReport, PipelineFlow } from ".";
 export interface PipelineJob {
     id: string;
-    repositoryItems?: RepositoryItem[];
-    pipelineNodeReports?: PipelineNodeReport[];
-    entries?: Entry[];
-    pipeline?: Pipeline;
-    pipelineId?: string;
-    downstreamPipelineIds?: string[];
     status: string;
-    completedAt?: string;
+    pipeline: Pipeline;
+    pipelineJob: PipelineJob;
+    upstreamPipelineJob: PipelineJob;
+    downstreamPipelineJobs: PipelineJob[];
+    repositoryItems: RepositoryItem[];
+    pipelineFlows: PipelineFlow[];
+    pipelineNodeReports: PipelineNodeReport[];
+    entries: Entry[];
+    completedAt: string;
     createdAt: string;
     updatedAt: string;
 }

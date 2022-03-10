@@ -10,13 +10,13 @@ export interface FeaturedThread {
     timezoneDelay?: boolean;
     preferenceTypes: string[];
     platforms: string[];
-    featuredGroup?: FeaturedGroup;
-    featuredThreadPreferences?: FeaturedThreadPreference[];
-    featuredThreadReleases?: FeaturedThreadRelease[];
-    featuredThreadPushNotifications?: FeaturedThreadPushNotification[];
-    pipelineNodes?: PipelineNode[];
-    startedAt: string;
-    endedAt: string;
+    featuredGroup: FeaturedGroup;
+    featuredThreadPreferences: FeaturedThreadPreference[];
+    featuredThreadReleases: FeaturedThreadRelease[];
+    featuredThreadPushNotifications: FeaturedThreadPushNotification[];
+    pipelineNodes: PipelineNode[];
+    startedAt: number;
+    endedAt: number;
     createdAt: string;
     updatedAt: string;
 }

@@ -12,14 +12,14 @@ export interface FeaturedThread {
     preferenceTypes: string[]
     platforms: string[]
 
-    featuredGroup?: FeaturedGroup
-    featuredThreadPreferences?: FeaturedThreadPreference[]
-    featuredThreadReleases?: FeaturedThreadRelease[]
-    featuredThreadPushNotifications?: FeaturedThreadPushNotification[]
-    pipelineNodes?: PipelineNode[]
+    featuredGroup: FeaturedGroup
+    featuredThreadPreferences: FeaturedThreadPreference[]
+    featuredThreadReleases: FeaturedThreadRelease[]
+    featuredThreadPushNotifications: FeaturedThreadPushNotification[]
+    pipelineNodes: PipelineNode[]
 
-    startedAt: string
-    endedAt: string
+    startedAt: number
+    endedAt: number
     createdAt: string
     updatedAt: string
 }

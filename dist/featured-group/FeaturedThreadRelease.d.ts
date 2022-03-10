@@ -7,8 +7,8 @@ export interface FeaturedThreadRelease {
     trackingId: string;
     releaseNo: number;
     status: string;
-    featuredThread?: FeaturedThread;
-    repositoryItems?: RepositoryItem[];
+    featuredThread: FeaturedThread;
+    repositoryItems: RepositoryItem[];
     createdAt: string;
     updatedAt: string;
 }

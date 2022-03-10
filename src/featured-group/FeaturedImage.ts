@@ -6,7 +6,7 @@ export interface FeaturedImage {
     order: number
 
     image: Image
-    featuredGroup?: FeaturedGroup
+    featuredGroup: FeaturedGroup
 
     createdAt: string
     updatedAt: string

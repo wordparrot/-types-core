@@ -1,20 +1,30 @@
-import { PipelineNode } from ".";
+import { PipelineNode, PipelineJob, PipelineGroup } from ".";
 import { Listener } from "..";
-export interface AbstractPipeline {
-    id?: string;
+import { Site } from '..';
+import { User } from '..';
+import { Role } from '..';
+import { FeaturedThreadPreference } from "../featured-group";
+export interface Pipeline {
+    id: string;
     title: string;
-    content?: string;
+    content: string;
+    etag: string;
+    recordReports: boolean;
     runInterval: number;
     runUnit: string;
-    nextRun: any;
+    nextRun: number;
     status: string;
-    recordReports: boolean;
     queueStatus: string;
-    createdAt?: string;
-    updatedAt?: string;
-}
-export interface Pipeline extends AbstractPipeline {
-    pipelineGroupId: string;
     nodes: PipelineNode[];
+    jobs: PipelineJob[];
+    pipelineGroup: PipelineGroup;
+    site: Site;
+    user: User;
+    roles: Role[];
+    upstreamPipelines: Pipeline[];
+    downstreamPipelines: Pipeline[];
+    featuredThreadPreferences: FeaturedThreadPreference[];
     listeners: Listener[];
+    createdAt: string;
+    updatedAt: string;
 }

@@ -10,11 +10,11 @@ export interface FeaturedThreadPreference {
     userId: string
 
     user: User
-    featuredThread?: FeaturedThread
-    site?: Site
-    pipeline?: Pipeline
-    repository?: Repository
-    repositoryTags?: RepositoryTag[]
+    featuredThread: FeaturedThread
+    site: Site
+    pipeline: Pipeline
+    repository: Repository
+    repositoryTags: RepositoryTag[]
 
     createdAt: string
     updatedAt: string

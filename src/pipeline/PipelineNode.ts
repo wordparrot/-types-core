@@ -2,63 +2,65 @@ import { Pipeline, PipelineNodeCondition } from ".";
 import { Repository, RepositoryTag } from "..";
 import { FeaturedThread } from "..";
 import { Credential } from '..'
+import { Category } from "..";
+import { FeaturedGroup } from "..";
+import { Subcategory } from "..";
+import { Entry } from '..'
 
 export interface PipelineNode {
-    id?: string
-    title?: string
-    content?: string
-    prospectiveTitle?: string
-    prospectiveContent?: string
-    categoryId?: string
-    subcategoryId?: string
-    featuredGroupId?: string
-    featuredThreadIds?: (undefined | string)[]
-    featuredThreads?: FeaturedThread[]
-    type: string
-    subtype?: string
-    provider?: string
-    action?: string
-    mode?: string
-    topic?: string
-    group?: string
-    subgroup?: string
-    language?: string
-    location?: string
-    method?: string
-    url?: string
-    domain?: string
-    path?: string
-    from?: string
-    to?: string
-    emailAddresses?: string
-    search?: string
-    select?: string
-    sort?: string
-    limit?: number
-    skip?: number
-    status?: string
-    date?: number
-  
-    whitelistCSV?: string
-    blacklistCSV?: string
-  
-    repository?: Repository
-    repositoryId?: string
+  id: string
+  title: string
+  content: string
+  nodeStatus: string
+  status: string
+  provider: string
+  type: string
 
-    repositoryTags?: RepositoryTag[]
-    repositoryTagIds?: string[]
+  values: Record<string, any>
+  transformations: { key: string, value: any }[]
+  prospectiveTitle: string
+  prospectiveContent: string
+  text: string
+  color: string
+  background: string
+  subtype: string
+  functionName: string
+  emailAddresses: string
+  group: string
+  subgroup: string
+  to: string
+  from: string
+  domain: string
+  url: string
+  path: string
+  method: string
+  language: string
+  location: string
+  action: string
+  mode: string
+  topic: string
+  search: string
+  select: string
+  sort: string
+  limit: number
+  skip: number
+  date: number
+  whitelistCSV: string
+  blacklistCSV: string
 
-    credential?: Credential
-    credentialId?: string
-    
-    pipelineId: string
-    pipeline?: Pipeline
+  pipeline: Pipeline
+  category: Category
+  subcategory: Subcategory
+  featuredGroup: FeaturedGroup
+  featuredThreads: FeaturedThread[]
+  credential: Credential
+  repository: Repository
+  repositoryTagIds: string[]
+  parentNode: PipelineNode
+  childNodes: PipelineNode[]
+  conditions: PipelineNodeCondition[]
+  entries: Entry[]
 
-    parentNode?: PipelineNode
-    parentNodeId?: string
-  
-    conditions?: PipelineNodeCondition[]
-  
-    createdAt?: string
-    updatedAt?: string
-  }
+  createdAt: string
+  updatedAt: string
+}

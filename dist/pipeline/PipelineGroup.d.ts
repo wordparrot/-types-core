@@ -1,11 +1,13 @@
 import { Pipeline } from ".";
+import { Site } from "..";
+import { User } from '..';
 export interface PipelineGroup {
-    id?: string;
+    id: string;
     title: string;
-    content?: string;
+    content: string;
     pipelines: Pipeline[];
-    siteId: string;
-    userId: string;
-    createdAt?: string;
-    updatedAt?: string;
+    site: Site;
+    user: User;
+    createdAt: string;
+    updatedAt: string;
 }

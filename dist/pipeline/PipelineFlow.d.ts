@@ -1,16 +1,22 @@
-import { PipelineNode, Pipeline } from ".";
+import { PipelineNode, Pipeline, PipelineJob } from ".";
 import { FeaturedThreadRelease } from "..";
 import { RepositoryItem } from "..";
+import { Repository } from "..";
+import { RepositoryHistory } from "..";
+import { Site } from "..";
+import { User } from '..';
 export interface PipelineFlow {
     id: string;
-    pipeline?: Pipeline;
-    pipelineNode?: PipelineNode;
-    pipelineNodeId?: string;
-    pipelineJobId?: string;
-    featuredThreadReleaseId?: string;
-    featuredThreadRelease?: FeaturedThreadRelease;
+    platforms: string[];
+    pipeline: Pipeline;
+    pipelineJob: PipelineJob;
+    pipelineNode: PipelineNode;
+    featuredThreadRelease: FeaturedThreadRelease;
+    repository: Repository;
     repositoryItems: RepositoryItem[];
-    platforms?: string[];
+    repositoryHistory: RepositoryHistory;
+    site: Site;
+    user: User;
     createdAt?: string;
     updatedAt?: string;
 }

@@ -10,13 +10,11 @@ export interface FeaturedGroup {
     subscriptionScheme: string;
     itemLimit?: number;
     user: User;
-    site?: Site;
-    profile?: Profile;
-    featuredImages?: FeaturedImage[];
-    featuredThreads?: FeaturedThread[];
+    site: Site;
+    profile: Profile;
+    featuredImages: FeaturedImage[];
+    featuredThreads: FeaturedThread[];
     featuredSubscriptions: FeaturedSubscription[];
-    startedAt: number;
-    endedAt: number;
-    createdAt?: string;
-    updatedAt?: string;
+    createdAt: string;
+    updatedAt: string;
 }
