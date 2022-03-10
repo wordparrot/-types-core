@@ -1,8 +1,9 @@
 import { HubPlugin, PluginError, PluginAction, PluginCredential, PluginListener } from ".";
 export interface Plugin extends HubPlugin {
+    id: string;
+    name: string;
+    active: boolean;
     hubPluginId: string;
-    createdAt?: string;
-    updatedAt?: string;
     actions: PluginAction[];
     credentials: PluginCredential[];
     listeners: PluginListener[];
@@ -14,4 +15,6 @@ export interface Plugin extends HubPlugin {
     translations: {
         languages: Record<string, Record<string, string>>;
     };
+    createdAt: string;
+    updatedAt: string;
 }

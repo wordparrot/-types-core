@@ -1,8 +1,14 @@
 import { RepositoryItem } from ".";
+import { Repository } from ".";
 
 export interface RepositoryTag {
     id: string
     title: string
     color: string
-    repositoryItems?: RepositoryItem[]
+
+    repository: Repository
+    repositoryItems: RepositoryItem[]
+
+    createdAt: string
+    updatedAt: string
 }

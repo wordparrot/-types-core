@@ -1,15 +1,10 @@
-import { RepositoryItem, RepositoryTag } from ".";
-import { PipelineNode, Pipeline, PipelineFlow } from "..";
-import { User } from '..';
+import { Repository } from ".";
+import { PipelineFlow } from "..";
 export interface RepositoryHistory {
+    id: string;
     operation: string;
-    repositoryId: string;
-    repositoryItems: RepositoryItem[];
-    pipelineFlow?: PipelineFlow;
-    pipelines?: Pipeline[];
-    pipelineNodes?: PipelineNode[];
-    tags?: RepositoryTag[];
-    user?: User;
+    repository: Repository;
+    pipelineFlow: PipelineFlow;
     createdAt: string;
     updatedAt: string;
 }

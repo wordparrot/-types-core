@@ -1,4 +1,4 @@
-import { PipelineNode, Pipeline, PipelineJob } from ".";
+import { PipelineNode, PipelineJob } from ".";
 import { FeaturedThreadRelease } from "..";
 import { RepositoryItem } from "..";
 import { Repository } from "..";
@@ -8,7 +8,6 @@ import { User } from '..';
 export interface PipelineFlow {
     id: string;
     platforms: string[];
-    pipeline: Pipeline;
     pipelineJob: PipelineJob;
     pipelineNode: PipelineNode;
     featuredThreadRelease: FeaturedThreadRelease;

@@ -17,4 +17,5 @@ __exportStar(require("./PluginAction"), exports);
 __exportStar(require("./PluginCredential"), exports);
 __exportStar(require("./PluginError"), exports);
 __exportStar(require("./PluginListener"), exports);
+__exportStar(require("./PluginMeta"), exports);
 __exportStar(require("./PluginValidationTerm"), exports);
