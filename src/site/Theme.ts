@@ -32,7 +32,7 @@ export interface Theme {
     divider: string
     footer: string
 
-    site: Site
+    site?: Site
 
     createdAt: string
     updatedAt: string

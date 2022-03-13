@@ -5,7 +5,7 @@ export interface EntryLink {
     title: string;
     url: string;
     status: string;
-    entry: Entry;
+    entry?: Entry;
     createdAt: string;
     updatedAt: string;
 }

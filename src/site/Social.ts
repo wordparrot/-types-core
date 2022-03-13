@@ -8,7 +8,7 @@ export interface Social {
     twitter: string
     github: string
 
-    site: Site
+    site?: Site
 
     createdAt: string
     updatedAt: string

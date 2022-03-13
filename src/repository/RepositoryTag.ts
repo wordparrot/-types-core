@@ -6,8 +6,8 @@ export interface RepositoryTag {
     title: string
     color: string
 
-    repository: Repository
-    repositoryItems: RepositoryItem[]
+    repository?: Repository
+    repositoryItems?: RepositoryItem[]
 
     createdAt: string
     updatedAt: string

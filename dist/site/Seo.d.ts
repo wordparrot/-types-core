@@ -11,7 +11,7 @@ export interface Seo {
     metaFavicon: string;
     googleSiteVerification: string;
     googleAnalyticsId: string;
-    site: Site;
+    site?: Site;
     createdAt: string;
     updatedAt: string;
 }

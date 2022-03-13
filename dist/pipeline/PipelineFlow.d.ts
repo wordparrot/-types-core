@@ -9,6 +9,7 @@ export interface PipelineFlow {
     id: string;
     platforms: string[];
     pipelineJob: PipelineJob;
+    pipelineJobId: string;
     pipelineNode: PipelineNode;
     featuredThreadRelease: FeaturedThreadRelease;
     repository: Repository;

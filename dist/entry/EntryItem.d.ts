@@ -16,9 +16,9 @@ export interface EntryItem {
     status: string;
     statusNotification?: string;
     title: string;
-    entry: Entry;
-    credential: Credential;
-    downloadEntities: EntryItemDownload[];
+    entry?: Entry;
+    credential?: Credential;
+    downloadEntities?: EntryItemDownload[];
     createdAt?: string;
     updatedAt?: string;
 }

@@ -13,7 +13,7 @@ export interface Seo {
     googleSiteVerification: string
     googleAnalyticsId: string
 
-    site: Site
+    site?: Site
 
     createdAt: string
     updatedAt: string

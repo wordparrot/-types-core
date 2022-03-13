@@ -11,6 +11,7 @@ export interface PipelineFlow {
     platforms: string[]
 
     pipelineJob: PipelineJob
+    pipelineJobId: string
     pipelineNode: PipelineNode
     featuredThreadRelease: FeaturedThreadRelease
     repository: Repository

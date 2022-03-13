@@ -23,7 +23,7 @@ export interface Theme {
     backgroundPaper: string;
     divider: string;
     footer: string;
-    site: Site;
+    site?: Site;
     createdAt: string;
     updatedAt: string;
 }

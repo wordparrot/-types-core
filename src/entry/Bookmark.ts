@@ -4,10 +4,13 @@ import { User } from '..'
 
 export interface Bookmark {
     id: string
+
+    site?: Site
+    entry?: Entry
+    entryId: string
+    user?: User
     repositoryItemId: string
-    site: Site
-    entry: Entry
-    user: User
+    
     createdAt: string
     updatedAt: string
 }

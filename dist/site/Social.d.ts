@@ -6,7 +6,7 @@ export interface Social {
     linkedin: string;
     twitter: string;
     github: string;
-    site: Site;
+    site?: Site;
     createdAt: string;
     updatedAt: string;
 }
