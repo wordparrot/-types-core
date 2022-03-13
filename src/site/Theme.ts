@@ -1,3 +1,5 @@
+import { Site } from '..'
+
 export interface Theme {
     id: string
   
@@ -29,4 +31,9 @@ export interface Theme {
   
     divider: string
     footer: string
+
+    site: Site
+
+    createdAt: string
+    updatedAt: string
 }

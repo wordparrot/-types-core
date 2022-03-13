@@ -1,3 +1,4 @@
+import { Site } from '..';
 export interface Theme {
     id: string;
     defaultView: string;
@@ -22,4 +23,7 @@ export interface Theme {
     backgroundPaper: string;
     divider: string;
     footer: string;
+    site: Site;
+    createdAt: string;
+    updatedAt: string;
 }

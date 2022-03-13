@@ -1,7 +1,15 @@
+import { Site } from '..'
+
 export interface Social {
-    facebook?: string
-    instagram?: string
-    linkedin?: string
-    twitter?: string
-    github?: string
+    id: string
+    facebook: string
+    instagram: string
+    linkedin: string
+    twitter: string
+    github: string
+
+    site: Site
+
+    createdAt: string
+    updatedAt: string
 }

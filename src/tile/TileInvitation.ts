@@ -1,14 +1,16 @@
 import { Tile } from '.'
 import { Profile } from '..'
+import { Site } from '..'
+import { User } from '..'
 
 export interface TileInvitation {
     id: string
-    tile?: Tile
-    tileId: string
-    userId: string
-    profile: Profile
-    inviteeId: string
     status: string
+
+    tile: Tile
+    user: User
+    invitee: User
+
     createdAt: string
     updatedAt: string
 }
