@@ -11,6 +11,7 @@ export interface FeaturedThread {
     preferenceTypes: string[];
     platforms: string[];
     featuredGroup: FeaturedGroup;
+    featuredGroupId: string;
     featuredThreadPreferences: FeaturedThreadPreference[];
     featuredThreadReleases: FeaturedThreadRelease[];
     featuredThreadPushNotifications: FeaturedThreadPushNotification[];

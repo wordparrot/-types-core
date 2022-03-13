@@ -11,7 +11,9 @@ export interface FeaturedThreadPreference {
     featuredThread: FeaturedThread;
     site: Site;
     pipeline: Pipeline;
+    pipelineId: string;
     repository: Repository;
+    repositoryId: string;
     repositoryTags: RepositoryTag[];
     createdAt: string;
     updatedAt: string;

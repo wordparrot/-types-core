@@ -10,6 +10,7 @@ export interface FeaturedGroup {
     subscriptionScheme: string;
     itemLimit?: number;
     user: User;
+    userId: string;
     site: Site;
     profile: Profile;
     featuredImages: FeaturedImage[];

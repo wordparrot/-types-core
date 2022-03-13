@@ -1,7 +1,7 @@
 import { Tile } from '.'
-import { Profile } from '..'
 import { Site } from '..'
 import { User } from '..'
+import { Profile } from '..'
 
 export interface TileInvitation {
     id: string
@@ -10,6 +10,7 @@ export interface TileInvitation {
     tile: Tile
     user: User
     invitee: User
+    profile?: Profile
 
     createdAt: string
     updatedAt: string

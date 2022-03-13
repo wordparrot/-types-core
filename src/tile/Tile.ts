@@ -11,24 +11,10 @@ export interface Tile {
 
     repository: Repository
     repositoryTags: RepositoryTag[]
-    repositoryTagIds: string[]
     user: User
     subscriptions: TileSubscription[]
     invitations: TileInvitation[]
-    profile: Profile
 
     createdAt: string
     updatedAt: string
 }
-
-//   @OneToMany(
-//     (type) => TileSubscriptionEntity,
-//     (tileSubscription) => tileSubscription.tile
-//   )
-//   subscriptions: TileSubscriptionEntity[]
-
-//   @OneToMany(
-//     (type) => TileInvitationEntity,
-//     (tileInvitation) => tileInvitation.tile
-//   )
-//   invitations: TileInvitationEntity[]

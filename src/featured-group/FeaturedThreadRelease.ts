@@ -10,6 +10,7 @@ export interface FeaturedThreadRelease {
     status: string
 
     featuredThread: FeaturedThread
+    featuredThreadId: string
     repositoryItems: RepositoryItem[]
 
     createdAt: string

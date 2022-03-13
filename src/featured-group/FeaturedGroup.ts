@@ -12,6 +12,7 @@ export interface FeaturedGroup {
     itemLimit?: number
 
     user: User
+    userId: string
     site: Site
     profile: Profile
     featuredImages: FeaturedImage[]

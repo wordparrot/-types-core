@@ -12,12 +12,13 @@ export interface Pipeline {
     recordReports: boolean;
     runInterval: number;
     runUnit: string;
-    nextRun: number;
+    nextRun: Date;
     status: string;
     queueStatus: string;
     nodes: PipelineNode[];
     jobs: PipelineJob[];
     pipelineGroup: PipelineGroup;
+    pipelineGroupId: string;
     site: Site;
     user: User;
     roles: Role[];

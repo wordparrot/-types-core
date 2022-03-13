@@ -20,7 +20,9 @@ export interface Entry {
     items: EntryItem[];
     links: EntryLink[];
     category: Category;
+    categoryId?: string;
     subcategory: Subcategory;
+    subcategoryId?: string;
     bookmarks: Bookmark[];
     pipelineJob: PipelineJob;
     pipelineNode: PipelineNode;

@@ -1,4 +1,3 @@
-import { Profile } from "..";
 import { Repository, RepositoryTag } from "..";
 import { TileSubscription } from ".";
 import { User } from '..';
@@ -9,11 +8,9 @@ export interface Tile {
     content: string;
     repository: Repository;
     repositoryTags: RepositoryTag[];
-    repositoryTagIds: string[];
     user: User;
     subscriptions: TileSubscription[];
     invitations: TileInvitation[];
-    profile: Profile;
     createdAt: string;
     updatedAt: string;
 }
