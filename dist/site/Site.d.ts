@@ -24,7 +24,7 @@ export interface Site {
     seo: Seo;
     social: Social;
     theme: Theme;
-    storage?: Storage;
+    storage: Storage;
     banners?: Banner[];
     roles?: Role[];
     locked?: boolean;

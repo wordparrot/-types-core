@@ -14,6 +14,7 @@ export interface Pipeline {
     runInterval: number
     runUnit: string
     nextRun: number
+    nextRunDate?: Date
     status: string
     queueStatus: string
 
