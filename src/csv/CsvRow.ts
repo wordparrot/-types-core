@@ -2,7 +2,7 @@ import { Csv } from '.'
 
 export interface CsvRow {
   id: string
-  order: number
+  y: number
   uniqId: string
   isLabel: boolean
   data: any
