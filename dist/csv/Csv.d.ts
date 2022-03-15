@@ -2,13 +2,13 @@ import { CsvRow } from ".";
 import { PipelineNode } from "..";
 export interface Csv {
     id: string;
-    uniqId: boolean;
+    uniqId: string;
     rowIdValue: string;
     rowIdType: string;
     secondaryRowId: string;
     filename: string;
-    url: boolean;
-    provider: boolean;
+    url: string;
+    provider: string;
     providerMetadata: Record<string, any>;
     page: number;
     rows: CsvRow[];
