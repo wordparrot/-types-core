@@ -1,7 +1,7 @@
 import { DynamicServiceBodyConfig } from "..";
-import { CsvCellChange } from "./CsvCellChange";
+import { CsvRowChange } from "./CsvRowChange";
 export interface CsvMetadata {
-    csvId: string;
-    changes: CsvCellChange[];
+    csvId?: string;
+    changes: CsvRowChange[];
     run: DynamicServiceBodyConfig[];
 }
