@@ -3,11 +3,14 @@ import { PipelineNode } from "..";
 export interface Csv {
     id: string;
     uniqId: boolean;
-    rowUniqId: string;
-    secondaryRowUniqId?: string;
+    rowIdValue: string;
+    rowIdType: string;
+    secondaryRowId: string;
+    filename: string;
     url: boolean;
     provider: boolean;
-    metadata: Record<string, any>;
+    providerMetadata: Record<string, any>;
+    page: number;
     rows: CsvRow[];
     pipelineNode: PipelineNode;
     pipelineNodeId: string;
