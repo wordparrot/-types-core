@@ -1,4 +1,5 @@
 import { RepositoryFile, RepositoryItem } from "..";
+import { CsvMetadata } from "..";
 export interface DynamicServiceResponseOutputBase {
     message: string;
     status: string;
@@ -13,5 +14,6 @@ export interface DynamicServiceResponseOutputBase {
         name: string;
         value: string;
     }[];
+    csvToPassOn: CsvMetadata[];
 }
 export declare type DynamicServiceResponseOutput = Partial<DynamicServiceResponseOutputBase>;

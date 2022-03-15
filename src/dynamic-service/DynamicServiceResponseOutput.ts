@@ -1,4 +1,5 @@
 import { RepositoryFile, RepositoryItem } from "..";
+import { CsvMetadata } from "..";
 
 export interface DynamicServiceResponseOutputBase {
     message: string
@@ -11,6 +12,7 @@ export interface DynamicServiceResponseOutputBase {
     filesToPassOn: RepositoryFile[]
     filesDeleted: RepositoryFile[]
     tokensToPassOn: { name: string, value: string }[]
+    csvToPassOn: CsvMetadata[]
 }
 
 export type DynamicServiceResponseOutput = Partial<DynamicServiceResponseOutputBase>
