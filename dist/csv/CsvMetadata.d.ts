@@ -5,7 +5,8 @@ export interface CsvMetadata {
     uniqId: string;
     rowKeyValue: string;
     rowKeyType: string;
-    rowKeyX: number;
+    rowKeyX?: number;
+    rowKeyY: number;
     secondaryRowKey?: string;
     pipelineNodeId?: string;
     pipelineJobId?: string;
