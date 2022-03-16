@@ -15,6 +15,6 @@ export interface CsvMetadata {
     provider?: string;
     providerMetadata?: Record<string, any>;
     csvArray?: any[][];
-    changes?: CsvRowChange[];
+    rowChanges?: CsvRowChange[];
     run?: DynamicServiceBodyConfig[];
 }

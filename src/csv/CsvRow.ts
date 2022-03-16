@@ -6,6 +6,7 @@ export interface CsvRow {
   uniqId: string
   isLabel: boolean
   data: any
+  providerMetadata: Record<string, any>
 
   csv: Csv
   csvId: string
