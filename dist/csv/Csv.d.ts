@@ -5,7 +5,8 @@ export interface Csv {
     uniqId: string;
     rowKeyValue: string;
     rowKeyType: string;
-    rowKeyX: number;
+    rowKeyX?: number;
+    rowKeyY: number;
     secondaryRowKey: string;
     filename: string;
     url: string;
