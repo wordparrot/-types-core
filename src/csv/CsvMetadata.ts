@@ -4,9 +4,10 @@ import { CsvRowChange } from "./CsvRowChange"
 export interface CsvMetadata {
     id?: string
     uniqId: string
-    rowIdValue: string
-    rowIdType: string
-    secondaryRowId?: string
+    rowKeyValue: string
+    rowKeyType: string
+    rowKeyX: number
+    secondaryRowKey?: string
     pipelineNodeId?: string
     pipelineJobId?: string
     url?: string

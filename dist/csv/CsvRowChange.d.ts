@@ -1,7 +1,7 @@
 import { CsvCellChange } from ".";
 export interface CsvRowChange {
     y: number;
-    uniqId: string;
+    rowKey: string;
     code: string;
     cellChanges: CsvCellChange[];
 }

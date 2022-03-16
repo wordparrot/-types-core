@@ -4,4 +4,5 @@ export interface CsvCellChange {
     oldValue: any;
     newValue: any;
     code: string;
+    isRowKey: boolean;
 }

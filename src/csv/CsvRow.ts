@@ -3,7 +3,7 @@ import { Csv } from '.'
 export interface CsvRow {
   id: string
   y: number
-  uniqId: string
+  rowKey: string
   isLabel: boolean
   data: any
   providerMetadata: Record<string, any>

@@ -3,9 +3,10 @@ import { PipelineNode } from "..";
 export interface Csv {
     id: string;
     uniqId: string;
-    rowIdValue: string;
-    rowIdType: string;
-    secondaryRowId: string;
+    rowKeyValue: string;
+    rowKeyType: string;
+    rowKeyX: number;
+    secondaryRowKey: string;
     filename: string;
     url: string;
     provider: string;
