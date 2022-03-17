@@ -5,6 +5,6 @@ export interface CsvRowChangeReport {
     numberUpdated: number
     numberDeleted: number
     duplicates: CsvDuplicate[]
-    rowChanges: CsvRowChange
+    rowChanges: CsvRowChange[]
     error?: string
 }
