@@ -6,7 +6,6 @@ export interface CsvMetadata {
     uniqId: string
     rowKeyValue: string
     rowKeyType: string
-    rowKeyX?: number
     rowKeyY: number
     secondaryRowKey?: string
     pipelineNodeId?: string
