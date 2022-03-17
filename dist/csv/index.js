@@ -11,8 +11,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Csv"), exports);
+__exportStar(require("./CsvDuplicate"), exports);
 __exportStar(require("./CsvCell"), exports);
 __exportStar(require("./CsvCellChange"), exports);
 __exportStar(require("./CsvRowChange"), exports);
+__exportStar(require("./CsvRowChangeReport"), exports);
 __exportStar(require("./CsvMetadata"), exports);
 __exportStar(require("./CsvRow"), exports);
