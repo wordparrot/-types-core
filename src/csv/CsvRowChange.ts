@@ -4,6 +4,7 @@ export interface CsvRowChange {
     y: number
     rowKey: string
     code: string
-    original: any[][] | null
-    cellChanges: CsvCellChange[]
+    indexesChanged?: number[]
+    original?: any[]
+    cells: any[]
 }
