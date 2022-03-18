@@ -1,4 +1,9 @@
-import { DynamicServiceBody, DynamicServiceResponseOutput, DynamicServiceResponseAuthCallback, DynamicServiceResponseListener } from ".."
+import { 
+    DynamicServiceBody, 
+    DynamicServiceResponseOutput, 
+    DynamicServiceResponseOutputAuthCallback, 
+    DynamicServiceResponseOutputListener 
+} from "..";
 import { SandboxLib } from ".."
 
 export type ActionReturnValue = Promise<DynamicServiceResponseOutput>
@@ -9,7 +14,7 @@ export type PluginModuleActionFactory = () => {
     }
 }
 
-export type CredentialReturnValue = Promise<DynamicServiceResponseAuthCallback>
+export type CredentialReturnValue = Promise<DynamicServiceResponseOutputAuthCallback>
 
 export type PluginModuleCredentialFactory = () => {
     [n: string]: {
@@ -18,7 +23,7 @@ export type PluginModuleCredentialFactory = () => {
     }
 }
 
-export type ListenerReturnValue = Promise<DynamicServiceResponseListener>
+export type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>
 
 export type PluginModuleListenerFactory = () => {
     [n: string]: {
