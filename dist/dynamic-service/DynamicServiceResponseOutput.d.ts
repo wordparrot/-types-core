@@ -2,6 +2,7 @@ import { RepositoryFile, RepositoryItem } from "..";
 import { CsvMetadata } from "..";
 export interface DynamicServiceResponseOutputBase {
     message: string;
+    messageVars: Record<string, string | number>;
     status: string;
     errors: Record<string, any>;
     pipelineCount: number;

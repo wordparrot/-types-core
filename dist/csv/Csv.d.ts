@@ -14,8 +14,7 @@ export interface Csv {
     providerMetadata: Record<string, any>;
     page: number;
     rows: CsvRow[];
-    pipelineNode: PipelineNode;
-    pipelineNodeId: string;
+    pipelineNodes: PipelineNode[];
     createdAt: string;
     updatedAt: string;
 }
