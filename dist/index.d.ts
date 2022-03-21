@@ -17,5 +17,6 @@ export * from './sandbox';
 export * from './site';
 export * from './storage';
 export * from './tile';
+export * from './transformation';
 export * from './trending';
 export * from './user';

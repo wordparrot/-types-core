@@ -29,5 +29,6 @@ __exportStar(require("./sandbox"), exports);
 __exportStar(require("./site"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./tile"), exports);
+__exportStar(require("./transformation"), exports);
 __exportStar(require("./trending"), exports);
 __exportStar(require("./user"), exports);
