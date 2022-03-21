@@ -5,7 +5,7 @@ import { User } from '..';
 import { Role } from '..';
 import { FeaturedThreadPreference } from "../featured-group";
 export interface Pipeline {
-    id: string;
+    id: string | null;
     title: string;
     content: string;
     etag: string;
