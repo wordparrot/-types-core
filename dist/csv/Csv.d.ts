@@ -1,5 +1,6 @@
 import { CsvRow } from ".";
 import { PipelineNode } from "..";
+import { Repository } from "..";
 export interface Csv {
     id: string;
     uniqId: string;
@@ -15,6 +16,7 @@ export interface Csv {
     page: number;
     rows: CsvRow[];
     pipelineNodes: PipelineNode[];
+    repositories: Repository[];
     createdAt: string;
     updatedAt: string;
 }

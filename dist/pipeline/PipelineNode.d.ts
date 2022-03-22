@@ -6,6 +6,7 @@ import { Category } from "..";
 import { FeaturedGroup } from "..";
 import { Subcategory } from "..";
 import { Entry } from '..';
+import { JsonTransformation } from "..";
 export interface PipelineNode {
     id: string;
     title: string;
@@ -15,10 +16,7 @@ export interface PipelineNode {
     provider: string;
     type: string;
     values: Record<string, any>;
-    transformations: {
-        key: string;
-        value: any;
-    }[];
+    transformations: JsonTransformation[];
     prospectiveTitle: string;
     prospectiveContent: string;
     text: string;
