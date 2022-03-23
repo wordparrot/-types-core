@@ -25,6 +25,20 @@ const statPromisified = promisify(stat)
 const mkdirPromisified = promisify(mkdir)
 const rmdirPromisified = promisify(rm)
 
+
+export interface FileUtilityConfig {
+  uniqId?: string
+  pipelineJobId?: string
+  pipelineNodeId?: string
+  filename: string
+  buffer?: Buffer
+  repositoryId?: string
+  parentRepositoryItem?: {
+    nodeUniqId: string
+    uniqId: string
+  }
+}
+
 export class FileUtility {
   pipelineJobId: string
   pipelineNodeId: string
@@ -41,18 +55,7 @@ export class FileUtility {
   public tempFolder = `${process.cwd()}/content/temp`
   public repositoriesFolder = `${process.cwd()}/content/repositories`
 
-  constructor(config: {
-    uniqId?: string
-    pipelineJobId?: string
-    pipelineNodeId?: string
-    filename: string
-    buffer?: Buffer
-    repositoryId?: string
-    parentRepositoryItem?: {
-      nodeUniqId: string
-      uniqId: string
-    }
-  }) {
+  constructor(config: FileUtilityConfig) {
     this.uniqId = config.uniqId
     this.pipelineJobId = config.pipelineJobId
     this.pipelineNodeId = config.pipelineNodeId

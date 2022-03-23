@@ -1,7 +1,8 @@
 import { Axios } from 'axios';
-import { FileUtility } from '../file-utility';
+import { FileUtility, FileUtilityConfig } from '..';
+import { ConstructableWithConfig } from '..';
 export declare type SandboxLib = Partial<{
     axios: Axios;
     _: any;
-    FileUtility: FileUtility;
+    FileUtility: ConstructableWithConfig<FileUtilityConfig, FileUtility>;
 }>;

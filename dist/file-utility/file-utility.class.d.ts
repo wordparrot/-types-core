@@ -2,6 +2,18 @@
 import { WriteFileOptions } from 'fs';
 import { FileOperation } from './file-utility.interface';
 import { FileMetadata } from '..';
+export interface FileUtilityConfig {
+    uniqId?: string;
+    pipelineJobId?: string;
+    pipelineNodeId?: string;
+    filename: string;
+    buffer?: Buffer;
+    repositoryId?: string;
+    parentRepositoryItem?: {
+        nodeUniqId: string;
+        uniqId: string;
+    };
+}
 export declare class FileUtility {
     pipelineJobId: string;
     pipelineNodeId: string;
@@ -16,18 +28,7 @@ export declare class FileUtility {
     };
     tempFolder: string;
     repositoriesFolder: string;
-    constructor(config: {
-        uniqId?: string;
-        pipelineJobId?: string;
-        pipelineNodeId?: string;
-        filename: string;
-        buffer?: Buffer;
-        repositoryId?: string;
-        parentRepositoryItem?: {
-            nodeUniqId: string;
-            uniqId: string;
-        };
-    });
+    constructor(config: FileUtilityConfig);
     get jobPath(): string;
     get nodePath(): string;
     get filePath(): string;

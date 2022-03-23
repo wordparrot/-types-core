@@ -1,4 +1,5 @@
 export * from './category';
+export * from './constructable';
 export * from './csv';
 export * from './credential';
 export * from './dashboard';
