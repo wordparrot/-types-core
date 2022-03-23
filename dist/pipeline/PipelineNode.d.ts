@@ -46,6 +46,7 @@ export interface PipelineNode {
     date: number;
     whitelistCSV: string;
     blacklistCSV: string;
+    page: number;
     pipeline: Pipeline;
     pipelineId: string;
     category: Category;
