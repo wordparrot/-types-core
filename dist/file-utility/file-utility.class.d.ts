@@ -2,7 +2,7 @@
 import { WriteFileOptions } from 'fs';
 import { FileOperation } from './file-utility.interface';
 import { FileMetadata } from '..';
-export declare class FileUtility {
+declare class FileUtility {
     pipelineJobId: string;
     pipelineNodeId: string;
     filename: string;
@@ -44,3 +44,4 @@ export declare class FileUtility {
     incrementCopyNumber(): void;
     hasCopyNumber(str: string): boolean;
 }
+export = FileUtility;

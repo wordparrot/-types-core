@@ -25,7 +25,7 @@ const statPromisified = promisify(stat)
 const mkdirPromisified = promisify(mkdir)
 const rmdirPromisified = promisify(rm)
 
-export class FileUtility {
+class FileUtility {
   pipelineJobId: string
   pipelineNodeId: string
   filename: string
@@ -294,3 +294,5 @@ export class FileUtility {
     return true
   }
 }
+
+export = FileUtility

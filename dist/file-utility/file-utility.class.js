@@ -8,8 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.FileUtility = void 0;
 const fs_1 = require("fs");
 const lodash_1 = require("lodash");
 const util_1 = require("util");
@@ -253,4 +251,4 @@ class FileUtility {
         return true;
     }
 }
-exports.FileUtility = FileUtility;
+module.exports = FileUtility;
