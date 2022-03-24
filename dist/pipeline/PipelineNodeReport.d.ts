@@ -23,7 +23,7 @@ export interface PipelineNodeReport {
         filesToPassOn: Record<string, any>[];
         filesToPassOnTotal: number;
         fileMetadataToPassOn: Record<string, any>[];
-        fileMetadataTotal: number;
+        fileMetadataToPassOnTotal: number;
         filesDeleted: Record<string, any>[];
         filesDeletedTotal: number;
         itemsToPassOn: Record<string, any>[];
