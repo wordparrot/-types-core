@@ -13,7 +13,7 @@ exports.FileUtility = void 0;
 const fs_1 = require("fs");
 const lodash_1 = require("lodash");
 const util_1 = require("util");
-const file_utility_functions_1 = require("./file-utility.functions");
+const __1 = require("..");
 const readFilePromisified = util_1.promisify(fs_1.readFile);
 const writeFilePromisified = util_1.promisify(fs_1.writeFile);
 const deleteFilePromisified = util_1.promisify(fs_1.unlink);
@@ -29,7 +29,7 @@ class FileUtility {
         this.pipelineNodeId = config.pipelineNodeId;
         this.filename = config.filename;
         this.buffer = config.buffer;
-        this.extension = file_utility_functions_1.getExtension(this.filename);
+        this.extension = __1.getExtension(this.filename);
         this.repositoryId = config.repositoryId;
         this.parentRepositoryItem = config.parentRepositoryItem;
     }
@@ -63,7 +63,7 @@ class FileUtility {
                     `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
                 filename: this.filename,
                 path: this.filePath,
-                type: file_utility_functions_1.getExtension(this.filename),
+                type: __1.getExtension(this.filename),
                 pipelineJobId: this.pipelineJobId,
                 pipelineNodeId: this.pipelineNodeId,
                 parentRepositoryItem: this.parentRepositoryItem,
@@ -224,17 +224,17 @@ class FileUtility {
     }
     // Change filename.txt to filename(1).txt
     incrementCopyNumber() {
-        let filenameBase = file_utility_functions_1.getFilenameBase(this.filename);
+        let filenameBase = __1.getFilenameBase(this.filename);
         if (this.hasCopyNumber(filenameBase)) {
             const int = parseInt(filenameBase[filenameBase.length - 2]);
-            filenameBase = file_utility_functions_1.replaceStringIndexAt(filenameBase, filenameBase.length - 2, (int + 1).toString());
-            this.filename = filenameBase + '.' + file_utility_functions_1.getExtension(this.filename);
+            filenameBase = __1.replaceStringIndexAt(filenameBase, filenameBase.length - 2, (int + 1).toString());
+            this.filename = filenameBase + '.' + __1.getExtension(this.filename);
         }
         else {
             this.filename =
                 filenameBase +
                     `(${Math.floor(Date.now() / 1000)}).` +
-                    file_utility_functions_1.getExtension(this.filename);
+                    __1.getExtension(this.filename);
         }
     }
     hasCopyNumber(str) {

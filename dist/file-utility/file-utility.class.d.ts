@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { WriteFileOptions } from 'fs';
-import { FileOperation } from './file-utility.interface';
+import { FileOperation } from '..';
 import { FileMetadata } from '..';
 export interface FileUtilityConfig {
     uniqId?: string;

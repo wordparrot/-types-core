@@ -23,3 +23,4 @@ __exportStar(require("./DynamicServiceResponse"), exports);
 __exportStar(require("./DynamicServiceResponseAuthCallback"), exports);
 __exportStar(require("./DynamicServiceResponseListener"), exports);
 __exportStar(require("./DynamicServiceResponseOutput"), exports);
+__exportStar(require("./DynamicServiceResponseWebhook"), exports);

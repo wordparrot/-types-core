@@ -10,13 +10,13 @@ import {
 import { isInteger } from 'lodash'
 import { promisify } from 'util'
 
-import { FileOperation } from './file-utility.interface'
+import { FileOperation } from '..'
 import { FileMetadata } from '..'
 import {
   getExtension,
   getFilenameBase,
   replaceStringIndexAt,
-} from './file-utility.functions'
+} from '..'
 
 const readFilePromisified = promisify(readFile)
 const writeFilePromisified = promisify(writeFile)
