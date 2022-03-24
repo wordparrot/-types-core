@@ -8,26 +8,36 @@ export interface PipelineNodeReport {
   pipelineJobId: string
   
   toPassOn: {
-    messages: Record<string, any>[]
-    messagesTotal: number
     files: Record<string, any>[]
     filesTotal: number
+    fileMetadata: Record<string, any>[]
+    fileMetadataTotal: number
     items: Record<string, any>[]
     itemsTotal: number
+    json: Record<string, any>[]
+    jsonTotal: number
+    messages: Record<string, any>[]
+    messagesTotal: number
     tokens: Record<string, any>[]
     tokensTotal: number
   }
   diff: {
-    messagesToPassOn: Record<string, any>[]
-    messagesToPassOnTotal: number
+    filesToPassOn: Record<string, any>[]
+    filesToPassOnTotal: number
+    fileMetadataToPassOn: Record<string, any>[];
+    fileMetadataTotal: number;
+    filesDeleted: Record<string, any>[]
+    filesDeletedTotal: number
     itemsToPassOn: Record<string, any>[]
     itemsToPassOnTotal: number
     itemsDeleted: Record<string, any>[]
     itemsDeletedTotal: number
-    filesToPassOn: Record<string, any>[]
-    filesToPassOnTotal: number
-    filesDeleted: Record<string, any>[]
-    filesDeletedTotal: number
+    jsonToPassOn: Record<string, any>[]
+    jsonTotal: number
+    jsonDeleted: Record<string, any>[]
+    jsonDeletedTotal: number
+    messagesToPassOn: Record<string, any>[]
+    messagesToPassOnTotal: number
     tokensToPassOn: Record<string, any>[]
     tokensToPassOnTotal: number
   }

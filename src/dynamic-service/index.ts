@@ -1,3 +1,4 @@
+export * from './AbtractDynamicServiceInterface'
 export * from './DynamicServiceBody'
 export * from './DynamicServiceBodyAuth'
 export * from './DynamicServiceBodyConfig'
