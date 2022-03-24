@@ -10,7 +10,10 @@ export interface DynamicServiceBodyParameters {
     fileMetadataFromParent: FileMetadata[];
     filesFromParent: RepositoryFile[];
     itemsFromParent: RepositoryItem[];
-    tokensFromParent: PipelineToken;
+    jsonFromParent: Record<string, any>[];
+    tokensFromParent: PipelineToken[];
+    entriesFromParent: any[];
+    category: any;
     conditionFailedFromParent: string[];
     conditionFailed: string[];
 }
