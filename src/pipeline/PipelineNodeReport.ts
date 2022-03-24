@@ -1,9 +1,9 @@
 import { PipelineNode, PipelineJob } from ".";
 
 export interface PipelineNodeReport {
-  id: string
+  id?: string
   status: string
-  errorMessage: string
+  errorMessage?: string
   pipelineNodeId: string
   pipelineJobId: string
   
@@ -41,7 +41,8 @@ export interface PipelineNodeReport {
     tokensToPassOn: Record<string, any>[]
     tokensToPassOnTotal: number
   }
-  toRepository: {
+
+  toRepository?: {
     repositoryId: string
     items: string[]
     itemsTotal: number
@@ -49,9 +50,9 @@ export interface PipelineNodeReport {
     filesTotal: number
   }
 
-  pipelineNode: PipelineNode
-  pipelineJob: PipelineJob
+  pipelineNode?: PipelineNode
+  pipelineJob?: PipelineJob
 
-  createdAt: string
-  updatedAt: string
+  createdAt?: string
+  updatedAt?: string
 }
