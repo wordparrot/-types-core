@@ -1,3 +1,5 @@
+export * from './BroadcastToFeaturedGroup';
+export * from './BroadcastToFeaturedThread';
 export * from './FeaturedGroup';
 export * from './FeaturedImage';
 export * from './FeaturedInvitation';
@@ -6,3 +8,6 @@ export * from './FeaturedThread';
 export * from './FeaturedThreadPreference';
 export * from './FeaturedThreadPushNotification';
 export * from './FeaturedThreadRelease';
+export * from './PushNotificationToFeaturedGroup';
+export * from './PushNotificationToFeaturedThread';
+export * from './PushNotificationMeta';

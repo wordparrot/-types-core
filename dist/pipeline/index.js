@@ -15,6 +15,8 @@ __exportStar(require("./FileMetadata"), exports);
 __exportStar(require("./PipelineFlow"), exports);
 __exportStar(require("./PipelineGroup"), exports);
 __exportStar(require("./PipelineJob"), exports);
+__exportStar(require("./PipelineMessage"), exports);
 __exportStar(require("./PipelineNode"), exports);
 __exportStar(require("./PipelineNodeCondition"), exports);
 __exportStar(require("./PipelineNodeReport"), exports);
+__exportStar(require("./PipelineToken"), exports);

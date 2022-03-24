@@ -1,6 +1,11 @@
 import { RepositoryFile, RepositoryItem } from "..";
 import { CsvMetadata } from "..";
 import { FileMetadata } from '..';
+import { PipelineMessage } from "..";
+import { PipelineToken } from "..";
+import { BroadcastToFeaturedGroup } from "..";
+import { BroadcastToFeaturedThread } from "..";
+import { PushNotificationToFeaturedThread } from "..";
 export interface DynamicServiceResponseOutputBase {
     message: string;
     messageVars: Record<string, string | number>;
@@ -8,17 +13,22 @@ export interface DynamicServiceResponseOutputBase {
     errors: Record<string, any>;
     pipelineCount: number;
     csvToPassOn: CsvMetadata[];
-    messagesToPassOn: any[];
+    messagesToPassOn: PipelineMessage[];
     itemsToPassOn: RepositoryItem[];
     itemsDeleted: RepositoryItem[];
-    jsonToPassOn: any[];
-    jsonDeleted: any[];
+    jsonToPassOn: Record<string, any>[];
+    jsonDeleted: Record<string, any>[];
     fileMetadataToPassOn: FileMetadata[];
     filesToPassOn: RepositoryFile[];
     filesDeleted: RepositoryFile[];
-    tokensToPassOn: {
-        name: string;
-        value: string;
-    }[];
+    tokensToPassOn: PipelineToken[];
+    refreshTokenToSave: string;
+    repositoryId: string;
+    filesToRepository: string[];
+    itemsToRepository: string[];
+    conditionFailed: string[];
+    broadcastToFeaturedGroups: BroadcastToFeaturedGroup[];
+    broadcastToFeaturedThreads: BroadcastToFeaturedThread[];
+    pushNotificationToGroups: PushNotificationToFeaturedThread[];
 }
 export declare type DynamicServiceResponseOutput = Partial<DynamicServiceResponseOutputBase>;
