@@ -3,10 +3,13 @@ import { FileMetadata } from "..";
 import { RepositoryItem } from "..";
 import { RepositoryFile } from "..";
 import { PipelineToken } from "..";
+import { CsvMetadata } from "../csv";
 export interface DynamicServiceBodyParameters {
     status: string;
     recordReports: boolean;
     messagesFromParent: PipelineMessage[];
+    csvFromParent: CsvMetadata[];
+    csvDeleted?: CsvMetadata[];
     fileMetadataFromParent: FileMetadata[];
     fileMetadataDeleted?: FileMetadata[];
     filesFromParent: RepositoryFile[];
