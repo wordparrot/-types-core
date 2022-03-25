@@ -6,6 +6,12 @@ export interface PipelineNodeReport {
     pipelineNodeId: string;
     pipelineJobId: string;
     toPassOn: {
+        messages: Record<string, any>[];
+        messagesTotal: number;
+        tokens: Record<string, any>[];
+        tokensTotal: number;
+        csv: Record<string, any>[];
+        csvTotal: number;
         files: Record<string, any>[];
         filesTotal: number;
         fileMetadata: Record<string, any>[];
@@ -14,18 +20,24 @@ export interface PipelineNodeReport {
         itemsTotal: number;
         json: Record<string, any>[];
         jsonTotal: number;
-        messages: Record<string, any>[];
-        messagesTotal: number;
-        tokens: Record<string, any>[];
-        tokensTotal: number;
     };
     diff: {
+        messagesToPassOn: Record<string, any>[];
+        messagesToPassOnTotal: number;
+        tokensToPassOn: Record<string, any>[];
+        tokensToPassOnTotal: number;
+        csvToPassOn: Record<string, any>[];
+        csvToPassOnTotal: number;
+        csvDeleted: Record<string, any>[];
+        csvDeletedTotal: number;
         filesToPassOn: Record<string, any>[];
         filesToPassOnTotal: number;
-        fileMetadataToPassOn: Record<string, any>[];
-        fileMetadataToPassOnTotal: number;
         filesDeleted: Record<string, any>[];
         filesDeletedTotal: number;
+        fileMetadataToPassOn: Record<string, any>[];
+        fileMetadataToPassOnTotal: number;
+        fileMetadataDeleted: Record<string, any>[];
+        fileMetadataDeletedTotal: number;
         itemsToPassOn: Record<string, any>[];
         itemsToPassOnTotal: number;
         itemsDeleted: Record<string, any>[];
@@ -34,10 +46,6 @@ export interface PipelineNodeReport {
         jsonTotal: number;
         jsonDeleted: Record<string, any>[];
         jsonDeletedTotal: number;
-        messagesToPassOn: Record<string, any>[];
-        messagesToPassOnTotal: number;
-        tokensToPassOn: Record<string, any>[];
-        tokensToPassOnTotal: number;
     };
     toRepository?: {
         repositoryId: string;

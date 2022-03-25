@@ -6,16 +6,20 @@ import { PipelineToken } from ".."
 import { CsvMetadata } from ".."
 
 export interface DynamicServiceTrackedValues {
-    csvToPassOn: CsvMetadata[]
     messagesToPassOn: PipelineMessage[]
+    tokensToPassOn: PipelineToken[]
+
+    csvToPassOn: CsvMetadata[]
+    csvDeleted: CsvMetadata[]
     itemsToPassOn: RepositoryItem[]
     itemsDeleted: RepositoryItem[]
     jsonToPassOn: Record<string, any>[]
     jsonDeleted: Record<string, any>[]
     fileMetadataToPassOn: FileMetadata[]
+    fileMetadataDeleted: FileMetadata[]
     filesToPassOn: RepositoryFile[]
     filesDeleted: RepositoryFile[]
+    
     filesToRepository: string[]
     itemsToRepository: string[]
-    tokensToPassOn: PipelineToken[]
 }
