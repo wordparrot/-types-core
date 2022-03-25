@@ -7,4 +7,5 @@ export * from './PipelineMessage';
 export * from './PipelineNode';
 export * from './PipelineNodeCondition';
 export * from './PipelineNodeReport';
+export * from './PipelineRedis';
 export * from './PipelineToken';
