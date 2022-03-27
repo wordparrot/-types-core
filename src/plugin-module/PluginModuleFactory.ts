@@ -11,7 +11,7 @@ export type ActionReturnValue = Promise<DynamicServiceResponseOutput>
 
 export type PluginModuleActionFactory = () => {
     [n: string]: {
-        main: (body?: DynamicServiceBody, lib?: SandboxLib) => ActionReturnValue
+        main: (body?: DynamicServiceBody, lib?: SandboxLib) => ActionReturnValue | ListenerReturnValue
     }
 }
 

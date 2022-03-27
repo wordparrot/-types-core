@@ -14,7 +14,6 @@ __exportStar(require("./AbtractDynamicServiceInterface"), exports);
 __exportStar(require("./DynamicServiceBody"), exports);
 __exportStar(require("./DynamicServiceBodyAuth"), exports);
 __exportStar(require("./DynamicServiceBodyConfig"), exports);
-__exportStar(require("./DynamicServiceBodyInput"), exports);
 __exportStar(require("./DynamicServiceBodyParameters"), exports);
 __exportStar(require("./DynamicServiceBodyPipeline"), exports);
 __exportStar(require("./DynamicServiceBodyPlugin"), exports);

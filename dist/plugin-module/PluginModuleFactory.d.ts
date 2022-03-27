@@ -4,7 +4,7 @@ import { DynamicServiceResponseOutputWebhook } from "../dynamic-service";
 export declare type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 export declare type PluginModuleActionFactory = () => {
     [n: string]: {
-        main: (body?: DynamicServiceBody, lib?: SandboxLib) => ActionReturnValue;
+        main: (body?: DynamicServiceBody, lib?: SandboxLib) => ActionReturnValue | ListenerReturnValue;
     };
 };
 export declare type CredentialReturnValue = Promise<DynamicServiceResponseOutputAuthCallback>;
