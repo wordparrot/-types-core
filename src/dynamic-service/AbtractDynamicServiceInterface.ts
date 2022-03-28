@@ -1,6 +1,6 @@
-import { DynamicServiceBody, ActionReturnValue } from "..";
+import { DynamicServiceBody, ActionReturnValue, ListenerReturnValue } from "..";
 export interface AbstractDynamicServiceInterface<T = DynamicServiceBody> {
     requiresSite?: boolean;
     requiresThread?: boolean;
-    main: (config: T) => ActionReturnValue;
+    main: (config: T) => ListenerReturnValue | ActionReturnValue;
 }

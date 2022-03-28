@@ -34,7 +34,7 @@ export interface Site {
     locked?: boolean
     banned?: boolean
   
-    analytics?: any
+    analytics?: unknown
     dns: Dns
     seo: Seo
     social: Social
@@ -43,11 +43,11 @@ export interface Site {
     
     banners?: Banner[]
     categories?: Category[]
-    charts?: any[]
-    contacts?: any[]
+    charts?: unknown[]
+    contacts?: unknown[]
     entries?: Entry[]
     images?: Image[]
-    redirects?: any[]
+    redirects?: unknown[]
     roles?: Role[]
     pipelines?: Pipeline[]
     featuredGroups?: FeaturedGroup[]

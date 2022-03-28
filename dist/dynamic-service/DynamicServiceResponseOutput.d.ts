@@ -8,7 +8,7 @@ export interface DynamicServiceResponseOutputBase extends DynamicServiceTrackedV
     message: string;
     messageVars: Record<string, string | number>;
     status: string;
-    errors: Record<string, any>;
+    errors: Record<string, unknown>;
     errorMessage: string;
     pipelineCount: number;
     repositoryItemCount: number;

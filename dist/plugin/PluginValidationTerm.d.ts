@@ -6,7 +6,7 @@ export interface PluginValidationTerm {
     nullable?: boolean;
     min?: number;
     max?: number;
-    matches?: any;
+    matches?: unknown;
     lowercase?: boolean;
     uppercase?: boolean;
     integer?: boolean;

@@ -44,7 +44,7 @@ export interface RepositoryItem {
     repositoryFiles?: RepositoryFile[];
     featuredThreadRelease?: FeaturedThreadRelease;
     pipelineFlow?: PipelineFlow;
-    json?: any;
+    json?: unknown;
     originalCreatedAt?: string;
     createdAt?: string;
     updatedAt?: string;

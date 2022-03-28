@@ -12,7 +12,7 @@ export interface Credential {
     credentialName: string
     type: string
     status: string
-    providerConfig: any
+    providerConfig: unknown
     clientId: string
     clientSecret: string
     username: string
@@ -31,7 +31,7 @@ export interface Credential {
     restrictions: string[]
     useServiceAccount: boolean
     default: boolean
-    storage: any
+    storage: unknown
 
     user: User
     nodes: PipelineNode[]

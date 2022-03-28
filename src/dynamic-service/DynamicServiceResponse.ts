@@ -6,7 +6,7 @@ export interface DynamicServiceResponseData {
     message?: string
     statusCode?: number
     url?: string
-    error?: any
+    error?: unknown
     output: DynamicServiceResponseOutput
     createdAt?: string
 }

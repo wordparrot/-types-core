@@ -6,6 +6,6 @@ export interface CsvRowChange {
     rowKey: string
     code: string
     indexesChanged: number[]
-    original?: any[]
-    cells: any[]
+    original?: unknown[]
+    cells: unknown[]
 }

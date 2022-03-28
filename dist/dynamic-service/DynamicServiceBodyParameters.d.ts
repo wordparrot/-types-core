@@ -16,11 +16,11 @@ export interface DynamicServiceBodyParameters {
     filesDeleted?: RepositoryFile[];
     itemsFromParent: RepositoryItem[];
     itemsDeleted?: RepositoryItem[];
-    jsonFromParent: Record<string, any>[];
-    jsonDeleted?: Record<string, any>[];
+    jsonFromParent: Record<string, unknown>[];
+    jsonDeleted?: Record<string, unknown>[];
     tokensFromParent: PipelineToken[];
-    entriesFromParent: any[];
-    category: any;
+    entriesFromParent: unknown[];
+    category: unknown;
     conditionFailedFromParent: string[];
     conditionFailed: string[];
 }

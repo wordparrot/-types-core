@@ -15,7 +15,7 @@ export interface Csv {
   secondaryRowKey: string
   url: string
   provider: string
-  providerMetadata: Record<string, any>
+  providerMetadata: Record<string, unknown>
   page: number
 
   rows: CsvRow[]

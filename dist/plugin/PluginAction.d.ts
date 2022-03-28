@@ -6,5 +6,5 @@ export interface PluginAction {
     type: string;
     initialValues: Record<string, string>;
     validationSchema: PluginValidationTerm[];
-    fields: any[];
+    fields: unknown[];
 }

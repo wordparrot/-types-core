@@ -4,7 +4,7 @@ export interface ListenerJob {
     listener?: Listener;
     listenerId: string;
     status: string;
-    errors: Record<string, Record<string, any>>;
+    errors: Record<string, Record<string, unknown>>;
     completedAt: string;
     createdAt: string;
     updatedAt: string;
