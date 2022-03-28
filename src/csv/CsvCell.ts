@@ -1,6 +1,6 @@
 export interface CsvCell {
     x: number
     y: number
-    v: unknown
+    v: any
     k: boolean
 }
