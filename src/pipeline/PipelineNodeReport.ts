@@ -19,7 +19,7 @@ export interface PipelineNodeReport {
     tokens: PipelineToken[]
     tokensTotal: number
 
-    csv: Record<string, CsvMetadata>[]
+    csv: CsvMetadata[]
     csvTotal: number
     files: RepositoryFile[]
     filesTotal: number
