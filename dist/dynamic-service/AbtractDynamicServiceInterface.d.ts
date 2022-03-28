@@ -1,6 +1,6 @@
 import { DynamicServiceBody, ActionReturnValue } from "..";
-export interface AbstractDynamicServiceInterface {
+export interface AbstractDynamicServiceInterface<T = DynamicServiceBody> {
     requiresSite?: boolean;
     requiresThread?: boolean;
-    main: (config: DynamicServiceBody) => ActionReturnValue;
+    main: (config: T) => ActionReturnValue;
 }

@@ -4,5 +4,4 @@ export interface DynamicServiceBodyCredentialType {
     plugin: DynamicServiceBodyPlugin;
     auth: DynamicServiceBodyAuth;
     site: DynamicServiceBodySite;
-    values: Record<string, any>;
 }
