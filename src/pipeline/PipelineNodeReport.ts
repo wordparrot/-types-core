@@ -8,47 +8,47 @@ export interface PipelineNodeReport {
   pipelineJobId: string
   
   toPassOn: {
-    messages: Record<string, unknown>[]
+    messages: Record<string, any>[]
     messagesTotal: number
-    tokens: Record<string, unknown>[]
+    tokens: Record<string, any>[]
     tokensTotal: number
 
-    csv: Record<string, unknown>[]
+    csv: Record<string, any>[]
     csvTotal: number
-    files: Record<string, unknown>[]
+    files: Record<string, any>[]
     filesTotal: number
-    fileMetadata: Record<string, unknown>[]
+    fileMetadata: Record<string, any>[]
     fileMetadataTotal: number
-    items: Record<string, unknown>[]
+    items: Record<string, any>[]
     itemsTotal: number
-    json: Record<string, unknown>[]
+    json: Record<string, any>[]
     jsonTotal: number
   }
   diff: {
-    messagesToPassOn: Record<string, unknown>[]
+    messagesToPassOn: Record<string, any>[]
     messagesToPassOnTotal: number
-    tokensToPassOn: Record<string, unknown>[]
+    tokensToPassOn: Record<string, any>[]
     tokensToPassOnTotal: number
 
-    csvToPassOn: Record<string, unknown>[]
+    csvToPassOn: Record<string, any>[]
     csvToPassOnTotal: number
-    csvDeleted: Record<string, unknown>[]
+    csvDeleted: Record<string, any>[]
     csvDeletedTotal: number
-    filesToPassOn: Record<string, unknown>[]
+    filesToPassOn: Record<string, any>[]
     filesToPassOnTotal: number
-    filesDeleted: Record<string, unknown>[]
+    filesDeleted: Record<string, any>[]
     filesDeletedTotal: number
-    fileMetadataToPassOn: Record<string, unknown>[];
+    fileMetadataToPassOn: Record<string, any>[];
     fileMetadataToPassOnTotal: number;
-    fileMetadataDeleted: Record<string, unknown>[]
+    fileMetadataDeleted: Record<string, any>[]
     fileMetadataDeletedTotal: number
-    itemsToPassOn: Record<string, unknown>[]
+    itemsToPassOn: Record<string, any>[]
     itemsToPassOnTotal: number
-    itemsDeleted: Record<string, unknown>[]
+    itemsDeleted: Record<string, any>[]
     itemsDeletedTotal: number
-    jsonToPassOn: Record<string, unknown>[]
+    jsonToPassOn: Record<string, any>[]
     jsonTotal: number
-    jsonDeleted: Record<string, unknown>[]
+    jsonDeleted: Record<string, any>[]
     jsonDeletedTotal: number
   }
 

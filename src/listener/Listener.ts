@@ -12,7 +12,7 @@ export interface Listener {
     queueStatus: string;
     pollDelay: number;
     recordJobs: boolean;
-    values: Record<string, unknown>
+    values: Record<string, any>
 
     user: User
     pipelines: Pipeline[]

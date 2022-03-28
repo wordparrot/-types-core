@@ -5,7 +5,7 @@ export interface CsvRow {
     rowKey: string;
     isLabel: boolean;
     data: unknown;
-    providerMetadata: Record<string, unknown>;
+    providerMetadata: Record<string, any>;
     csv: Csv;
     csvId: string;
     createdAt: string;

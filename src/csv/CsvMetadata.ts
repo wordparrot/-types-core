@@ -17,7 +17,7 @@ export interface CsvMetadata {
     pageName: string | null
 
     provider: string | null
-    providerMetadata: Record<string, unknown> | null
+    providerMetadata: Record<string, any> | null
     
     pipelineNodeId?: string | null
     pipelineJobId?: string | null

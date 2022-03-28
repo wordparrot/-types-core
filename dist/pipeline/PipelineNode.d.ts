@@ -15,7 +15,7 @@ export interface PipelineNode {
     status: string;
     provider: string;
     type: string;
-    values: Record<string, unknown>;
+    values: Record<string, any>;
     transformations: JsonTransformation[];
     prospectiveTitle: string;
     prospectiveContent: string;

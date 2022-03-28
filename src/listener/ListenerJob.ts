@@ -8,7 +8,7 @@ export interface ListenerJob {
   status: string
   errors: Record<
     string,
-    Record<string, unknown>
+    Record<string, any>
   >
   completedAt: string
   createdAt: string

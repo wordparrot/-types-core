@@ -3,5 +3,5 @@ export interface PipelineMessage {
     pipelineNodeId: string
     provider: string
     message: string
-    values: Record<string, unknown>
+    values: Record<string, any>
 }
