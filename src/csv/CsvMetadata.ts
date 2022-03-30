@@ -23,7 +23,7 @@ export interface CsvMetadata {
     pipelineJobId?: string | null
     repositoryId?: string | null
 
-    csvArray?: unknown[][] | null
+    csvArray?: any[][] | null
     rowChanges?: CsvRowChange[]
     run?: DynamicServiceBodyConfig[]
 }

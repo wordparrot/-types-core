@@ -6,5 +6,5 @@ export interface PluginCredential {
     actions: string[];
     initialValues: Record<string, string>;
     validationSchema: PluginValidationTerm[];
-    fields: unknown[];
+    fields: any[];
 }

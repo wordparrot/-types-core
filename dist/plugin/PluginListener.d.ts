@@ -7,5 +7,5 @@ export interface PluginListener {
     type: string;
     initialValues: Record<string, string>;
     validationSchema: PluginValidationTerm[];
-    fields: unknown[];
+    fields: any[];
 }

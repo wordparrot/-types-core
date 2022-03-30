@@ -1,4 +1,4 @@
 export interface DynamicServiceBodySite {
-    site: unknown;
-    category?: unknown;
+    site: any;
+    category?: any;
 }

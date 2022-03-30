@@ -19,8 +19,8 @@ export interface DynamicServiceBodyParameters {
     jsonFromParent: Record<string, any>[];
     jsonDeleted?: Record<string, any>[];
     tokensFromParent: PipelineToken[];
-    entriesFromParent: unknown[];
-    category: unknown;
+    entriesFromParent: any[];
+    category: any;
     conditionFailedFromParent: string[];
     conditionFailed: string[];
 }

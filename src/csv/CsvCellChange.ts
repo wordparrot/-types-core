@@ -1,8 +1,8 @@
 export interface CsvCellChange {
     x: number
     y: number
-    oldValue: unknown
-    newValue: unknown
+    oldValue: any
+    newValue: any
     code: string
     isRowKey: boolean
 }

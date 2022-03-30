@@ -5,7 +5,7 @@ export interface CsvRow {
   y: number
   rowKey: string
   isLabel: boolean
-  data: unknown
+  data: any
   providerMetadata: Record<string, any>
 
   csv: Csv

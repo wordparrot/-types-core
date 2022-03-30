@@ -4,6 +4,6 @@ import { ConstructableWithConfig } from '..'
 
 export type SandboxLib = Partial<{
     axios: Axios
-    _: unknown
+    _: any
     FileUtility: ConstructableWithConfig<FileUtilityConfig, FileUtility>
 }>

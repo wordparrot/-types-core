@@ -11,7 +11,7 @@ export interface Credential {
     credentialName: string;
     type: string;
     status: string;
-    providerConfig: unknown;
+    providerConfig: any;
     clientId: string;
     clientSecret: string;
     username: string;
@@ -30,7 +30,7 @@ export interface Credential {
     restrictions: string[];
     useServiceAccount: boolean;
     default: boolean;
-    storage: unknown;
+    storage: any;
     user: User;
     nodes: PipelineNode[];
     entryItems: EntryItem[];

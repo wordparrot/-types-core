@@ -9,7 +9,7 @@ export interface HubPlugin {
     active?: boolean
     description?: string
     version: string
-    image: unknown
+    image: any
     logo: string
     platform?: string
     website?: string
