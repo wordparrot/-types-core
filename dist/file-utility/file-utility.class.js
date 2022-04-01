@@ -65,6 +65,7 @@ class FileUtility {
                 filename: this.filename,
                 path: this.filePath,
                 type: __1.getExtension(this.filename),
+                mimeType: this.mimeType,
                 pipelineJobId: this.pipelineJobId,
                 pipelineNodeId: this.pipelineNodeId,
                 parentRepositoryItem: this.parentRepositoryItem,

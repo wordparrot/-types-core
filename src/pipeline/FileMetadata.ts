@@ -4,6 +4,7 @@ export interface FileMetadata {
   filename: string
   buffer?: Buffer
   type?: string
+  mimeType?: string
   pipelineJobId: string
   pipelineNodeId: string
   parentRepositoryItem?: {
