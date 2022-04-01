@@ -32,6 +32,7 @@ export interface FileUtilityConfig {
   pipelineNodeId?: string
   filename: string
   buffer?: Buffer
+  mimeType?: string
   repositoryId?: string
   parentRepositoryItem?: {
     nodeUniqId: string
@@ -44,6 +45,7 @@ export class FileUtility {
   pipelineNodeId: string
   filename: string
   buffer?: Buffer
+  mimeType?: string
   extension: string
   repositoryId: string
   uniqId: string
@@ -63,6 +65,7 @@ export class FileUtility {
     this.buffer = config.buffer
 
     this.extension = getExtension(this.filename)
+    this.mimeType = config.mimeType
     this.repositoryId = config.repositoryId
     this.parentRepositoryItem = config.parentRepositoryItem
   }
@@ -296,4 +299,5 @@ export class FileUtility {
 
     return true
   }
+
 }

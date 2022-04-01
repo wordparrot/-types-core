@@ -8,6 +8,7 @@ export interface FileUtilityConfig {
     pipelineNodeId?: string;
     filename: string;
     buffer?: Buffer;
+    mimeType?: string;
     repositoryId?: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
@@ -19,6 +20,7 @@ export declare class FileUtility {
     pipelineNodeId: string;
     filename: string;
     buffer?: Buffer;
+    mimeType?: string;
     extension: string;
     repositoryId: string;
     uniqId: string;

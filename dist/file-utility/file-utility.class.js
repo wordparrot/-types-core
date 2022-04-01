@@ -30,6 +30,7 @@ class FileUtility {
         this.filename = config.filename;
         this.buffer = config.buffer;
         this.extension = __1.getExtension(this.filename);
+        this.mimeType = config.mimeType;
         this.repositoryId = config.repositoryId;
         this.parentRepositoryItem = config.parentRepositoryItem;
     }
