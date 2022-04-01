@@ -22,8 +22,8 @@ const mkdirPromisified = util_1.promisify(fs_1.mkdir);
 const rmdirPromisified = util_1.promisify(fs_1.rm);
 class FileUtility {
     constructor(config) {
-        this.tempFolder = `${process.cwd()}/content/temp`;
-        this.repositoriesFolder = `${process.cwd()}/content/repositories`;
+        this.tempFolder = process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`;
+        this.repositoriesFolder = process.env.WORDPARROT_REPOSITORIES_FILE_PATH || `${process.cwd()}/content/repositories`;
         this.uniqId = config.uniqId;
         this.pipelineJobId = config.pipelineJobId;
         this.pipelineNodeId = config.pipelineNodeId;

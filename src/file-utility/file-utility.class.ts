@@ -54,8 +54,8 @@ export class FileUtility {
     uniqId: string
   }
 
-  public tempFolder = `${process.cwd()}/content/temp`
-  public repositoriesFolder = `${process.cwd()}/content/repositories`
+  public tempFolder = process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`
+  public repositoriesFolder = process.env.WORDPARROT_REPOSITORIES_FILE_PATH || `${process.cwd()}/content/repositories`
 
   constructor(config: FileUtilityConfig) {
     this.uniqId = config.uniqId
