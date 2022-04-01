@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import { WriteFileOptions } from 'fs';
 export interface FileMetadata {
     uniqId: string;
     path: string;
@@ -6,6 +7,7 @@ export interface FileMetadata {
     buffer?: Buffer;
     type?: string;
     mimeType?: string;
+    encoding?: WriteFileOptions;
     pipelineJobId: string;
     pipelineNodeId: string;
     parentRepositoryItem?: {

@@ -9,6 +9,7 @@ export interface FileUtilityConfig {
     filename: string;
     buffer?: Buffer;
     mimeType?: string;
+    encoding?: WriteFileOptions;
     repositoryId?: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
@@ -21,6 +22,7 @@ export declare class FileUtility {
     filename: string;
     buffer?: Buffer;
     mimeType?: string;
+    encoding?: WriteFileOptions;
     extension: string;
     repositoryId: string;
     uniqId: string;

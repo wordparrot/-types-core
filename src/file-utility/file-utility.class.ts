@@ -25,7 +25,6 @@ const statPromisified = promisify(stat)
 const mkdirPromisified = promisify(mkdir)
 const rmdirPromisified = promisify(rm)
 
-
 export interface FileUtilityConfig {
   uniqId?: string
   pipelineJobId?: string
@@ -33,6 +32,7 @@ export interface FileUtilityConfig {
   filename: string
   buffer?: Buffer
   mimeType?: string
+  encoding?: WriteFileOptions
   repositoryId?: string
   parentRepositoryItem?: {
     nodeUniqId: string
@@ -46,6 +46,7 @@ export class FileUtility {
   filename: string
   buffer?: Buffer
   mimeType?: string
+  encoding?: WriteFileOptions
   extension: string
   repositoryId: string
   uniqId: string
@@ -63,7 +64,7 @@ export class FileUtility {
     this.pipelineNodeId = config.pipelineNodeId
     this.filename = config.filename
     this.buffer = config.buffer
-
+    this.encoding = config.encoding || 'utf8'
     this.extension = getExtension(this.filename)
     this.mimeType = config.mimeType
     this.repositoryId = config.repositoryId
@@ -98,9 +99,9 @@ export class FileUtility {
     return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`
   }
 
-  async saveToTemp(encoding: WriteFileOptions = 'utf8'): Promise<FileMetadata> {
+  async saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata> {
     await this.createNodeTempFolders()
-    await this.writeToTempFolder(encoding)
+    await this.writeToTempFolder(encoding || this.encoding)
     return {
       uniqId:
         this.uniqId ||
@@ -109,6 +110,7 @@ export class FileUtility {
       path: this.filePath,
       type: getExtension(this.filename),
       mimeType: this.mimeType,
+      encoding: encoding || this.encoding,
       pipelineJobId: this.pipelineJobId,
       pipelineNodeId: this.pipelineNodeId,
       parentRepositoryItem: this.parentRepositoryItem,

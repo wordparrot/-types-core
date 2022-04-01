@@ -29,6 +29,7 @@ class FileUtility {
         this.pipelineNodeId = config.pipelineNodeId;
         this.filename = config.filename;
         this.buffer = config.buffer;
+        this.encoding = config.encoding || 'utf8';
         this.extension = __1.getExtension(this.filename);
         this.mimeType = config.mimeType;
         this.repositoryId = config.repositoryId;
@@ -55,10 +56,10 @@ class FileUtility {
         }
         return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`;
     }
-    saveToTemp(encoding = 'utf8') {
+    saveToTemp(encoding) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.createNodeTempFolders();
-            yield this.writeToTempFolder(encoding);
+            yield this.writeToTempFolder(encoding || this.encoding);
             return {
                 uniqId: this.uniqId ||
                     `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
@@ -66,6 +67,7 @@ class FileUtility {
                 path: this.filePath,
                 type: __1.getExtension(this.filename),
                 mimeType: this.mimeType,
+                encoding: encoding || this.encoding,
                 pipelineJobId: this.pipelineJobId,
                 pipelineNodeId: this.pipelineNodeId,
                 parentRepositoryItem: this.parentRepositoryItem,
