@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.replaceStringIndexAt = exports.getExtension = exports.getFilenameBase = exports.isUrl = void 0;
 function isUrl(str) {
+    if (!str)
+        return false;
     const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
         '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
@@ -12,6 +14,9 @@ function isUrl(str) {
 }
 exports.isUrl = isUrl;
 function getFilenameBase(filename) {
+    if (!filename) {
+        return;
+    }
     const pos = filename.lastIndexOf('.'); // gets the last position of `.`
     if (filename === '' || pos < 1)
         // if the file name is empty or ...
@@ -20,6 +25,9 @@ function getFilenameBase(filename) {
 }
 exports.getFilenameBase = getFilenameBase;
 function getExtension(path) {
+    if (!path) {
+        return;
+    }
     const baseName = path.split(/[\\/]/).pop(), // extracts file name from full path
     // (supports separators `\\` and `/`)
     pos = baseName.lastIndexOf('.'); // gets the last position of `.`

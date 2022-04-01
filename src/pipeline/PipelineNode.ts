@@ -7,6 +7,7 @@ import { FeaturedGroup } from "..";
 import { Subcategory } from "..";
 import { Entry } from '..'
 import { JsonTransformation } from "..";
+import { Csv } from '..'
 
 export interface PipelineNode {
   id: string
@@ -52,6 +53,8 @@ export interface PipelineNode {
 
   pipeline: Pipeline
   pipelineId: string
+  csv: Csv
+  csvId: string
   category: Category
   subcategory: Subcategory
   featuredGroup: FeaturedGroup
