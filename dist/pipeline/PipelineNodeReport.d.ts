@@ -5,6 +5,7 @@ import { RepositoryFile } from "../repository";
 import { RepositoryItem } from "../repository";
 import { CsvMetadata } from "../csv";
 import { FileMetadata } from "./FileMetadata";
+import { PipelineOperationFailed } from "./PipelineOperationFailed";
 export interface PipelineNodeReport {
     id?: string;
     status: string;
@@ -26,6 +27,8 @@ export interface PipelineNodeReport {
         itemsTotal: number;
         json: Record<string, any>[];
         jsonTotal: number;
+        operationsFailed: PipelineOperationFailed[];
+        operationsFailedTotal: number;
     };
     diff: {
         messagesToPassOn: PipelineMessage[];
@@ -52,6 +55,8 @@ export interface PipelineNodeReport {
         jsonTotal: number;
         jsonDeleted: Record<string, any>[];
         jsonDeletedTotal: number;
+        operationsFailed: PipelineOperationFailed[];
+        operationsFailedTotal: number;
     };
     toRepository?: {
         repositoryId: string;
