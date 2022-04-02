@@ -4,6 +4,7 @@ import { RepositoryItem } from ".."
 import { RepositoryFile } from ".."
 import { PipelineToken } from ".."
 import { CsvMetadata } from ".."
+import { PipelineOperationFailed } from "../pipeline"
 
 export interface DynamicServiceTrackedValues {
     messagesToPassOn: PipelineMessage[]
@@ -22,4 +23,6 @@ export interface DynamicServiceTrackedValues {
     
     filesToRepository: string[]
     itemsToRepository: string[]
+
+    operationsFailed: PipelineOperationFailed[]
 }
