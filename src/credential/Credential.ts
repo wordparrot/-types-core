@@ -9,6 +9,8 @@ export interface Credential {
     provider: string
     platform: string
     projectName: string
+    domain: string
+    url: string
     credentialName: string
     type: string
     status: string
@@ -17,6 +19,7 @@ export interface Credential {
     clientSecret: string
     username: string
     password: string
+    apiKey: string
     refreshToken: string
     accessToken: string
     tokenSecret: string
@@ -27,6 +30,7 @@ export interface Credential {
     redirectURI: string
     hasAuthCallback: boolean
     hasAuthTest: boolean
+    authMethod: string
     authResponse: string
     restrictions: string[]
     useServiceAccount: boolean
