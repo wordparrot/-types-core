@@ -11,6 +11,7 @@ export * from './image';
 export * from './listener';
 export * from './pipeline';
 export * from './plugin';
+export * from './plugin-form';
 export * from './plugin-module';
 export * from './repository';
 export * from './role';
