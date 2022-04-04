@@ -1,9 +1,9 @@
 import { BaseFormConfiguration } from '.';
-import { ActionInitialValues } from '.';
+import { WebhookInitialValues } from '.';
 import { ActionValidationSchemaItem } from '.';
 import { ActionFieldItem } from '.';
 export interface WebhookFormConfiguration extends BaseFormConfiguration {
-    initialValues: ActionInitialValues;
+    initialValues: WebhookInitialValues;
     validationSchema: ActionValidationSchemaItem[];
     fields: ActionFieldItem[];
 }

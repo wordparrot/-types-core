@@ -25,3 +25,4 @@ __exportStar(require("./PluginFormConfiguration"), exports);
 __exportStar(require("./PluginJsonConfiguration"), exports);
 __exportStar(require("./PluginTranslationConfiguration"), exports);
 __exportStar(require("./WebhookFormConfiguration"), exports);
+__exportStar(require("./WebhookInitialValues"), exports);
