@@ -1,4 +1,10 @@
-import { HubPlugin, PluginError, PluginAction, PluginCredential, PluginListener } from ".";
+import { HubPlugin, PluginError } from ".";
+import { 
+  ActionFormConfiguration, 
+  CredentialFormConfiguration, 
+  ListenerFormConfiguration, 
+  WebhookFormConfiguration 
+} from "..";
 
 export interface Plugin extends HubPlugin {
   id: string
@@ -6,9 +12,10 @@ export interface Plugin extends HubPlugin {
   active: boolean
   hubPluginId: string
   
-  actions: PluginAction[]
-  credentials: PluginCredential[]
-  listeners: PluginListener[]
+  actions: ActionFormConfiguration[]
+  credentials: CredentialFormConfiguration[]
+  listeners: ListenerFormConfiguration[]
+  webhooks: WebhookFormConfiguration[]
   
   errors: {
     actions: Record<string, PluginError>
