@@ -3,4 +3,5 @@ export interface BaseFormConfiguration {
     name: string
     description: string
     type: string
+    logo?: string
 }
