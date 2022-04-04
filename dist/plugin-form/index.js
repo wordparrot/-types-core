@@ -20,6 +20,7 @@ __exportStar(require("./CredentialFormConfiguration"), exports);
 __exportStar(require("./CredentialInitialValues"), exports);
 __exportStar(require("./ListenerFormConfiguration"), exports);
 __exportStar(require("./ListenerFormConfigurationUsingActionForm"), exports);
+__exportStar(require("./PluginConfiguration"), exports);
 __exportStar(require("./PluginFormConfiguration"), exports);
 __exportStar(require("./PluginJsonConfiguration"), exports);
 __exportStar(require("./WebhookFormConfiguration"), exports);
