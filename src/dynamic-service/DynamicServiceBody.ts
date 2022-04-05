@@ -4,7 +4,8 @@ import {
   DynamicServiceBodyPipeline,
   DynamicServiceBodyParameters,
   DynamicServiceBodyRun,
-  DynamicServiceBodySite
+  DynamicServiceBodySite,
+  DynamicServiceBodyWebhook,
 } from ".";
 
 export interface DynamicServiceBody {
@@ -14,4 +15,5 @@ export interface DynamicServiceBody {
   auth: DynamicServiceBodyAuth
   site: DynamicServiceBodySite
   parameters: DynamicServiceBodyParameters
+  webhook?: DynamicServiceBodyWebhook
 }

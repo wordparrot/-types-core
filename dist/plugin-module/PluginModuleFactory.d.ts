@@ -1,6 +1,5 @@
-import { DynamicServiceBody, DynamicServiceResponseOutput, DynamicServiceResponseOutputAuthCallback, DynamicServiceResponseOutputListener } from "..";
+import { DynamicServiceBody, DynamicServiceResponseOutput, DynamicServiceResponseOutputAuthCallback, DynamicServiceResponseOutputListener, DynamicServiceResponseOutputWebhook } from "..";
 import { SandboxLib } from "..";
-import { DynamicServiceResponseOutputWebhook } from "../dynamic-service";
 export declare type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 export declare type PluginModuleActionFactory = () => {
     [n: string]: {
@@ -20,9 +19,9 @@ export declare type PluginModuleListenerFactory = () => {
         main: (body?: DynamicServiceBody, lib?: SandboxLib) => ListenerReturnValue;
     };
 };
-export declare type WebhookReturnValue<B, H, P> = Promise<DynamicServiceResponseOutputWebhook<B, H, P>>;
+export declare type WebhookReturnValue = Promise<DynamicServiceResponseOutputWebhook>;
 export declare type PluginModuleWebhookFactory = () => {
     [n: string]: {
-        main: <B, H, P>(body?: DynamicServiceBody, lib?: SandboxLib) => WebhookReturnValue<B, H, P>;
+        main: (body?: DynamicServiceBody, lib?: SandboxLib) => WebhookReturnValue;
     };
 };

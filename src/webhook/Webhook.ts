@@ -6,6 +6,7 @@ export interface Webhook {
     route: string
 
     siteId: string
+    pipelines: string[]
 
     createdAt: string
     updatedAt: string

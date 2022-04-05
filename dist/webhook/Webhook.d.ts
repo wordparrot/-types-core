@@ -5,6 +5,7 @@ export interface Webhook {
     methods: string[];
     route: string;
     siteId: string;
+    pipelines: string[];
     createdAt: string;
     updatedAt: string;
 }
