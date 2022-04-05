@@ -1,4 +1,9 @@
-import { DynamicServiceResponseOutputListener, DynamicServiceResponseOutput, DynamicServiceResponseOutputAuthCallback } from ".";
+import { 
+    DynamicServiceResponseOutputListener, 
+    DynamicServiceResponseOutput, 
+    DynamicServiceResponseOutputAuthCallback,
+    DynamicServiceResponseOutputWebhook
+} from ".";
 
 export interface DynamicServiceResponseData {
     name?: string
@@ -32,3 +37,10 @@ export interface DynamicServiceResponseAuthCallback extends Omit<DynamicServiceR
     data: DynamicServiceResponseDataAuthCallback
 }
 
+export interface DynamicServiceResponseDataWebhook extends Omit<DynamicServiceResponseData, 'output'> {
+    output: DynamicServiceResponseOutputWebhook
+}
+
+export interface DynamicServiceResponseWebhook extends Omit<DynamicServiceResponse, 'data'> {
+    data: DynamicServiceResponseDataWebhook
+}
