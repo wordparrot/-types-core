@@ -1,5 +1,5 @@
-import { DynamicServiceResponseOutput } from ".";
 import { WebhookResponse } from '..';
-export interface DynamicServiceResponseOutputWebhook extends DynamicServiceResponseOutput {
+import { DynamicServiceResponseOutputListener } from ".";
+export interface DynamicServiceResponseOutputWebhook extends DynamicServiceResponseOutputListener {
     webhookResponse: WebhookResponse;
 }
