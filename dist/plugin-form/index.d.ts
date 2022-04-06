@@ -7,7 +7,7 @@ export * from './BaseFormConfiguration';
 export * from './CredentialFormConfiguration';
 export * from './CredentialInitialValues';
 export * from './ListenerFormConfiguration';
-export * from './ListenerFormConfigurationUsingActionForm';
+export * from './FormConfigurationUsingActionForm';
 export * from './PluginConfiguration';
 export * from './PluginFormConfiguration';
 export * from './PluginJsonConfiguration';
