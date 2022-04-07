@@ -1,5 +1,7 @@
 export interface Webhook {
     id: string;
+    title: string;
+    content: string;
     provider: string;
     active: boolean;
     methods: string[];
