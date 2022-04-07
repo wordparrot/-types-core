@@ -3,7 +3,7 @@ export interface Webhook {
   title: string;
   content: string;
   provider: string;
-  active: boolean;
+  status: string;
   methods: string[];
   route: string;
 
