@@ -1,13 +1,15 @@
 export interface Webhook {
-    id: string
-    provider: string
-    active: boolean
-    methods: string[]
-    route: string
+  id: string;
+  title: string;
+  content: string;
+  provider: string;
+  active: boolean;
+  methods: string[];
+  route: string;
 
-    siteId: string
-    pipelines: string[]
+  siteId: string;
+  pipelines: string[];
 
-    createdAt: string
-    updatedAt: string
+  createdAt: string;
+  updatedAt: string;
 }
