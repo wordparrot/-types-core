@@ -3,7 +3,8 @@ import { Listener } from "..";
 import { Site } from '..'
 import { User } from '..'
 import { Role } from '..'
-import { FeaturedThreadPreference } from "../featured-group";
+import { FeaturedThreadPreference } from "..";
+import { Webhook } from '..'
 
 export interface Pipeline {
     id: string | null
@@ -29,6 +30,7 @@ export interface Pipeline {
     downstreamPipelines?: Pipeline[]
     featuredThreadPreferences?: FeaturedThreadPreference[]
     listeners?: Listener[]
+    webhooks?: Webhook[]
 
     createdAt: string
     updatedAt: string
