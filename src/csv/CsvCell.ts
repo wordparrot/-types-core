@@ -1,5 +1,7 @@
+export type CsvCellData = Record<string, CsvCell>;
+
 export interface CsvCell {
-    x: number
-    y: number
-    v: any
+  x: number;
+  y: number;
+  v: any;
 }

@@ -1,4 +1,4 @@
-import { CsvReportRow } from '.';
+import { CsvReportRow } from ".";
 import { PipelineNode } from "..";
 import { Repository } from "..";
 export interface CsvReport {
@@ -17,8 +17,8 @@ export interface CsvReport {
     provider: string;
     providerMetadata: Record<string, any>;
     page: number;
-    orientation: 'h' | 'v';
-    convertedFrom: 'csv' | 'json';
+    orientation: "h" | "v";
+    convertedFrom: "csv" | "json";
     format: string;
     rows: CsvReportRow[];
     pipelineNodes: PipelineNode[];

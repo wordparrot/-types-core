@@ -1,0 +1,11 @@
+import { CsvReportCellType } from ".";
+
+export type CsvReportCellData = Record<string, CsvReportCell>;
+
+export interface CsvReportCell {
+  y: number;
+  x: number;
+  v: any;
+  t: CsvReportCellType;
+  p: string;
+}

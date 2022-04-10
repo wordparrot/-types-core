@@ -1,4 +1,4 @@
-import { CsvReport } from '.';
+import { CsvReport } from ".";
 import { CsvReportCellType } from ".";
 export interface CsvReportRow {
     id: string;
