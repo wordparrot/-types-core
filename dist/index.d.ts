@@ -1,6 +1,7 @@
 export * from './category';
 export * from './constructable';
 export * from './csv';
+export * from './csv-report';
 export * from './credential';
 export * from './dashboard';
 export * from './dynamic-service';

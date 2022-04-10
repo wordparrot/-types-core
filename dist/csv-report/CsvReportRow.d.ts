@@ -1,5 +1,6 @@
-import { Csv } from '.';
-export interface CsvRow {
+import { CsvReport } from '.';
+import { CsvReportCellType } from ".";
+export interface CsvReportRow {
     id: string;
     y: number;
     rowKey: string;
@@ -8,10 +9,12 @@ export interface CsvRow {
         y: number;
         x: number;
         v: any;
+        t: CsvReportCellType;
+        p: string;
     }>;
     providerMetadata: Record<string, any>;
-    csv: Csv;
-    csvId: string;
+    csvReport: CsvReport;
+    csvReportId: string;
     createdAt: string;
     updatedAt: string;
 }

@@ -14,12 +14,12 @@ const fs_1 = require("fs");
 const lodash_1 = require("lodash");
 const util_1 = require("util");
 const __1 = require("..");
-const readFilePromisified = util_1.promisify(fs_1.readFile);
-const writeFilePromisified = util_1.promisify(fs_1.writeFile);
-const deleteFilePromisified = util_1.promisify(fs_1.unlink);
-const statPromisified = util_1.promisify(fs_1.stat);
-const mkdirPromisified = util_1.promisify(fs_1.mkdir);
-const rmdirPromisified = util_1.promisify(fs_1.rm);
+const readFilePromisified = (0, util_1.promisify)(fs_1.readFile);
+const writeFilePromisified = (0, util_1.promisify)(fs_1.writeFile);
+const deleteFilePromisified = (0, util_1.promisify)(fs_1.unlink);
+const statPromisified = (0, util_1.promisify)(fs_1.stat);
+const mkdirPromisified = (0, util_1.promisify)(fs_1.mkdir);
+const rmdirPromisified = (0, util_1.promisify)(fs_1.rm);
 class FileUtility {
     constructor(config) {
         this.tempFolder = process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`;
@@ -30,7 +30,7 @@ class FileUtility {
         this.filename = config.filename;
         this.buffer = config.buffer;
         this.encoding = config.encoding || 'utf8';
-        this.extension = __1.getExtension(this.filename);
+        this.extension = (0, __1.getExtension)(this.filename);
         this.mimeType = config.mimeType;
         this.repositoryId = config.repositoryId;
         this.parentRepositoryItem = config.parentRepositoryItem;
@@ -65,7 +65,7 @@ class FileUtility {
                     `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
                 filename: this.filename,
                 path: this.filePath,
-                type: __1.getExtension(this.filename),
+                type: (0, __1.getExtension)(this.filename),
                 mimeType: this.mimeType,
                 encoding: encoding || this.encoding,
                 pipelineJobId: this.pipelineJobId,
@@ -228,17 +228,17 @@ class FileUtility {
     }
     // Change filename.txt to filename(1).txt
     incrementCopyNumber() {
-        let filenameBase = __1.getFilenameBase(this.filename);
+        let filenameBase = (0, __1.getFilenameBase)(this.filename);
         if (this.hasCopyNumber(filenameBase)) {
             const int = parseInt(filenameBase[filenameBase.length - 2]);
-            filenameBase = __1.replaceStringIndexAt(filenameBase, filenameBase.length - 2, (int + 1).toString());
-            this.filename = filenameBase + '.' + __1.getExtension(this.filename);
+            filenameBase = (0, __1.replaceStringIndexAt)(filenameBase, filenameBase.length - 2, (int + 1).toString());
+            this.filename = filenameBase + '.' + (0, __1.getExtension)(this.filename);
         }
         else {
             this.filename =
                 filenameBase +
                     `(${Math.floor(Date.now() / 1000)}).` +
-                    __1.getExtension(this.filename);
+                    (0, __1.getExtension)(this.filename);
         }
     }
     hasCopyNumber(str) {
@@ -248,7 +248,7 @@ class FileUtility {
         if (str[str.length - 1] !== ')') {
             return false;
         }
-        if (!lodash_1.isInteger(str[str.length - 2])) {
+        if (!(0, lodash_1.isInteger)(str[str.length - 2])) {
             return false;
         }
         if (str[str.length - 3] !== '(') {

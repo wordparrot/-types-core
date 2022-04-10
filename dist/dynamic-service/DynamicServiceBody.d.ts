@@ -1,4 +1,4 @@
-import { DynamicServiceBodyAuth, DynamicServiceBodyPlugin, DynamicServiceBodyPipeline, DynamicServiceBodyParameters, DynamicServiceBodyRun, DynamicServiceBodySite, DynamicServiceBodyWebhook } from ".";
+import { DynamicServiceBodyAuth, DynamicServiceBodyPlugin, DynamicServiceBodyPipeline, DynamicServiceBodyParameters, DynamicServiceBodyRun, DynamicServiceBodySite, DynamicServiceBodyWebhook, DynamicServiceBodyListener } from ".";
 export interface DynamicServiceBody {
     run: DynamicServiceBodyRun;
     plugin: DynamicServiceBodyPlugin;
@@ -7,4 +7,5 @@ export interface DynamicServiceBody {
     site: DynamicServiceBodySite;
     parameters: DynamicServiceBodyParameters;
     webhook?: DynamicServiceBodyWebhook;
+    listener?: DynamicServiceBodyListener;
 }
