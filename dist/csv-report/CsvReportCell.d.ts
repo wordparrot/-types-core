@@ -5,5 +5,7 @@ export interface CsvReportCell {
     x: number;
     v: any;
     t: CsvReportCellType;
-    p: string;
+    p?: string;
+    a?: string;
+    b?: boolean;
 }

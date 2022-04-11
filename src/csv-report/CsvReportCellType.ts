@@ -1,12 +1,15 @@
 export type CsvReportCellType =
-  | "add_collection"
+  | "sum_collection"
   | "mean_property"
   | "median_property"
   | "mode_property"
-  | "add_property"
-  | "append_property"
-  | "subtract_property"
+  | "sum_property"
   | "multiply_property"
-  | "divide_property"
+  | "append_property"
   | "newest_property"
-  | "oldest_property";
+  | "oldest_property"
+  | "minimum_property"
+  | "maximum_property"
+  | "print_value"
+  | "current_date"
+  | "empty_string";
