@@ -3,8 +3,8 @@ export declare type CsvReportCellData = Record<string, CsvReportCell>;
 export interface CsvReportCellCondition {
     p: string;
     v: string;
-    c: string;
-    r: string;
+    c: 'gt' | 'lt' | 'eq' | 'gte' | 'lte';
+    r?: 'and' | 'or' | 'xor';
 }
 export interface CsvReportCell {
     y: number;
@@ -17,5 +17,5 @@ export interface CsvReportCell {
     bk?: boolean;
     bp?: string;
     s?: string;
-    c?: Record<string, CsvReportCellCondition>[];
+    c?: CsvReportCellCondition[];
 }

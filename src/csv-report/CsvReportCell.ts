@@ -5,8 +5,8 @@ export type CsvReportCellData = Record<string, CsvReportCell>;
 export interface CsvReportCellCondition {
   p: string; // relevant property
   v: string; // conditional value
-  c: string; // condition (greater than, less than, equals, before, after)
-  r: string; // relation (AND, OR)
+  c: "gt" | "lt" | "eq" | "gte" | "lte"; // condition (greater than, less than, equals, before, after)
+  r?: "and" | "or" | "xor"; // relation (AND, OR, XOR)
 }
 
 export interface CsvReportCell {
@@ -20,5 +20,5 @@ export interface CsvReportCell {
   bk?: boolean; // by key? - print the rowKey of a matching row, instead of the value itself.
   bp?: string; // by properties? - print the interpolated value of a property, such as `{total} - {name}`, instead of the value itself. For example, 'title' for a movie that has max viewers among a set.
   s?: string; // separator, such as a hyphen, comma, semicolon, or slash
-  c?: Record<string, CsvReportCellCondition>[];
+  c?: CsvReportCellCondition[];
 }
