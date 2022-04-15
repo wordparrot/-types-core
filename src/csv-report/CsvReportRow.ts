@@ -1,21 +1,13 @@
 import { CsvReport } from ".";
 import { CsvReportCellType } from ".";
+import { CsvReportCell } from ".";
 
 export interface CsvReportRow {
   id: string;
   y: number;
   rowKey: string;
   isLabel: boolean;
-  data: Record<
-    string,
-    {
-      y: number;
-      x: number;
-      v: any;
-      t: CsvReportCellType;
-      p: string;
-    }
-  >;
+  data: Record<string, CsvReportCell>;
   providerMetadata: Record<string, any>;
 
   csvReport: CsvReport;

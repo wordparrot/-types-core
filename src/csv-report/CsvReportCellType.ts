@@ -11,8 +11,6 @@ export type CsvReportCellType =
   | "oldest_property"
   | "append_property"
   | "append_property_unique"
-  | "append_property_before_date"
-  | "append_property_after_date"
   | "print_value"
   | "current_date"
   | "empty_string";

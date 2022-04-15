@@ -9,17 +9,17 @@ export interface CsvReport {
   content: string;
   version: string;
 
-  uniqId: string;
   rowKeyValue: string;
   rowKeyType: string;
   rowKeyX?: number;
   rowKeyY: number;
   secondaryRowKey: string;
   url: string;
+  page: number;
 
+  uniqId: string;
   provider: string;
   providerMetadata: Record<string, any>;
-  page: number;
 
   orientation: "h" | "v";
   convertedFrom: "csv" | "json";

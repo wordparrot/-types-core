@@ -1,10 +1,12 @@
 import { CsvReportCellType } from ".";
 export declare type CsvReportCellData = Record<string, CsvReportCell>;
+export declare type CsvReportCellConditionType = "gt" | "lt" | "eq" | "gte" | "lte";
+export declare type CsvReportCellConditionRelation = "and" | "or" | "xor";
 export interface CsvReportCellCondition {
     p: string;
     v: string;
-    c: 'gt' | 'lt' | 'eq' | 'gte' | 'lte';
-    r?: 'and' | 'or' | 'xor';
+    c: CsvReportCellConditionType;
+    r?: CsvReportCellConditionRelation;
 }
 export interface CsvReportCell {
     y: number;
@@ -14,7 +16,6 @@ export interface CsvReportCell {
     d?: string | number;
     p?: string;
     a?: string;
-    bk?: boolean;
     bp?: string;
     s?: string;
     c?: CsvReportCellCondition[];
