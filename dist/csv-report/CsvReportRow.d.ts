@@ -3,7 +3,7 @@ import { CsvReportCell } from ".";
 export interface CsvReportRow {
     id: string;
     y: number;
-    rowKey: string;
+    x: number;
     isLabel: boolean;
     data: Record<string, CsvReportCell>;
     providerMetadata: Record<string, any>;

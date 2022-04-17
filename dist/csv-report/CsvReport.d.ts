@@ -7,14 +7,8 @@ export interface CsvReport {
     filename: string;
     content: string;
     version: string;
-    rowKeyValue: string;
-    rowKeyType: string;
-    rowKeyX?: number;
-    rowKeyY: number;
-    secondaryRowKey: string;
     url: string;
     page: number;
-    uniqId: string;
     provider: string;
     providerMetadata: Record<string, any>;
     orientation: "h" | "v";

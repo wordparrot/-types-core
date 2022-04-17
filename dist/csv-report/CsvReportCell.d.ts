@@ -1,6 +1,6 @@
 import { CsvReportCellType } from ".";
 export declare type CsvReportCellData = Record<string, CsvReportCell>;
-export declare type CsvReportCellConditionType = "gt" | "lt" | "eq" | "gte" | "lte";
+export declare type CsvReportCellConditionType = "gt" | "lt" | "eq" | "gte" | "lte" | "def" | "undef";
 export declare type CsvReportCellConditionRelation = "and" | "or" | "xor";
 export interface CsvReportCellCondition {
     p: string;
