@@ -8,6 +8,7 @@ import { Subcategory } from "..";
 import { Entry } from '..';
 import { JsonTransformation } from "..";
 import { Csv } from '..';
+import { CsvReport } from '..';
 export interface PipelineNode {
     id: string;
     title: string;
@@ -52,6 +53,8 @@ export interface PipelineNode {
     pipelineId: string;
     csv: Csv;
     csvId: string;
+    csvReport: CsvReport;
+    csvReportId: string;
     category: Category;
     subcategory: Subcategory;
     featuredGroup: FeaturedGroup;

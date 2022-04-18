@@ -12,6 +12,8 @@ export interface CsvReport {
   url: string;
   page: number;
 
+  saveReports: boolean;
+
   provider: string;
   providerMetadata: Record<string, any>;
 

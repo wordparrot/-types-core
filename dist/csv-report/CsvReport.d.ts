@@ -9,6 +9,7 @@ export interface CsvReport {
     version: string;
     url: string;
     page: number;
+    saveReports: boolean;
     provider: string;
     providerMetadata: Record<string, any>;
     orientation: "h" | "v";
