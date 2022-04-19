@@ -9,7 +9,7 @@ import { Entry } from "..";
 import { JsonTransformation } from "..";
 import { Csv } from "..";
 import { CsvReport } from "..";
-import { DataBackup } from '..';
+import { DataBackup } from "..";
 export interface PipelineNode {
     id: string;
     title: string;
@@ -35,11 +35,13 @@ export interface PipelineNode {
     domain: string;
     url: string;
     path: string;
-    method: string;
     language: string;
     location: string;
     action: string;
     mode: string;
+    method: string;
+    identifier: string;
+    properties: string;
     topic: string;
     search: string;
     select: string;

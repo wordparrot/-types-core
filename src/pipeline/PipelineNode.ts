@@ -37,11 +37,13 @@ export interface PipelineNode {
   domain: string;
   url: string;
   path: string;
-  method: string;
   language: string;
   location: string;
   action: string;
   mode: string;
+  method: string;
+  identifier: string;
+  properties: string;
   topic: string;
   search: string;
   select: string;
