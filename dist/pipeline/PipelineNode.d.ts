@@ -1,14 +1,15 @@
 import { Pipeline, PipelineNodeCondition } from ".";
 import { Repository } from "..";
 import { FeaturedThread } from "..";
-import { Credential } from '..';
+import { Credential } from "..";
 import { Category } from "..";
 import { FeaturedGroup } from "..";
 import { Subcategory } from "..";
-import { Entry } from '..';
+import { Entry } from "..";
 import { JsonTransformation } from "..";
-import { Csv } from '..';
-import { CsvReport } from '..';
+import { Csv } from "..";
+import { CsvReport } from "..";
+import { DataBackup } from '..';
 export interface PipelineNode {
     id: string;
     title: string;
@@ -55,6 +56,8 @@ export interface PipelineNode {
     csvId: string;
     csvReport: CsvReport;
     csvReportId: string;
+    dataBackup: DataBackup;
+    dataBackupId: string;
     category: Category;
     subcategory: Subcategory;
     featuredGroup: FeaturedGroup;
