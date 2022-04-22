@@ -16,6 +16,6 @@ export interface DynamicServiceBody {
   auth: DynamicServiceBodyAuth;
   site: DynamicServiceBodySite;
   parameters: DynamicServiceBodyParameters;
-  webhook?: DynamicServiceBodyWebhook;
-  listener?: DynamicServiceBodyListener;
+  webhook: DynamicServiceBodyWebhook;
+  listener: DynamicServiceBodyListener;
 }
