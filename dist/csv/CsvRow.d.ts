@@ -10,6 +10,7 @@ export interface CsvRow {
         v: any;
     }>;
     providerMetadata: Record<string, any>;
+    cellArray?: string[];
     csv: Csv;
     csvId: string;
     createdAt: string;

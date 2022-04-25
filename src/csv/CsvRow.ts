@@ -14,6 +14,7 @@ export interface CsvRow {
     }
   >;
   providerMetadata: Record<string, any>;
+  cellArray?: string[];
 
   csv: Csv;
   csvId: string;

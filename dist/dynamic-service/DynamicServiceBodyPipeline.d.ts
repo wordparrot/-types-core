@@ -2,8 +2,8 @@ import { PipelineNode } from "..";
 import { PipelineRedis } from '..';
 export interface DynamicServiceBodyPipeline {
     pipelineId: string;
-    pipelineJobId: string;
+    pipelineJobId?: string;
     pipelineNodeId: string;
     pipelineNode: PipelineNode;
-    pipelineRedis: PipelineRedis;
+    pipelineRedis?: PipelineRedis;
 }
