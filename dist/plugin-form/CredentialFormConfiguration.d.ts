@@ -6,4 +6,9 @@ export interface CredentialFormConfiguration extends BaseFormConfiguration {
     initialValues: CredentialInitialValues;
     validationSchema: ActionValidationSchemaItem[];
     fields: ActionFieldItem[];
+    test?: {
+        name: string;
+        description: string;
+        initialValues: CredentialInitialValues;
+    }[];
 }

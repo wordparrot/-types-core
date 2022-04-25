@@ -8,4 +8,10 @@ export interface WebhookFormConfiguration extends BaseFormConfiguration {
     validationSchema: ActionValidationSchemaItem[];
     fields: ActionFieldItem[];
     methods: WebhookMethod[];
+    test?: {
+        name: string;
+        description: string;
+        initialValues: WebhookInitialValues;
+        request: any;
+    }[];
 }

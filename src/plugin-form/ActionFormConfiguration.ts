@@ -1,10 +1,15 @@
-import { BaseFormConfiguration } from '.'
-import { ActionInitialValues } from '.'
-import { ActionValidationSchemaItem } from '.'
-import { ActionFieldItem } from '.'
+import { BaseFormConfiguration } from ".";
+import { ActionInitialValues } from ".";
+import { ActionValidationSchemaItem } from ".";
+import { ActionFieldItem } from ".";
 
 export interface ActionFormConfiguration extends BaseFormConfiguration {
-    initialValues: ActionInitialValues
-    validationSchema: ActionValidationSchemaItem[]
-    fields: ActionFieldItem[]
+  initialValues: ActionInitialValues;
+  validationSchema: ActionValidationSchemaItem[];
+  fields: ActionFieldItem[];
+  test?: {
+    name: string;
+    description: string;
+    initialValues: ActionInitialValues;
+  }[];
 }
