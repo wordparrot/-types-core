@@ -2,6 +2,7 @@ import { BaseFormConfiguration } from ".";
 import { CredentialInitialValues } from ".";
 import { ActionValidationSchemaItem } from ".";
 import { ActionFieldItem } from ".";
+import { DynamicServiceBodyParameters } from "..";
 export interface CredentialFormConfiguration extends BaseFormConfiguration {
     initialValues: CredentialInitialValues;
     validationSchema: ActionValidationSchemaItem[];
@@ -10,5 +11,6 @@ export interface CredentialFormConfiguration extends BaseFormConfiguration {
         name: string;
         description: string;
         initialValues: CredentialInitialValues;
+        parameters?: DynamicServiceBodyParameters;
     }[];
 }

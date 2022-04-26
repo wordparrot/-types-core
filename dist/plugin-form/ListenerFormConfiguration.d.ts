@@ -1,7 +1,8 @@
-import { BaseFormConfiguration } from '.';
-import { ActionInitialValues } from '.';
-import { ActionValidationSchemaItem } from '.';
-import { ActionFieldItem } from '.';
+import { BaseFormConfiguration } from ".";
+import { ActionInitialValues } from ".";
+import { ActionValidationSchemaItem } from ".";
+import { ActionFieldItem } from ".";
+import { DynamicServiceBodyParameters } from "..";
 export interface ListenerFormConfiguration extends BaseFormConfiguration {
     initialValues: ActionInitialValues;
     validationSchema: ActionValidationSchemaItem[];
@@ -10,5 +11,6 @@ export interface ListenerFormConfiguration extends BaseFormConfiguration {
         name: string;
         description: string;
         initialValues: ActionInitialValues;
+        parameters?: DynamicServiceBodyParameters;
     }[];
 }

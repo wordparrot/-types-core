@@ -2,6 +2,7 @@ import { BaseFormConfiguration } from ".";
 import { WebhookInitialValues } from ".";
 import { ActionValidationSchemaItem } from ".";
 import { ActionFieldItem } from ".";
+import { DynamicServiceBodyParameters } from "..";
 
 export type WebhookMethod =
   | "head"
@@ -21,6 +22,7 @@ export interface WebhookFormConfiguration extends BaseFormConfiguration {
     name: string;
     description: string;
     initialValues: WebhookInitialValues;
+    parameters?: DynamicServiceBodyParameters;
     request: any;
   }[];
 }
