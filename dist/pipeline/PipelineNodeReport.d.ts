@@ -52,7 +52,7 @@ export interface PipelineNodeReport {
         itemsDeleted: RepositoryItem[];
         itemsDeletedTotal: number;
         jsonToPassOn: Record<string, any>[];
-        jsonTotal: number;
+        jsonToPassOnTotal: number;
         jsonDeleted: Record<string, any>[];
         jsonDeletedTotal: number;
         operationsFailed: PipelineOperationFailed[];

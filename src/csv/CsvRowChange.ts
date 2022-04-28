@@ -1,11 +1,12 @@
-import { CsvCellChange } from "."
+import { CsvCellChange } from ".";
 
 export interface CsvRowChange {
-    y: number
-    oldY?: number
-    rowKey: string
-    code: string
-    indexesChanged: number[]
-    original?: any[]
-    cells: any[]
+  id?: string;
+  y: number;
+  oldY?: number;
+  rowKey: string;
+  code: string;
+  indexesChanged: number[];
+  original?: any[];
+  cells: any[];
 }

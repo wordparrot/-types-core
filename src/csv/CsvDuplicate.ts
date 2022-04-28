@@ -1,4 +1,5 @@
 export interface CsvDuplicate {
-    duplicateY: number
-    originalY: number
+  duplicateId?: string;
+  duplicateY: number;
+  originalY: number;
 }

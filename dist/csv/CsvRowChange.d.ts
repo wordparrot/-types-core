@@ -1,4 +1,5 @@
 export interface CsvRowChange {
+    id?: string;
     y: number;
     oldY?: number;
     rowKey: string;
