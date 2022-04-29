@@ -1,4 +1,5 @@
 import { Csv } from ".";
+import { CsvCell } from ".";
 
 export interface CsvRow {
   id: string;
@@ -14,7 +15,7 @@ export interface CsvRow {
     }
   >;
   providerMetadata: Record<string, any>;
-  cellArray?: string[];
+  cellArray?: CsvCell[];
 
   csv: Csv;
   csvId: string;
