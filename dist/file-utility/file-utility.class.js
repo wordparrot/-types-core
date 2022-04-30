@@ -23,13 +23,14 @@ const rmdirPromisified = (0, util_1.promisify)(fs_1.rm);
 class FileUtility {
     constructor(config) {
         this.tempFolder = process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`;
-        this.repositoriesFolder = process.env.WORDPARROT_REPOSITORIES_FILE_PATH || `${process.cwd()}/content/repositories`;
+        this.repositoriesFolder = process.env.WORDPARROT_REPOSITORIES_FILE_PATH ||
+            `${process.cwd()}/content/repositories`;
         this.uniqId = config.uniqId;
         this.pipelineJobId = config.pipelineJobId;
         this.pipelineNodeId = config.pipelineNodeId;
         this.filename = config.filename;
         this.buffer = config.buffer;
-        this.encoding = config.encoding || 'utf8';
+        this.encoding = config.encoding || "utf8";
         this.extension = (0, __1.getExtension)(this.filename);
         this.mimeType = config.mimeType;
         this.repositoryId = config.repositoryId;
@@ -49,10 +50,10 @@ class FileUtility {
     }
     get repositoriesFilePath() {
         if (!this.filename) {
-            throw new Error('Cannot get repository file path: filename required.');
+            throw new Error("Cannot get repository file path: filename required.");
         }
         if (!this.repositoryId) {
-            throw new Error('Cannot get repository file path: repository ID required.');
+            throw new Error("Cannot get repository file path: repository ID required.");
         }
         return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`;
     }
@@ -87,7 +88,7 @@ class FileUtility {
                 catch (e) {
                     console.log(e);
                     // This folder does not exist yet
-                    throw new Error('cannot_make_temp_job_folder');
+                    throw new Error("cannot_make_temp_job_folder");
                 }
             }
             try {
@@ -101,12 +102,12 @@ class FileUtility {
                 catch (e) {
                     console.log(e);
                     // This folder does not exist yet
-                    throw new Error('cannot_make_temp_node_folder');
+                    throw new Error("cannot_make_temp_node_folder");
                 }
             }
         });
     }
-    writeToTempFolder(encoding = 'utf8') {
+    writeToTempFolder(encoding = "utf8") {
         return __awaiter(this, void 0, void 0, function* () {
             return writeFilePromisified(this.filePath, this.buffer, encoding);
         });
@@ -124,7 +125,7 @@ class FileUtility {
                 catch (e) {
                     console.log(e);
                     // This folder does not exist yet
-                    throw new Error('cannot_make_repositories_folder');
+                    throw new Error("cannot_make_repositories_folder");
                 }
             }
         });
@@ -140,7 +141,7 @@ class FileUtility {
             return readFilePromisified(path);
         });
     }
-    saveTempToRepositoryFolder(encoding = 'utf8', buffer) {
+    saveTempToRepositoryFolder(encoding = "utf8", buffer) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 if (!this.buffer) {
@@ -151,13 +152,13 @@ class FileUtility {
                 return {
                     path: this.repositoriesFilePath,
                     filename: this.filename,
-                    operation: 'save',
+                    operation: "save",
                     success: false,
                 };
             }
             try {
                 if (!this.repositoriesPath) {
-                    throw new Error('repositories_path_not_set');
+                    throw new Error("repositories_path_not_set");
                 }
                 try {
                     yield statPromisified(this.repositoriesFilePath);
@@ -167,7 +168,7 @@ class FileUtility {
                     return {
                         path: this.repositoriesFilePath,
                         filename: this.filename,
-                        operation: 'save',
+                        operation: "save",
                         success: true,
                     };
                 }
@@ -178,13 +179,13 @@ class FileUtility {
                         return {
                             path: this.repositoriesFilePath,
                             filename: this.filename,
-                            operation: 'save',
+                            operation: "save",
                             success: true,
                         };
                     }
                     catch (e) {
                         console.log(e);
-                        throw new Error('unable_to_save');
+                        throw new Error("unable_to_save");
                     }
                 }
             }
@@ -192,7 +193,7 @@ class FileUtility {
                 return {
                     path: this.repositoriesFilePath,
                     filename: this.filename,
-                    operation: 'save',
+                    operation: "save",
                     error: e.message,
                     success: false,
                 };
@@ -203,18 +204,18 @@ class FileUtility {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 if (!this.repositoriesPath) {
-                    throw new Error('repositories_path_not_set');
+                    throw new Error("repositories_path_not_set");
                 }
                 try {
                     yield deleteFilePromisified(this.repositoriesFilePath);
                 }
                 catch (e) {
-                    throw new Error('unable_to_delete');
+                    throw new Error("unable_to_delete");
                 }
                 return {
                     path: this.repositoriesFilePath,
                     filename: this.filename,
-                    operation: 'delete',
+                    operation: "delete",
                     success: true,
                 };
             }
@@ -222,7 +223,7 @@ class FileUtility {
                 return {
                     path: this.repositoriesFilePath,
                     filename: this.filename,
-                    operation: 'delete',
+                    operation: "delete",
                     error: e.message,
                     success: false,
                 };
@@ -238,7 +239,7 @@ class FileUtility {
         if (this.hasCopyNumber(filenameBase)) {
             const int = parseInt(filenameBase[filenameBase.length - 2]);
             filenameBase = (0, __1.replaceStringIndexAt)(filenameBase, filenameBase.length - 2, (int + 1).toString());
-            this.filename = filenameBase + '.' + (0, __1.getExtension)(this.filename);
+            this.filename = filenameBase + "." + (0, __1.getExtension)(this.filename);
         }
         else {
             this.filename =
@@ -251,13 +252,13 @@ class FileUtility {
         if (str.length <= 3) {
             return false;
         }
-        if (str[str.length - 1] !== ')') {
+        if (str[str.length - 1] !== ")") {
             return false;
         }
         if (!(0, lodash_1.isInteger)(str[str.length - 2])) {
             return false;
         }
-        if (str[str.length - 3] !== '(') {
+        if (str[str.length - 3] !== "(") {
             return false;
         }
         return true;
