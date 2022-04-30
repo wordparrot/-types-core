@@ -43,6 +43,7 @@ export declare class FileUtility {
     private writeToTempFolder;
     createRepositoryFolder(): Promise<void>;
     private retrieveBufferFromTemp;
+    private static getBuffer;
     saveTempToRepositoryFolder(encoding?: WriteFileOptions, buffer?: Buffer): Promise<FileOperation>;
     deleteFromRepositoryFolder(): Promise<FileOperation>;
     removeNodeFolder(): Promise<void>;

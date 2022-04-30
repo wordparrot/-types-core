@@ -1,4 +1,5 @@
 import {
+  BufferEncodingOption,
   WriteFileOptions,
   mkdir,
   readFile,
@@ -6,102 +7,103 @@ import {
   stat,
   unlink,
   writeFile,
-} from 'fs'
-import { isInteger } from 'lodash'
-import { promisify } from 'util'
+} from "fs";
+import { isInteger } from "lodash";
+import { promisify } from "util";
 
-import { FileOperation } from '..'
-import { FileMetadata } from '..'
-import {
-  getExtension,
-  getFilenameBase,
-  replaceStringIndexAt,
-} from '..'
+import { FileOperation } from "..";
+import { FileMetadata } from "..";
+import { getExtension, getFilenameBase, replaceStringIndexAt } from "..";
 
-const readFilePromisified = promisify(readFile)
-const writeFilePromisified = promisify(writeFile)
-const deleteFilePromisified = promisify(unlink)
-const statPromisified = promisify(stat)
-const mkdirPromisified = promisify(mkdir)
-const rmdirPromisified = promisify(rm)
+const readFilePromisified = promisify(readFile);
+const writeFilePromisified = promisify(writeFile);
+const deleteFilePromisified = promisify(unlink);
+const statPromisified = promisify(stat);
+const mkdirPromisified = promisify(mkdir);
+const rmdirPromisified = promisify(rm);
 
 export interface FileUtilityConfig {
-  uniqId?: string
-  pipelineJobId?: string
-  pipelineNodeId?: string
-  filename: string
-  buffer?: Buffer
-  mimeType?: string
-  encoding?: WriteFileOptions
-  repositoryId?: string
+  uniqId?: string;
+  pipelineJobId?: string;
+  pipelineNodeId?: string;
+  filename: string;
+  buffer?: Buffer;
+  mimeType?: string;
+  encoding?: WriteFileOptions;
+  repositoryId?: string;
   parentRepositoryItem?: {
-    nodeUniqId: string
-    uniqId: string
-  }
+    nodeUniqId: string;
+    uniqId: string;
+  };
 }
 
 export class FileUtility {
-  pipelineJobId: string
-  pipelineNodeId: string
-  filename: string
-  buffer?: Buffer
-  mimeType?: string
-  encoding?: WriteFileOptions
-  extension: string
-  repositoryId: string
-  uniqId: string
+  pipelineJobId: string;
+  pipelineNodeId: string;
+  filename: string;
+  buffer?: Buffer;
+  mimeType?: string;
+  encoding?: WriteFileOptions;
+  extension: string;
+  repositoryId: string;
+  uniqId: string;
   parentRepositoryItem?: {
-    nodeUniqId: string
-    uniqId: string
-  }
+    nodeUniqId: string;
+    uniqId: string;
+  };
 
-  public tempFolder = process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`
-  public repositoriesFolder = process.env.WORDPARROT_REPOSITORIES_FILE_PATH || `${process.cwd()}/content/repositories`
+  public tempFolder =
+    process.env.WORDPARROT_TEMP_FILE_PATH || `${process.cwd()}/content/temp`;
+  public repositoriesFolder =
+    process.env.WORDPARROT_REPOSITORIES_FILE_PATH ||
+    `${process.cwd()}/content/repositories`;
 
   constructor(config: FileUtilityConfig) {
-    this.uniqId = config.uniqId
-    this.pipelineJobId = config.pipelineJobId
-    this.pipelineNodeId = config.pipelineNodeId
-    this.filename = config.filename
-    this.buffer = config.buffer
-    this.encoding = config.encoding || 'utf8'
-    this.extension = getExtension(this.filename)
-    this.mimeType = config.mimeType
-    this.repositoryId = config.repositoryId
-    this.parentRepositoryItem = config.parentRepositoryItem
+    this.uniqId = config.uniqId;
+    this.pipelineJobId = config.pipelineJobId;
+    this.pipelineNodeId = config.pipelineNodeId;
+    this.filename = config.filename;
+    this.buffer = config.buffer;
+    this.encoding = config.encoding || "utf8";
+    this.extension = getExtension(this.filename);
+    this.mimeType = config.mimeType;
+    this.repositoryId = config.repositoryId;
+    this.parentRepositoryItem = config.parentRepositoryItem;
   }
 
   get jobPath(): string {
-    return `${this.tempFolder}/${this.pipelineJobId}`
+    return `${this.tempFolder}/${this.pipelineJobId}`;
   }
 
   get nodePath(): string {
-    return `${this.jobPath}/${this.pipelineNodeId}`
+    return `${this.jobPath}/${this.pipelineNodeId}`;
   }
 
   get filePath(): string {
-    return `${this.nodePath}/${this.filename}`
+    return `${this.nodePath}/${this.filename}`;
   }
 
   get repositoriesPath(): string {
-    return `${this.repositoriesFolder}/${this.repositoryId}`
+    return `${this.repositoriesFolder}/${this.repositoryId}`;
   }
 
   get repositoriesFilePath(): string {
     if (!this.filename) {
-      throw new Error('Cannot get repository file path: filename required.')
+      throw new Error("Cannot get repository file path: filename required.");
     }
 
     if (!this.repositoryId) {
-      throw new Error('Cannot get repository file path: repository ID required.')
+      throw new Error(
+        "Cannot get repository file path: repository ID required."
+      );
     }
 
-    return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`
+    return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`;
   }
 
   async saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata> {
-    await this.createNodeTempFolders()
-    await this.writeToTempFolder(encoding || this.encoding)
+    await this.createNodeTempFolders();
+    await this.writeToTempFolder(encoding || this.encoding);
     return {
       uniqId:
         this.uniqId ||
@@ -114,95 +116,100 @@ export class FileUtility {
       pipelineJobId: this.pipelineJobId,
       pipelineNodeId: this.pipelineNodeId,
       parentRepositoryItem: this.parentRepositoryItem,
-    }
+    };
   }
 
   private async createNodeTempFolders() {
     try {
-      await statPromisified(this.jobPath)
+      await statPromisified(this.jobPath);
     } catch (e) {
       // This folder does not exist yet
       try {
-        await mkdirPromisified(this.jobPath)
+        await mkdirPromisified(this.jobPath);
       } catch (e) {
-        console.log(e)
+        console.log(e);
         // This folder does not exist yet
-        throw new Error('cannot_make_temp_job_folder')
+        throw new Error("cannot_make_temp_job_folder");
       }
     }
 
     try {
-      await statPromisified(this.nodePath)
+      await statPromisified(this.nodePath);
     } catch (e) {
       // This folder does not exist yet
       try {
-        await mkdirPromisified(this.nodePath)
+        await mkdirPromisified(this.nodePath);
       } catch (e) {
-        console.log(e)
+        console.log(e);
         // This folder does not exist yet
-        throw new Error('cannot_make_temp_node_folder')
+        throw new Error("cannot_make_temp_node_folder");
       }
     }
   }
 
-  private async writeToTempFolder(encoding: WriteFileOptions = 'utf8') {
-    return writeFilePromisified(this.filePath, this.buffer, encoding)
+  private async writeToTempFolder(encoding: WriteFileOptions = "utf8") {
+    return writeFilePromisified(this.filePath, this.buffer, encoding);
   }
 
   async createRepositoryFolder() {
     try {
-      await statPromisified(this.repositoriesPath)
+      await statPromisified(this.repositoriesPath);
     } catch (e) {
       // This folder does not exist yet
       try {
-        await mkdirPromisified(this.repositoriesPath)
+        await mkdirPromisified(this.repositoriesPath);
       } catch (e) {
-        console.log(e)
+        console.log(e);
         // This folder does not exist yet
-        throw new Error('cannot_make_repositories_folder')
+        throw new Error("cannot_make_repositories_folder");
       }
     }
   }
 
   private async retrieveBufferFromTemp() {
-    return readFilePromisified(this.filePath)
+    return readFilePromisified(this.filePath);
+  }
+
+  private static async getBuffer(fileMetadata: FileMetadata): Promise<Buffer> {
+    const { path } = fileMetadata;
+    return readFilePromisified(path);
   }
 
   async saveTempToRepositoryFolder(
-    encoding: WriteFileOptions = 'utf8',
+    encoding: WriteFileOptions = "utf8",
     buffer?: Buffer
   ): Promise<FileOperation> {
     try {
       if (!this.buffer) {
-        buffer = await this.retrieveBufferFromTemp()
+        buffer = await this.retrieveBufferFromTemp();
       }
     } catch (e) {
       return {
         path: this.repositoriesFilePath,
         filename: this.filename,
-        operation: 'save',
+        operation: "save",
         success: false,
-      }
+      };
     }
 
     try {
       if (!this.repositoriesPath) {
-        throw new Error('repositories_path_not_set')
+        throw new Error("repositories_path_not_set");
       }
 
       try {
-        await statPromisified(this.repositoriesFilePath)
+        await statPromisified(this.repositoriesFilePath);
         // File by this name already exists, increment copy number
-        this.incrementCopyNumber()
+        this.incrementCopyNumber();
 
-        await writeFilePromisified(this.repositoriesFilePath, buffer, encoding)
+        await writeFilePromisified(this.repositoriesFilePath, buffer, encoding);
 
         return {
           path: this.repositoriesFilePath,
           filename: this.filename,
-          operation: 'save',
+          operation: "save",
           success: true,
-        }
+        };
       } catch (e) {
         // file does not exist
         try {
@@ -210,97 +217,96 @@ export class FileUtility {
             this.repositoriesFilePath,
             buffer,
             encoding
-          )
+          );
           return {
             path: this.repositoriesFilePath,
             filename: this.filename,
-            operation: 'save',
+            operation: "save",
             success: true,
-          }
+          };
         } catch (e) {
-          console.log(e)
-          throw new Error('unable_to_save')
+          console.log(e);
+          throw new Error("unable_to_save");
         }
       }
     } catch (e) {
       return {
         path: this.repositoriesFilePath,
         filename: this.filename,
-        operation: 'save',
+        operation: "save",
         error: e.message,
         success: false,
-      }
+      };
     }
   }
 
   async deleteFromRepositoryFolder(): Promise<FileOperation> {
     try {
       if (!this.repositoriesPath) {
-        throw new Error('repositories_path_not_set')
+        throw new Error("repositories_path_not_set");
       }
 
       try {
-        await deleteFilePromisified(this.repositoriesFilePath)
+        await deleteFilePromisified(this.repositoriesFilePath);
       } catch (e) {
-        throw new Error('unable_to_delete')
+        throw new Error("unable_to_delete");
       }
 
       return {
         path: this.repositoriesFilePath,
         filename: this.filename,
-        operation: 'delete',
+        operation: "delete",
         success: true,
-      }
+      };
     } catch (e) {
       return {
         path: this.repositoriesFilePath,
         filename: this.filename,
-        operation: 'delete',
+        operation: "delete",
         error: e.message,
         success: false,
-      }
+      };
     }
   }
 
   removeNodeFolder() {
-    return rmdirPromisified(this.nodePath, { recursive: true })
+    return rmdirPromisified(this.nodePath, { recursive: true });
   }
 
   // Change filename.txt to filename(1).txt
   incrementCopyNumber(): void {
-    let filenameBase = getFilenameBase(this.filename)
+    let filenameBase = getFilenameBase(this.filename);
 
     if (this.hasCopyNumber(filenameBase)) {
-      const int = parseInt(filenameBase[filenameBase.length - 2])
+      const int = parseInt(filenameBase[filenameBase.length - 2]);
       filenameBase = replaceStringIndexAt(
         filenameBase,
         filenameBase.length - 2,
         (int + 1).toString()
-      )
-      this.filename = filenameBase + '.' + getExtension(this.filename)
+      );
+      this.filename = filenameBase + "." + getExtension(this.filename);
     } else {
       this.filename =
         filenameBase +
         `(${Math.floor(Date.now() / 1000)}).` +
-        getExtension(this.filename)
+        getExtension(this.filename);
     }
   }
 
   hasCopyNumber(str: string): boolean {
     if (str.length <= 3) {
-      return false
+      return false;
     }
-    if (str[str.length - 1] !== ')') {
-      return false
+    if (str[str.length - 1] !== ")") {
+      return false;
     }
     if (!isInteger(str[str.length - 2])) {
-      return false
+      return false;
     }
-    if (str[str.length - 3] !== '(') {
-      return false
+    if (str[str.length - 3] !== "(") {
+      return false;
     }
 
-    return true
+    return true;
   }
-
 }

@@ -134,6 +134,12 @@ class FileUtility {
             return readFilePromisified(this.filePath);
         });
     }
+    static getBuffer(fileMetadata) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { path } = fileMetadata;
+            return readFilePromisified(path);
+        });
+    }
     saveTempToRepositoryFolder(encoding = 'utf8', buffer) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
