@@ -3,10 +3,10 @@ import { WriteFileOptions } from "fs";
 import { FileOperation } from "..";
 import { FileMetadata } from "..";
 export interface FileUtilityConfig {
-    uniqId?: string;
-    pipelineJobId?: string;
-    pipelineNodeId?: string;
+    pipelineJobId: string;
+    pipelineNodeId: string;
     filename: string;
+    uniqId?: string;
     buffer?: Buffer;
     mimeType?: string;
     encoding?: WriteFileOptions;
@@ -42,7 +42,7 @@ export declare class FileUtility {
     private createNodeTempFolders;
     private writeToTempFolder;
     createRepositoryFolder(): Promise<void>;
-    private retrieveBufferFromTemp;
+    retrieveBufferFromTemp(): Promise<Buffer>;
     static getBuffer(fileMetadata: FileMetadata): Promise<Buffer>;
     saveTempToRepositoryFolder(encoding?: WriteFileOptions, buffer?: Buffer): Promise<FileOperation>;
     deleteFromRepositoryFolder(): Promise<FileOperation>;

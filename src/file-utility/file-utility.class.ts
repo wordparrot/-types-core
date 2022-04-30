@@ -23,10 +23,10 @@ const mkdirPromisified = promisify(mkdir);
 const rmdirPromisified = promisify(rm);
 
 export interface FileUtilityConfig {
-  uniqId?: string;
-  pipelineJobId?: string;
-  pipelineNodeId?: string;
+  pipelineJobId: string;
+  pipelineNodeId: string;
   filename: string;
+  uniqId?: string;
   buffer?: Buffer;
   mimeType?: string;
   encoding?: WriteFileOptions;
@@ -166,7 +166,7 @@ export class FileUtility {
     }
   }
 
-  private async retrieveBufferFromTemp() {
+  async retrieveBufferFromTemp(): Promise<Buffer> {
     return readFilePromisified(this.filePath);
   }
 
