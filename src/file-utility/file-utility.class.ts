@@ -170,7 +170,7 @@ export class FileUtility {
     return readFilePromisified(this.filePath);
   }
 
-  static async getBuffer(fileMetadata: FileMetadata): Promise<Buffer> {
+  static async getBuffer(fileMetadata: FileMetadata) {
     const { path } = fileMetadata;
     return readFilePromisified(path);
   }

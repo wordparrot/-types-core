@@ -3,6 +3,7 @@ import { ActionInitialValues } from ".";
 import { ActionValidationSchemaItem } from ".";
 import { ActionFieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
+import { DynamicServiceBodyAuth } from "..";
 
 export interface ActionFormConfiguration extends BaseFormConfiguration {
   initialValues: ActionInitialValues;
@@ -12,6 +13,7 @@ export interface ActionFormConfiguration extends BaseFormConfiguration {
     name: string;
     description: string;
     initialValues: ActionInitialValues;
+    auth?: DynamicServiceBodyAuth;
     parameters?: DynamicServiceBodyParameters;
   }[];
 }
