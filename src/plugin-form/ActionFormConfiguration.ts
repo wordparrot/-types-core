@@ -13,7 +13,6 @@ export interface ActionFormConfiguration extends BaseFormConfiguration {
     name: string;
     description: string;
     initialValues: ActionInitialValues;
-    auth?: DynamicServiceBodyAuth;
     parameters?: DynamicServiceBodyParameters;
   }[];
 }

@@ -4,5 +4,7 @@ import { ConstructableWithConfig } from "..";
 export declare type SandboxLib = {
     axios: Axios;
     _: any;
+    qs: any;
+    FormData: any;
     FileUtility: ConstructableWithConfig<FileUtilityConfig, FileUtility>;
 };
