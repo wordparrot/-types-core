@@ -14,4 +14,5 @@ export interface CredentialFormConfiguration extends BaseFormConfiguration {
     initialValues: CredentialInitialValues;
     parameters?: DynamicServiceBodyParameters;
   }[];
+  forPlatform?: string[];
 }
