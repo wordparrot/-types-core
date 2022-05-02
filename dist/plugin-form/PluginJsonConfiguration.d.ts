@@ -11,6 +11,10 @@ export interface PluginJsonConfiguration {
     repository: string;
     license: string;
     logo: string;
+    actionLogo?: string;
+    listenerLogo?: string;
+    credentialLogo?: string;
+    webhookLogo?: string;
     categories?: string[];
     subcategories?: string[];
 }

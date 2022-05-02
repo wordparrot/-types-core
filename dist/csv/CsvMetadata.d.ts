@@ -12,7 +12,7 @@ export interface CsvMetadata {
     secondaryRowKey: string | null;
     url: string | null;
     filename: string | null;
-    page: number | null;
+    range: string | null;
     pageName: string | null;
     provider: string | null;
     providerMetadata: Record<string, any> | null;

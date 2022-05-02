@@ -1,27 +1,30 @@
-import { CsvRow } from "."
-import { PipelineNode } from ".."
-import { Repository } from ".."
+import { CsvRow } from ".";
+import { PipelineNode } from "..";
+import { Repository } from "..";
 
 export interface Csv {
-  id: string
-  title: string
-  filename: string
-  content: string
-  uniqId: string
-  rowKeyValue: string
-  rowKeyType: string
-  rowKeyX?: number
-  rowKeyY: number
-  secondaryRowKey: string
-  url: string
-  provider: string
-  providerMetadata: Record<string, any>
-  page: number
+  id: string;
+  title: string;
+  filename: string;
+  content: string;
+  uniqId: string;
+  url: string;
+  provider: string;
+  providerMetadata: Record<string, any>;
 
-  rows: CsvRow[]
-  pipelineNodes: PipelineNode[]
-  repositories: Repository[]
+  rowKeyValue: string;
+  rowKeyType: string;
+  rowKeyX?: number;
+  rowKeyY: number;
+  secondaryRowKey: string;
 
-  createdAt: string
-  updatedAt: string
+  range: string;
+  pageName: string;
+
+  rows: CsvRow[];
+  pipelineNodes: PipelineNode[];
+  repositories: Repository[];
+
+  createdAt: string;
+  updatedAt: string;
 }
