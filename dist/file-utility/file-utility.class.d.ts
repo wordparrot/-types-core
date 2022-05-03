@@ -11,6 +11,7 @@ export interface FileUtilityConfig {
     mimeType?: string;
     encoding?: WriteFileOptions;
     repositoryId?: string;
+    repositoryFileId?: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
         uniqId: string;
@@ -25,6 +26,7 @@ export declare class FileUtility {
     encoding?: WriteFileOptions;
     extension: string;
     repositoryId: string;
+    repositoryFileId: string;
     uniqId: string;
     parentRepositoryItem?: {
         nodeUniqId: string;

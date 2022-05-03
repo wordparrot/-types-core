@@ -1,7 +1,6 @@
 import { PipelineMessage } from "..";
 import { FileMetadata } from "..";
 import { RepositoryItem } from "..";
-import { RepositoryFile } from "..";
 import { PipelineToken } from "..";
 import { CsvMetadata } from "../csv";
 export interface DynamicServiceBodyParameters {
@@ -12,8 +11,6 @@ export interface DynamicServiceBodyParameters {
     csvDeleted?: CsvMetadata[];
     fileMetadataFromParent: FileMetadata[];
     fileMetadataDeleted?: FileMetadata[];
-    filesFromParent: RepositoryFile[];
-    filesDeleted?: RepositoryFile[];
     itemsFromParent: RepositoryItem[];
     itemsDeleted?: RepositoryItem[];
     jsonFromParent: Record<string, any>[];

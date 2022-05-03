@@ -34,6 +34,7 @@ class FileUtility {
         this.extension = (0, __1.getExtension)(this.filename);
         this.mimeType = config.mimeType;
         this.repositoryId = config.repositoryId;
+        this.repositoryFileId = config.repositoryFileId;
         this.parentRepositoryItem = config.parentRepositoryItem;
     }
     get jobPath() {
@@ -71,6 +72,8 @@ class FileUtility {
                 encoding: encoding || this.encoding,
                 pipelineJobId: this.pipelineJobId,
                 pipelineNodeId: this.pipelineNodeId,
+                repositoryId: this.repositoryId,
+                repositoryFileId: this.repositoryFileId,
                 parentRepositoryItem: this.parentRepositoryItem,
             };
         });

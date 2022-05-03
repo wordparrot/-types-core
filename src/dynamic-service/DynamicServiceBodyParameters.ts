@@ -1,30 +1,28 @@
-import { PipelineMessage } from ".."
-import { FileMetadata } from ".."
-import { RepositoryItem } from ".."
-import { RepositoryFile } from ".."
-import { PipelineToken } from ".."
-import { CsvMetadata } from "../csv"
+import { PipelineMessage } from "..";
+import { FileMetadata } from "..";
+import { RepositoryItem } from "..";
+import { RepositoryFile } from "..";
+import { PipelineToken } from "..";
+import { CsvMetadata } from "../csv";
 
 export interface DynamicServiceBodyParameters {
-    status: string
-    recordReports: boolean
+  status: string;
+  recordReports: boolean;
 
-    messagesFromParent: PipelineMessage[]
-    csvFromParent: CsvMetadata[]
-    csvDeleted?: CsvMetadata[]
-    fileMetadataFromParent: FileMetadata[]
-    fileMetadataDeleted?: FileMetadata[]
-    filesFromParent: RepositoryFile[]
-    filesDeleted?: RepositoryFile[]
-    itemsFromParent: RepositoryItem[]
-    itemsDeleted?: RepositoryItem[]
-    jsonFromParent: Record<string, any>[]
-    jsonDeleted?: Record<string, any>[]
-    tokensFromParent: PipelineToken[]
+  messagesFromParent: PipelineMessage[];
+  csvFromParent: CsvMetadata[];
+  csvDeleted?: CsvMetadata[];
+  fileMetadataFromParent: FileMetadata[];
+  fileMetadataDeleted?: FileMetadata[];
+  itemsFromParent: RepositoryItem[];
+  itemsDeleted?: RepositoryItem[];
+  jsonFromParent: Record<string, any>[];
+  jsonDeleted?: Record<string, any>[];
+  tokensFromParent: PipelineToken[];
 
-    entriesFromParent: any[]
-    category: any
+  entriesFromParent: any[];
+  category: any;
 
-    conditionFailedFromParent: string[]
-    conditionFailed: string[]
+  conditionFailedFromParent: string[];
+  conditionFailed: string[];
 }

@@ -31,6 +31,7 @@ export interface FileUtilityConfig {
   mimeType?: string;
   encoding?: WriteFileOptions;
   repositoryId?: string;
+  repositoryFileId?: string;
   parentRepositoryItem?: {
     nodeUniqId: string;
     uniqId: string;
@@ -46,6 +47,7 @@ export class FileUtility {
   encoding?: WriteFileOptions;
   extension: string;
   repositoryId: string;
+  repositoryFileId: string;
   uniqId: string;
   parentRepositoryItem?: {
     nodeUniqId: string;
@@ -68,6 +70,7 @@ export class FileUtility {
     this.extension = getExtension(this.filename);
     this.mimeType = config.mimeType;
     this.repositoryId = config.repositoryId;
+    this.repositoryFileId = config.repositoryFileId;
     this.parentRepositoryItem = config.parentRepositoryItem;
   }
 
@@ -115,6 +118,8 @@ export class FileUtility {
       encoding: encoding || this.encoding,
       pipelineJobId: this.pipelineJobId,
       pipelineNodeId: this.pipelineNodeId,
+      repositoryId: this.repositoryId,
+      repositoryFileId: this.repositoryFileId,
       parentRepositoryItem: this.parentRepositoryItem,
     };
   }

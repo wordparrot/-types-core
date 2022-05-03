@@ -1,7 +1,6 @@
 import { PipelineNode, PipelineJob } from ".";
 import { PipelineMessage } from "./PipelineMessage";
 import { PipelineToken } from "./PipelineToken";
-import { RepositoryFile } from "../repository";
 import { RepositoryItem } from "../repository";
 import { CsvMetadata } from "../csv";
 import { FileMetadata } from "./FileMetadata";
@@ -19,8 +18,6 @@ export interface PipelineNodeReport {
         tokensTotal: number;
         csv: CsvMetadata[];
         csvTotal: number;
-        files: RepositoryFile[];
-        filesTotal: number;
         fileMetadata: FileMetadata[];
         fileMetadataTotal: number;
         items: RepositoryItem[];
@@ -39,10 +36,6 @@ export interface PipelineNodeReport {
         csvToPassOnTotal: number;
         csvDeleted: CsvMetadata[];
         csvDeletedTotal: number;
-        filesToPassOn: RepositoryFile[];
-        filesToPassOnTotal: number;
-        filesDeleted: RepositoryFile[];
-        filesDeletedTotal: number;
         fileMetadataToPassOn: FileMetadata[];
         fileMetadataToPassOnTotal: number;
         fileMetadataDeleted: FileMetadata[];
@@ -64,9 +57,12 @@ export interface PipelineNodeReport {
         itemsTotal: number;
         files: string[];
         filesTotal: number;
+        csv: string[];
+        csvTotal: number;
     };
     pipelineNode?: PipelineNode;
     pipelineJob?: PipelineJob;
+    downstreamPipelineEvents?: string[];
     createdAt?: string;
     updatedAt?: string;
 }

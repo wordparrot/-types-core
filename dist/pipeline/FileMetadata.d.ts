@@ -10,6 +10,8 @@ export interface FileMetadata {
     encoding?: WriteFileOptions;
     pipelineJobId: string;
     pipelineNodeId: string;
+    repositoryId?: string;
+    repositoryFileId?: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
         uniqId: string;
