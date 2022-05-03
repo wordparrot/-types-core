@@ -5,6 +5,10 @@ export interface Plugin extends HubPlugin {
     name: string;
     active: boolean;
     hubPluginId: string;
+    actionLogo?: string;
+    listenerLogo?: string;
+    credentialLogo?: string;
+    webhookLogo?: string;
     actions: ActionFormConfiguration[];
     credentials: CredentialFormConfiguration[];
     listeners: ListenerFormConfiguration[];
