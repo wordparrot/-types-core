@@ -21,6 +21,7 @@ export interface DynamicServiceTrackedValues {
 
   filesToRepository: string[];
   itemsToRepository: string[];
+  csvToRepository: string[];
 
   operationsFailed: PipelineOperationFailed[];
 }

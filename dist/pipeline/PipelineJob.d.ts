@@ -6,6 +6,7 @@ export interface PipelineJob {
     status: string;
     pipeline: Pipeline;
     upstreamPipelineJob: PipelineJob;
+    downstreamPipelines: Pipeline[];
     downstreamPipelineJobs: PipelineJob[];
     repositoryItems: RepositoryItem[];
     pipelineFlows: PipelineFlow[];

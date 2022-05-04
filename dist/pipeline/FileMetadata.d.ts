@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { WriteFileOptions } from 'fs';
+import { WriteFileOptions } from "fs";
 export interface FileMetadata {
     uniqId: string;
     path: string;

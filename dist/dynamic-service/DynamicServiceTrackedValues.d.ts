@@ -17,5 +17,6 @@ export interface DynamicServiceTrackedValues {
     fileMetadataDeleted: FileMetadata[];
     filesToRepository: string[];
     itemsToRepository: string[];
+    csvToRepository: string[];
     operationsFailed: PipelineOperationFailed[];
 }
