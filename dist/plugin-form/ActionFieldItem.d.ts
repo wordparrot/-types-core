@@ -19,4 +19,5 @@ export interface ActionFieldItem {
     defaultTransformation?: string;
     multiple?: boolean;
     self?: boolean;
+    forPlatform?: string[];
 }

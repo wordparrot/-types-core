@@ -1,5 +1,5 @@
-import { RepositoryItem } from '..';
-import { Entry } from '..';
+import { RepositoryItem } from "..";
+import { Entry } from "..";
 import { Pipeline, PipelineNodeReport, PipelineFlow } from ".";
 export interface PipelineJob {
     id: string;
