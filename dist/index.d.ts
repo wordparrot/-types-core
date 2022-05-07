@@ -19,6 +19,7 @@ export * from "./repository";
 export * from "./role";
 export * from "./sandbox";
 export * from "./site";
+export * from "./smtp";
 export * from "./storage";
 export * from "./tile";
 export * from "./transformation";

@@ -1,1 +1,1 @@
-export * from './SmtpAccount';
+export * from "./SmtpAccount";
