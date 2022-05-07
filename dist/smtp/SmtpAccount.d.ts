@@ -1,4 +1,3 @@
-import { String } from "lodash";
 export interface SmtpAccount {
     id: string;
     title: string;
@@ -8,7 +7,8 @@ export interface SmtpAccount {
     port: number;
     domain: string;
     apiKey: string;
-    sender: String;
+    sender: string;
+    status: string;
     createdAt: string;
     updatedAt: string;
 }
