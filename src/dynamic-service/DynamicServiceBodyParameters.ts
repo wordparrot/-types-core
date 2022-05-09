@@ -13,6 +13,7 @@ export interface DynamicServiceBodyParameters {
   messagesFromParent: PipelineMessage[];
   csvFromParent: CsvMetadata[];
   csvDeleted?: CsvMetadata[];
+  emailMetadataFromParent: EmailMetadata[];
   fileMetadataFromParent: FileMetadata[];
   fileMetadataDeleted?: FileMetadata[];
   itemsFromParent: RepositoryItem[];
@@ -20,7 +21,6 @@ export interface DynamicServiceBodyParameters {
   jsonFromParent: Record<string, any>[];
   jsonDeleted?: Record<string, any>[];
   tokensFromParent: PipelineToken[];
-  emailFromParent: EmailMetadata[];
 
   entriesFromParent: any[];
   category: any;

@@ -13,13 +13,13 @@ export interface DynamicServiceTrackedValues {
 
   csvToPassOn: CsvMetadata[];
   csvDeleted: CsvMetadata[];
+  emailMetadataToPassOn: EmailMetadata[];
+  fileMetadataToPassOn: FileMetadata[];
+  fileMetadataDeleted: FileMetadata[];
   itemsToPassOn: RepositoryItem[];
   itemsDeleted: RepositoryItem[];
   jsonToPassOn: Record<string, any>[];
   jsonDeleted: Record<string, any>[];
-  fileMetadataToPassOn: FileMetadata[];
-  fileMetadataDeleted: FileMetadata[];
-  emailToPassOn: EmailMetadata[];
 
   filesToRepository: string[];
   itemsToRepository: string[];
