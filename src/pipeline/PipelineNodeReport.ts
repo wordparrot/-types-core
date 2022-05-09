@@ -25,7 +25,7 @@ export interface PipelineNodeReport {
     csv: CsvMetadata[];
     csvTotal: number;
     emailMetadata: EmailMetadata[];
-    emailTotal: number;
+    emailMetadataTotal: number;
     fileMetadata: FileMetadata[];
     fileMetadataTotal: number;
     items: RepositoryItem[];
