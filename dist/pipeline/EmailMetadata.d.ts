@@ -1,6 +1,8 @@
 import { FileMetadata } from ".";
-export interface EmailMetadata {
-    from: string;
+import { CsvMetadata } from "..";
+import { RequireAtLeastOne } from "../require/RequireAtLeastOne";
+interface EmailMetadataBase {
+    from?: string;
     cc?: string[];
     bcc?: string[];
     recipients: string[];
@@ -9,16 +11,21 @@ export interface EmailMetadata {
     template?: string;
     language?: string;
     messageId?: string;
-    headers: {
+    headers?: {
         references?: string;
         inReplyTo?: string;
         messageId?: string;
     };
     locals?: Record<string, any>;
-    attachments?: FileMetadata[];
+    fileMetadata?: FileMetadata[];
+    json?: any[];
+    csv?: CsvMetadata[];
     links?: {
         text: string;
+        description?: string;
         url: string;
         queryParams: Record<string, string>;
     }[];
 }
+export declare type EmailMetadata = RequireAtLeastOne<EmailMetadataBase, 'body' | 'template'>;
+export {};
