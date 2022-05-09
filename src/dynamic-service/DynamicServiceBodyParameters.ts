@@ -3,7 +3,8 @@ import { FileMetadata } from "..";
 import { RepositoryItem } from "..";
 import { RepositoryFile } from "..";
 import { PipelineToken } from "..";
-import { CsvMetadata } from "../csv";
+import { CsvMetadata } from "..";
+import { EmailMetadata } from "..";
 
 export interface DynamicServiceBodyParameters {
   status: string;
@@ -19,6 +20,7 @@ export interface DynamicServiceBodyParameters {
   jsonFromParent: Record<string, any>[];
   jsonDeleted?: Record<string, any>[];
   tokensFromParent: PipelineToken[];
+  emailFromParent: EmailMetadata[];
 
   entriesFromParent: any[];
   category: any;

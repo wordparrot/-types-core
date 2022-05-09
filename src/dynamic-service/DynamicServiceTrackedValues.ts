@@ -4,7 +4,8 @@ import { RepositoryItem } from "..";
 import { RepositoryFile } from "..";
 import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
-import { PipelineOperationFailed } from "../pipeline";
+import { PipelineOperationFailed } from "..";
+import { EmailMetadata } from "..";
 
 export interface DynamicServiceTrackedValues {
   messagesToPassOn: PipelineMessage[];
@@ -18,6 +19,7 @@ export interface DynamicServiceTrackedValues {
   jsonDeleted: Record<string, any>[];
   fileMetadataToPassOn: FileMetadata[];
   fileMetadataDeleted: FileMetadata[];
+  emailToPassOn: EmailMetadata[];
 
   filesToRepository: string[];
   itemsToRepository: string[];

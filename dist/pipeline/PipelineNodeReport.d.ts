@@ -5,12 +5,14 @@ import { RepositoryItem } from "../repository";
 import { CsvMetadata } from "../csv";
 import { FileMetadata } from "./FileMetadata";
 import { PipelineOperationFailed } from "./PipelineOperationFailed";
+import { EmailMetadata } from "./EmailMetadata";
 export interface PipelineNodeReport {
     id?: string;
     status: string;
     errorMessage?: string;
     pipelineNodeId: string;
     pipelineJobId: string;
+    provider: string;
     toPassOn: {
         messages: PipelineMessage[];
         messagesTotal: number;
@@ -18,6 +20,8 @@ export interface PipelineNodeReport {
         tokensTotal: number;
         csv: CsvMetadata[];
         csvTotal: number;
+        emailMetadata: EmailMetadata[];
+        emailTotal: number;
         fileMetadata: FileMetadata[];
         fileMetadataTotal: number;
         items: RepositoryItem[];
@@ -36,6 +40,8 @@ export interface PipelineNodeReport {
         csvToPassOnTotal: number;
         csvDeleted: CsvMetadata[];
         csvDeletedTotal: number;
+        emailMetadataToPassOn: EmailMetadata[];
+        emailMetadataToPassOnTotal: number;
         fileMetadataToPassOn: FileMetadata[];
         fileMetadataToPassOnTotal: number;
         fileMetadataDeleted: FileMetadata[];

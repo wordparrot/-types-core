@@ -1,4 +1,5 @@
 export * from './Pipeline';
+export * from './EmailMetadata';
 export * from './FileMetadata';
 export * from './PipelineFlow';
 export * from './PipelineGroup';
