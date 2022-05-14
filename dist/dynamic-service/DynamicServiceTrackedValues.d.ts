@@ -21,6 +21,6 @@ export interface DynamicServiceTrackedValues {
     filesToRepository: string[];
     itemsToRepository: string[];
     csvToRepository: string[];
-    policy?: DynamicServiceOutputPolicy;
+    policy?: Partial<DynamicServiceOutputPolicy>;
     operationsFailed: PipelineOperationFailed[];
 }
