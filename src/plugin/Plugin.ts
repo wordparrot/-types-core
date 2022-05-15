@@ -5,6 +5,7 @@ import {
   ListenerFormConfiguration,
   WebhookFormConfiguration,
 } from "..";
+import { Blueprint } from "..";
 
 export interface Plugin extends HubPlugin {
   id: string;
@@ -16,6 +17,7 @@ export interface Plugin extends HubPlugin {
   credentialLogo?: string;
   webhookLogo?: string;
 
+  blueprints?: Blueprint[];
   actions: ActionFormConfiguration[];
   credentials: CredentialFormConfiguration[];
   listeners: ListenerFormConfiguration[];
