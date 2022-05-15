@@ -5,5 +5,5 @@ export interface BlueprintRequirement {
     author: string;
     version: string;
     previousVersion: string;
-    message: 'update' | 'install' | 'ok';
+    message: "update" | "install" | "ok";
 }
