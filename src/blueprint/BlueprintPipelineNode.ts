@@ -6,7 +6,7 @@ export interface BlueprintPipelineNode {
   title: string;
   content: string;
 
-  initialValues: PipelineNode;
+  initialValues: Partial<PipelineNode>;
   validationSchema?: ActionValidationSchemaItem[];
   fields?: ActionFieldItem[];
 

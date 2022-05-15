@@ -8,6 +8,6 @@ export interface Blueprint {
 
   pipelineGroupTitle?: string;
 
-  plugins: BlueprintPlugin[];
+  dependencies?: BlueprintPlugin[];
   pipelines: BlueprintPipeline[];
 }

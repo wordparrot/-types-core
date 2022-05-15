@@ -5,6 +5,6 @@ export interface Blueprint {
     content: string;
     author: string;
     pipelineGroupTitle?: string;
-    plugins: BlueprintPlugin[];
+    dependencies?: BlueprintPlugin[];
     pipelines: BlueprintPipeline[];
 }

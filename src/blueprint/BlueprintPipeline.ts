@@ -5,6 +5,6 @@ export interface BlueprintPipeline {
   title: string;
   content: string;
 
-  initialValues: Pipeline;
+  initialValues: Partial<Pipeline>;
   nodes: BlueprintPipelineNode[];
 }
