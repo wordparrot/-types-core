@@ -18,3 +18,4 @@ __exportStar(require("./Blueprint"), exports);
 __exportStar(require("./BlueprintPipeline"), exports);
 __exportStar(require("./BlueprintPipelineNode"), exports);
 __exportStar(require("./BlueprintPlugin"), exports);
+__exportStar(require("./BlueprintRequirement"), exports);
