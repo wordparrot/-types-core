@@ -6,5 +6,6 @@ export declare type SandboxLib = {
     _: any;
     qs: any;
     FormData: any;
+    crypto?: any;
     FileUtility: ConstructableWithConfig<FileUtilityConfig, FileUtility>;
 };
