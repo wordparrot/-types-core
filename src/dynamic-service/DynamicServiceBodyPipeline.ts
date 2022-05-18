@@ -1,5 +1,6 @@
 import { PipelineNode } from "..";
 import { PipelineRedis } from "..";
+import { DataStore } from "..";
 
 export interface DynamicServiceBodyPipeline {
   pipelineId: string;
@@ -7,4 +8,5 @@ export interface DynamicServiceBodyPipeline {
   pipelineNodeId: string;
   pipelineNode: PipelineNode;
   pipelineRedis?: PipelineRedis;
+  dataStore?: DataStore;
 }
