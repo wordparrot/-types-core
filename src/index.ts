@@ -5,7 +5,7 @@ export * from "./csv";
 export * from "./csv-report";
 export * from "./credential";
 export * from "./dashboard";
-export * from "./data-backup";
+export * from "./data-store";
 export * from "./dynamic-service";
 export * from "./entry";
 export * from "./featured-group";

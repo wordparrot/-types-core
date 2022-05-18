@@ -3,8 +3,8 @@ export interface DataStoreSaved {
     id: string;
     filename: string;
     data: any;
-    DataStore: DataStore;
-    DataStoreId: string;
+    dataStore: DataStore;
+    dataStoreId: string;
     createdAt: string;
     updatedAt: string;
 }

@@ -21,7 +21,7 @@ __exportStar(require("./csv"), exports);
 __exportStar(require("./csv-report"), exports);
 __exportStar(require("./credential"), exports);
 __exportStar(require("./dashboard"), exports);
-__exportStar(require("./data-backup"), exports);
+__exportStar(require("./data-store"), exports);
 __exportStar(require("./dynamic-service"), exports);
 __exportStar(require("./entry"), exports);
 __exportStar(require("./featured-group"), exports);

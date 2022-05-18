@@ -1,8 +1,8 @@
-import { DataBackupSaved } from ".";
+import { DataStoreSaved } from ".";
 import { PipelineNode } from "..";
 import { Repository } from "..";
 
-export interface DataBackup {
+export interface DataStore {
   id: string;
   title: string;
   content: string;
@@ -13,7 +13,7 @@ export interface DataBackup {
   version: string;
   saveBackups: boolean;
 
-  saved: DataBackupSaved[];
+  saved: DataStoreSaved[];
   pipelineNodes: PipelineNode[];
   repositories: Repository[];
 

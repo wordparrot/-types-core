@@ -9,7 +9,7 @@ import { Entry } from "..";
 import { JsonTransformation } from "..";
 import { Csv } from "..";
 import { CsvReport } from "..";
-import { DataBackup } from "..";
+import { DataStore } from "..";
 export interface PipelineNode {
     id: string;
     title: string;
@@ -58,8 +58,8 @@ export interface PipelineNode {
     csvId: string;
     csvReport: CsvReport;
     csvReportId: string;
-    dataBackup: DataBackup;
-    dataBackupId: string;
+    dataStore: DataStore;
+    dataStoreId: string;
     category: Category;
     subcategory: Subcategory;
     featuredGroup: FeaturedGroup;

@@ -4,10 +4,9 @@ export interface ActionFieldItem {
   value: string;
   label: string;
   type?: string;
-  options?: {
-    value: string;
-    label: string;
-  }[];
+  options?:
+    | ActionFieldOption[]
+    | ((field: ActionFieldItem, props: any) => ActionFieldOption[]);
   link?: {
     text: string;
     href: string;
@@ -25,4 +24,12 @@ export interface ActionFieldItem {
     schema: any;
     uiSchema?: any;
   };
+}
+
+export interface ActionFieldOption {
+  value: string | boolean;
+  label: string;
+  name?: string;
+  avatar?: string;
+  alt?: string;
 }
