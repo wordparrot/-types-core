@@ -20,4 +20,8 @@ export interface ActionFieldItem {
     multiple?: boolean;
     self?: boolean;
     forPlatform?: string[];
+    jsonSchemaForm?: {
+        schema: any;
+        uiSchema?: any;
+    };
 }
