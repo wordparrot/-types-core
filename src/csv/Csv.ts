@@ -18,6 +18,7 @@ export interface Csv {
   rowKeyY: number;
   secondaryRowKey: string;
 
+  throwUnidentifiedRowError: boolean;
   range: string;
   pageName: string;
 

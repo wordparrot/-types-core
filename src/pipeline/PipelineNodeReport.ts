@@ -56,9 +56,9 @@ export interface PipelineNodeReport {
     itemsToPassOnTotal: number;
     itemsDeleted: RepositoryItem[];
     itemsDeletedTotal: number;
-    jsonToPassOn: Record<string, any>[];
+    jsonToPassOn: any[];
     jsonToPassOnTotal: number;
-    jsonDeleted: Record<string, any>[];
+    jsonDeleted: any[];
     jsonDeletedTotal: number;
 
     operationsFailed: PipelineOperationFailed[];
@@ -74,6 +74,18 @@ export interface PipelineNodeReport {
     csv: string[];
     csvTotal: number;
   };
+
+  byProvider: Record<
+    string,
+    {
+      csv?: CsvMetadata[];
+      fileMetadata?: FileMetadata[];
+      items?: RepositoryItem[];
+      json?: any[];
+      tokens?: PipelineToken[];
+      entries?: any[];
+    }
+  >;
 
   pipelineNode?: PipelineNode;
   pipelineJob?: PipelineJob;

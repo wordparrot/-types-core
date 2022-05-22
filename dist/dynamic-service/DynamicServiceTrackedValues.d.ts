@@ -16,8 +16,8 @@ export interface DynamicServiceTrackedValues {
     fileMetadataDeleted: FileMetadata[];
     itemsToPassOn: RepositoryItem[];
     itemsDeleted: RepositoryItem[];
-    jsonToPassOn: Record<string, any>[];
-    jsonDeleted: Record<string, any>[];
+    jsonToPassOn: any[];
+    jsonDeleted: any[];
     filesToRepository: string[];
     itemsToRepository: string[];
     csvToRepository: string[];
