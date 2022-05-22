@@ -25,6 +25,7 @@ export interface DynamicServiceBodyParameters {
   byProvider?: Record<
     string,
     {
+      messages?: PipelineMessage[];
       csv?: CsvMetadata[];
       fileMetadata?: FileMetadata[];
       items?: RepositoryItem[];

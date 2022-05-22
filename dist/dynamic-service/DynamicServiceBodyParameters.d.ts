@@ -19,6 +19,7 @@ export interface DynamicServiceBodyParameters {
     jsonDeleted?: any[];
     tokensFromParent: PipelineToken[];
     byProvider?: Record<string, {
+        messages?: PipelineMessage[];
         csv?: CsvMetadata[];
         fileMetadata?: FileMetadata[];
         items?: RepositoryItem[];
