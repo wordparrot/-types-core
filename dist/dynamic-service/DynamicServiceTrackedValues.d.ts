@@ -6,6 +6,7 @@ import { CsvMetadata } from "..";
 import { PipelineOperationFailed } from "..";
 import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
+import { DynamicServiceBodyByProvider } from ".";
 export interface DynamicServiceTrackedValues {
     messagesToPassOn: PipelineMessage[];
     tokensToPassOn: PipelineToken[];
@@ -21,6 +22,7 @@ export interface DynamicServiceTrackedValues {
     filesToRepository: string[];
     itemsToRepository: string[];
     csvToRepository: string[];
+    byProvider?: DynamicServiceBodyByProvider;
     policy?: Partial<DynamicServiceOutputPolicy>;
     operationsFailed: PipelineOperationFailed[];
 }

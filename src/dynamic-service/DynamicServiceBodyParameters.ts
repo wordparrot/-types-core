@@ -5,6 +5,7 @@ import { RepositoryFile } from "..";
 import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
+import { DynamicServiceBodyByProvider } from ".";
 
 export interface DynamicServiceBodyParameters {
   status: string;
@@ -22,18 +23,7 @@ export interface DynamicServiceBodyParameters {
   jsonDeleted?: any[];
   tokensFromParent: PipelineToken[];
 
-  byProvider?: Record<
-    string,
-    {
-      messages?: PipelineMessage[];
-      csv?: CsvMetadata[];
-      fileMetadata?: FileMetadata[];
-      items?: RepositoryItem[];
-      json?: any[];
-      tokens?: PipelineToken[];
-      entries?: any[];
-    }
-  >;
+  byProvider?: DynamicServiceBodyByProvider;
 
   entriesFromParent: any[];
   category: any;
