@@ -9,6 +9,7 @@ export interface Webhook {
 
   siteId: string;
   pipelines: string[];
+  credentialId?: string;
 
   createdAt: string;
   updatedAt: string;
