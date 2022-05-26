@@ -24,8 +24,7 @@ export interface Pipeline {
     site?: Site;
     user?: User;
     roles?: Role[];
-    upstreamPipelines?: Pipeline[];
-    downstreamPipelines?: Pipeline[];
+    upstreamPipelineNodes?: PipelineNode[];
     featuredThreadPreferences?: FeaturedThreadPreference[];
     listeners?: Listener[];
     webhooks?: Webhook[];

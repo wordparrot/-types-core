@@ -76,6 +76,7 @@ export interface PipelineNode {
     childNodes: PipelineNode[];
     conditions: PipelineNodeCondition[];
     entries: Entry[];
+    downstreamPipelines?: Pipeline[];
     createdAt: string;
     updatedAt: string;
 }

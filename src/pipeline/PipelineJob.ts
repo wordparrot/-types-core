@@ -5,11 +5,9 @@ import { Pipeline, PipelineNodeReport, PipelineFlow } from ".";
 export interface PipelineJob {
   id: string;
   status: string;
+  linkedRedisKey: string | null;
 
   pipeline: Pipeline;
-  upstreamPipelineJob: PipelineJob;
-  downstreamPipelines: Pipeline[];
-  downstreamPipelineJobs: PipelineJob[];
   repositoryItems: RepositoryItem[];
   pipelineFlows: PipelineFlow[];
   pipelineNodeReports: PipelineNodeReport[];

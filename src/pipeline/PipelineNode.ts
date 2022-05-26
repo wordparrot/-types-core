@@ -80,6 +80,8 @@ export interface PipelineNode {
   conditions: PipelineNodeCondition[];
   entries: Entry[];
 
+  downstreamPipelines?: Pipeline[];
+
   createdAt: string;
   updatedAt: string;
 }
