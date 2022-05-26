@@ -7,9 +7,7 @@ export interface PipelineRedis {
     featuredGroupId: string;
     featuredThreadId: string;
     featuredThreadReleaseId: string;
-    linkedPipelineJobId?: string;
     linkedRedisKey?: string;
-    linkedPipelineNodeIds?: string[];
     timeToRun: number;
     currentIndex: number;
     pipelinesByLevel?: string[];
