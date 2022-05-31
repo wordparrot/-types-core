@@ -8,7 +8,7 @@ export * from "./PipelineMessage";
 export * from "./PipelineNode";
 export * from "./PipelineNodeCondition";
 export * from "./PipelineNodeReport";
-export * from './Prompt';
+export * from "./Prompt";
 export * from "./PipelineOperationFailed";
 export * from "./PipelineOperationFailedData";
 export * from "./PipelineRedis";

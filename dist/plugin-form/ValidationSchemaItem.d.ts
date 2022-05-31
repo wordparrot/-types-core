@@ -1,7 +1,7 @@
 export interface ValidationSchemaItem {
     property: string;
     type: string;
-    requirement: 'required' | 'optional' | true | false;
+    requirement: "required" | "optional" | true | false;
     of?: ValidationSchemaItem[] | ValidationSchemaItem;
     nullable?: boolean;
     min?: number;
