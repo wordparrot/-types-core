@@ -4,10 +4,12 @@ import { ListenerFormConfiguration } from ".";
 import { FormConfigurationUsingActionForm } from ".";
 import { WebhookFormConfiguration } from ".";
 import { Blueprint } from "../blueprint";
+import { PromptFormConfiguration } from '.';
 export interface PluginFormConfiguration {
     actions: ActionFormConfiguration[];
     credentials?: (CredentialFormConfiguration | FormConfigurationUsingActionForm)[];
     listeners?: (ListenerFormConfiguration | FormConfigurationUsingActionForm)[];
     webhooks?: (WebhookFormConfiguration | FormConfigurationUsingActionForm)[];
     blueprints?: Blueprint[];
+    prompts?: PromptFormConfiguration[];
 }

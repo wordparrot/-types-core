@@ -1,8 +1,8 @@
-export * from './ActionFieldItem';
-export * from './ActionFieldPrerequisite';
+export * from './FieldItem';
+export * from './FieldPrerequisite';
 export * from './ActionFormConfiguration';
-export * from './ActionInitialValues';
-export * from './ActionValidationSchemaItem';
+export * from './InitialValues';
+export * from './ValidationSchemaItem';
 export * from './BaseFormConfiguration';
 export * from './CredentialFormConfiguration';
 export * from './CredentialInitialValues';
@@ -14,3 +14,4 @@ export * from './PluginJsonConfiguration';
 export * from './PluginTranslationConfiguration';
 export * from './WebhookFormConfiguration';
 export * from './WebhookInitialValues';
+export * from './PromptFormConfiguration';

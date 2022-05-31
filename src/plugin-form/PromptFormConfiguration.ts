@@ -4,7 +4,7 @@ import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 
-export interface ListenerFormConfiguration extends BaseFormConfiguration {
+export interface PromptFormConfiguration extends BaseFormConfiguration {
   initialValues: InitialValues;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];

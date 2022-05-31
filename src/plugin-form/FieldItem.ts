@@ -1,17 +1,15 @@
-import { ActionFieldPrerequisite } from ".";
+import { FieldPrerequisite } from ".";
 
-export interface ActionFieldItem {
+export interface FieldItem {
   value: string;
   label: string;
   type?: string;
-  options?:
-    | ActionFieldOption[]
-    | ((field: ActionFieldItem, props: any) => ActionFieldOption[]);
+  options?: FieldOption[] | ((field: FieldItem, props: any) => FieldOption[]);
   link?: {
     text: string;
     href: string;
   };
-  prerequisites?: ActionFieldPrerequisite[];
+  prerequisites?: FieldPrerequisite[];
   category?: string;
   fromPropertyLabel?: string;
   transformValueLabel?: string;
@@ -26,7 +24,7 @@ export interface ActionFieldItem {
   };
 }
 
-export interface ActionFieldOption {
+export interface FieldOption {
   value: string | boolean;
   label: string;
   name?: string;

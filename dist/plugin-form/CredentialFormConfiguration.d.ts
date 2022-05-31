@@ -1,12 +1,12 @@
 import { BaseFormConfiguration } from ".";
 import { CredentialInitialValues } from ".";
-import { ActionValidationSchemaItem } from ".";
-import { ActionFieldItem } from ".";
+import { ValidationSchemaItem } from ".";
+import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 export interface CredentialFormConfiguration extends BaseFormConfiguration {
     initialValues: CredentialInitialValues;
-    validationSchema: ActionValidationSchemaItem[];
-    fields: ActionFieldItem[];
+    validationSchema: ValidationSchemaItem[];
+    fields: FieldItem[];
     test?: {
         name: string;
         description: string;

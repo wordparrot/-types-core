@@ -1,7 +1,7 @@
 import { BaseFormConfiguration } from ".";
 import { WebhookInitialValues } from ".";
-import { ActionValidationSchemaItem } from ".";
-import { ActionFieldItem } from ".";
+import { ValidationSchemaItem } from ".";
+import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 
 export type WebhookMethod =
@@ -15,8 +15,8 @@ export type WebhookMethod =
 
 export interface WebhookFormConfiguration extends BaseFormConfiguration {
   initialValues: WebhookInitialValues;
-  validationSchema: ActionValidationSchemaItem[];
-  fields: ActionFieldItem[];
+  validationSchema: ValidationSchemaItem[];
+  fields: FieldItem[];
   methods: WebhookMethod[];
   test?: {
     name: string;

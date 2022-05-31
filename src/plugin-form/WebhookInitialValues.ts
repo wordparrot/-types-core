@@ -1,7 +1,7 @@
-import { ActionInitialValues, WebhookMethod } from ".";
+import { InitialValues, WebhookMethod } from ".";
 
-export interface WebhookInitialValues extends ActionInitialValues {
-    active: boolean
-    route: string
-    methods: WebhookMethod[]
+export interface WebhookInitialValues extends InitialValues {
+  active: boolean;
+  route: string;
+  methods: WebhookMethod[];
 }

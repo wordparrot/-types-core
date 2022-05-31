@@ -1,16 +1,16 @@
 import { BaseFormConfiguration } from ".";
-import { ActionInitialValues } from ".";
-import { ActionValidationSchemaItem } from ".";
-import { ActionFieldItem } from ".";
+import { InitialValues } from ".";
+import { ValidationSchemaItem } from ".";
+import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 export interface ActionFormConfiguration extends BaseFormConfiguration {
-    initialValues: ActionInitialValues;
-    validationSchema: ActionValidationSchemaItem[];
-    fields: ActionFieldItem[];
+    initialValues: InitialValues;
+    validationSchema: ValidationSchemaItem[];
+    fields: FieldItem[];
     test?: {
         name: string;
         description: string;
-        initialValues: ActionInitialValues;
+        initialValues: InitialValues;
         parameters?: DynamicServiceBodyParameters;
     }[];
 }
