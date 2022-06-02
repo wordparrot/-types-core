@@ -1,8 +1,6 @@
 export interface ProgressVisual {
   id: string;
-  type: string;
   status: string;
-  order: number;
 
   upstreamPipelineId: string;
   pipelineId: string;
@@ -11,7 +9,6 @@ export interface ProgressVisual {
   pipelineJobId: string;
 
   upstreamPipelineNodeId: string;
-  parentPipelineNodeId: string;
   pipelineNodeId: string;
 
   createdAt: string;

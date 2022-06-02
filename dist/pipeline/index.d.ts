@@ -13,4 +13,4 @@ export * from "./PipelineOperationFailed";
 export * from "./PipelineOperationFailedData";
 export * from "./PipelineRedis";
 export * from "./PipelineToken";
-export * from './ProgressVisual';
+export * from "./ProgressVisual";
