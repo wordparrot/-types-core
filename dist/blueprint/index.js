@@ -15,6 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Blueprint"), exports);
+__exportStar(require("./BlueprintInstallation"), exports);
 __exportStar(require("./BlueprintPipeline"), exports);
 __exportStar(require("./BlueprintPipelineNode"), exports);
 __exportStar(require("./BlueprintPlugin"), exports);
