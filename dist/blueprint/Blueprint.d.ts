@@ -5,7 +5,10 @@ import { Webhook } from "..";
 export interface Blueprint {
     title: string;
     content: string;
-    author: string;
+    author?: string;
+    name?: string;
+    version?: string;
+    logo?: string;
     pipelineGroupTitle?: string;
     dependencies?: BlueprintPlugin[];
     pipelines: BlueprintPipeline[];

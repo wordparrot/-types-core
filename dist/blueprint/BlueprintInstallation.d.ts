@@ -1,10 +1,10 @@
 import { Pipeline } from "../pipeline";
-import { Webhook } from '../webhook';
-import { Listener } from '../listener';
+import { Webhook } from "../webhook";
+import { Listener } from "../listener";
 export interface BlueprintInstallation {
     id: string;
-    blueprintTitle: string;
-    plugin: string;
+    title: string;
+    name: string;
     author: string;
     version: string;
     status: string;
