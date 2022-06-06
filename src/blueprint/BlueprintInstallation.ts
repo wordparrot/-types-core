@@ -10,11 +10,7 @@ export interface BlueprintInstallation {
   version: string;
 
   status: string;
-  data: {
-    pipelines?: Pipeline[];
-    listeners?: Listener[];
-    webhooks?: Webhook[];
-  };
+  data: any;
 
   createdAt: string;
   updatedAt: string;

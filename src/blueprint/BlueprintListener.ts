@@ -1,12 +1,15 @@
 import { ValidationSchemaItem } from "..";
 import { FieldItem } from "..";
 import { Listener } from "..";
+import { InitialValues } from "..";
 
 export interface BlueprintListener {
   title: string;
   content: string;
 
-  initialValues: Partial<Listener>;
+  initialValues: InitialValues;
   validationSchema?: ValidationSchemaItem[];
   fields?: FieldItem[];
+
+  downstreamPipelines?: string[];
 }
