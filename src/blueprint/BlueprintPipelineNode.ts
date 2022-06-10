@@ -8,8 +8,8 @@ export interface BlueprintPipelineNode {
   content: string;
 
   initialValues: InitialValues;
-  validationSchema?: ValidationSchemaItem[];
   fields?: FieldItem[];
+  validationSchema?: ValidationSchemaItem[];
 
   parentNodeTitle: string | null;
   downstreamPipelines?: string[];

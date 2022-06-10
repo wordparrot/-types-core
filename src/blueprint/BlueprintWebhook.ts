@@ -8,8 +8,8 @@ export interface BlueprintWebhook {
   content: string;
 
   initialValues: WebhookInitialValues;
-  validationSchema?: ValidationSchemaItem[];
   fields?: FieldItem[];
+  validationSchema?: ValidationSchemaItem[];
 
   downstreamPipelines?: string[];
 }

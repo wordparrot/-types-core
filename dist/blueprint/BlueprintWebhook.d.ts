@@ -5,7 +5,7 @@ export interface BlueprintWebhook {
     title: string;
     content: string;
     initialValues: WebhookInitialValues;
-    validationSchema?: ValidationSchemaItem[];
     fields?: FieldItem[];
+    validationSchema?: ValidationSchemaItem[];
     downstreamPipelines?: string[];
 }

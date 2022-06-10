@@ -8,8 +8,8 @@ export interface BlueprintListener {
   content: string;
 
   initialValues: InitialValues;
-  validationSchema?: ValidationSchemaItem[];
   fields?: FieldItem[];
+  validationSchema?: ValidationSchemaItem[];
 
   downstreamPipelines?: string[];
 }
