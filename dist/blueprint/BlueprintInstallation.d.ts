@@ -16,19 +16,19 @@ export interface FormDataInnerValue {
 }
 export interface FormDataItem {
     title: string;
-    type: 'pipeline';
+    type: "pipeline";
     inner: Record<string, FormDataInnerValue>;
     allReady: boolean;
 }
 export interface WebhookFormDataItem {
     title: string;
-    type: 'webhook';
+    type: "webhook";
     values: any;
     isValid: boolean;
 }
 export interface ListenerFormDataItem {
     title: string;
-    type: 'listener';
+    type: "listener";
     values: any;
     isValid: boolean;
 }
@@ -50,7 +50,11 @@ export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
 export declare type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
 export interface BlueprintInstallationToSave {
     blueprintInstallationId: string;
-    pipelines: FormDataMap;
-    webhooks: WebhookFormDataMap;
-    listeners: ListenerFormDataMap;
+    blueprintTitle: string;
+    hubPluginId?: string;
+    data: {
+        pipelines: FormDataMap;
+        webhooks: WebhookFormDataMap;
+        listeners: ListenerFormDataMap;
+    };
 }

@@ -67,7 +67,11 @@ export type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
 
 export interface BlueprintInstallationToSave {
   blueprintInstallationId: string;
-  pipelines: FormDataMap;
-  webhooks: WebhookFormDataMap;
-  listeners: ListenerFormDataMap;
+  blueprintTitle: string;
+  hubPluginId?: string;
+  data: {
+    pipelines: FormDataMap;
+    webhooks: WebhookFormDataMap;
+    listeners: ListenerFormDataMap;
+  };
 }
