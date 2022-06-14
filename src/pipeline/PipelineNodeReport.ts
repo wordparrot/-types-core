@@ -7,6 +7,7 @@ import { CsvMetadata } from "../csv";
 import { FileMetadata } from "./FileMetadata";
 import { PipelineOperationFailed } from "./PipelineOperationFailed";
 import { EmailMetadata } from "./EmailMetadata";
+import { Prompt } from "../prompt";
 
 export interface PipelineNodeReport {
   id?: string;
@@ -32,6 +33,8 @@ export interface PipelineNodeReport {
     itemsTotal: number;
     json: Record<string, any>[];
     jsonTotal: number;
+    prompts: Prompt[];
+    promptsTotal: number;
 
     operationsFailed: PipelineOperationFailed[];
     operationsFailedTotal: number;
@@ -60,6 +63,8 @@ export interface PipelineNodeReport {
     jsonToPassOnTotal: number;
     jsonDeleted: any[];
     jsonDeletedTotal: number;
+    promptsToPassOn: Prompt[];
+    promptsToPassOnTotal: number;
 
     operationsFailed: PipelineOperationFailed[];
     operationsFailedTotal: number;
@@ -84,6 +89,7 @@ export interface PipelineNodeReport {
       json?: any[];
       tokens?: PipelineToken[];
       entries?: any[];
+      prompts?: Prompt[];
     }
   >;
 

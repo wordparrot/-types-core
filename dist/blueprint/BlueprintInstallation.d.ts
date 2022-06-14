@@ -34,6 +34,7 @@ export interface ListenerFormDataItem {
 }
 export interface FormDataItemToChange {
     title: string;
+    nodeTitle: string;
     index: number;
     innerValue: FormDataInnerValue;
     allReady: boolean;

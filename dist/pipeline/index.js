@@ -24,7 +24,6 @@ __exportStar(require("./PipelineMessage"), exports);
 __exportStar(require("./PipelineNode"), exports);
 __exportStar(require("./PipelineNodeCondition"), exports);
 __exportStar(require("./PipelineNodeReport"), exports);
-__exportStar(require("./Prompt"), exports);
 __exportStar(require("./PipelineOperationFailed"), exports);
 __exportStar(require("./PipelineOperationFailedData"), exports);
 __exportStar(require("./PipelineRedis"), exports);

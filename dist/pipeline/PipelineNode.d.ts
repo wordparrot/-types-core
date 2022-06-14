@@ -10,6 +10,7 @@ import { JsonTransformation } from "..";
 import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
+import { Prompt } from '..';
 export interface PipelineNode {
     id: string;
     title: string;
@@ -56,6 +57,8 @@ export interface PipelineNode {
     pipelineId: string;
     csv: Csv;
     csvId: string;
+    prompt: Prompt;
+    promptId: string;
     csvReport: CsvReport;
     csvReportId: string;
     dataStore: DataStore;

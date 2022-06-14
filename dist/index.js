@@ -32,6 +32,7 @@ __exportStar(require("./pipeline"), exports);
 __exportStar(require("./plugin"), exports);
 __exportStar(require("./plugin-form"), exports);
 __exportStar(require("./plugin-module"), exports);
+__exportStar(require("./prompt"), exports);
 __exportStar(require("./repository"), exports);
 __exportStar(require("./role"), exports);
 __exportStar(require("./sandbox"), exports);
