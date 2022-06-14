@@ -5,6 +5,7 @@ import { User } from "..";
 import { Role } from "..";
 import { FeaturedThreadPreference } from "..";
 import { Webhook } from "..";
+import { Prompt } from "..";
 
 export interface Pipeline {
   id: string | null;
@@ -27,6 +28,7 @@ export interface Pipeline {
   user?: User;
   roles?: Role[];
   upstreamPipelineNodes?: PipelineNode[];
+  upstreamPrompts?: Prompt[];
   featuredThreadPreferences?: FeaturedThreadPreference[];
   listeners?: Listener[];
   webhooks?: Webhook[];

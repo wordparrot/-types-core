@@ -8,6 +8,7 @@ import { PipelineOperationFailed } from "..";
 import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
 import { DynamicServiceBodyByProvider } from ".";
+import { Prompt } from "..";
 
 export interface DynamicServiceTrackedValues {
   messagesToPassOn: PipelineMessage[];
@@ -22,6 +23,7 @@ export interface DynamicServiceTrackedValues {
   itemsDeleted: RepositoryItem[];
   jsonToPassOn: any[];
   jsonDeleted: any[];
+  promptsToPassOn: Prompt[];
 
   filesToRepository: string[];
   itemsToRepository: string[];

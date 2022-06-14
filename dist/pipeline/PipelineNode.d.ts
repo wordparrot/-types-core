@@ -10,7 +10,7 @@ import { JsonTransformation } from "..";
 import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
-import { Prompt } from '..';
+import { Prompt } from "..";
 export interface PipelineNode {
     id: string;
     title: string;

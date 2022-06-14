@@ -14,7 +14,7 @@ export interface Prompt {
 
   values: Record<string, any>;
 
-  defaultRecipients: Record<string, PromptRecipient>;
+  defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];
   instances: PromptInstance[];
 

@@ -1,13 +1,15 @@
 import { PipelineNode } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
+import { Prompt } from '.';
 export interface PromptInstance {
     id: string;
-    promptId: string;
     status: string;
     passEvent: boolean;
-    recipients: Record<string, PromptRecipient>;
+    recipients: PromptRecipient[];
     data: any;
+    prompt: Prompt;
+    promptId: string;
     dataStoreId: string;
     dataStore: DataStore;
     pipelineNodeId: string;

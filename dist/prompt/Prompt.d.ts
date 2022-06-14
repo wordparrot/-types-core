@@ -9,7 +9,7 @@ export interface Prompt {
     type: string;
     requireAllRecipients: boolean;
     values: Record<string, any>;
-    defaultRecipients: Record<string, PromptRecipient>;
+    defaultRecipients: PromptRecipient[];
     downstreamPipelines: Pipeline[];
     instances: PromptInstance[];
     createdAt: string;
