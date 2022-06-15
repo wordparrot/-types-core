@@ -5,7 +5,7 @@ import { User } from "..";
 import { Role } from "..";
 import { FeaturedThreadPreference } from "..";
 import { Webhook } from "..";
-import { Prompt } from '..';
+import { Prompt } from "..";
 export interface Pipeline {
     id: string | null;
     title: string;

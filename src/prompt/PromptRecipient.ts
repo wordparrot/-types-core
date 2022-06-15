@@ -1,4 +1,4 @@
-import { FileMetadata } from "..";
+import { FileMetadata, Csv } from "..";
 
 export interface PromptRecipient {
   id: string;
@@ -7,6 +7,8 @@ export interface PromptRecipient {
 
   data: any;
   fileMetadata: FileMetadata[];
+  csv: Csv[];
+  json: any[];
 
   userId: string;
 

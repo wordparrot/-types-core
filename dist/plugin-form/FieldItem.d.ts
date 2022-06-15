@@ -21,6 +21,7 @@ export interface FieldItem {
         schema: any;
         uiSchema?: any;
     };
+    hiddenFields?: FieldItem[];
 }
 export interface FieldOption {
     value: string | boolean;

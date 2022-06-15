@@ -7,8 +7,14 @@ export interface Prompt {
     content: string;
     provider: string;
     type: string;
+    requireAuth: boolean;
     requireAllRecipients: boolean;
-    values: Record<string, any>;
+    viewAfterSubmit: boolean;
+    includeCsv: boolean;
+    includeFiles: boolean;
+    includeJSON: boolean;
+    schema: any;
+    uiSchema: any;
     defaultRecipients: PromptRecipient[];
     downstreamPipelines: Pipeline[];
     instances: PromptInstance[];

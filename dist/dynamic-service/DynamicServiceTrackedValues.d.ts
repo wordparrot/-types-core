@@ -7,7 +7,7 @@ import { PipelineOperationFailed } from "..";
 import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
 import { DynamicServiceBodyByProvider } from ".";
-import { Prompt } from '..';
+import { Prompt } from "..";
 export interface DynamicServiceTrackedValues {
     messagesToPassOn: PipelineMessage[];
     tokensToPassOn: PipelineToken[];

@@ -1,7 +1,7 @@
 import { PipelineNode } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
-import { Prompt } from '.';
+import { Prompt } from ".";
 export interface PromptInstance {
     id: string;
     status: string;
