@@ -2,8 +2,9 @@ import { Pipeline, PipelineNode } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { PromptInstance } from ".";
+import { PromptInstanceOptions } from ".";
 
-export interface Prompt {
+export interface Prompt extends PromptInstanceOptions {
   id: string;
   title: string;
   content: string;
@@ -11,16 +12,9 @@ export interface Prompt {
   provider: string;
   type: string;
 
-  requireAuth: boolean;
-  requireAllRecipients: boolean;
-  viewAfterSubmit: boolean;
-
   includeCsv: boolean;
   includeFiles: boolean;
   includeJSON: boolean;
-
-  schema: any;
-  uiSchema: any;
 
   defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];

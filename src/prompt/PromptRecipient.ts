@@ -2,7 +2,6 @@ import { FileMetadata, Csv } from "..";
 
 export interface PromptRecipient {
   id: string;
-  email: string;
   status: string;
 
   data: any;
@@ -10,6 +9,7 @@ export interface PromptRecipient {
   csv: Csv[];
   json: any[];
 
+  email: string;
   userId: string;
 
   createdAt: string;

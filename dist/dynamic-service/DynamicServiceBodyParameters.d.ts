@@ -4,7 +4,7 @@ import { RepositoryItem } from "..";
 import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
-import { Prompt } from '..';
+import { Prompt } from "..";
 import { DynamicServiceBodyByProvider } from ".";
 export interface DynamicServiceBodyParameters {
     status: string;

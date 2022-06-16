@@ -1,20 +1,16 @@
 import { Pipeline } from "..";
 import { PromptRecipient } from ".";
 import { PromptInstance } from ".";
-export interface Prompt {
+import { PromptInstanceOptions } from ".";
+export interface Prompt extends PromptInstanceOptions {
     id: string;
     title: string;
     content: string;
     provider: string;
     type: string;
-    requireAuth: boolean;
-    requireAllRecipients: boolean;
-    viewAfterSubmit: boolean;
     includeCsv: boolean;
     includeFiles: boolean;
     includeJSON: boolean;
-    schema: any;
-    uiSchema: any;
     defaultRecipients: PromptRecipient[];
     downstreamPipelines: Pipeline[];
     instances: PromptInstance[];
