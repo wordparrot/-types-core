@@ -2,7 +2,7 @@ import { Pipeline, PipelineNode, PipelineGroup } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { Prompt } from ".";
-import { FileMetadata, Csv } from "..";
+import { FileMetadata, Csv, RepositoryFile } from "..";
 import { PromptInstanceOptions } from ".";
 
 export interface PromptInstance extends PromptInstanceOptions {
@@ -11,22 +11,19 @@ export interface PromptInstance extends PromptInstanceOptions {
   passEvent: boolean;
 
   fileMetadata: FileMetadata[];
-  csv: Csv[];
   json: any[];
-  data: any;
 
   enableDownloads: boolean;
   enableUploads: boolean;
 
-  recipients: PromptRecipient[];
   prompt: Prompt;
   promptId: string;
-  dataStoreId: string;
-  dataStore: DataStore;
-  pipelineNodeId: string;
-  pipelineNode: PipelineNode;
-  pipelineGroupId: string;
-  pipelineGroup: PipelineGroup;
+
+  pipelineNodes: PipelineNode[];
+  recipients: PromptRecipient[];
+  dataStores: DataStore[];
+  files: RepositoryFile[];
+  csv: Csv[];
 
   passedEventAt: string;
   createdAt: string;

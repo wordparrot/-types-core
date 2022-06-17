@@ -1,6 +1,7 @@
 import { DataStoreSaved } from ".";
 import { PipelineNode } from "..";
 import { Repository } from "..";
+import { Prompt, PromptInstance } from "..";
 
 export interface DataStore {
   id: string;
@@ -16,6 +17,8 @@ export interface DataStore {
   saved: DataStoreSaved[];
   pipelineNodes: PipelineNode[];
   repositories: Repository[];
+  prompts: Prompt[];
+  promptInstances: PromptInstance[];
 
   createdAt: string;
   updatedAt: string;

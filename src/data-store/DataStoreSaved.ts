@@ -1,4 +1,5 @@
 import { DataStore } from ".";
+import { PromptRecipient } from "../prompt";
 
 export interface DataStoreSaved {
   id: string;
@@ -7,6 +8,9 @@ export interface DataStoreSaved {
 
   dataStore: DataStore;
   dataStoreId: string;
+
+  promptRecipient: PromptRecipient;
+  promptRecipientId: string;
 
   createdAt: string;
   updatedAt: string;

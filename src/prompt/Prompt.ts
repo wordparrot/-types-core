@@ -1,8 +1,9 @@
-import { Pipeline, PipelineNode } from "..";
+import { Pipeline, PipelineNode, PipelineGroup } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { PromptInstance } from ".";
 import { PromptInstanceOptions } from ".";
+import { Csv, RepositoryFile } from "..";
 
 export interface Prompt extends PromptInstanceOptions {
   id: string;
@@ -24,6 +25,12 @@ export interface Prompt extends PromptInstanceOptions {
   downstreamPipelines: Pipeline[];
   pipelineNodes: PipelineNode[];
   instances: PromptInstance[];
+  dataStores: DataStore[];
+  files: RepositoryFile[];
+  csv: Csv[];
+
+  pipelineGroupId: string;
+  pipelineGroup: PipelineGroup;
 
   createdAt: string;
   updatedAt: string;
