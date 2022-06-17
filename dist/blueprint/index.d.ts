@@ -4,5 +4,6 @@ export * from "./BlueprintListener";
 export * from "./BlueprintPipeline";
 export * from "./BlueprintPipelineNode";
 export * from "./BlueprintPlugin";
+export * from './BlueprintPrompt';
 export * from "./BlueprintRequirement";
 export * from "./BlueprintWebhook";

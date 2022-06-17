@@ -16,8 +16,13 @@ export interface Prompt extends PromptInstanceOptions {
   includeFiles: boolean;
   includeJSON: boolean;
 
+  enableDownloads: boolean;
+  enableUploads: boolean;
+  issueDuplicates: boolean;
+
   defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];
+  upstreamPipelineNodes: PipelineNode[];
   instances: PromptInstance[];
 
   createdAt: string;

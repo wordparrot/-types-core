@@ -2,6 +2,7 @@ import { BlueprintPipeline } from "..";
 import { BlueprintPlugin } from "..";
 import { BlueprintListener } from "..";
 import { BlueprintWebhook } from "..";
+import { BlueprintPrompt } from "..";
 
 export interface Blueprint {
   title: string;
@@ -17,4 +18,5 @@ export interface Blueprint {
   pipelines: BlueprintPipeline[];
   listeners?: BlueprintListener[];
   webhooks?: BlueprintWebhook[];
+  prompts?: BlueprintPrompt[];
 }

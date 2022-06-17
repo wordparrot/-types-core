@@ -31,3 +31,4 @@ __exportStar(require("./PluginTranslationConfiguration"), exports);
 __exportStar(require("./WebhookFormConfiguration"), exports);
 __exportStar(require("./WebhookInitialValues"), exports);
 __exportStar(require("./PromptFormConfiguration"), exports);
+__exportStar(require("./PromptInitialValues"), exports);

@@ -15,3 +15,4 @@ export * from "./PluginTranslationConfiguration";
 export * from "./WebhookFormConfiguration";
 export * from "./WebhookInitialValues";
 export * from "./PromptFormConfiguration";
+export * from './PromptInitialValues';

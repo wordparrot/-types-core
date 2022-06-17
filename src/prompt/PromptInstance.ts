@@ -1,4 +1,4 @@
-import { Pipeline, PipelineNode } from "..";
+import { Pipeline, PipelineNode, PipelineGroup } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { Prompt } from ".";
@@ -15,6 +15,9 @@ export interface PromptInstance extends PromptInstanceOptions {
   json: any[];
   data: any;
 
+  enableDownloads: boolean;
+  enableUploads: boolean;
+
   recipients: PromptRecipient[];
   prompt: Prompt;
   promptId: string;
@@ -22,6 +25,8 @@ export interface PromptInstance extends PromptInstanceOptions {
   dataStore: DataStore;
   pipelineNodeId: string;
   pipelineNode: PipelineNode;
+  pipelineGroupId: string;
+  pipelineGroup: PipelineGroup;
 
   passedEventAt: string;
   createdAt: string;
