@@ -16,7 +16,7 @@ export interface Prompt extends PromptInstanceOptions {
     issueDuplicates: boolean;
     defaultRecipients: PromptRecipient[];
     downstreamPipelines: Pipeline[];
-    upstreamPipelineNodes: PipelineNode[];
+    pipelineNodes: PipelineNode[];
     instances: PromptInstance[];
     createdAt: string;
     updatedAt: string;

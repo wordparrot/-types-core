@@ -22,7 +22,7 @@ export interface Prompt extends PromptInstanceOptions {
 
   defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];
-  upstreamPipelineNodes: PipelineNode[];
+  pipelineNodes: PipelineNode[];
   instances: PromptInstance[];
 
   createdAt: string;
