@@ -18,3 +18,4 @@ __exportStar(require("./Prompt"), exports);
 __exportStar(require("./PromptInstance"), exports);
 __exportStar(require("./PromptInstanceOptions"), exports);
 __exportStar(require("./PromptRecipient"), exports);
+__exportStar(require("./PromptToPassOn"), exports);
