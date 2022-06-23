@@ -17,7 +17,7 @@ export interface Prompt extends PromptInstanceOptions {
 
   enableDownloads: boolean;
   enableUploads: boolean;
-  issueDuplicates: boolean;
+  publicInstances: boolean;
 
   defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];

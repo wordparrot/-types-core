@@ -13,7 +13,7 @@ export interface Prompt extends PromptInstanceOptions {
     delay: number;
     enableDownloads: boolean;
     enableUploads: boolean;
-    issueDuplicates: boolean;
+    publicInstances: boolean;
     defaultRecipients: PromptRecipient[];
     downstreamPipelines: Pipeline[];
     pipelineNodes: PipelineNode[];

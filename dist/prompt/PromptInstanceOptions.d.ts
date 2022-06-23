@@ -1,7 +1,9 @@
 export interface PromptInstanceOptions {
     urlName: string;
+    token: string;
     requireAuth: boolean;
-    requireAllRecipients: boolean;
+    restrictedRecipients: boolean;
+    requireAllResponses: boolean;
     viewAfterSubmit: boolean;
     schema: any;
     uiSchema: any;
