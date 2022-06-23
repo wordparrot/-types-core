@@ -62,7 +62,7 @@ class FileUtility {
     getMetadata() {
         var _a;
         if (!this.predefinedPath && !this.filePath) {
-            throw new Error('File Utility getMetadata(): no path available for file source.');
+            throw new Error("File Utility getMetadata(): no path available for file source.");
         }
         return {
             uniqId: (_a = this.uniqId) !== null && _a !== void 0 ? _a : `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,

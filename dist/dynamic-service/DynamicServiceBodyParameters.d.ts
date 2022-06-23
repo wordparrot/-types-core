@@ -4,7 +4,7 @@ import { RepositoryItem } from "..";
 import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
-import { Prompt } from "..";
+import { PromptToPassOn } from "..";
 import { DynamicServiceBodyByProvider } from ".";
 export interface DynamicServiceBodyParameters {
     status: string;
@@ -20,7 +20,7 @@ export interface DynamicServiceBodyParameters {
     jsonFromParent: any[];
     jsonDeleted?: any[];
     tokensFromParent: PipelineToken[];
-    promptsFromParent: Prompt[];
+    promptsFromParent: PromptToPassOn[];
     byProvider?: DynamicServiceBodyByProvider;
     entriesFromParent: any[];
     category: any;
