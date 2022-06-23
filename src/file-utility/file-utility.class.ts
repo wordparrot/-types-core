@@ -8,7 +8,7 @@ import {
   unlink,
   writeFile,
 } from "fs";
-import { isInteger } from "lodash";
+import { isInteger, throttle } from "lodash";
 import { promisify } from "util";
 
 import { FileOperation } from "..";
@@ -32,6 +32,7 @@ export interface FileUtilityConfig {
   encoding?: WriteFileOptions;
   repositoryId?: string;
   repositoryFileId?: string;
+  predefinedPath?: string;
   parentRepositoryItem?: {
     nodeUniqId: string;
     uniqId: string;
@@ -49,6 +50,7 @@ export class FileUtility {
   repositoryId: string;
   repositoryFileId: string;
   uniqId: string;
+  predefinedPath: string;
   parentRepositoryItem?: {
     nodeUniqId: string;
     uniqId: string;
@@ -72,6 +74,7 @@ export class FileUtility {
     this.repositoryId = config.repositoryId;
     this.repositoryFileId = config.repositoryFileId;
     this.parentRepositoryItem = config.parentRepositoryItem;
+    this.predefinedPath = config.predefinedPath;
   }
 
   get jobPath(): string {
@@ -104,12 +107,35 @@ export class FileUtility {
     return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`;
   }
 
+  getMetadata(): FileMetadata {
+    if (!this.predefinedPath && !this.filePath) {
+      throw new Error(
+        "File Utility getMetadata(): no path available for file source."
+      );
+    }
+    return {
+      uniqId:
+        this.uniqId ??
+        `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
+      filename: this.filename,
+      path: this.predefinedPath || this.filePath,
+      type: getExtension(this.filename),
+      mimeType: this.mimeType,
+      encoding: this.encoding,
+      pipelineJobId: this.pipelineJobId,
+      pipelineNodeId: this.pipelineNodeId,
+      repositoryId: this.repositoryId,
+      repositoryFileId: this.repositoryFileId,
+      parentRepositoryItem: this.parentRepositoryItem,
+    };
+  }
+
   async saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata> {
     await this.createNodeTempFolders();
     await this.writeToTempFolder(encoding || this.encoding);
     return {
       uniqId:
-        this.uniqId ||
+        this.uniqId ??
         `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
       filename: this.filename,
       path: this.filePath,

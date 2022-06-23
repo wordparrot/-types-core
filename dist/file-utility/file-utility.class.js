@@ -36,6 +36,7 @@ class FileUtility {
         this.repositoryId = config.repositoryId;
         this.repositoryFileId = config.repositoryFileId;
         this.parentRepositoryItem = config.parentRepositoryItem;
+        this.predefinedPath = config.predefinedPath;
     }
     get jobPath() {
         return `${this.tempFolder}/${this.pipelineJobId}`;
@@ -58,13 +59,32 @@ class FileUtility {
         }
         return `${this.repositoriesFolder}/${this.repositoryId}/${this.filename}`;
     }
+    getMetadata() {
+        var _a;
+        if (!this.predefinedPath && !this.filePath) {
+            throw new Error('File Utility getMetadata(): no path available for file source.');
+        }
+        return {
+            uniqId: (_a = this.uniqId) !== null && _a !== void 0 ? _a : `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
+            filename: this.filename,
+            path: this.predefinedPath || this.filePath,
+            type: (0, __1.getExtension)(this.filename),
+            mimeType: this.mimeType,
+            encoding: this.encoding,
+            pipelineJobId: this.pipelineJobId,
+            pipelineNodeId: this.pipelineNodeId,
+            repositoryId: this.repositoryId,
+            repositoryFileId: this.repositoryFileId,
+            parentRepositoryItem: this.parentRepositoryItem,
+        };
+    }
     saveToTemp(encoding) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             yield this.createNodeTempFolders();
             yield this.writeToTempFolder(encoding || this.encoding);
             return {
-                uniqId: this.uniqId ||
-                    `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
+                uniqId: (_a = this.uniqId) !== null && _a !== void 0 ? _a : `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
                 filename: this.filename,
                 path: this.filePath,
                 type: (0, __1.getExtension)(this.filename),

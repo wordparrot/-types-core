@@ -12,6 +12,7 @@ export interface FileUtilityConfig {
     encoding?: WriteFileOptions;
     repositoryId?: string;
     repositoryFileId?: string;
+    predefinedPath?: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
         uniqId: string;
@@ -28,6 +29,7 @@ export declare class FileUtility {
     repositoryId: string;
     repositoryFileId: string;
     uniqId: string;
+    predefinedPath: string;
     parentRepositoryItem?: {
         nodeUniqId: string;
         uniqId: string;
@@ -40,6 +42,7 @@ export declare class FileUtility {
     get filePath(): string;
     get repositoriesPath(): string;
     get repositoriesFilePath(): string;
+    getMetadata(): FileMetadata;
     saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata>;
     private createNodeTempFolders;
     private writeToTempFolder;
