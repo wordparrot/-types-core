@@ -1,7 +1,7 @@
 import { DataStoreSaved } from ".";
 import { PipelineNode } from "..";
 import { Repository } from "..";
-import { Prompt, PromptInstance } from '..';
+import { Prompt, PromptInstance } from "..";
 export interface DataStore {
     id: string;
     title: string;

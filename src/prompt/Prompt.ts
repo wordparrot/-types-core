@@ -13,9 +13,7 @@ export interface Prompt extends PromptInstanceOptions {
   provider: string;
   type: string;
 
-  includeCsv: boolean;
-  includeFiles: boolean;
-  includeJSON: boolean;
+  delay: number;
 
   enableDownloads: boolean;
   enableUploads: boolean;

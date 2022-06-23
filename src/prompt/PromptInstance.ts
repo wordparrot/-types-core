@@ -10,9 +10,6 @@ export interface PromptInstance extends PromptInstanceOptions {
   status: string;
   passEvent: boolean;
 
-  fileMetadata: FileMetadata[];
-  json: any[];
-
   enableDownloads: boolean;
   enableUploads: boolean;
 
