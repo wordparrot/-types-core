@@ -1,5 +1,5 @@
 export * from "./Prompt";
 export * from "./PromptInstance";
-export * from "./PromptInstanceOptions";
 export * from "./PromptRecipient";
 export * from "./PromptToPassOn";
+export * from './PromptPolicy';

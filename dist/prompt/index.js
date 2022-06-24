@@ -16,6 +16,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Prompt"), exports);
 __exportStar(require("./PromptInstance"), exports);
-__exportStar(require("./PromptInstanceOptions"), exports);
 __exportStar(require("./PromptRecipient"), exports);
 __exportStar(require("./PromptToPassOn"), exports);
+__exportStar(require("./PromptPolicy"), exports);

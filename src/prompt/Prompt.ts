@@ -2,10 +2,10 @@ import { Pipeline, PipelineNode, PipelineGroup } from "..";
 import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { PromptInstance } from ".";
-import { PromptInstanceOptions } from ".";
 import { Csv, RepositoryFile } from "..";
+import { PromptPolicy } from ".";
 
-export interface Prompt extends PromptInstanceOptions {
+export interface Prompt {
   id: string;
   title: string;
   content: string;
@@ -15,9 +15,8 @@ export interface Prompt extends PromptInstanceOptions {
 
   delay: number;
 
-  enableDownloads: boolean;
-  enableUploads: boolean;
-  publicInstances: boolean;
+  policy: PromptPolicy;
+  policyId: string;
 
   defaultRecipients: PromptRecipient[];
   downstreamPipelines: Pipeline[];

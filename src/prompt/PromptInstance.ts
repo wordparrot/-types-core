@@ -3,18 +3,20 @@ import { DataStore } from "..";
 import { PromptRecipient } from ".";
 import { Prompt } from ".";
 import { FileMetadata, Csv, RepositoryFile } from "..";
-import { PromptInstanceOptions } from ".";
+import { PromptPolicy } from ".";
 
-export interface PromptInstance extends PromptInstanceOptions {
+export interface PromptInstance {
   id: string;
   status: string;
   passEvent: boolean;
 
-  enableDownloads: boolean;
-  enableUploads: boolean;
+  token: string;
 
   prompt: Prompt;
   promptId: string;
+
+  policy: PromptPolicy;
+  policyId: string;
 
   pipelineNodes: PipelineNode[];
   recipients: PromptRecipient[];

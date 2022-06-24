@@ -1,7 +1,10 @@
-export interface PromptInstanceOptions {
+export interface PromptPolicy {
+  id: string;
   urlName: string;
 
-  token: string;
+  enableDownloads: boolean;
+  enableUploads: boolean;
+  publicInstances: boolean;
   requireAuth: boolean;
   restrictedRecipients: boolean;
   requireAllResponses: boolean;
@@ -9,4 +12,7 @@ export interface PromptInstanceOptions {
 
   schema: any;
   uiSchema: any;
+
+  createdAt: string;
+  updatedAt: string;
 }
