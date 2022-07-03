@@ -28,6 +28,7 @@ class FileUtility {
         this.uniqId = config.uniqId;
         this.pipelineJobId = config.pipelineJobId;
         this.pipelineNodeId = config.pipelineNodeId;
+        this.promptRecipientId = config.promptRecipientId;
         this.filename = config.filename;
         this.buffer = config.buffer;
         this.encoding = config.encoding || "utf8";
@@ -65,7 +66,7 @@ class FileUtility {
             throw new Error("File Utility getMetadata(): no path available for file source.");
         }
         return {
-            uniqId: (_a = this.uniqId) !== null && _a !== void 0 ? _a : `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
+            uniqId: (_a = this.uniqId) !== null && _a !== void 0 ? _a : this.generateUniqueId(),
             filename: this.filename,
             path: this.predefinedPath || this.filePath,
             type: (0, __1.getExtension)(this.filename),
@@ -77,6 +78,15 @@ class FileUtility {
             repositoryFileId: this.repositoryFileId,
             parentRepositoryItem: this.parentRepositoryItem,
         };
+    }
+    generateUniqueId() {
+        if (this.pipelineJobId && this.pipelineNodeId) {
+            return `job_${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`;
+        }
+        if (this.promptRecipientId) {
+            return `recipient_${this.promptRecipientId}_${this.filename}`;
+        }
+        return `timestamp_${Date.now()}_${this.filename}`;
     }
     saveToTemp(encoding) {
         var _a;

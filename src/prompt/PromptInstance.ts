@@ -7,6 +7,8 @@ import { PromptPolicy } from ".";
 
 export interface PromptInstance {
   id: string;
+  title: string;
+  content: string;
   status: string;
   passEvent: boolean;
 

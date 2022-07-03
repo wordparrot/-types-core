@@ -5,6 +5,7 @@ import { FileMetadata } from "..";
 export interface FileUtilityConfig {
     pipelineJobId: string;
     pipelineNodeId: string;
+    promptRecipientId: string;
     filename: string;
     uniqId?: string;
     buffer?: Buffer;
@@ -21,6 +22,7 @@ export interface FileUtilityConfig {
 export declare class FileUtility {
     pipelineJobId: string;
     pipelineNodeId: string;
+    promptRecipientId: string;
     filename: string;
     buffer?: Buffer;
     mimeType?: string;
@@ -43,6 +45,7 @@ export declare class FileUtility {
     get repositoriesPath(): string;
     get repositoriesFilePath(): string;
     getMetadata(): FileMetadata;
+    private generateUniqueId;
     saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata>;
     private createNodeTempFolders;
     private writeToTempFolder;

@@ -4,6 +4,7 @@ import { PromptRecipient } from ".";
 import { PromptInstance } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
+import { User } from "..";
 
 export interface Prompt {
   id: string;
@@ -18,7 +19,7 @@ export interface Prompt {
   policy: PromptPolicy;
   policyId: string;
 
-  defaultRecipients: PromptRecipient[];
+  defaultRecipients: User[];
   downstreamPipelines: Pipeline[];
   pipelineNodes: PipelineNode[];
   instances: PromptInstance[];

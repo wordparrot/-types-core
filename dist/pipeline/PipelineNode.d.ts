@@ -59,6 +59,7 @@ export interface PipelineNode {
     csvId: string;
     prompt: Prompt;
     promptId: string;
+    promptInstanceId: string;
     csvReport: CsvReport;
     csvReportId: string;
     dataStore: DataStore;

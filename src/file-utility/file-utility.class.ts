@@ -25,6 +25,7 @@ const rmdirPromisified = promisify(rm);
 export interface FileUtilityConfig {
   pipelineJobId: string;
   pipelineNodeId: string;
+  promptRecipientId: string;
   filename: string;
   uniqId?: string;
   buffer?: Buffer;
@@ -42,6 +43,7 @@ export interface FileUtilityConfig {
 export class FileUtility {
   pipelineJobId: string;
   pipelineNodeId: string;
+  promptRecipientId: string;
   filename: string;
   buffer?: Buffer;
   mimeType?: string;
@@ -66,6 +68,7 @@ export class FileUtility {
     this.uniqId = config.uniqId;
     this.pipelineJobId = config.pipelineJobId;
     this.pipelineNodeId = config.pipelineNodeId;
+    this.promptRecipientId = config.promptRecipientId;
     this.filename = config.filename;
     this.buffer = config.buffer;
     this.encoding = config.encoding || "utf8";
@@ -114,9 +117,7 @@ export class FileUtility {
       );
     }
     return {
-      uniqId:
-        this.uniqId ??
-        `${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`,
+      uniqId: this.uniqId ?? this.generateUniqueId(),
       filename: this.filename,
       path: this.predefinedPath || this.filePath,
       type: getExtension(this.filename),
@@ -128,6 +129,16 @@ export class FileUtility {
       repositoryFileId: this.repositoryFileId,
       parentRepositoryItem: this.parentRepositoryItem,
     };
+  }
+
+  private generateUniqueId(): string {
+    if (this.pipelineJobId && this.pipelineNodeId) {
+      return `job_${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`;
+    }
+    if (this.promptRecipientId) {
+      return `recipient_${this.promptRecipientId}_${this.filename}`;
+    }
+    return `timestamp_${Date.now()}_${this.filename}`;
   }
 
   async saveToTemp(encoding?: WriteFileOptions): Promise<FileMetadata> {
