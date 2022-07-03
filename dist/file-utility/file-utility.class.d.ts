@@ -5,8 +5,8 @@ import { FileMetadata } from "..";
 export interface FileUtilityConfig {
     pipelineJobId: string;
     pipelineNodeId: string;
-    promptRecipientId: string;
     filename: string;
+    promptRecipientId?: string;
     uniqId?: string;
     buffer?: Buffer;
     mimeType?: string;
@@ -22,7 +22,6 @@ export interface FileUtilityConfig {
 export declare class FileUtility {
     pipelineJobId: string;
     pipelineNodeId: string;
-    promptRecipientId: string;
     filename: string;
     buffer?: Buffer;
     mimeType?: string;

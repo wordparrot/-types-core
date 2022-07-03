@@ -28,7 +28,6 @@ class FileUtility {
         this.uniqId = config.uniqId;
         this.pipelineJobId = config.pipelineJobId;
         this.pipelineNodeId = config.pipelineNodeId;
-        this.promptRecipientId = config.promptRecipientId;
         this.filename = config.filename;
         this.buffer = config.buffer;
         this.encoding = config.encoding || "utf8";
@@ -82,9 +81,6 @@ class FileUtility {
     generateUniqueId() {
         if (this.pipelineJobId && this.pipelineNodeId) {
             return `job_${this.pipelineJobId}_${this.pipelineNodeId}_${this.filename}`;
-        }
-        if (this.promptRecipientId) {
-            return `recipient_${this.promptRecipientId}_${this.filename}`;
         }
         return `timestamp_${Date.now()}_${this.filename}`;
     }
