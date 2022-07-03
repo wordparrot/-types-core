@@ -25,6 +25,7 @@ export interface DynamicServiceTrackedValues {
   jsonToPassOn: any[];
   jsonDeleted: any[];
   promptsToPassOn: PromptToPassOn[];
+  promptsDeleted: PromptToPassOn[];
   promptInstancesToPassOn: PromptInstance[];
 
   filesToRepository: string[];
