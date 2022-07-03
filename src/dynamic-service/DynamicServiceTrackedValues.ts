@@ -9,6 +9,7 @@ import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
 import { DynamicServiceBodyByProvider } from ".";
 import { PromptToPassOn } from "..";
+import { PromptInstance } from "..";
 
 export interface DynamicServiceTrackedValues {
   messagesToPassOn: PipelineMessage[];
@@ -24,6 +25,7 @@ export interface DynamicServiceTrackedValues {
   jsonToPassOn: any[];
   jsonDeleted: any[];
   promptsToPassOn: PromptToPassOn[];
+  promptInstancesToPassOn: PromptInstance[];
 
   filesToRepository: string[];
   itemsToRepository: string[];

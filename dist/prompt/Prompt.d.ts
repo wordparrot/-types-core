@@ -3,7 +3,7 @@ import { DataStore } from "..";
 import { PromptInstance } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
-import { User } from '..';
+import { User } from "..";
 export interface Prompt {
     id: string;
     title: string;
