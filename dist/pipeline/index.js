@@ -19,6 +19,7 @@ __exportStar(require("./EmailMetadata"), exports);
 __exportStar(require("./FileMetadata"), exports);
 __exportStar(require("./PipelineFlow"), exports);
 __exportStar(require("./PipelineGroup"), exports);
+__exportStar(require("./PipelineGroupTag"), exports);
 __exportStar(require("./PipelineJob"), exports);
 __exportStar(require("./PipelineMessage"), exports);
 __exportStar(require("./PipelineNode"), exports);
