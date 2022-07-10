@@ -7,6 +7,7 @@ import { FileMetadata } from "./FileMetadata";
 import { PipelineOperationFailed } from "./PipelineOperationFailed";
 import { EmailMetadata } from "./EmailMetadata";
 import { PromptToPassOn, PromptInstance } from "../prompt";
+import { DynamicServiceBodyContext } from "../dynamic-service";
 export interface PipelineNodeReport {
     id?: string;
     status: string;
@@ -31,6 +32,7 @@ export interface PipelineNodeReport {
         jsonTotal: number;
         prompts: PromptToPassOn[];
         promptsTotal: number;
+        context: DynamicServiceBodyContext;
         operationsFailed: PipelineOperationFailed[];
         operationsFailedTotal: number;
     };
@@ -63,6 +65,7 @@ export interface PipelineNodeReport {
         promptsDeletedTotal: number;
         promptInstancesToPassOn: PromptInstance[];
         promptInstancesToPassOnTotal: number;
+        contextToPassOn: DynamicServiceBodyContext;
         operationsFailed: PipelineOperationFailed[];
         operationsFailedTotal: number;
     };

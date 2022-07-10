@@ -8,6 +8,7 @@ export interface PromptPolicy {
     restrictedRecipients: boolean;
     requireAllResponses: boolean;
     viewAfterSubmit: boolean;
+    saveDataToContext: boolean;
     schema: any;
     uiSchema: any;
     createdAt: string;

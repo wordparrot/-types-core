@@ -6,6 +6,7 @@ import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
 import { PromptToPassOn } from "..";
 import { DynamicServiceBodyByProvider } from ".";
+import { DynamicServiceBodyContext } from ".";
 export interface DynamicServiceBodyParameters {
     status: string;
     recordReports: boolean;
@@ -21,6 +22,7 @@ export interface DynamicServiceBodyParameters {
     jsonDeleted?: any[];
     tokensFromParent: PipelineToken[];
     promptsFromParent: PromptToPassOn[];
+    context: DynamicServiceBodyContext;
     byProvider?: DynamicServiceBodyByProvider;
     entriesFromParent: any[];
     category: any;

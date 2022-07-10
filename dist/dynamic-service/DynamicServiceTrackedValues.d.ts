@@ -7,6 +7,7 @@ import { PipelineOperationFailed } from "..";
 import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
 import { DynamicServiceBodyByProvider } from ".";
+import { DynamicServiceBodyContext } from ".";
 import { PromptToPassOn } from "..";
 import { PromptInstance } from "..";
 export interface DynamicServiceTrackedValues {
@@ -27,6 +28,7 @@ export interface DynamicServiceTrackedValues {
     filesToRepository: string[];
     itemsToRepository: string[];
     csvToRepository: string[];
+    contextToPassOn?: DynamicServiceBodyContext;
     byProvider?: DynamicServiceBodyByProvider;
     policy?: Partial<DynamicServiceOutputPolicy>;
     operationsFailed: PipelineOperationFailed[];
