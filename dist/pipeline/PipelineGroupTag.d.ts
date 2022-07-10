@@ -1,12 +1,14 @@
 import { PipelineGroup } from "./PipelineGroup";
-import { Pipeline } from '..';
-import { Listener } from '..';
-import { Webhook } from '..';
-import { Prompt } from '..';
+import { Pipeline } from "..";
+import { Listener } from "..";
+import { Webhook } from "..";
+import { Prompt } from "..";
 export interface PipelineGroupTag {
     id: string;
     title: string;
     content: string;
+    entityType: string;
+    entityId: string;
     orderCollection: PipelineGroupTagOrder[];
     pipelineGroup: PipelineGroup;
     pipelineGroupId: string;
@@ -18,7 +20,7 @@ export interface PipelineGroupTag {
     updatedAt: string;
 }
 export interface PipelineGroupTagOrder {
-    index: number;
+    index: string;
     type: string;
     id: string;
 }

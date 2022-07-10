@@ -8,6 +8,8 @@ export interface PipelineGroupTag {
   id: string;
   title: string;
   content: string;
+  entityType: string;
+  entityId: string;
 
   orderCollection: PipelineGroupTagOrder[];
 
@@ -24,7 +26,7 @@ export interface PipelineGroupTag {
 }
 
 export interface PipelineGroupTagOrder {
-  index: number;
+  index: string;
   type: string;
   id: string;
 }

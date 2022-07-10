@@ -3,7 +3,7 @@ export * from "./EmailMetadata";
 export * from "./FileMetadata";
 export * from "./PipelineFlow";
 export * from "./PipelineGroup";
-export * from './PipelineGroupTag';
+export * from "./PipelineGroupTag";
 export * from "./PipelineJob";
 export * from "./PipelineMessage";
 export * from "./PipelineNode";
