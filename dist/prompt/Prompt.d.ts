@@ -8,7 +8,6 @@ export interface Prompt {
     id: string;
     title: string;
     content: string;
-    successMsg: string;
     provider: string;
     type: string;
     delay: number;

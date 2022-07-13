@@ -1,6 +1,7 @@
 export interface PromptPolicy {
     id: string;
     urlName: string;
+    successMsg: string;
     enableDownloads: boolean;
     enableUploads: boolean;
     publicInstances: boolean;
