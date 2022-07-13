@@ -1,6 +1,11 @@
 import { RepositoryItem } from "..";
 import { Entry } from "..";
-import { Pipeline, PipelineNodeReport, PipelineFlow } from ".";
+import {
+  Pipeline,
+  PipelineNodeReport,
+  PipelineFlow,
+  PipelineJobSequence,
+} from ".";
 
 export interface PipelineJob {
   id: string;
@@ -12,6 +17,9 @@ export interface PipelineJob {
   pipelineFlows: PipelineFlow[];
   pipelineNodeReports: PipelineNodeReport[];
   entries: Entry[];
+
+  sequence: PipelineJobSequence;
+  pipelineJobSequenceId: string;
 
   completedAt: string;
   createdAt: string;

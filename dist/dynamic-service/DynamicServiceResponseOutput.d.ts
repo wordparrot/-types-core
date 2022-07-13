@@ -1,9 +1,9 @@
 import { BroadcastToFeaturedGroup } from "..";
 import { BroadcastToFeaturedThread } from "..";
 import { PushNotificationToFeaturedThread } from "..";
-import { Entry } from '..';
+import { Entry } from "..";
 import { PushNotificationToFeaturedGroup } from "..";
-import { DynamicServiceTrackedValues } from '..';
+import { DynamicServiceTrackedValues } from "..";
 export interface DynamicServiceResponseOutputBase extends DynamicServiceTrackedValues {
     message: string;
     messageVars: Record<string, string | number>;

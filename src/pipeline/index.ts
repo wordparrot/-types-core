@@ -5,6 +5,7 @@ export * from "./PipelineFlow";
 export * from "./PipelineGroup";
 export * from "./PipelineGroupTag";
 export * from "./PipelineJob";
+export * from "./PipelineJobSequence";
 export * from "./PipelineMessage";
 export * from "./PipelineNode";
 export * from "./PipelineNodeCondition";

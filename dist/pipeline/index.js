@@ -21,6 +21,7 @@ __exportStar(require("./PipelineFlow"), exports);
 __exportStar(require("./PipelineGroup"), exports);
 __exportStar(require("./PipelineGroupTag"), exports);
 __exportStar(require("./PipelineJob"), exports);
+__exportStar(require("./PipelineJobSequence"), exports);
 __exportStar(require("./PipelineMessage"), exports);
 __exportStar(require("./PipelineNode"), exports);
 __exportStar(require("./PipelineNodeCondition"), exports);

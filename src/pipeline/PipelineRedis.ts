@@ -7,6 +7,7 @@ export interface PipelineRedis {
   featuredGroupId: string;
   featuredThreadId: string;
   featuredThreadReleaseId: string;
+  pipelineJobSequenceId: string;
   linkedRedisKey?: string;
   progressVisualMap?: Record<string, string>;
   timeToRun: number;
