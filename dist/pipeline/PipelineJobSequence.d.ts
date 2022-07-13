@@ -1,12 +1,12 @@
 import { PipelineJob } from ".";
 import { Listener } from "../listener";
-import { Prompt } from "../prompt";
+import { PromptInstance } from "../prompt";
 import { Webhook } from "../webhook";
 export interface PipelineJobSequence {
     id: string;
     status: string;
-    prompt: Prompt;
-    promptId: string;
+    promptInstance: PromptInstance;
+    promptInstanceId: string;
     listener: Listener;
     listenerId: string;
     webhook: Webhook;
