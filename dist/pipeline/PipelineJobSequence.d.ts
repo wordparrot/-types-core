@@ -5,6 +5,7 @@ import { Webhook } from "../webhook";
 export interface PipelineJobSequence {
     id: string;
     status: string;
+    delay: number;
     promptInstance: PromptInstance;
     promptInstanceId: string;
     listener: Listener;

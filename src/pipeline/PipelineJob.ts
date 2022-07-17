@@ -20,6 +20,8 @@ export interface PipelineJob {
 
   sequence: PipelineJobSequence;
   pipelineJobSequenceId: string;
+  upstreamPipelineJob: PipelineJob;
+  upstreamPipelineJobId: string;
 
   completedAt: string;
   createdAt: string;

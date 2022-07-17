@@ -12,6 +12,8 @@ export interface PipelineJob {
     entries: Entry[];
     sequence: PipelineJobSequence;
     pipelineJobSequenceId: string;
+    upstreamPipelineJob: PipelineJob;
+    upstreamPipelineJobId: string;
     completedAt: string;
     createdAt: string;
     updatedAt: string;
