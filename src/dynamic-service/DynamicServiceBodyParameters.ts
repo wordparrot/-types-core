@@ -6,7 +6,6 @@ import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
 import { PromptToPassOn } from "..";
-import { DynamicServiceBodyByProvider } from ".";
 import { DynamicServiceBodyContext } from ".";
 
 export interface DynamicServiceBodyParameters {
