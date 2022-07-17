@@ -7,7 +7,6 @@ import { CsvMetadata } from "..";
 import { PipelineOperationFailed } from "..";
 import { EmailMetadata } from "..";
 import { DynamicServiceOutputPolicy } from "..";
-import { DynamicServiceBodyByProvider } from ".";
 import { DynamicServiceBodyContext } from ".";
 import { PromptToPassOn } from "..";
 import { PromptInstance } from "..";
@@ -34,7 +33,6 @@ export interface DynamicServiceTrackedValues {
   csvToRepository: string[];
 
   contextToPassOn?: DynamicServiceBodyContext;
-  byProvider?: DynamicServiceBodyByProvider;
   policy?: Partial<DynamicServiceOutputPolicy>;
 
   operationsFailed: PipelineOperationFailed[];

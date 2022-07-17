@@ -5,7 +5,6 @@ import { PipelineToken } from "..";
 import { CsvMetadata } from "..";
 import { EmailMetadata } from "..";
 import { PromptToPassOn } from "..";
-import { DynamicServiceBodyByProvider } from ".";
 import { DynamicServiceBodyContext } from ".";
 export interface DynamicServiceBodyParameters {
     status: string;
@@ -23,7 +22,6 @@ export interface DynamicServiceBodyParameters {
     tokensFromParent: PipelineToken[];
     promptsFromParent: PromptToPassOn[];
     context: DynamicServiceBodyContext;
-    byProvider?: DynamicServiceBodyByProvider;
     entriesFromParent: any[];
     category: any;
     conditionFailedFromParent: string[];

@@ -89,19 +89,6 @@ export interface PipelineNodeReport {
     csvTotal: number;
   };
 
-  byProvider: Record<
-    string,
-    {
-      csv?: CsvMetadata[];
-      fileMetadata?: FileMetadata[];
-      items?: RepositoryItem[];
-      json?: any[];
-      tokens?: PipelineToken[];
-      entries?: any[];
-      prompts?: PromptToPassOn[];
-    }
-  >;
-
   pipelineNode?: PipelineNode;
   pipelineJob?: PipelineJob;
 

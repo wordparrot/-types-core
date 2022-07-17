@@ -22,4 +22,5 @@ export interface PipelineRedis {
   upstreamDisabled: string[];
   upstreamConditionFailed: string[];
   recordReports: boolean;
+  hasDownstreamPipelines: boolean;
 }

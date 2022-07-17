@@ -27,7 +27,6 @@ export interface DynamicServiceBodyParameters {
   promptsFromParent: PromptToPassOn[];
 
   context: DynamicServiceBodyContext;
-  byProvider?: DynamicServiceBodyByProvider;
 
   entriesFromParent: any[];
   category: any;
