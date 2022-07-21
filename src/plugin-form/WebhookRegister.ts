@@ -7,6 +7,6 @@ export interface WebhookRegisterItem<T = string> {
   };
 }
 
-export type WebhookRegister = (
-  webhookRegisterItemArray: WebhookRegisterItem[]
+export type WebhookRegister<T = string> = (
+  webhookRegisterItemArray: WebhookRegisterItem<T>[]
 ) => PluginModuleWebhookFactory;

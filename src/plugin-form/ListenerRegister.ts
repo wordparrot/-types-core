@@ -7,6 +7,6 @@ export interface ListenerRegisterItem<T = string> {
   };
 }
 
-export type ListenerRegister = (
-  listenerRegisterItemArray: ListenerRegisterItem[]
+export type ListenerRegister<T = string> = (
+  listenerRegisterItemArray: ListenerRegisterItem<T>[]
 ) => PluginModuleListenerFactory;

@@ -8,6 +8,6 @@ export interface CredentialRegisterItem<T = string> {
   };
 }
 
-export type CredentialRegister = (
-  credentialRegisterItemArray: CredentialRegisterItem[]
+export type CredentialRegister<T = string> = (
+  credentialRegisterItemArray: CredentialRegisterItem<T>[]
 ) => PluginModuleCredentialFactory;
