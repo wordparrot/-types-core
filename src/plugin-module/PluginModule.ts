@@ -1,13 +1,13 @@
-import { 
-    PluginModuleActionFactory, 
-    PluginModuleCredentialFactory, 
-    PluginModuleListenerFactory,
-    PluginModuleWebhookFactory,
-} from ".";
+import {
+  ActionRegister,
+  CredentialRegister,
+  ListenerRegister,
+  WebhookRegister,
+} from "../plugin-form";
 
 export interface PluginMainModule {
-    actions: PluginModuleActionFactory
-    listeners: PluginModuleListenerFactory
-    credentials: PluginModuleCredentialFactory
-    webhooks: PluginModuleWebhookFactory
+  actions: ActionRegister;
+  listeners: ListenerRegister;
+  credentials: CredentialRegister;
+  webhooks: WebhookRegister;
 }

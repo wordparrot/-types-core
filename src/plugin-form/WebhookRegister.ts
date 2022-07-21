@@ -1,12 +1,14 @@
-import { WebhookReturnFunction, PluginModuleWebhookFactory } from "..";
+import { WebhookReturnFunction } from "..";
+
+export interface WebhookReturnMethods {
+  main: WebhookReturnFunction;
+}
 
 export interface WebhookRegisterItem<T = string> {
   provider: T;
-  methods: {
-    main: WebhookReturnFunction;
-  };
+  methods: WebhookReturnMethods;
 }
 
 export type WebhookRegister<T = string> = (
   webhookRegisterItemArray: WebhookRegisterItem<T>[]
-) => PluginModuleWebhookFactory;
+) => Record<string, WebhookReturnMethods>;

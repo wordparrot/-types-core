@@ -1,8 +1,9 @@
-import { ActionReturnFunction, PluginModuleActionFactory } from "..";
+import { ActionReturnFunction } from "..";
+export declare type ActionReturnMethods = {
+    main: ActionReturnFunction;
+};
 export interface ActionRegisterItem<T = string> {
     provider: T;
-    methods: {
-        main: ActionReturnFunction;
-    };
+    methods: ActionReturnMethods;
 }
-export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => PluginModuleActionFactory;
+export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionReturnMethods>;

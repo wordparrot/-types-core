@@ -1,12 +1,14 @@
-import { ListenerReturnFunction, PluginModuleListenerFactory } from "..";
+import { ListenerReturnFunction } from "..";
+
+export interface ListenerReturnMethods {
+  main: ListenerReturnFunction;
+}
 
 export interface ListenerRegisterItem<T = string> {
   provider: T;
-  methods: {
-    main: ListenerReturnFunction;
-  };
+  methods: ListenerReturnMethods;
 }
 
 export type ListenerRegister<T = string> = (
   listenerRegisterItemArray: ListenerRegisterItem<T>[]
-) => PluginModuleListenerFactory;
+) => Record<string, ListenerReturnMethods>;

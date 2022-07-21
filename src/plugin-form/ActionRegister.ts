@@ -1,12 +1,14 @@
-import { ActionReturnFunction, PluginModuleActionFactory } from "..";
+import { ActionReturnFunction } from "..";
+
+export type ActionReturnMethods = {
+  main: ActionReturnFunction;
+};
 
 export interface ActionRegisterItem<T = string> {
   provider: T;
-  methods: {
-    main: ActionReturnFunction;
-  };
+  methods: ActionReturnMethods;
 }
 
 export type ActionRegister = <T = string>(
   actionRegisterItemArray: ActionRegisterItem<T>[]
-) => PluginModuleActionFactory;
+) => Record<string, ActionReturnMethods>;

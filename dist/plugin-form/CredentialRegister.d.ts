@@ -1,9 +1,10 @@
-import { CredentialReturnFunction, PluginModuleCredentialFactory } from "..";
+import { CredentialReturnFunction } from "..";
+export interface CredentialReturnMethods {
+    auth: CredentialReturnFunction;
+    test: CredentialReturnFunction;
+}
 export interface CredentialRegisterItem<T = string> {
     provider: T;
-    methods: {
-        auth: CredentialReturnFunction;
-        test: CredentialReturnFunction;
-    };
+    methods: CredentialReturnMethods;
 }
-export declare type CredentialRegister<T = string> = (credentialRegisterItemArray: CredentialRegisterItem<T>[]) => PluginModuleCredentialFactory;
+export declare type CredentialRegister<T = string> = (credentialRegisterItemArray: CredentialRegisterItem<T>[]) => Record<string, CredentialReturnMethods>;
