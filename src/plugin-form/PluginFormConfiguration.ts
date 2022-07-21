@@ -6,14 +6,22 @@ import { WebhookFormConfiguration } from ".";
 import { Blueprint } from "../blueprint";
 import { PromptFormConfiguration } from ".";
 
-export interface PluginFormConfiguration {
-  actions: ActionFormConfiguration[];
+export interface PluginFormConfiguration<
+  A = string,
+  C = string,
+  L = string,
+  W = string
+> {
+  actions: ActionFormConfiguration<A>[];
   credentials?: (
-    | CredentialFormConfiguration
+    | CredentialFormConfiguration<C>
     | FormConfigurationUsingActionForm
   )[];
-  listeners?: (ListenerFormConfiguration | FormConfigurationUsingActionForm)[];
-  webhooks?: (WebhookFormConfiguration | FormConfigurationUsingActionForm)[];
+  listeners?: (
+    | ListenerFormConfiguration<L>
+    | FormConfigurationUsingActionForm
+  )[];
+  webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm)[];
   blueprints?: Blueprint[];
   prompts?: PromptFormConfiguration[];
 }
