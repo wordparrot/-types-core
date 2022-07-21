@@ -3,7 +3,7 @@ import { InitialValues } from ".";
 import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
-export interface ListenerFormConfiguration<T = string> extends BaseFormConfiguration {
+export interface ListenerFormConfiguration<T = string> extends BaseFormConfiguration<T> {
     initialValues: InitialValues<T>;
     validationSchema: ValidationSchemaItem[];
     fields: FieldItem[];

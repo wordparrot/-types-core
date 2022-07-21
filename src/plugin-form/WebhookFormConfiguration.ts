@@ -14,7 +14,7 @@ export type WebhookMethod =
   | "delete";
 
 export interface WebhookFormConfiguration<T = string>
-  extends BaseFormConfiguration {
+  extends BaseFormConfiguration<T> {
   initialValues: WebhookInitialValues<T>;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];

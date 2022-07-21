@@ -5,7 +5,7 @@ import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 
 export interface ActionFormConfiguration<T = string>
-  extends BaseFormConfiguration {
+  extends BaseFormConfiguration<T> {
   initialValues: InitialValues<T>;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];
