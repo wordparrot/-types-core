@@ -2,7 +2,10 @@ import { CredentialReturnFunction, PluginModuleCredentialFactory } from "..";
 
 export interface CredentialRegisterItem<T = string> {
   provider: T;
-  methods: CredentialReturnFunction;
+  methods: {
+    auth: CredentialReturnFunction;
+    test: CredentialReturnFunction;
+  };
 }
 
 export type CredentialRegister = (

@@ -3,11 +3,11 @@ import { FieldItem } from "..";
 import { Webhook } from "..";
 import { WebhookInitialValues } from "..";
 
-export interface BlueprintWebhook {
+export interface BlueprintWebhook<T = string> {
   title: string;
   content: string;
 
-  initialValues: WebhookInitialValues;
+  initialValues: WebhookInitialValues<T>;
   fields?: FieldItem[];
   validationSchema?: ValidationSchemaItem[];
 

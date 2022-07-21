@@ -2,7 +2,9 @@ import { ActionReturnFunction, PluginModuleActionFactory } from "..";
 
 export interface ActionRegisterItem<T = string> {
   provider: T;
-  methods: ActionReturnFunction;
+  methods: {
+    main: ActionReturnFunction;
+  };
 }
 
 export type ActionRegister = (

@@ -2,7 +2,9 @@ import { WebhookReturnFunction, PluginModuleWebhookFactory } from "..";
 
 export interface WebhookRegisterItem<T = string> {
   provider: T;
-  methods: WebhookReturnFunction;
+  methods: {
+    main: WebhookReturnFunction;
+  };
 }
 
 export type WebhookRegister = (
