@@ -9,6 +9,6 @@ export interface WebhookRegisterItem<T = string> {
   methods: WebhookReturnMethods;
 }
 
-export type WebhookRegister<T = string> = (
+export type WebhookRegister = <T = string>(
   webhookRegisterItemArray: WebhookRegisterItem<T>[]
 ) => Record<string, WebhookReturnMethods>;

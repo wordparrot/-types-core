@@ -10,6 +10,6 @@ export interface CredentialRegisterItem<T = string> {
   methods: CredentialReturnMethods;
 }
 
-export type CredentialRegister<T = string> = (
+export type CredentialRegister = <T = string>(
   credentialRegisterItemArray: CredentialRegisterItem<T>[]
 ) => Record<string, CredentialReturnMethods>;
