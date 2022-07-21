@@ -32,3 +32,7 @@ __exportStar(require("./WebhookFormConfiguration"), exports);
 __exportStar(require("./WebhookInitialValues"), exports);
 __exportStar(require("./PromptFormConfiguration"), exports);
 __exportStar(require("./PromptInitialValues"), exports);
+__exportStar(require("./ActionRegister"), exports);
+__exportStar(require("./CredentialRegister"), exports);
+__exportStar(require("./ListenerRegister"), exports);
+__exportStar(require("./WebhookRegister"), exports);

@@ -4,15 +4,15 @@ import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 export declare type WebhookMethod = "head" | "options" | "get" | "post" | "put" | "patch" | "delete";
-export interface WebhookFormConfiguration extends BaseFormConfiguration {
-    initialValues: WebhookInitialValues;
+export interface WebhookFormConfiguration<T = string> extends BaseFormConfiguration {
+    initialValues: WebhookInitialValues<T>;
     validationSchema: ValidationSchemaItem[];
     fields: FieldItem[];
     methods: WebhookMethod[];
     test?: {
         name: string;
         description: string;
-        initialValues: WebhookInitialValues;
+        initialValues: WebhookInitialValues<T>;
         parameters?: DynamicServiceBodyParameters;
         request: any;
     }[];

@@ -4,14 +4,15 @@ import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 
-export interface ListenerFormConfiguration extends BaseFormConfiguration {
-  initialValues: InitialValues;
+export interface ListenerFormConfiguration<T = string>
+  extends BaseFormConfiguration {
+  initialValues: InitialValues<T>;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];
   test?: {
     name: string;
     description: string;
-    initialValues: InitialValues;
+    initialValues: InitialValues<T>;
     parameters?: DynamicServiceBodyParameters;
   }[];
 }

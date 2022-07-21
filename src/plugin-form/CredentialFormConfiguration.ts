@@ -4,14 +4,15 @@ import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 
-export interface CredentialFormConfiguration extends BaseFormConfiguration {
-  initialValues: CredentialInitialValues;
+export interface CredentialFormConfiguration<T = string>
+  extends BaseFormConfiguration {
+  initialValues: CredentialInitialValues<T>;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];
   test?: {
     name: string;
     description: string;
-    initialValues: CredentialInitialValues;
+    initialValues: CredentialInitialValues<T>;
     parameters?: DynamicServiceBodyParameters;
   }[];
   forPlatform?: string[];

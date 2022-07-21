@@ -1,5 +1,5 @@
-export interface InitialValues extends Record<string, any> {
-  provider: string;
+export interface InitialValues<T = string> extends Record<string, any> {
+  provider: T;
   title: string;
   content: string;
   status: string;

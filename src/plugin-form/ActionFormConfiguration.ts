@@ -3,16 +3,16 @@ import { InitialValues } from ".";
 import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
-import { DynamicServiceBodyAuth } from "..";
 
-export interface ActionFormConfiguration extends BaseFormConfiguration {
-  initialValues: InitialValues;
+export interface ActionFormConfiguration<T = string>
+  extends BaseFormConfiguration {
+  initialValues: InitialValues<T>;
   validationSchema: ValidationSchemaItem[];
   fields: FieldItem[];
   test?: {
     name: string;
     description: string;
-    initialValues: InitialValues;
+    initialValues: InitialValues<T>;
     parameters?: DynamicServiceBodyParameters;
   }[];
 }
