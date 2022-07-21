@@ -5,4 +5,4 @@ export interface WebhookRegisterItem<T = string> {
         main: WebhookReturnFunction;
     };
 }
-export declare type WebhookRegister = (webhookRegisterItemArray: WebhookRegisterItem[]) => PluginModuleWebhookFactory;
+export declare type WebhookRegister<T = string> = (webhookRegisterItemArray: WebhookRegisterItem<T>[]) => PluginModuleWebhookFactory;

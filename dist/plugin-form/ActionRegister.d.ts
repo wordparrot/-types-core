@@ -5,4 +5,4 @@ export interface ActionRegisterItem<T = string> {
         main: ActionReturnFunction;
     };
 }
-export declare type ActionRegister = (actionsRegisterItemArray: ActionRegisterItem[]) => PluginModuleActionFactory;
+export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => PluginModuleActionFactory;

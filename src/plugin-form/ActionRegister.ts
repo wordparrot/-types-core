@@ -7,6 +7,6 @@ export interface ActionRegisterItem<T = string> {
   };
 }
 
-export type ActionRegister<T = string> = (
+export type ActionRegister = <T = string>(
   actionRegisterItemArray: ActionRegisterItem<T>[]
 ) => PluginModuleActionFactory;

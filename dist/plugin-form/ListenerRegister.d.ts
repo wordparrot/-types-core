@@ -5,4 +5,4 @@ export interface ListenerRegisterItem<T = string> {
         main: ListenerReturnFunction;
     };
 }
-export declare type ListenerRegister = (listenerRegisterItemArray: ListenerRegisterItem[]) => PluginModuleListenerFactory;
+export declare type ListenerRegister<T = string> = (listenerRegisterItemArray: ListenerRegisterItem<T>[]) => PluginModuleListenerFactory;

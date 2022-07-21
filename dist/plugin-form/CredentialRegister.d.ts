@@ -6,4 +6,4 @@ export interface CredentialRegisterItem<T = string> {
         test: CredentialReturnFunction;
     };
 }
-export declare type CredentialRegister = (credentialRegisterItemArray: CredentialRegisterItem[]) => PluginModuleCredentialFactory;
+export declare type CredentialRegister<T = string> = (credentialRegisterItemArray: CredentialRegisterItem<T>[]) => PluginModuleCredentialFactory;
