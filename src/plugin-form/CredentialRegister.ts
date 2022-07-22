@@ -1,7 +1,7 @@
 import { CredentialReturnFunction } from "..";
 
 export interface CredentialReturnMethods {
-  auth: CredentialReturnFunction;
+  authCallback: CredentialReturnFunction;
   test: CredentialReturnFunction;
 }
 
