@@ -4,10 +4,10 @@ import { InitialValues } from "..";
 import { FieldItem } from "..";
 import { ValidationSchemaItem } from "..";
 
-export interface BlueprintPipeline {
+export interface BlueprintPipeline<A = string> {
   title: string;
   content: string;
-  initialValues: InitialValues;
+  initialValues: InitialValues<A>;
   fields?: FieldItem[];
   validationSchema?: ValidationSchemaItem[];
   nodes: BlueprintPipelineNode[];

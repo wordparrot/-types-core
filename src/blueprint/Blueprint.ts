@@ -4,7 +4,7 @@ import { BlueprintListener } from "..";
 import { BlueprintWebhook } from "..";
 import { BlueprintPrompt } from "..";
 
-export interface Blueprint {
+export interface Blueprint<A = string, L = string, W = string> {
   title: string;
   content: string;
   author?: string;
@@ -15,8 +15,8 @@ export interface Blueprint {
   pipelineGroupTitle?: string;
 
   dependencies?: BlueprintPlugin[];
-  pipelines: BlueprintPipeline[];
-  listeners?: BlueprintListener[];
-  webhooks?: BlueprintWebhook[];
+  pipelines: BlueprintPipeline<A>[];
+  listeners?: BlueprintListener<L>[];
+  webhooks?: BlueprintWebhook<W>[];
   prompts?: BlueprintPrompt[];
 }

@@ -3,11 +3,11 @@ import { FieldItem } from "..";
 import { Listener } from "..";
 import { InitialValues } from "..";
 
-export interface BlueprintListener {
+export interface BlueprintListener<L = string> {
   title: string;
   content: string;
 
-  initialValues: InitialValues;
+  initialValues: InitialValues<L>;
   fields?: FieldItem[];
   validationSchema?: ValidationSchemaItem[];
 

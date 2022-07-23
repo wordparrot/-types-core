@@ -22,6 +22,6 @@ export interface PluginFormConfiguration<
     | FormConfigurationUsingActionForm
   )[];
   webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm)[];
-  blueprints?: Blueprint[];
+  blueprints?: Blueprint<A, L, W>[];
   prompts?: PromptFormConfiguration[];
 }

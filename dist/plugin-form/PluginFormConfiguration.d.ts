@@ -10,6 +10,6 @@ export interface PluginFormConfiguration<A = string, C = string, L = string, W =
     credentials?: (CredentialFormConfiguration<C> | FormConfigurationUsingActionForm)[];
     listeners?: (ListenerFormConfiguration<L> | FormConfigurationUsingActionForm)[];
     webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm)[];
-    blueprints?: Blueprint[];
+    blueprints?: Blueprint<A, L, W>[];
     prompts?: PromptFormConfiguration[];
 }
