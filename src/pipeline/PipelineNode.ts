@@ -58,14 +58,22 @@ export interface PipelineNode {
 
   pipeline: Pipeline;
   pipelineId: string;
+
+  linkedNode: PipelineNode;
+  linkedNodeId: string;
+
   csv: Csv;
   csvId: string;
+
   prompt: Prompt;
   promptId: string;
+
   csvReport: CsvReport;
   csvReportId: string;
+
   dataStore: DataStore;
   dataStoreId: string;
+
   category: Category;
   subcategory: Subcategory;
   featuredGroup: FeaturedGroup;

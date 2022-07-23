@@ -55,6 +55,8 @@ export interface PipelineNode {
     page: number;
     pipeline: Pipeline;
     pipelineId: string;
+    linkedNode: PipelineNode;
+    linkedNodeId: string;
     csv: Csv;
     csvId: string;
     prompt: Prompt;
