@@ -9,7 +9,7 @@ export * from "./DynamicServiceBodyPlugin";
 export * from "./DynamicServiceBodyRun";
 export * from "./DynamicServiceBodySite";
 export * from "./DynamicServiceBodyWebhook";
-export * from "./DynamicServiceHttpRequestFormat";
+export * from "./HttpRequestFormat";
 export * from "./DynamicServiceOutputPolicy";
 export * from "./DynamicServiceResponse";
 export * from "./DynamicServiceResponseAuthCallback";

@@ -25,7 +25,7 @@ __exportStar(require("./DynamicServiceBodyPlugin"), exports);
 __exportStar(require("./DynamicServiceBodyRun"), exports);
 __exportStar(require("./DynamicServiceBodySite"), exports);
 __exportStar(require("./DynamicServiceBodyWebhook"), exports);
-__exportStar(require("./DynamicServiceHttpRequestFormat"), exports);
+__exportStar(require("./HttpRequestFormat"), exports);
 __exportStar(require("./DynamicServiceOutputPolicy"), exports);
 __exportStar(require("./DynamicServiceResponse"), exports);
 __exportStar(require("./DynamicServiceResponseAuthCallback"), exports);
