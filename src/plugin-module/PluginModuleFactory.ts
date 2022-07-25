@@ -4,7 +4,6 @@ import {
   DynamicServiceResponseOutputAuthCallback,
   DynamicServiceResponseOutputListener,
   DynamicServiceResponseOutputWebhook,
-  DynamicServiceBodyWebhook,
 } from "..";
 import { SandboxLib } from "..";
 
