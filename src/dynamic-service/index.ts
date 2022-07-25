@@ -17,4 +17,3 @@ export * from "./DynamicServiceResponseListener";
 export * from "./DynamicServiceResponseOutput";
 export * from "./DynamicServiceResponseOutputWebhook";
 export * from "./DynamicServiceTrackedValues";
-export * from "./AuthCallbackStatus";

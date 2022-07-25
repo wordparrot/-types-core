@@ -1,4 +1,5 @@
-import { DynamicServiceResponseOutput, AuthCallbackStatus } from ".";
+import { DynamicServiceResponseOutput } from ".";
+import { AuthCallbackStatus } from "..";
 
 export interface DynamicServiceResponseOutputAuthCallback
   extends DynamicServiceResponseOutput {
