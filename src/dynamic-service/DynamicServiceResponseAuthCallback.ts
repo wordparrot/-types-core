@@ -1,12 +1,4 @@
-import { DynamicServiceResponseOutput } from ".";
-
-export enum DynamicServiceResponseOutputAuthCallbackStatus {
-  UNVERIFIED = "unverified",
-  VALID = "valid",
-  INVALID = "invalid",
-  EXPIRED = "expired",
-  REVOKED = "revoked",
-}
+import { DynamicServiceResponseOutput, AuthCallbackStatus } from ".";
 
 export interface DynamicServiceResponseOutputAuthCallback
   extends DynamicServiceResponseOutput {
@@ -14,5 +6,5 @@ export interface DynamicServiceResponseOutputAuthCallback
   refreshToken?: string;
   secret?: string;
   expiresAt?: string;
-  status: DynamicServiceResponseOutputAuthCallbackStatus;
+  status: AuthCallbackStatus;
 }
