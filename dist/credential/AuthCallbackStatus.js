@@ -8,4 +8,5 @@ var AuthCallbackStatus;
     AuthCallbackStatus["INVALID"] = "invalid";
     AuthCallbackStatus["EXPIRED"] = "expired";
     AuthCallbackStatus["REVOKED"] = "revoked";
+    AuthCallbackStatus["DISABLED"] = "disabled";
 })(AuthCallbackStatus = exports.AuthCallbackStatus || (exports.AuthCallbackStatus = {}));

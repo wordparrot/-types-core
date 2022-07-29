@@ -1,2 +1,2 @@
-export * from './Credential';
-export * from './AuthCallbackStatus';
+export * from "./Credential";
+export * from "./AuthCallbackStatus";

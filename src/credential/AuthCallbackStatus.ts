@@ -4,4 +4,5 @@ export enum AuthCallbackStatus {
   INVALID = "invalid",
   EXPIRED = "expired",
   REVOKED = "revoked",
+  DISABLED = "disabled",
 }
