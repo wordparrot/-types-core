@@ -7,9 +7,9 @@ import { Blueprint } from "../blueprint";
 import { PromptFormConfiguration } from ".";
 export interface PluginFormConfiguration<A = string, C = string, L = string, W = string> {
     actions: ActionFormConfiguration<A>[];
-    credentials?: (CredentialFormConfiguration<C> | FormConfigurationUsingActionForm)[];
-    listeners?: (ListenerFormConfiguration<L> | FormConfigurationUsingActionForm)[];
-    webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm)[];
+    credentials?: (CredentialFormConfiguration<C> | FormConfigurationUsingActionForm<C>)[];
+    listeners?: (ListenerFormConfiguration<L> | FormConfigurationUsingActionForm<L>)[];
+    webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm<W>)[];
     blueprints?: Blueprint<A, L, W>[];
     prompts?: PromptFormConfiguration[];
 }

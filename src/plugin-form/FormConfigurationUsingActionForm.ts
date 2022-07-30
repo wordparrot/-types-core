@@ -1,5 +1,6 @@
-import { BaseFormConfiguration } from '.'
+import { BaseFormConfiguration } from ".";
 
-export interface FormConfigurationUsingActionForm extends BaseFormConfiguration {
-    useActionProvider: string
+export interface FormConfigurationUsingActionForm<T = any>
+  extends BaseFormConfiguration<T> {
+  useActionProvider: string;
 }

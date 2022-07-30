@@ -15,13 +15,16 @@ export interface PluginFormConfiguration<
   actions: ActionFormConfiguration<A>[];
   credentials?: (
     | CredentialFormConfiguration<C>
-    | FormConfigurationUsingActionForm
+    | FormConfigurationUsingActionForm<C>
   )[];
   listeners?: (
     | ListenerFormConfiguration<L>
-    | FormConfigurationUsingActionForm
+    | FormConfigurationUsingActionForm<L>
   )[];
-  webhooks?: (WebhookFormConfiguration<W> | FormConfigurationUsingActionForm)[];
+  webhooks?: (
+    | WebhookFormConfiguration<W>
+    | FormConfigurationUsingActionForm<W>
+  )[];
   blueprints?: Blueprint<A, L, W>[];
   prompts?: PromptFormConfiguration[];
 }
