@@ -1,10 +1,6 @@
-import { Credential } from '..'
+import { Credential, BaseCredentialTerms, AuthCallbackStatus } from "..";
 
-export interface DynamicServiceBodyAuth {
-    username?: string
-    password?: string
-    accessToken?: string
-    refreshToken?: string
-    userAgent?: string
-    credential?: Credential
+export interface DynamicServiceBodyAuth extends Partial<BaseCredentialTerms> {
+  userAgent?: string;
+  credential?: Credential;
 }

@@ -1,7 +1,22 @@
 import { User } from "..";
 import { PipelineNode } from '..';
 import { EntryItem } from '..';
-export interface Credential {
+import { AuthCallbackStatus } from "..";
+export interface BaseCredentialTerms {
+    accessToken: string;
+    refreshToken: string;
+    tokenType: string;
+    authType: string;
+    tokenSecret: string;
+    timestamp: number;
+    expiresAt: string;
+    clientId: string;
+    clientSecret: string;
+    username: string;
+    password: string;
+    status: AuthCallbackStatus;
+}
+export interface Credential extends BaseCredentialTerms {
     id: string;
     title: string;
     content: string;
@@ -12,18 +27,8 @@ export interface Credential {
     url: string;
     credentialName: string;
     type: string;
-    status: string;
     providerConfig: any;
-    clientId: string;
-    clientSecret: string;
-    username: string;
-    password: string;
     apiKey: string;
-    refreshToken: string;
-    accessToken: string;
-    tokenSecret: string;
-    tokenExpiration: number;
-    tokenType: string;
     scopes: string[];
     rootFolderId: string;
     redirectURI: string;

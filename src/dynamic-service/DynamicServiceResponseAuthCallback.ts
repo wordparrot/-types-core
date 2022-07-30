@@ -1,17 +1,9 @@
 import { DynamicServiceResponseOutput } from ".";
 import { AuthCallbackStatus } from "..";
+import { BaseCredentialTerms } from "..";
 
 export interface DynamicServiceResponseOutputAuthCallback
-  extends DynamicServiceResponseOutput {
-  accessToken?: string;
-  refreshToken?: string;
-  authType?: string;
-  tokenType?: string;
+  extends Partial<BaseCredentialTerms> {
   id?: string;
-  secret?: string;
-  username?: string;
-  password?: string;
-  expiresAt?: string;
-  timestamp?: number;
   status: AuthCallbackStatus;
 }
