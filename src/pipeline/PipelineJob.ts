@@ -17,7 +17,6 @@ export enum PipelineJobOutcome {
 export interface PipelineJob {
   id: string;
   status: string;
-  outcome: PipelineJobOutcome;
   linkedRedisKey: string | null;
 
   pipeline: Pipeline;
