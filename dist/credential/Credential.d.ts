@@ -1,6 +1,6 @@
 import { User } from "..";
-import { PipelineNode } from '..';
-import { EntryItem } from '..';
+import { PipelineNode } from "..";
+import { EntryItem } from "..";
 import { AuthCallbackStatus } from "..";
 export interface BaseCredentialTerms {
     accessToken: string;

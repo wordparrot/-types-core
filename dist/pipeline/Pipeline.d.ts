@@ -18,6 +18,7 @@ export interface Pipeline {
     nextRunDate?: Date;
     status: string;
     queueStatus: string;
+    dataStatus: string;
     nodes: PipelineNode[];
     jobs?: PipelineJob[];
     pipelineGroup?: PipelineGroup;
