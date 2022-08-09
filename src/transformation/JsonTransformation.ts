@@ -1,8 +1,8 @@
 export interface JsonTransformation {
   transformType: string;
-  fromProperty: string | null;
   allProperties?: boolean;
-  transformValue: string;
-  secondaryValue?: string;
-  tertiaryValue?: string;
+  primary: string | null;
+  secondary?: string;
+  tertiary?: string;
+  quaternary?: string;
 }
