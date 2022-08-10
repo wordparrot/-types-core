@@ -12,17 +12,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class BatchManager {
     constructor(config) {
         this.resultsArray = [];
-        this.startingIndex = 0;
+        this.currentIndex = 0;
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
         this.stopOnError = config.stopOnError;
-        if (!config.handler) {
-            throw new Error("Batch Manager: handler must be provided");
+        if (!config.defaultHandler) {
+            throw new Error("Batch Manager: default handler must be provided");
         }
-        this.handler = config.handler;
-        if (config.startingIndex) {
-            this.startingIndex = config.startingIndex;
+        this.defaultHandler = config.defaultHandler;
+        if (config.currentIndex) {
+            this.currentIndex = config.currentIndex;
         }
+    }
+    load(moreBatchItems) {
+        this.batchItems = [...this.batchItems, ...moreBatchItems];
     }
     run() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -52,7 +55,7 @@ class BatchManager {
                 unsent: [],
             };
             let shortCircuitLoop = false;
-            for (let i = this.startingIndex; i < this.batchItems.length; i += this.batchSize) {
+            for (let i = this.currentIndex; i < this.batchItems.length; i += this.batchSize) {
                 const remainder = this.batchItems.length - i;
                 if (shortCircuitLoop) {
                     const unsentBatchItems = this.batchItems.slice(i);
@@ -73,7 +76,13 @@ class BatchManager {
                     try {
                         const batchResponses = yield Promise.all(requests.map((batchItem, batchIndex) => __awaiter(this, void 0, void 0, function* () {
                             try {
-                                const response = yield this.handler(batchItem);
+                                let response;
+                                if (typeof batchItem === "function") {
+                                    response = yield batchItem();
+                                }
+                                else {
+                                    response = yield this.defaultHandler(batchItem);
+                                }
                                 const batchItemResponse = {
                                     batchItem,
                                     index: i + batchIndex,
@@ -86,7 +95,7 @@ class BatchManager {
                                 const batchItemResponse = {
                                     batchItem,
                                     index: i + batchIndex,
-                                    response: (e === null || e === void 0 ? void 0 : e.message) || 'error',
+                                    response: (e === null || e === void 0 ? void 0 : e.message) || "error",
                                     success: false,
                                 };
                                 return batchItemResponse;

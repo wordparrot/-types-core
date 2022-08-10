@@ -1,3 +1,18 @@
+declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
+    private batchItems;
+    private batchSize;
+    private stopOnError;
+    private resultsArray;
+    private currentIndex;
+    private defaultHandler;
+    constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>);
+    load(moreBatchItems: BatchItem[]): void;
+    run(): Promise<BatchManagerResults<BatchItem>>;
+    private execute;
+    mostRecentResult(): BatchManagerResults<BatchItem> | null;
+    allResults(): BatchManagerResults<BatchItem>[];
+}
+export default BatchManager;
 interface BatchItemResponse<BatchItem = any> {
     index: number;
     batchItem: BatchItem;
@@ -17,20 +32,6 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
     batchItems: BatchItem[];
     batchSize: number;
     stopOnError: boolean;
-    startingIndex?: number;
-    handler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
+    currentIndex?: number;
+    defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
 }
-declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
-    private batchItems;
-    private batchSize;
-    private stopOnError;
-    private resultsArray;
-    private startingIndex;
-    private handler;
-    constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>);
-    run(): Promise<BatchManagerResults<BatchItem>>;
-    private execute;
-    mostRecentResult(): BatchManagerResults<BatchItem> | null;
-    allResults(): BatchManagerResults<BatchItem>[];
-}
-export default BatchManager;
