@@ -1,9 +1,14 @@
 class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private batchItems: BatchItem[];
+
   private batchSize: number;
+
   private stopOnError: boolean;
-  private resultsArray: BatchManagerResults[] = [];
-  private currentIndex = 0;
+
+  private resultsArray: BatchResults[] = [];
+
+  private startingIndex = 0;
+
   private defaultHandler: (batch: BatchItem) => Promise<BatchReturnValue>;
 
   constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>) {
@@ -11,13 +16,14 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
     this.batchSize = config.batchSize;
     this.stopOnError = config.stopOnError;
 
-    if (!config.defaultHandler) {
+    if (!config?.defaultHandler) {
       throw new Error("Batch Manager: default handler must be provided");
     }
+
     this.defaultHandler = config.defaultHandler;
 
-    if (config.currentIndex) {
-      this.currentIndex = config.currentIndex;
+    if (config.startingIndex && config?.startingIndex > 0) {
+      this.startingIndex = config.startingIndex;
     }
   }
 
@@ -25,7 +31,11 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
     this.batchItems = [...this.batchItems, ...moreBatchItems];
   }
 
-  async run(): Promise<BatchManagerResults<BatchItem>> {
+  setStartingIndex(index: number) {
+    this.startingIndex = index;
+  }
+
+  async run(): Promise<BatchResults<BatchItem>> {
     if (!Array.isArray(this.batchItems)) {
       throw new Error("Batch Manager: batches are not in array format");
     }
@@ -43,8 +53,8 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
     return results;
   }
 
-  private async execute(): Promise<BatchManagerResults<BatchItem>> {
-    const results: BatchManagerResults = {
+  private async execute(): Promise<BatchResults<BatchItem>> {
+    const results: BatchResults = {
       numItems: this.batchItems.length,
       totalSuccess: 0,
       totalFailed: 0,
@@ -57,7 +67,7 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
     let shortCircuitLoop = false;
 
     for (
-      let i = this.currentIndex;
+      let i = this.startingIndex;
       i < this.batchItems.length;
       i += this.batchSize
     ) {
@@ -79,8 +89,6 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
             return batchItemResponse;
           })
         );
-
-        continue;
       } else if (remainder > 0 && remainder <= this.batchItems.length) {
         const requests = this.batchItems.slice(i, i + this.batchSize);
 
@@ -104,7 +112,7 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
                 };
 
                 return batchItemResponse;
-              } catch (e) {
+              } catch (e: any) {
                 const batchItemResponse: BatchItemResponse<BatchItem> = {
                   batchItem,
                   index: i + batchIndex,
@@ -138,36 +146,34 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
         } catch (e) {
           console.log(e);
         }
-      } else {
-        break;
       }
     }
 
     return results;
   }
 
-  mostRecentResult(): BatchManagerResults<BatchItem> | null {
+  mostRecentResult(): BatchResults<BatchItem> | null {
     if (!this.resultsArray.length) {
       return null;
     }
     return this.resultsArray[this.resultsArray.length - 1];
   }
 
-  allResults(): BatchManagerResults<BatchItem>[] {
+  allResults(): BatchResults<BatchItem>[] {
     return this.resultsArray;
   }
 }
 
 export default BatchManager;
 
-interface BatchItemResponse<BatchItem = any> {
+export interface BatchItemResponse<BatchItem = any> {
   index: number;
   batchItem: BatchItem;
   response: any;
   success: boolean;
 }
 
-interface BatchManagerResults<BatchItem = any> {
+export interface BatchResults<BatchItem = any> {
   numItems: number;
   totalSuccess: number;
   totalFailed: number;
@@ -181,6 +187,6 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
   batchItems: BatchItem[];
   batchSize: number;
   stopOnError: boolean;
-  currentIndex?: number;
+  startingIndex?: number;
   defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
 }

@@ -12,31 +12,34 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class BatchManager {
     constructor(config) {
         this.resultsArray = [];
-        this.currentIndex = 0;
+        this.startingIndex = 0;
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
         this.stopOnError = config.stopOnError;
-        if (!config.defaultHandler) {
-            throw new Error("Batch Manager: default handler must be provided");
+        if (!(config === null || config === void 0 ? void 0 : config.defaultHandler)) {
+            throw new Error('Batch Manager: default handler must be provided');
         }
         this.defaultHandler = config.defaultHandler;
-        if (config.currentIndex) {
-            this.currentIndex = config.currentIndex;
+        if (config.startingIndex && (config === null || config === void 0 ? void 0 : config.startingIndex) > 0) {
+            this.startingIndex = config.startingIndex;
         }
     }
     load(moreBatchItems) {
         this.batchItems = [...this.batchItems, ...moreBatchItems];
     }
+    setStartingIndex(index) {
+        this.startingIndex = index;
+    }
     run() {
         return __awaiter(this, void 0, void 0, function* () {
             if (!Array.isArray(this.batchItems)) {
-                throw new Error("Batch Manager: batches are not in array format");
+                throw new Error('Batch Manager: batches are not in array format');
             }
             if (!this.batchItems.length) {
-                throw new Error("Batch Manager: request length is zero");
+                throw new Error('Batch Manager: request length is zero');
             }
             if (this.batchSize <= 0) {
-                throw new Error("Batch Manager: must provide valid batchSize");
+                throw new Error('Batch Manager: must provide valid batchSize');
             }
             const results = yield this.execute();
             this.resultsArray.push(results);
@@ -55,7 +58,7 @@ class BatchManager {
                 unsent: [],
             };
             let shortCircuitLoop = false;
-            for (let i = this.currentIndex; i < this.batchItems.length; i += this.batchSize) {
+            for (let i = this.startingIndex; i < this.batchItems.length; i += this.batchSize) {
                 const remainder = this.batchItems.length - i;
                 if (shortCircuitLoop) {
                     const unsentBatchItems = this.batchItems.slice(i);
@@ -69,7 +72,6 @@ class BatchManager {
                         };
                         return batchItemResponse;
                     }));
-                    continue;
                 }
                 else if (remainder > 0 && remainder <= this.batchItems.length) {
                     const requests = this.batchItems.slice(i, i + this.batchSize);
@@ -77,7 +79,7 @@ class BatchManager {
                         const batchResponses = yield Promise.all(requests.map((batchItem, batchIndex) => __awaiter(this, void 0, void 0, function* () {
                             try {
                                 let response;
-                                if (typeof batchItem === "function") {
+                                if (typeof batchItem === 'function') {
                                     response = yield batchItem();
                                 }
                                 else {
@@ -95,7 +97,7 @@ class BatchManager {
                                 const batchItemResponse = {
                                     batchItem,
                                     index: i + batchIndex,
-                                    response: (e === null || e === void 0 ? void 0 : e.message) || "error",
+                                    response: (e === null || e === void 0 ? void 0 : e.message) || 'error',
                                     success: false,
                                 };
                                 return batchItemResponse;
@@ -118,9 +120,6 @@ class BatchManager {
                     catch (e) {
                         console.log(e);
                     }
-                }
-                else {
-                    break;
                 }
             }
             return results;

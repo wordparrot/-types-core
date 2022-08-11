@@ -9,6 +9,7 @@ import { PipelineOperationFailed } from "./PipelineOperationFailed";
 import { EmailMetadata } from "./EmailMetadata";
 import { Prompt, PromptToPassOn, PromptInstance } from "../prompt";
 import { DynamicServiceBodyContext } from "../dynamic-service";
+import { BatchResults } from "../_classes/batch-manager";
 
 export interface PipelineNodeReport {
   id?: string;
@@ -74,6 +75,7 @@ export interface PipelineNodeReport {
     promptInstancesToPassOnTotal: number;
 
     contextToPassOn: DynamicServiceBodyContext;
+    batchResults: BatchResults | null;
 
     operationsFailed: PipelineOperationFailed[];
     operationsFailedTotal: number;
