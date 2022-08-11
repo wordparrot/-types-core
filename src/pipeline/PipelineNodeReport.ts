@@ -1,7 +1,6 @@
 import { PipelineNode, PipelineJob } from ".";
 import { PipelineMessage } from "./PipelineMessage";
 import { PipelineToken } from "./PipelineToken";
-import { RepositoryFile } from "../repository";
 import { RepositoryItem } from "../repository";
 import { CsvMetadata } from "../csv";
 import { FileMetadata } from "./FileMetadata";

@@ -1,3 +1,4 @@
+export * from "./_classes";
 export * from "./blueprint";
 export * from "./category";
 export * from "./constructable";
