@@ -1,4 +1,4 @@
-class BatchManager<BatchItem = any, BatchReturnValue = any> {
+export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private batchItems: BatchItem[];
 
   private batchSize: number;
@@ -163,8 +163,6 @@ class BatchManager<BatchItem = any, BatchReturnValue = any> {
     return this.resultsArray;
   }
 }
-
-export default BatchManager;
 
 export interface BatchItemResponse<BatchItem = any> {
   index: number;

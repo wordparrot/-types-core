@@ -1,4 +1,4 @@
-declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
+export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     private batchItems;
     private batchSize;
     private stopOnError;
@@ -13,7 +13,6 @@ declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     mostRecentResult(): BatchResults<BatchItem> | null;
     allResults(): BatchResults<BatchItem>[];
 }
-export default BatchManager;
 export interface BatchItemResponse<BatchItem = any> {
     index: number;
     batchItem: BatchItem;
@@ -36,3 +35,4 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
     startingIndex?: number;
     defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
 }
+export {};

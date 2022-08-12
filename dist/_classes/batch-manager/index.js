@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BatchManager = void 0;
 class BatchManager {
     constructor(config) {
         this.resultsArray = [];
@@ -135,4 +136,4 @@ class BatchManager {
         return this.resultsArray;
     }
 }
-exports.default = BatchManager;
+exports.BatchManager = BatchManager;
