@@ -1,7 +1,7 @@
 export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     private batchItems;
     private batchSize;
-    private stopOnError;
+    private stopOnFailure;
     private resultsArray;
     private startingIndex;
     private defaultHandler;
@@ -31,7 +31,7 @@ export interface BatchResults<BatchItem = any> {
 interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
     batchItems: BatchItem[];
     batchSize: number;
-    stopOnError: boolean;
+    stopOnFailure: boolean;
     startingIndex?: number;
     defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
 }

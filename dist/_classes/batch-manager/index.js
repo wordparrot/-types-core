@@ -16,7 +16,7 @@ class BatchManager {
         this.startingIndex = 0;
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
-        this.stopOnError = config.stopOnError;
+        this.stopOnFailure = config.stopOnFailure;
         if (!(config === null || config === void 0 ? void 0 : config.defaultHandler)) {
             throw new Error("Batch Manager: default handler must be provided");
         }
@@ -114,7 +114,7 @@ class BatchManager {
                             results.totalFailed += failed.length;
                             results.failed.push(failed);
                         }
-                        if (failed.length && this.stopOnError) {
+                        if (failed.length && this.stopOnFailure) {
                             shortCircuitLoop = true;
                         }
                     }
