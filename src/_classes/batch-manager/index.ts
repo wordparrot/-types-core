@@ -34,9 +34,6 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     if (!Array.isArray(this.batchItems)) {
       throw new Error("Batch Manager: batches are not in array format");
     }
-    if (!this.batchItems.length) {
-      throw new Error("Batch Manager: request length is zero");
-    }
     if (this.batchSize <= 0) {
       throw new Error("Batch Manager: must provide valid batchSize");
     }
@@ -58,6 +55,10 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
       failed: [],
       unsent: [],
     };
+
+    if (!this.batchItems.length) {
+      return results;
+    }
 
     let shortCircuitLoop = false;
 
