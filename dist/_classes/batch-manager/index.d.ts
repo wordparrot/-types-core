@@ -12,6 +12,8 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     private execute;
     mostRecentResult(): BatchResults<BatchItem> | null;
     allResults(): BatchResults<BatchItem>[];
+    getSuccessValues(batchResults?: BatchResults): BatchReturnValue[];
+    combine(batchResultsArray: BatchResults[]): BatchResults;
 }
 export interface BatchItemResponse<BatchItem = any> {
     index: number;

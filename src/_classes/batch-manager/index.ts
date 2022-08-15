@@ -158,6 +158,48 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   allResults(): BatchResults<BatchItem>[] {
     return this.resultsArray;
   }
+
+  getSuccessValues(batchResults?: BatchResults): BatchReturnValue[] {
+    if (!batchResults) {
+      const mostRecent = this.mostRecentResult();
+      return (
+        mostRecent?.success
+          ?.flat()
+          ?.map((batchResponse) => batchResponse.response) || []
+      );
+    }
+    return (
+      batchResults?.success
+        ?.flat()
+        ?.map((batchResponse) => batchResponse.response) || []
+    );
+  }
+
+  combine(batchResultsArray: BatchResults[]): BatchResults {
+    const combinedResults: BatchResults = {
+      numItems: 0,
+      totalSuccess: 0,
+      totalFailed: 0,
+      totalUnsent: 0,
+      success: [],
+      failed: [],
+      unsent: [],
+    };
+
+    return batchResultsArray.reduce((accumulator, counter) => {
+      combinedResults.numItems += counter.numItems;
+      combinedResults.totalSuccess += counter.totalSuccess;
+      combinedResults.totalFailed += counter.totalFailed;
+      combinedResults.totalUnsent += counter.totalUnsent;
+      combinedResults.success = [
+        ...combinedResults.success,
+        ...counter.success,
+      ];
+      combinedResults.failed = [...combinedResults.failed, ...counter.failed];
+      combinedResults.unsent = [...combinedResults.unsent, ...counter.unsent];
+      return accumulator;
+    }, combinedResults);
+  }
 }
 
 export interface BatchItemResponse<BatchItem = any> {
