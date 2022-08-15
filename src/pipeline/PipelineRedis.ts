@@ -25,4 +25,7 @@ export interface PipelineRedis {
   upstreamConditionFailed: string[];
   recordReports: boolean;
   hasDownstreamPipelines: boolean;
+  batchProcesses?: string[];
+  resolvedProcesses?: string[];
+  erroredProcesses?: string[];
 }

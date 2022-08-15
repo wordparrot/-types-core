@@ -7,6 +7,7 @@ export type ActionReturnMethods = {
 export interface ActionRegisterItem<T = string> {
   provider: T;
   methods: ActionReturnMethods;
+  isBatchProcess?: boolean;
 }
 
 export type ActionRegister = <T = string>(
