@@ -5,5 +5,6 @@ export declare type ActionReturnMethods = {
 export interface ActionRegisterItem<T = string> {
     provider: T;
     methods: ActionReturnMethods;
+    isBatchProcess?: boolean;
 }
 export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionReturnMethods>;

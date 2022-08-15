@@ -9,6 +9,7 @@ export * from "./PipelineJobSequence";
 export * from "./PipelineMessage";
 export * from "./PipelineNode";
 export * from "./PipelineNodeCondition";
+export * from "./PipelineNodeBatchProcess";
 export * from "./PipelineNodeReport";
 export * from "./PipelineOperationFailed";
 export * from "./PipelineOperationFailedData";

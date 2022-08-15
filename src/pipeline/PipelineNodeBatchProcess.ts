@@ -6,6 +6,7 @@ export interface PipelineNodeBatchProcess {
   batchIndex: number;
   batchState: any;
   parentNodeState: any;
+  pipelineRedis: any;
 
   pipelineJob: PipelineJob;
   pipelineJobId: string;
