@@ -4,15 +4,19 @@ export interface PipelineNodeBatchProcess {
   id: string;
   status: string;
   batchIndex: number;
-  batchState: any;
-  parentNodeState: any;
-  pipelineRedis: any;
+  batchSize: number;
 
-  pipelineJob: PipelineJob;
+  batchState: any;
+  parentTrackedValues: any;
+  pipelineRedis?: any;
+  diff?: any;
+
+  pipelineJob?: PipelineJob;
   pipelineJobId: string;
-  pipelineNode: PipelineNode;
+  pipelineNode?: PipelineNode;
   pipelineNodeId: string;
 
-  createdAt: string;
-  updatedAt: string;
+  latestBatchAt?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

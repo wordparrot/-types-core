@@ -39,12 +39,16 @@ class BatchManager {
             if (this.batchSize <= 0) {
                 throw new Error("Batch Manager: must provide valid batchSize");
             }
+            if (this.endingIndex <= this.startingIndex) {
+                throw new Error("Batch Manager: ending index must be after startingIndex");
+            }
             const results = yield this.execute();
             this.resultsArray.push(results);
             return results;
         });
     }
     execute() {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const results = {
                 numItems: this.batchItems.length,
@@ -59,7 +63,8 @@ class BatchManager {
                 return results;
             }
             let shortCircuitLoop = false;
-            for (let i = this.startingIndex; i < this.batchItems.length; i += this.batchSize) {
+            const endingIndex = (_a = this.endingIndex) !== null && _a !== void 0 ? _a : this.batchItems.length;
+            for (let i = this.startingIndex; i < endingIndex; i += this.batchSize) {
                 const remainder = this.batchItems.length - i;
                 if (shortCircuitLoop) {
                     const unsentBatchItems = this.batchItems.slice(i);
@@ -142,6 +147,13 @@ class BatchManager {
             return (((_b = (_a = mostRecent === null || mostRecent === void 0 ? void 0 : mostRecent.success) === null || _a === void 0 ? void 0 : _a.flat()) === null || _b === void 0 ? void 0 : _b.map((batchResponse) => batchResponse.response)) || []);
         }
         return (((_d = (_c = batchResults === null || batchResults === void 0 ? void 0 : batchResults.success) === null || _c === void 0 ? void 0 : _c.flat()) === null || _d === void 0 ? void 0 : _d.map((batchResponse) => batchResponse.response)) || []);
+    }
+    hasFailed() {
+        const mostRecent = this.mostRecentResult();
+        if (!mostRecent) {
+            return false;
+        }
+        return mostRecent.totalFailed > 0;
     }
     combine(batchResultsArray) {
         const combinedResults = {

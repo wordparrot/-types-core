@@ -4,6 +4,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private stopOnFailure: boolean;
   private resultsArray: BatchResults[] = [];
   private startingIndex = 0;
+  private endingIndex?: number;
   private defaultHandler: (batch: BatchItem) => Promise<BatchReturnValue>;
 
   constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>) {
@@ -37,6 +38,11 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     if (this.batchSize <= 0) {
       throw new Error("Batch Manager: must provide valid batchSize");
     }
+    if (this.endingIndex <= this.startingIndex) {
+      throw new Error(
+        "Batch Manager: ending index must be after startingIndex"
+      );
+    }
 
     const results = await this.execute();
 
@@ -62,11 +68,9 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
 
     let shortCircuitLoop = false;
 
-    for (
-      let i = this.startingIndex;
-      i < this.batchItems.length;
-      i += this.batchSize
-    ) {
+    const endingIndex = this.endingIndex ?? this.batchItems.length;
+
+    for (let i = this.startingIndex; i < endingIndex; i += this.batchSize) {
       const remainder = this.batchItems.length - i;
 
       if (shortCircuitLoop) {
@@ -173,6 +177,16 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
         ?.flat()
         ?.map((batchResponse) => batchResponse.response) || []
     );
+  }
+
+  hasFailed(): boolean {
+    const mostRecent = this.mostRecentResult();
+
+    if (!mostRecent) {
+      return false;
+    }
+
+    return mostRecent.totalFailed > 0;
   }
 
   combine(batchResultsArray: BatchResults[]): BatchResults {

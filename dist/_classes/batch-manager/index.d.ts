@@ -4,6 +4,7 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     private stopOnFailure;
     private resultsArray;
     private startingIndex;
+    private endingIndex?;
     private defaultHandler;
     constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>);
     load(moreBatchItems: BatchItem[]): void;
@@ -13,6 +14,7 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     mostRecentResult(): BatchResults<BatchItem> | null;
     allResults(): BatchResults<BatchItem>[];
     getSuccessValues(batchResults?: BatchResults): BatchReturnValue[];
+    hasFailed(): boolean;
     combine(batchResultsArray: BatchResults[]): BatchResults;
 }
 export interface BatchItemResponse<BatchItem = any> {
