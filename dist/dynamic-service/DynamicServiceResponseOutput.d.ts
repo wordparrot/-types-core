@@ -22,5 +22,6 @@ export interface DynamicServiceResponseOutputBase extends DynamicServiceTrackedV
     broadcastToFeaturedThreads: BroadcastToFeaturedThread[];
     pushNotificationToFeaturedGroups: PushNotificationToFeaturedGroup[];
     pushNotificationToFeaturedThreads: PushNotificationToFeaturedThread[];
+    isBatchProcess: boolean;
 }
 export declare type DynamicServiceResponseOutput = Partial<DynamicServiceResponseOutputBase>;

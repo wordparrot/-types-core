@@ -27,6 +27,8 @@ export interface DynamicServiceResponseOutputBase
   broadcastToFeaturedThreads: BroadcastToFeaturedThread[];
   pushNotificationToFeaturedGroups: PushNotificationToFeaturedGroup[];
   pushNotificationToFeaturedThreads: PushNotificationToFeaturedThread[];
+
+  isBatchProcess: boolean;
 }
 
 export type DynamicServiceResponseOutput =
