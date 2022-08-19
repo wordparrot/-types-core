@@ -214,6 +214,19 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
       return accumulator;
     }, combinedResults);
   }
+
+  hasFinished(batchResults?: BatchResults): boolean {
+    const results = batchResults || this.mostRecentResult();
+
+    if (!results || results.numItems === 0) {
+      return false;
+    }
+
+    return (
+      results.totalSuccess + results.totalFailed + results.totalUnsent >=
+      results.numItems
+    );
+  }
 }
 
 export interface BatchItemResponse<BatchItem = any> {

@@ -11,7 +11,7 @@ export interface PipelineNodeBatchProcess {
   id: string;
   status: string;
   batchIndex: number;
-  batchSize: number;
+  batchSize?: number;
 
   batchResults: BatchResults;
   parentTrackedValues: DynamicServiceTrackedValues;

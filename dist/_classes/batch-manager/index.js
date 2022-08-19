@@ -179,5 +179,12 @@ class BatchManager {
             return accumulator;
         }, combinedResults);
     }
+    hasFinished(batchResults) {
+        const results = batchResults || this.mostRecentResult();
+        if (!results || results.numItems === 0) {
+            return false;
+        }
+        return results.totalSuccess + results.totalFailed + results.totalUnsent >= results.numItems;
+    }
 }
 exports.BatchManager = BatchManager;
