@@ -16,7 +16,7 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     getSuccessValues(batchResults?: BatchResults): BatchReturnValue[];
     hasFailed(): boolean;
     combine(batchResultsArray: BatchResults[]): BatchResults;
-    hasFinished(batchResults?: BatchResults): boolean;
+    static hasFinished(batchResults: BatchResults): boolean;
 }
 export interface BatchItemResponse<BatchItem = any> {
     index: number;

@@ -215,8 +215,8 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     }, combinedResults);
   }
 
-  hasFinished(batchResults?: BatchResults): boolean {
-    const results = batchResults || this.mostRecentResult();
+  static hasFinished(batchResults: BatchResults): boolean {
+    const results = batchResults;
 
     if (!results || results.numItems === 0) {
       return false;
