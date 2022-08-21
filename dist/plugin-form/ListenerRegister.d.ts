@@ -1,9 +1,11 @@
 import { ListenerReturnFunction } from "..";
-export interface ListenerReturnMethods {
+export interface ListenerRegisterMethods {
     main: ListenerReturnFunction;
 }
-export interface ListenerRegisterItem<T = string> {
-    provider: T;
-    methods: ListenerReturnMethods;
+export interface ListenerRegisterValues {
+    methods: ListenerRegisterMethods;
 }
-export declare type ListenerRegister = <T = string>(listenerRegisterItemArray: ListenerRegisterItem<T>[]) => Record<string, ListenerRegisterItem<T>>;
+export interface ListenerRegisterItem<T = string> extends ListenerRegisterValues {
+    provider: T;
+}
+export declare type ListenerRegister = <T = string>(listenerRegisterItemArray: ListenerRegisterItem<T>[]) => Record<string, ListenerRegisterValues>;

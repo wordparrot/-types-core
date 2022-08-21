@@ -1,10 +1,12 @@
 import { ActionReturnFunction } from "..";
-export declare type ActionReturnMethods = {
+export declare type ActionRegisterMethods = {
     main: ActionReturnFunction;
 };
-export interface ActionRegisterItem<T = string> {
-    provider: T;
-    methods: ActionReturnMethods;
+export interface ActionRegisterValues {
+    methods: ActionRegisterMethods;
     isBatchProcess?: boolean;
 }
-export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionRegisterItem<T>>;
+export interface ActionRegisterItem<T = string> extends ActionRegisterValues {
+    provider: T;
+}
+export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionRegisterValues>;

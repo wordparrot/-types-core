@@ -1,15 +1,19 @@
 import { CredentialReturnFunction } from "..";
 
-export interface CredentialReturnMethods {
+export interface CredentialRegisterMethods {
   authCallback: CredentialReturnFunction;
   test: CredentialReturnFunction;
 }
 
-export interface CredentialRegisterItem<T = string> {
+export interface CredentialRegisterValues {
+  methods: CredentialRegisterMethods;
+}
+
+export interface CredentialRegisterItem<T = string>
+  extends CredentialRegisterValues {
   provider: T;
-  methods: CredentialReturnMethods;
 }
 
 export type CredentialRegister = <T = string>(
   credentialRegisterItemArray: CredentialRegisterItem<T>[]
-) => Record<string, CredentialRegisterItem<T>>;
+) => Record<string, CredentialRegisterValues>;

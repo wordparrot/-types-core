@@ -1,9 +1,11 @@
 import { WebhookReturnFunction } from "..";
-export interface WebhookReturnMethods {
+export interface WebhookRegisterMethods {
     main: WebhookReturnFunction;
 }
-export interface WebhookRegisterItem<T = string> {
-    provider: T;
-    methods: WebhookReturnMethods;
+export interface WebhookRegisterValues {
+    methods: WebhookRegisterMethods;
 }
-export declare type WebhookRegister = <T = string>(webhookRegisterItemArray: WebhookRegisterItem<T>[]) => Record<string, WebhookRegisterItem<T>>;
+export interface WebhookRegisterItem<T = string> extends WebhookRegisterValues {
+    provider: T;
+}
+export declare type WebhookRegister = <T = string>(webhookRegisterItemArray: WebhookRegisterItem<T>[]) => Record<string, WebhookRegisterValues>;

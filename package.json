@@ -1,6 +1,7 @@
 {
   "name": "@types/core",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "Types for the Wordparrot platform.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
