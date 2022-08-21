@@ -17,6 +17,7 @@ class BatchManager {
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
         this.stopOnFailure = config.stopOnFailure;
+        this.maxIterations = config.maxIterations;
         if (!(config === null || config === void 0 ? void 0 : config.defaultHandler)) {
             throw new Error("Batch Manager: default handler must be provided");
         }
@@ -64,8 +65,10 @@ class BatchManager {
             }
             let shortCircuitLoop = false;
             const endingIndex = (_a = this.endingIndex) !== null && _a !== void 0 ? _a : this.batchItems.length;
+            let numIterations = 0;
             for (let i = this.startingIndex; i < endingIndex; i += this.batchSize) {
                 const remainder = this.batchItems.length - i;
+                numIterations += 1;
                 if (shortCircuitLoop) {
                     const unsentBatchItems = this.batchItems.slice(i);
                     results.totalUnsent += unsentBatchItems.length;
@@ -126,6 +129,9 @@ class BatchManager {
                     catch (e) {
                         console.log(e);
                     }
+                }
+                if (numIterations >= this.maxIterations) {
+                    break;
                 }
             }
             return results;

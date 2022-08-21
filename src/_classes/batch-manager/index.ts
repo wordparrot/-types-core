@@ -5,12 +5,14 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private resultsArray: BatchResults[] = [];
   private startingIndex = 0;
   private endingIndex?: number;
+  private maxIterations?: number;
   private defaultHandler: (batch: BatchItem) => Promise<BatchReturnValue>;
 
   constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>) {
     this.batchItems = config.batchItems;
     this.batchSize = config.batchSize;
     this.stopOnFailure = config.stopOnFailure;
+    this.maxIterations = config.maxIterations;
 
     if (!config?.defaultHandler) {
       throw new Error("Batch Manager: default handler must be provided");
@@ -69,9 +71,11 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     let shortCircuitLoop = false;
 
     const endingIndex = this.endingIndex ?? this.batchItems.length;
+    let numIterations = 0;
 
     for (let i = this.startingIndex; i < endingIndex; i += this.batchSize) {
       const remainder = this.batchItems.length - i;
+      numIterations += 1;
 
       if (shortCircuitLoop) {
         const unsentBatchItems = this.batchItems.slice(i);
@@ -146,6 +150,10 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
         } catch (e) {
           console.log(e);
         }
+      }
+
+      if (numIterations >= this.maxIterations) {
+        break;
       }
     }
 
@@ -251,5 +259,6 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
   batchSize: number;
   stopOnFailure: boolean;
   startingIndex?: number;
+  maxIterations?: number;
   defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
 }
