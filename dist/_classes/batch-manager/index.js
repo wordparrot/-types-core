@@ -40,6 +40,9 @@ class BatchManager {
             if (this.batchSize <= 0) {
                 throw new Error("Batch Manager: must provide valid batchSize");
             }
+            if (this.batchItems.length < this.startingIndex) {
+                throw new Error("Batch Manager: number of items is below starting index");
+            }
             if (this.endingIndex <= this.startingIndex) {
                 throw new Error("Batch Manager: ending index must be after startingIndex");
             }
@@ -53,6 +56,7 @@ class BatchManager {
         return __awaiter(this, void 0, void 0, function* () {
             const results = {
                 numItems: this.batchItems.length,
+                batchSize: this.batchSize,
                 totalSuccess: 0,
                 totalFailed: 0,
                 totalUnsent: 0,
@@ -164,6 +168,7 @@ class BatchManager {
     combine(batchResultsArray) {
         const combinedResults = {
             numItems: 0,
+            batchSize: this.batchSize,
             totalSuccess: 0,
             totalFailed: 0,
             totalUnsent: 0,
@@ -185,10 +190,23 @@ class BatchManager {
             return accumulator;
         }, combinedResults);
     }
-    static hasFinished(batchResults) {
+    static indexExceedsItems(batchResults, index) {
+        const remainder = batchResults.numItems % batchResults.batchSize;
+        if (remainder > 0) {
+            return batchResults.numItems < batchResults.batchSize * (index + 1);
+        }
+        return batchResults.numItems < batchResults.batchSize * index;
+    }
+    static hasFinished(batchResults, index) {
         const results = batchResults;
-        if (!results || results.numItems === 0) {
-            return false;
+        if (!results) {
+            throw new Error('Batch manager: results have not been provided.');
+        }
+        if (this.indexExceedsItems(results, index)) {
+            return true;
+        }
+        if (results.numItems === 0) {
+            return true;
         }
         return (results.totalSuccess + results.totalFailed + results.totalUnsent >=
             results.numItems);

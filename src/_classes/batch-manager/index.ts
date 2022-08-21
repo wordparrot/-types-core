@@ -40,6 +40,9 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     if (this.batchSize <= 0) {
       throw new Error("Batch Manager: must provide valid batchSize");
     }
+    if (this.batchItems.length < this.startingIndex) {
+      throw new Error("Batch Manager: number of items is below starting index");
+    }
     if (this.endingIndex <= this.startingIndex) {
       throw new Error(
         "Batch Manager: ending index must be after startingIndex"
@@ -56,6 +59,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private async execute(): Promise<BatchResults<BatchItem>> {
     const results: BatchResults = {
       numItems: this.batchItems.length,
+      batchSize: this.batchSize,
       totalSuccess: 0,
       totalFailed: 0,
       totalUnsent: 0,
@@ -200,6 +204,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   combine(batchResultsArray: BatchResults[]): BatchResults {
     const combinedResults: BatchResults = {
       numItems: 0,
+      batchSize: this.batchSize,
       totalSuccess: 0,
       totalFailed: 0,
       totalUnsent: 0,
@@ -223,11 +228,29 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     }, combinedResults);
   }
 
-  static hasFinished(batchResults: BatchResults): boolean {
+  static indexExceedsItems(batchResults: BatchResults, index: number): boolean {
+    const remainder = batchResults.numItems % batchResults.batchSize;
+
+    if (remainder > 0) {
+      return batchResults.numItems < batchResults.batchSize * (index + 1);
+    }
+
+    return batchResults.numItems < batchResults.batchSize * index;
+  }
+
+  static hasFinished(batchResults: BatchResults, index: number): boolean {
     const results = batchResults;
 
-    if (!results || results.numItems === 0) {
-      return false;
+    if (!results) {
+      throw new Error("Batch manager: results have not been provided.");
+    }
+
+    if (this.indexExceedsItems(results, index)) {
+      return true;
+    }
+
+    if (results.numItems === 0) {
+      return true;
     }
 
     return (
@@ -246,6 +269,7 @@ export interface BatchItemResponse<BatchItem = any> {
 
 export interface BatchResults<BatchItem = any> {
   numItems: number;
+  batchSize: number;
   totalSuccess: number;
   totalFailed: number;
   totalUnsent: number;
