@@ -6,4 +6,4 @@ export interface ListenerRegisterItem<T = string> {
     provider: T;
     methods: ListenerReturnMethods;
 }
-export declare type ListenerRegister = <T = string>(listenerRegisterItemArray: ListenerRegisterItem<T>[]) => Record<string, ListenerReturnMethods>;
+export declare type ListenerRegister = <T = string>(listenerRegisterItemArray: ListenerRegisterItem<T>[]) => Record<string, ListenerRegisterItem<T>>;

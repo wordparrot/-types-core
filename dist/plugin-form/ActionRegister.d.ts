@@ -7,4 +7,4 @@ export interface ActionRegisterItem<T = string> {
     methods: ActionReturnMethods;
     isBatchProcess?: boolean;
 }
-export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionReturnMethods>;
+export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionRegisterItem<T>>;

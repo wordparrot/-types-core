@@ -7,6 +7,7 @@ export interface ActionFormConfiguration<T = string> extends BaseFormConfigurati
     initialValues: InitialValues<T>;
     validationSchema: ValidationSchemaItem[];
     fields: FieldItem[];
+    isBatchProcess?: boolean;
     test?: {
         name: string;
         description: string;

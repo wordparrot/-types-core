@@ -12,4 +12,4 @@ export interface ActionRegisterItem<T = string> {
 
 export type ActionRegister = <T = string>(
   actionRegisterItemArray: ActionRegisterItem<T>[]
-) => Record<string, ActionReturnMethods>;
+) => Record<string, ActionRegisterItem<T>>;
