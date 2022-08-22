@@ -20,6 +20,8 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
         batchResultsArray: BatchResults[];
         startingIndex: number;
         batchSize: number;
+        stopOnFailure: boolean;
+        isSameProcess: boolean;
     }): BatchResults;
     static indexExceedsItems(batchResults: BatchResults, index: number): boolean;
     static hasFinished(batchResults: BatchResults, index: number): boolean;
@@ -34,6 +36,7 @@ export interface BatchResults<BatchItem = any> {
     numItems: number;
     startingIndex: number;
     batchSize: number;
+    stopOnFailure: boolean;
     totalSuccess: number;
     totalFailed: number;
     totalUnsent: number;

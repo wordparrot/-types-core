@@ -61,6 +61,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
       numItems: this.batchItems.length,
       startingIndex: this.startingIndex,
       batchSize: this.batchSize,
+      stopOnFailure: this.stopOnFailure,
       totalSuccess: 0,
       totalFailed: 0,
       totalUnsent: 0,
@@ -206,13 +207,22 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     batchResultsArray: BatchResults[];
     startingIndex: number;
     batchSize: number;
+    stopOnFailure: boolean;
+    isSameProcess: boolean;
   }): BatchResults {
-    const { batchResultsArray, startingIndex, batchSize } = config;
+    const {
+      batchResultsArray,
+      startingIndex,
+      batchSize,
+      isSameProcess,
+      stopOnFailure,
+    } = config;
 
     const combinedResults: BatchResults = {
       numItems: 0,
       startingIndex,
       batchSize,
+      stopOnFailure,
       totalSuccess: 0,
       totalFailed: 0,
       totalUnsent: 0,
@@ -222,7 +232,11 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     };
 
     return batchResultsArray.reduce((accumulator, counter) => {
-      combinedResults.numItems += counter.numItems;
+      if (isSameProcess) {
+        combinedResults.numItems = counter.numItems;
+      } else {
+        combinedResults.numItems += counter.numItems;
+      }
       combinedResults.totalSuccess += counter.totalSuccess;
       combinedResults.totalFailed += counter.totalFailed;
       combinedResults.totalUnsent += counter.totalUnsent;
@@ -285,6 +299,7 @@ export interface BatchResults<BatchItem = any> {
   numItems: number;
   startingIndex: number;
   batchSize: number;
+  stopOnFailure: boolean;
   totalSuccess: number;
   totalFailed: number;
   totalUnsent: number;

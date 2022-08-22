@@ -58,6 +58,7 @@ class BatchManager {
                 numItems: this.batchItems.length,
                 startingIndex: this.startingIndex,
                 batchSize: this.batchSize,
+                stopOnFailure: this.stopOnFailure,
                 totalSuccess: 0,
                 totalFailed: 0,
                 totalUnsent: 0,
@@ -167,11 +168,12 @@ class BatchManager {
         return mostRecent.totalFailed > 0;
     }
     static combine(config) {
-        const { batchResultsArray, startingIndex, batchSize } = config;
+        const { batchResultsArray, startingIndex, batchSize, isSameProcess, stopOnFailure } = config;
         const combinedResults = {
             numItems: 0,
             startingIndex,
             batchSize,
+            stopOnFailure,
             totalSuccess: 0,
             totalFailed: 0,
             totalUnsent: 0,
@@ -180,7 +182,12 @@ class BatchManager {
             unsent: [],
         };
         return batchResultsArray.reduce((accumulator, counter) => {
-            combinedResults.numItems += counter.numItems;
+            if (isSameProcess) {
+                combinedResults.numItems = counter.numItems;
+            }
+            else {
+                combinedResults.numItems += counter.numItems;
+            }
             combinedResults.totalSuccess += counter.totalSuccess;
             combinedResults.totalFailed += counter.totalFailed;
             combinedResults.totalUnsent += counter.totalUnsent;
@@ -196,9 +203,11 @@ class BatchManager {
     static indexExceedsItems(batchResults, index) {
         const remainder = batchResults.numItems % batchResults.batchSize;
         if (remainder > 0) {
-            return (batchResults.numItems) <= batchResults.batchSize + (batchResults.batchSize * (index + 1));
+            return (batchResults.numItems <=
+                batchResults.batchSize + batchResults.batchSize * (index + 1));
         }
-        return batchResults.numItems <= batchResults.batchSize + (batchResults.batchSize * index);
+        return (batchResults.numItems <=
+            batchResults.batchSize + batchResults.batchSize * index);
     }
     static hasFinished(batchResults, index) {
         const results = batchResults;
