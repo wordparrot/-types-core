@@ -37,7 +37,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     if (!Array.isArray(this.batchItems)) {
       throw new Error("Batch Manager: batches are not in array format");
     }
-    if (this.batchSize <= 0) {
+    if (!Number.isInteger(this.batchSize) || this.batchSize <= 0) {
       throw new Error("Batch Manager: must provide valid batchSize");
     }
     if (this.batchItems.length < this.startingIndex) {
@@ -59,6 +59,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private async execute(): Promise<BatchResults<BatchItem>> {
     const results: BatchResults = {
       numItems: this.batchItems.length,
+      startingIndex: this.startingIndex,
       batchSize: this.batchSize,
       totalSuccess: 0,
       totalFailed: 0,
@@ -201,10 +202,17 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     return mostRecent.totalFailed > 0;
   }
 
-  combine(batchResultsArray: BatchResults[]): BatchResults {
+  static combine(config: {
+    batchResultsArray: BatchResults[];
+    startingIndex: number;
+    batchSize: number;
+  }): BatchResults {
+    const { batchResultsArray, startingIndex, batchSize } = config;
+
     const combinedResults: BatchResults = {
       numItems: 0,
-      batchSize: this.batchSize,
+      startingIndex,
+      batchSize,
       totalSuccess: 0,
       totalFailed: 0,
       totalUnsent: 0,
@@ -232,10 +240,16 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     const remainder = batchResults.numItems % batchResults.batchSize;
 
     if (remainder > 0) {
-      return batchResults.numItems < batchResults.batchSize * (index + 1);
+      return (
+        batchResults.numItems <=
+        batchResults.batchSize + batchResults.batchSize * (index + 1)
+      );
     }
 
-    return batchResults.numItems < batchResults.batchSize * index;
+    return (
+      batchResults.numItems <=
+      batchResults.batchSize + batchResults.batchSize * index
+    );
   }
 
   static hasFinished(batchResults: BatchResults, index: number): boolean {
@@ -269,6 +283,7 @@ export interface BatchItemResponse<BatchItem = any> {
 
 export interface BatchResults<BatchItem = any> {
   numItems: number;
+  startingIndex: number;
   batchSize: number;
   totalSuccess: number;
   totalFailed: number;

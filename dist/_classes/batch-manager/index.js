@@ -37,7 +37,7 @@ class BatchManager {
             if (!Array.isArray(this.batchItems)) {
                 throw new Error("Batch Manager: batches are not in array format");
             }
-            if (this.batchSize <= 0) {
+            if (!Number.isInteger(this.batchSize) || this.batchSize <= 0) {
                 throw new Error("Batch Manager: must provide valid batchSize");
             }
             if (this.batchItems.length < this.startingIndex) {
@@ -56,6 +56,7 @@ class BatchManager {
         return __awaiter(this, void 0, void 0, function* () {
             const results = {
                 numItems: this.batchItems.length,
+                startingIndex: this.startingIndex,
                 batchSize: this.batchSize,
                 totalSuccess: 0,
                 totalFailed: 0,
@@ -165,10 +166,12 @@ class BatchManager {
         }
         return mostRecent.totalFailed > 0;
     }
-    combine(batchResultsArray) {
+    static combine(config) {
+        const { batchResultsArray, startingIndex, batchSize } = config;
         const combinedResults = {
             numItems: 0,
-            batchSize: this.batchSize,
+            startingIndex,
+            batchSize,
             totalSuccess: 0,
             totalFailed: 0,
             totalUnsent: 0,
@@ -193,14 +196,14 @@ class BatchManager {
     static indexExceedsItems(batchResults, index) {
         const remainder = batchResults.numItems % batchResults.batchSize;
         if (remainder > 0) {
-            return batchResults.numItems < batchResults.batchSize * (index + 1);
+            return (batchResults.numItems) <= batchResults.batchSize + (batchResults.batchSize * (index + 1));
         }
-        return batchResults.numItems < batchResults.batchSize * index;
+        return batchResults.numItems <= batchResults.batchSize + (batchResults.batchSize * index);
     }
     static hasFinished(batchResults, index) {
         const results = batchResults;
         if (!results) {
-            throw new Error('Batch manager: results have not been provided.');
+            throw new Error("Batch manager: results have not been provided.");
         }
         if (this.indexExceedsItems(results, index)) {
             return true;

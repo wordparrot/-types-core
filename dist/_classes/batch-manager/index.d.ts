@@ -16,7 +16,11 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     allResults(): BatchResults<BatchItem>[];
     getSuccessValues(batchResults?: BatchResults): BatchReturnValue[];
     hasFailed(): boolean;
-    combine(batchResultsArray: BatchResults[]): BatchResults;
+    static combine(config: {
+        batchResultsArray: BatchResults[];
+        startingIndex: number;
+        batchSize: number;
+    }): BatchResults;
     static indexExceedsItems(batchResults: BatchResults, index: number): boolean;
     static hasFinished(batchResults: BatchResults, index: number): boolean;
 }
@@ -28,6 +32,7 @@ export interface BatchItemResponse<BatchItem = any> {
 }
 export interface BatchResults<BatchItem = any> {
     numItems: number;
+    startingIndex: number;
     batchSize: number;
     totalSuccess: number;
     totalFailed: number;
