@@ -1,4 +1,4 @@
-export class BatchManager<BatchItem = any, BatchReturnValue = any> {
+export class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
   private batchItems: BatchItem[];
   private batchSize: number;
   private stopOnFailure: boolean;
@@ -10,9 +10,9 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private defaultHandler: (
     batch: BatchItem,
     index?: number
-  ) => Promise<BatchReturnValue>;
+  ) => Promise<BatchItemReturnValue>;
 
-  constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>) {
+  constructor(config: BatchManagerConfig<BatchItem, BatchItemReturnValue>) {
     this.batchItems = config.batchItems;
     this.batchSize = config.batchSize;
     this.stopOnFailure = config.stopOnFailure;
@@ -114,7 +114,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
           const batchResponses = await Promise.all(
             requests.map(async (batchItem, batchIndex) => {
               try {
-                let response: Awaited<BatchReturnValue>;
+                let response: Awaited<BatchItemReturnValue>;
 
                 if (typeof batchItem === "function") {
                   response = await batchItem();
@@ -188,7 +188,7 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     return this.resultsArray;
   }
 
-  getSuccessValues(batchResults?: BatchResults): BatchReturnValue[] {
+  getSuccessValues(batchResults?: BatchResults): BatchItemReturnValue[] {
     if (!batchResults) {
       const mostRecent = this.mostRecentResult();
       return (
@@ -326,5 +326,8 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
   allowEmpty?: boolean;
   startingIndex?: number;
   maxIterations?: number;
-  defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
+  defaultHandler: (
+    batch: BatchItem,
+    index?: number
+  ) => Promise<BatchItemReturnValue>;
 }
