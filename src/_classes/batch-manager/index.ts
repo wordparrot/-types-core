@@ -9,7 +9,7 @@ export class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
   private maxIterations?: number;
   private defaultHandler: (
     batch: BatchItem,
-    index?: number
+    index: number
   ) => Promise<BatchItemReturnValue>;
 
   constructor(config: BatchManagerConfig<BatchItem, BatchItemReturnValue>) {
@@ -328,6 +328,6 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
   maxIterations?: number;
   defaultHandler: (
     batch: BatchItem,
-    index?: number
+    index: number
   ) => Promise<BatchItemReturnValue>;
 }

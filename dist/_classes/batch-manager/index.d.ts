@@ -52,6 +52,6 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
     allowEmpty?: boolean;
     startingIndex?: number;
     maxIterations?: number;
-    defaultHandler: (batch: BatchItem, index?: number) => Promise<BatchItemReturnValue>;
+    defaultHandler: (batch: BatchItem, index: number) => Promise<BatchItemReturnValue>;
 }
 export {};
