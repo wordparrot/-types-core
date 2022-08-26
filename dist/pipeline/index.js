@@ -31,4 +31,3 @@ __exportStar(require("./PipelineOperationFailed"), exports);
 __exportStar(require("./PipelineOperationFailedData"), exports);
 __exportStar(require("./PipelineRedis"), exports);
 __exportStar(require("./PipelineToken"), exports);
-__exportStar(require("./ProgressVisual"), exports);

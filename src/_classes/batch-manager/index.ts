@@ -2,16 +2,21 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
   private batchItems: BatchItem[];
   private batchSize: number;
   private stopOnFailure: boolean;
+  private allowEmpty: boolean;
   private resultsArray: BatchResults[] = [];
   private startingIndex = 0;
   private endingIndex?: number;
   private maxIterations?: number;
-  private defaultHandler: (batch: BatchItem) => Promise<BatchReturnValue>;
+  private defaultHandler: (
+    batch: BatchItem,
+    index?: number
+  ) => Promise<BatchReturnValue>;
 
   constructor(config: BatchManagerConfig<BatchItem, BatchReturnValue>) {
     this.batchItems = config.batchItems;
     this.batchSize = config.batchSize;
     this.stopOnFailure = config.stopOnFailure;
+    this.allowEmpty = config.allowEmpty || false;
     this.maxIterations = config.maxIterations;
 
     if (!config?.defaultHandler) {
@@ -39,6 +44,9 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
     }
     if (!Number.isInteger(this.batchSize) || this.batchSize <= 0) {
       throw new Error("Batch Manager: must provide valid batchSize");
+    }
+    if (this.batchItems.length === 0 && !this.allowEmpty) {
+      throw new Error("Batch Manager: no items provided to manager");
     }
     if (this.batchItems.length < this.startingIndex) {
       throw new Error("Batch Manager: number of items is below starting index");
@@ -111,7 +119,10 @@ export class BatchManager<BatchItem = any, BatchReturnValue = any> {
                 if (typeof batchItem === "function") {
                   response = await batchItem();
                 } else {
-                  response = await this.defaultHandler(batchItem);
+                  response = await this.defaultHandler(
+                    batchItem,
+                    i + batchIndex
+                  );
                 }
 
                 const batchItemResponse: BatchItemResponse<BatchItem> = {
@@ -312,6 +323,7 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
   batchItems: BatchItem[];
   batchSize: number;
   stopOnFailure: boolean;
+  allowEmpty?: boolean;
   startingIndex?: number;
   maxIterations?: number;
   defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;

@@ -17,6 +17,7 @@ class BatchManager {
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
         this.stopOnFailure = config.stopOnFailure;
+        this.allowEmpty = config.allowEmpty || false;
         this.maxIterations = config.maxIterations;
         if (!(config === null || config === void 0 ? void 0 : config.defaultHandler)) {
             throw new Error("Batch Manager: default handler must be provided");
@@ -39,6 +40,9 @@ class BatchManager {
             }
             if (!Number.isInteger(this.batchSize) || this.batchSize <= 0) {
                 throw new Error("Batch Manager: must provide valid batchSize");
+            }
+            if (this.batchItems.length === 0 && !this.allowEmpty) {
+                throw new Error("Batch Manager: no items provided to manager");
             }
             if (this.batchItems.length < this.startingIndex) {
                 throw new Error("Batch Manager: number of items is below starting index");
@@ -98,7 +102,7 @@ class BatchManager {
                                     response = yield batchItem();
                                 }
                                 else {
-                                    response = yield this.defaultHandler(batchItem);
+                                    response = yield this.defaultHandler(batchItem, i + batchIndex);
                                 }
                                 const batchItemResponse = {
                                     batchItem,
@@ -168,7 +172,7 @@ class BatchManager {
         return mostRecent.totalFailed > 0;
     }
     static combine(config) {
-        const { batchResultsArray, startingIndex, batchSize, isSameProcess, stopOnFailure } = config;
+        const { batchResultsArray, startingIndex, batchSize, isSameProcess, stopOnFailure, } = config;
         const combinedResults = {
             numItems: 0,
             startingIndex,

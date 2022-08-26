@@ -2,6 +2,7 @@ export declare class BatchManager<BatchItem = any, BatchReturnValue = any> {
     private batchItems;
     private batchSize;
     private stopOnFailure;
+    private allowEmpty;
     private resultsArray;
     private startingIndex;
     private endingIndex?;
@@ -48,6 +49,7 @@ interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
     batchItems: BatchItem[];
     batchSize: number;
     stopOnFailure: boolean;
+    allowEmpty?: boolean;
     startingIndex?: number;
     maxIterations?: number;
     defaultHandler: (batchItem: BatchItem) => Promise<BatchItemReturnValue>;
