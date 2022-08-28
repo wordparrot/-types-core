@@ -10,7 +10,6 @@ export * from "./data-store";
 export * from "./dynamic-service";
 export * from "./entry";
 export * from "./featured-group";
-export * from "./file-utility";
 export * from "./image";
 export * from "./listener";
 export * from "./pipeline";

@@ -11,9 +11,9 @@ import {
 import { isInteger, throttle } from "lodash";
 import { promisify } from "util";
 
-import { FileOperation } from "..";
-import { FileMetadata } from "..";
-import { getExtension, getFilenameBase, replaceStringIndexAt } from "..";
+import { FileOperation } from "../..";
+import { FileMetadata } from "../..";
+import { getExtension, getFilenameBase, replaceStringIndexAt } from "../..";
 
 const readFilePromisified = promisify(readFile);
 const writeFilePromisified = promisify(writeFile);
@@ -32,7 +32,7 @@ export interface FileUtilityConfig {
   mimeType?: string;
   encoding?: WriteFileOptions;
   repositoryId?: string;
-  repositoryFileId?: string;
+  repositoryFileId: string;
   predefinedPath?: string;
   parentRepositoryItem?: {
     nodeUniqId: string;
@@ -185,6 +185,9 @@ export class FileUtility {
   }
 
   private async writeToTempFolder(encoding: WriteFileOptions = "utf8") {
+    if (!this.buffer) {
+      throw new Error("File Utility writeToTempFolder: no buffer found.");
+    }
     return writeFilePromisified(this.filePath, this.buffer, encoding);
   }
 
@@ -204,7 +207,13 @@ export class FileUtility {
   }
 
   async retrieveBufferFromTemp(): Promise<Buffer> {
-    return readFilePromisified(this.filePath);
+    this.buffer = await readFilePromisified(this.filePath);
+    return this.buffer;
+  }
+
+  async retrieveBufferFromRepository(): Promise<Buffer> {
+    this.buffer = await readFilePromisified(this.repositoriesFilePath);
+    return this.buffer;
   }
 
   static async getBuffer(fileMetadata: FileMetadata) {

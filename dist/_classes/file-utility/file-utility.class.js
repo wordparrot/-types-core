@@ -13,7 +13,7 @@ exports.FileUtility = void 0;
 const fs_1 = require("fs");
 const lodash_1 = require("lodash");
 const util_1 = require("util");
-const __1 = require("..");
+const __1 = require("../..");
 const readFilePromisified = (0, util_1.promisify)(fs_1.readFile);
 const writeFilePromisified = (0, util_1.promisify)(fs_1.writeFile);
 const deleteFilePromisified = (0, util_1.promisify)(fs_1.unlink);
@@ -138,6 +138,9 @@ class FileUtility {
     }
     writeToTempFolder(encoding = "utf8") {
         return __awaiter(this, void 0, void 0, function* () {
+            if (!this.buffer) {
+                throw new Error('File Utility writeToTempFolder: no buffer found.');
+            }
             return writeFilePromisified(this.filePath, this.buffer, encoding);
         });
     }
@@ -161,7 +164,14 @@ class FileUtility {
     }
     retrieveBufferFromTemp() {
         return __awaiter(this, void 0, void 0, function* () {
-            return readFilePromisified(this.filePath);
+            this.buffer = yield readFilePromisified(this.filePath);
+            return this.buffer;
+        });
+    }
+    retrieveBufferFromRepository() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.buffer = yield readFilePromisified(this.repositoriesFilePath);
+            return this.buffer;
         });
     }
     static getBuffer(fileMetadata) {
