@@ -32,7 +32,7 @@ export interface FileUtilityConfig {
   mimeType?: string;
   encoding?: WriteFileOptions;
   repositoryId?: string;
-  repositoryFileId: string;
+  repositoryFileId?: string;
   predefinedPath?: string;
   parentRepositoryItem?: {
     nodeUniqId: string;

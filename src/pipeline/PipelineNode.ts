@@ -11,18 +11,13 @@ import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
 import { Prompt } from "..";
+import { AbstractPipelineNode } from ".";
 
-export interface PipelineNode {
-  id: string;
-  title: string;
-  content: string;
+export interface PipelineNode extends AbstractPipelineNode {
   nodeStatus: string;
-  status: string;
-  provider: string;
-  type: string;
 
-  values: Record<string, any>;
   transformations: JsonTransformation[];
+
   prospectiveTitle: string;
   prospectiveContent: string;
   text: string;
@@ -80,8 +75,6 @@ export interface PipelineNode {
   featuredGroupId: string;
   featuredThreads: FeaturedThread[];
   featuredThreadIds: string[];
-  credential: Credential;
-  credentialId: string;
   repository: Repository;
   repositoryId: string;
   repositoryTagIds: string[];
@@ -90,9 +83,4 @@ export interface PipelineNode {
   childNodes: PipelineNode[];
   conditions: PipelineNodeCondition[];
   entries: Entry[];
-
-  downstreamPipelines?: Pipeline[];
-
-  createdAt: string;
-  updatedAt: string;
 }

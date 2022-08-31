@@ -1,14 +1,5 @@
-export interface Webhook {
-    id: string;
-    title: string;
-    content: string;
-    provider: string;
-    status: string;
+import { AbstractPipelineNode } from "..";
+export interface Webhook extends AbstractPipelineNode {
     methods: string[];
     route: string;
-    siteId: string;
-    pipelines: string[];
-    credentialId?: string;
-    createdAt: string;
-    updatedAt: string;
 }

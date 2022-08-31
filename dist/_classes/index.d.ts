@@ -1,2 +1,2 @@
 export * from "./batch-manager";
-export * from './file-utility';
+export * from "./file-utility";

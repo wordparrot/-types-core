@@ -1,3 +1,4 @@
+export * from './AbstractPipelineNode';
 export * from "./Pipeline";
 export * from "./EmailMetadata";
 export * from "./FileMetadata";

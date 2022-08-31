@@ -139,7 +139,7 @@ class FileUtility {
     writeToTempFolder(encoding = "utf8") {
         return __awaiter(this, void 0, void 0, function* () {
             if (!this.buffer) {
-                throw new Error('File Utility writeToTempFolder: no buffer found.');
+                throw new Error("File Utility writeToTempFolder: no buffer found.");
             }
             return writeFilePromisified(this.filePath, this.buffer, encoding);
         });
