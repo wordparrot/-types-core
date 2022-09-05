@@ -1,6 +1,6 @@
 import { Pipeline } from ".";
 import { Credential } from "..";
-import { User } from '..';
+import { User } from "..";
 export interface AbstractPipelineNode {
     id: string;
     title: string;

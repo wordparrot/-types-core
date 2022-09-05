@@ -8,7 +8,7 @@ export interface SmtpAccount {
     domain: string;
     apiKey: string;
     sender: string;
-    status: string;
+    method: string;
     createdAt: string;
     updatedAt: string;
 }
