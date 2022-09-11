@@ -21,6 +21,10 @@ export declare enum PipelineNodeConditionComparator {
     BEFORE = "BEFORE",
     AFTER = "AFTER"
 }
+export declare enum PipelineNodeConditionType {
+    QUANTITY = "QUANTITY",
+    HAS_PROPERTY = "HAS_PROPERTY"
+}
 export interface PipelineNodeCondition {
     id: string;
     conditions: Record<string, PipelineNodeConditionObject>;
@@ -31,6 +35,7 @@ export interface PipelineNodeCondition {
     updatedAt: string;
 }
 export interface PipelineNodeConditionObject {
+    type: PipelineNodeConditionType;
     subject: PipelineNodeConditionSubject;
     comparator: PipelineNodeConditionComparator;
     primary: string | null;
