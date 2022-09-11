@@ -8,11 +8,7 @@ import {
   PipelineGroup,
 } from ".";
 
-export enum PipelineJobOutcome {
-  COMPLETED = "completed",
-  PARTIAL = "partial",
-  FAILURE = "failure",
-}
+export type PipelineJobOutcome = "completed" | "partial" | "failure";
 
 export interface PipelineJob {
   id: string;

@@ -1,11 +1,7 @@
 import { RepositoryItem } from "..";
 import { Entry } from "..";
 import { Pipeline, PipelineNodeReport, PipelineFlow, PipelineJobSequence, PipelineGroup } from ".";
-export declare enum PipelineJobOutcome {
-    COMPLETED = "completed",
-    PARTIAL = "partial",
-    FAILURE = "failure"
-}
+export declare type PipelineJobOutcome = "completed" | "partial" | "failure";
 export interface PipelineJob {
     id: string;
     status: string;

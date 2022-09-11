@@ -1,16 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterHttpRequests = exports.isValidHttpRequestFormat = exports.HttpRequestFormatMethod = void 0;
-var HttpRequestFormatMethod;
-(function (HttpRequestFormatMethod) {
-    HttpRequestFormatMethod["GET"] = "get";
-    HttpRequestFormatMethod["POST"] = "post";
-    HttpRequestFormatMethod["PUT"] = "put";
-    HttpRequestFormatMethod["PATCH"] = "patch";
-    HttpRequestFormatMethod["DELETE"] = "delete";
-    HttpRequestFormatMethod["HEAD"] = "head";
-    HttpRequestFormatMethod["OPTIONS"] = "options";
-})(HttpRequestFormatMethod = exports.HttpRequestFormatMethod || (exports.HttpRequestFormatMethod = {}));
+exports.filterHttpRequests = exports.isValidHttpRequestFormat = void 0;
 const isValidHttpRequestFormat = (json) => {
     if (typeof json !== "object") {
         return false;

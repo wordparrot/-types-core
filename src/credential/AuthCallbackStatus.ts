@@ -1,8 +1,7 @@
-export enum AuthCallbackStatus {
-  UNVERIFIED = "unverified",
-  VALID = "valid",
-  INVALID = "invalid",
-  EXPIRED = "expired",
-  REVOKED = "revoked",
-  DISABLED = "disabled",
-}
+export type AuthCallbackStatus =
+  | "unverified"
+  | "valid"
+  | "invalid"
+  | "expired"
+  | "revoked"
+  | "disabled";

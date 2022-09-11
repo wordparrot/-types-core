@@ -1,12 +1,4 @@
-export declare enum HttpRequestFormatMethod {
-    GET = "get",
-    POST = "post",
-    PUT = "put",
-    PATCH = "patch",
-    DELETE = "delete",
-    HEAD = "head",
-    OPTIONS = "options"
-}
+export declare type HttpRequestFormatMethod = 'get' | 'post' | 'put' | 'patch' | 'delete' | 'head' | 'options';
 export interface HttpRequestFormat {
     url?: string;
     method?: HttpRequestFormatMethod;
