@@ -47,7 +47,7 @@ class BatchManager {
             if (this.batchItems.length < this.startingIndex) {
                 throw new Error("Batch Manager: number of items is below starting index");
             }
-            if (this.endingIndex <= this.startingIndex) {
+            if (this.endingIndex && this.endingIndex <= this.startingIndex) {
                 throw new Error("Batch Manager: ending index must be after startingIndex");
             }
             const results = yield this.execute();
@@ -140,7 +140,7 @@ class BatchManager {
                         console.log(e);
                     }
                 }
-                if (numIterations >= this.maxIterations) {
+                if (this.maxIterations && numIterations >= this.maxIterations) {
                     break;
                 }
             }

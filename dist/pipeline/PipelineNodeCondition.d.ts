@@ -1,5 +1,5 @@
 import { PipelineNode } from ".";
-export declare type PipelineNodeConditionPolicy = 'AND' | 'OR' | 'XOR';
+export declare type PipelineNodeConditionPolicy = "AND" | "OR" | "XOR";
 export declare type PipelineNodeConditionSubject = "ITEMS" | "FILES" | "JSON" | "CSV" | "PROMPTS";
 export declare type PipelineNodeConditionComparator = "LESS_THAN" | "LESS_THAN_OR_EQUALS" | "EQUALS" | "GREATER_THAN" | "GREATER_THAN_OR_EQUALS" | "CONTAINS" | "BEFORE" | "AFTER";
 export declare type PipelineNodeConditionType = "QUANTITY" | "HAS_PROPERTY";

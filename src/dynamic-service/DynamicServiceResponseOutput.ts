@@ -22,7 +22,6 @@ export interface DynamicServiceResponseOutputBase
   chartId: string;
   categoryId: string;
 
-  conditionFailed: string[];
   broadcastToFeaturedGroups: BroadcastToFeaturedGroup[];
   broadcastToFeaturedThreads: BroadcastToFeaturedThread[];
   pushNotificationToFeaturedGroups: PushNotificationToFeaturedGroup[];

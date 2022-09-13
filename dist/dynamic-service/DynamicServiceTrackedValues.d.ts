@@ -32,4 +32,5 @@ export interface DynamicServiceTrackedValues {
     policy?: Partial<DynamicServiceOutputPolicy>;
     batchResults?: BatchResults;
     operationsFailed: PipelineOperationFailed[];
+    conditionsFailed: string[];
 }

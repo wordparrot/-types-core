@@ -30,6 +30,5 @@ export interface DynamicServiceBodyParameters {
   entriesFromParent: any[];
   category: any;
 
-  conditionFailedFromParent: string[];
-  conditionFailed: string[];
+  conditionsFailedFromParent: string[];
 }

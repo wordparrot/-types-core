@@ -17,7 +17,6 @@ export interface DynamicServiceResponseOutputBase extends DynamicServiceTrackedV
     repositoryId: string;
     chartId: string;
     categoryId: string;
-    conditionFailed: string[];
     broadcastToFeaturedGroups: BroadcastToFeaturedGroup[];
     broadcastToFeaturedThreads: BroadcastToFeaturedThread[];
     pushNotificationToFeaturedGroups: PushNotificationToFeaturedGroup[];

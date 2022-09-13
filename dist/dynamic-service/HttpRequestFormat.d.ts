@@ -1,4 +1,4 @@
-export declare type HttpRequestFormatMethod = 'get' | 'post' | 'put' | 'patch' | 'delete' | 'head' | 'options';
+export declare type HttpRequestFormatMethod = "get" | "post" | "put" | "patch" | "delete" | "head" | "options";
 export interface HttpRequestFormat {
     url?: string;
     method?: HttpRequestFormatMethod;
