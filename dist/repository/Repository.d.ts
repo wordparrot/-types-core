@@ -5,6 +5,7 @@ import { Site } from '..';
 import { User } from '..';
 export interface Repository {
     id: string;
+    banner: string;
     title: string;
     content: string;
     repositoryTags: RepositoryTag[];

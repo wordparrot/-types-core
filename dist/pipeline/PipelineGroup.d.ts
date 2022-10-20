@@ -1,9 +1,9 @@
 import { Pipeline } from ".";
 import { Site } from "..";
-import { User } from '..';
-import { Prompt } from '..';
-import { Webhook } from '..';
-import { Listener } from '..';
+import { User } from "..";
+import { Prompt } from "..";
+import { Webhook } from "..";
+import { Listener } from "..";
 export interface PipelineGroup {
     id: string;
     banner: string;
