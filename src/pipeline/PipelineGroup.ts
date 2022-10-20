@@ -1,16 +1,24 @@
 import { Pipeline } from ".";
 import { Site } from "..";
-import { User } from '..'
+import { User } from "..";
+import { Prompt } from "..";
+import { Webhook } from "..";
+import { Listener } from "..";
 
 export interface PipelineGroup {
-    id: string
-    title: string
-    content: string
+  id: string;
+  banner: string;
+  title: string;
+  content: string;
 
-    pipelines: Pipeline[]
-    site: Site
-    user: User
+  pipelines: Pipeline[];
+  prompts?: Prompt[];
+  listeners?: Listener[];
+  webhooks?: Webhook[];
 
-    createdAt: string
-    updatedAt: string
+  site: Site;
+  user: User;
+
+  createdAt: string;
+  updatedAt: string;
 }

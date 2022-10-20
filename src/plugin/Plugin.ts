@@ -12,6 +12,8 @@ export interface Plugin extends HubPlugin {
   name: string;
   active: boolean;
   hubPluginId: string;
+  official: boolean;
+
   actionLogo?: string;
   listenerLogo?: string;
   credentialLogo?: string;

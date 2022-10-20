@@ -204,6 +204,38 @@ export class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
     );
   }
 
+  getFailedValues(batchResults?: BatchResults): BatchItemReturnValue[] {
+    if (!batchResults) {
+      const mostRecent = this.mostRecentResult();
+      return (
+        mostRecent?.failed
+          ?.flat()
+          ?.map((batchResponse) => batchResponse.response) || []
+      );
+    }
+    return (
+      batchResults?.failed
+        ?.flat()
+        ?.map((batchResponse) => batchResponse.response) || []
+    );
+  }
+
+  getUnsentValues(batchResults?: BatchResults): BatchItemReturnValue[] {
+    if (!batchResults) {
+      const mostRecent = this.mostRecentResult();
+      return (
+        mostRecent?.unsent
+          ?.flat()
+          ?.map((batchResponse) => batchResponse.response) || []
+      );
+    }
+    return (
+      batchResults?.unsent
+        ?.flat()
+        ?.map((batchResponse) => batchResponse.response) || []
+    );
+  }
+
   hasFailed(): boolean {
     const mostRecent = this.mostRecentResult();
 

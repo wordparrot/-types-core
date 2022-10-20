@@ -16,6 +16,8 @@ export declare class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
     mostRecentResult(): BatchResults<BatchItem> | null;
     allResults(): BatchResults<BatchItem>[];
     getSuccessValues(batchResults?: BatchResults): BatchItemReturnValue[];
+    getFailedValues(batchResults?: BatchResults): BatchItemReturnValue[];
+    getUnsentValues(batchResults?: BatchResults): BatchItemReturnValue[];
     hasFailed(): boolean;
     static combine(config: {
         batchResultsArray: BatchResults[];

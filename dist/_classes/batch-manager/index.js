@@ -164,6 +164,22 @@ class BatchManager {
         }
         return (((_d = (_c = batchResults === null || batchResults === void 0 ? void 0 : batchResults.success) === null || _c === void 0 ? void 0 : _c.flat()) === null || _d === void 0 ? void 0 : _d.map((batchResponse) => batchResponse.response)) || []);
     }
+    getFailedValues(batchResults) {
+        var _a, _b, _c, _d;
+        if (!batchResults) {
+            const mostRecent = this.mostRecentResult();
+            return (((_b = (_a = mostRecent === null || mostRecent === void 0 ? void 0 : mostRecent.failed) === null || _a === void 0 ? void 0 : _a.flat()) === null || _b === void 0 ? void 0 : _b.map((batchResponse) => batchResponse.response)) || []);
+        }
+        return (((_d = (_c = batchResults === null || batchResults === void 0 ? void 0 : batchResults.failed) === null || _c === void 0 ? void 0 : _c.flat()) === null || _d === void 0 ? void 0 : _d.map((batchResponse) => batchResponse.response)) || []);
+    }
+    getUnsentValues(batchResults) {
+        var _a, _b, _c, _d;
+        if (!batchResults) {
+            const mostRecent = this.mostRecentResult();
+            return (((_b = (_a = mostRecent === null || mostRecent === void 0 ? void 0 : mostRecent.unsent) === null || _a === void 0 ? void 0 : _a.flat()) === null || _b === void 0 ? void 0 : _b.map((batchResponse) => batchResponse.response)) || []);
+        }
+        return (((_d = (_c = batchResults === null || batchResults === void 0 ? void 0 : batchResults.unsent) === null || _c === void 0 ? void 0 : _c.flat()) === null || _d === void 0 ? void 0 : _d.map((batchResponse) => batchResponse.response)) || []);
+    }
     hasFailed() {
         const mostRecent = this.mostRecentResult();
         if (!mostRecent) {
