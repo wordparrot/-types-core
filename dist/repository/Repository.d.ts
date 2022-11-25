@@ -1,8 +1,8 @@
 import { RepositoryTag, RepositoryItem } from ".";
-import { Tile } from '..';
-import { Role } from '..';
-import { Site } from '..';
-import { User } from '..';
+import { Tile } from "..";
+import { Role } from "..";
+import { Site } from "..";
+import { User } from "..";
 export interface Repository {
     id: string;
     banner: string;
