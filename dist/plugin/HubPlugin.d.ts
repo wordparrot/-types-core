@@ -1,4 +1,5 @@
 import { HubPluginVersion } from ".";
+import { BlueprintMeta } from "../blueprint";
 export interface HubPlugin {
     id: string;
     author: string;
@@ -20,4 +21,6 @@ export interface HubPlugin {
     license?: string;
     privacyPolicy?: string;
     hubPluginVersions: HubPluginVersion[];
+    rootBlueprints: BlueprintMeta[];
+    connectedBlueprints: BlueprintMeta[];
 }

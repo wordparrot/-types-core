@@ -7,5 +7,6 @@ export * from "./BlueprintPlugin";
 export * from "./BlueprintPrompt";
 export * from "./BlueprintRequirement";
 export * from "./BlueprintWebhook";
-export * from './BlueprintMeta';
-export * from './BlueprintPrice';
+export * from "./BlueprintMeta";
+export * from "./BlueprintPrice";
+export * from "./BlueprintFile";

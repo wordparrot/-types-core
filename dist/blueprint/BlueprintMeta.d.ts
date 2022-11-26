@@ -2,10 +2,13 @@ export interface BlueprintMeta {
     id: string;
     title: string;
     content: string;
+    type: string;
+    status: string;
     official: boolean;
-    allowFork: boolean;
     renderOrder: boolean;
-    hubPlugins: any[];
+    rootPlugin: any;
+    rootPluginId: string;
+    connectedPlugins: any[];
     prices: any[];
     hubUser: any;
     hubUserId: string;

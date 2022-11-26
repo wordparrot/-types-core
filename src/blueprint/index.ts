@@ -9,3 +9,4 @@ export * from "./BlueprintRequirement";
 export * from "./BlueprintWebhook";
 export * from "./BlueprintMeta";
 export * from "./BlueprintPrice";
+export * from "./BlueprintFile";
