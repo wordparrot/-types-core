@@ -7,6 +7,7 @@ export interface BlueprintVersion {
   content: string;
   status: String;
   value: string;
+  current: boolean;
 
   blueprint: Blueprint;
 
