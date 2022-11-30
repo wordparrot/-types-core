@@ -1,4 +1,4 @@
-import { Blueprint } from '.';
+import { Blueprint } from ".";
 export interface BlueprintFile {
     id: string;
     current: boolean;
