@@ -26,4 +26,4 @@ __exportStar(require("./BlueprintWebhook"), exports);
 __exportStar(require("./BlueprintMeta"), exports);
 __exportStar(require("./BlueprintPrice"), exports);
 __exportStar(require("./BlueprintFile"), exports);
-__exportStar(require("./BlueprintMeta"), exports);
+__exportStar(require("./BlueprintVersion"), exports);

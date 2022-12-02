@@ -11,8 +11,8 @@ export interface BlueprintVersion {
 
   blueprint: Blueprint;
 
-  meta: BlueprintMeta;
-  metaId: string;
+  blueprintMeta: BlueprintMeta;
+  blueprintMetaId: string;
 
   createdAt: string;
   updatedAt: string;

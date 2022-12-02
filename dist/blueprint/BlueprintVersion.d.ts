@@ -8,8 +8,8 @@ export interface BlueprintVersion {
     value: string;
     current: boolean;
     blueprint: Blueprint;
-    meta: BlueprintMeta;
-    metaId: string;
+    blueprintMeta: BlueprintMeta;
+    blueprintMetaId: string;
     createdAt: string;
     updatedAt: string;
 }
