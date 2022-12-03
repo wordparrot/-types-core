@@ -3,8 +3,10 @@ export interface BlueprintMeta {
     id: string;
     title: string;
     content: string;
+    body: string;
     type: string;
     status: string;
+    categories: string[];
     official: boolean;
     renderOrder: boolean;
     rootPlugin: any;
