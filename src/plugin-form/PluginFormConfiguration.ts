@@ -3,7 +3,7 @@ import { CredentialFormConfiguration } from ".";
 import { ListenerFormConfiguration } from ".";
 import { FormConfigurationUsingActionForm } from ".";
 import { WebhookFormConfiguration } from ".";
-import { Blueprint } from "../blueprint";
+import { BlueprintStructure } from "..";
 import { PromptFormConfiguration } from ".";
 
 export interface PluginFormConfiguration<
@@ -25,6 +25,6 @@ export interface PluginFormConfiguration<
     | WebhookFormConfiguration<W>
     | FormConfigurationUsingActionForm<W>
   )[];
-  blueprints?: Blueprint<A, L, W>[];
+  blueprints?: BlueprintStructure<A, L, W>[];
   prompts?: PromptFormConfiguration[];
 }

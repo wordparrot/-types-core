@@ -1,4 +1,4 @@
-import { Blueprint } from "./Blueprint";
+import { BlueprintStructure } from "./BlueprintStructure";
 import { BlueprintMeta } from "./BlueprintMeta";
 
 export interface BlueprintVersion {
@@ -9,7 +9,7 @@ export interface BlueprintVersion {
   value: string;
   current: boolean;
 
-  blueprint: Blueprint;
+  blueprint: BlueprintStructure;
 
   blueprintMeta: BlueprintMeta;
   blueprintMetaId: string;

@@ -1,4 +1,5 @@
 export * from "./Blueprint";
+export * from "./BlueprintStructure";
 export * from "./BlueprintInstallation";
 export * from "./BlueprintListener";
 export * from "./BlueprintPipeline";

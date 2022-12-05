@@ -12,6 +12,8 @@ export interface BlueprintInstallation {
   status: string;
   data: any;
 
+  hubBlueprintMetaId: string;
+
   createdAt: string;
   updatedAt: string;
 }

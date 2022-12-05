@@ -6,6 +6,7 @@ export interface BlueprintInstallation {
     version: string;
     status: string;
     data: any;
+    hubBlueprintMetaId: string;
     createdAt: string;
     updatedAt: string;
 }

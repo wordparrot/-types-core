@@ -1,10 +1,10 @@
-import { Blueprint, BlueprintMeta } from ".";
+import { BlueprintStructure, BlueprintMeta } from ".";
 
 export interface BlueprintFile {
   id: string;
   current: boolean;
   version: string;
-  blueprint: Blueprint;
+  blueprint: BlueprintStructure;
 
   blueprintMeta: BlueprintMeta;
   blueprintMetaId: string;
