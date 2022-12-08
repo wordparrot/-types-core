@@ -1,4 +1,5 @@
 import { BlueprintPrice, BlueprintVersion } from ".";
+import { HubPlugin, HubPluginVersion } from "../plugin";
 
 export interface BlueprintMeta {
   id: string;
@@ -12,9 +13,13 @@ export interface BlueprintMeta {
   official: boolean;
   renderOrder: boolean;
 
-  rootPlugin: any;
+  rootPlugin: HubPlugin;
   rootPluginId: string;
-  connectedPlugins: any[];
+  rootPluginVersion: HubPluginVersion;
+  rootPluginVersionId: string;
+
+  connectedPlugins: HubPlugin[];
+  connectedPluginVersions: HubPluginVersion[];
 
   blueprintPrice: BlueprintPrice;
   blueprintPriceId: string;

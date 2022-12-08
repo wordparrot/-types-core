@@ -2,7 +2,7 @@ import { Pipeline } from "../pipeline";
 import { Webhook } from "../webhook";
 import { Listener } from "../listener";
 import { Blueprint } from "./Blueprint";
-import { PipelineGroup } from '..';
+import { PipelineGroup } from "..";
 export interface BlueprintInstallation {
     id: string;
     title: string;
