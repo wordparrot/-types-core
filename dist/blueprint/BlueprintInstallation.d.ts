@@ -1,3 +1,8 @@
+import { Pipeline } from "../pipeline";
+import { Webhook } from "../webhook";
+import { Listener } from "../listener";
+import { Blueprint } from "./Blueprint";
+import { PipelineGroup } from '..';
 export interface BlueprintInstallation {
     id: string;
     title: string;
@@ -6,6 +11,15 @@ export interface BlueprintInstallation {
     version: string;
     status: string;
     data: any;
+    blueprintId: string;
+    blueprint: Blueprint;
+    pipelineGroup: PipelineGroup;
+    pipelineGroupId: string;
+    pipelines: Pipeline[];
+    listener: Listener;
+    listenerId: string;
+    webhook: Webhook;
+    webhookId: string;
     hubBlueprintMetaId: string;
     createdAt: string;
     updatedAt: string;
