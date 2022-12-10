@@ -1,5 +1,7 @@
 export interface HubPluginVersion {
-    version: string
-    createdAt: string
-    updatedAt: string
+  id: string;
+  version: string;
+  hubPluginId: string;
+  createdAt: string;
+  updatedAt: string;
 }
