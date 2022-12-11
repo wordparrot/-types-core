@@ -22,7 +22,7 @@ __exportStar(require("./BlueprintPipeline"), exports);
 __exportStar(require("./BlueprintPipelineNode"), exports);
 __exportStar(require("./BlueprintPlugin"), exports);
 __exportStar(require("./BlueprintPrompt"), exports);
-__exportStar(require("./BlueprintRequirement"), exports);
+__exportStar(require("./BlueprintDependency"), exports);
 __exportStar(require("./BlueprintWebhook"), exports);
 __exportStar(require("./BlueprintMeta"), exports);
 __exportStar(require("./BlueprintPrice"), exports);

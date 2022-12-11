@@ -6,7 +6,7 @@ export * from "./BlueprintPipeline";
 export * from "./BlueprintPipelineNode";
 export * from "./BlueprintPlugin";
 export * from "./BlueprintPrompt";
-export * from "./BlueprintRequirement";
+export * from "./BlueprintDependency";
 export * from "./BlueprintWebhook";
 export * from "./BlueprintMeta";
 export * from "./BlueprintPrice";

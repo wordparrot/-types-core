@@ -1,4 +1,4 @@
-export interface BlueprintRequirement {
+export interface BlueprintDependency {
   hubPluginId: string;
   title: string;
   content: string;
