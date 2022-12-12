@@ -1,5 +1,5 @@
-import { BlueprintPrice, BlueprintVersion } from ".";
-import { HubPlugin, HubPluginVersion } from "../plugin";
+import { BlueprintPrice, BlueprintStats, BlueprintVersion } from ".";
+import { HubPlugin } from "..";
 export interface BlueprintMeta {
     id: string;
     title: string;
@@ -12,13 +12,11 @@ export interface BlueprintMeta {
     renderOrder: boolean;
     rootPlugin: HubPlugin;
     rootPluginId: string;
-    rootPluginVersion: HubPluginVersion;
-    rootPluginVersionId: string;
     connectedPlugins: HubPlugin[];
-    connectedPluginVersions: HubPluginVersion[];
     blueprintPrice: BlueprintPrice;
     blueprintPriceId: string;
-    blueprintVersions: BlueprintVersion[];
+    versions: BlueprintVersion[];
+    stats: BlueprintStats[];
     hubUser: any;
     hubUserId: string;
     author: any;
