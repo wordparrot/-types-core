@@ -1,9 +1,14 @@
+export declare type BlueprintDependencyMessage = "update" | "install" | "ok";
 export interface BlueprintDependency {
     hubPluginId: string;
+    hubPluginVersionId: string;
     title: string;
     content: string;
+    name: string;
     author: string;
     version: string;
-    previousVersion: string;
-    message: "update" | "install" | "ok";
+    message: BlueprintDependencyMessage;
+    imageUrl?: string;
+    createdAt?: string;
+    previousVersion?: string;
 }
