@@ -2,7 +2,7 @@ import { Pipeline } from "../pipeline";
 import { Webhook } from "../webhook";
 import { Listener } from "../listener";
 import { Blueprint } from "./Blueprint";
-import { PipelineGroup } from "..";
+import { PipelineGroup, Prompt } from "..";
 export interface BlueprintInstallation {
     id: string;
     title: string;
@@ -20,6 +20,8 @@ export interface BlueprintInstallation {
     listenerId: string;
     webhook: Webhook;
     webhookId: string;
+    prompt: Prompt;
+    promptId: string;
     hubBlueprintMetaId: string;
     createdAt: string;
     updatedAt: string;
@@ -47,6 +49,12 @@ export interface ListenerFormDataItem {
     values: any;
     isValid: boolean;
 }
+export interface PromptFormDataItem {
+    title: string;
+    type: "prompt";
+    values: any;
+    isValid: boolean;
+}
 export interface FormDataItemToChange {
     title: string;
     nodeTitle: string;
@@ -62,14 +70,20 @@ export interface WebhookFormDataItemToChange {
 }
 export declare type ListenerFormDataItemToChange = WebhookFormDataItemToChange;
 export declare type FormDataMap = Record<string, FormDataItem>;
+export declare type PromptFormDataMap = Record<string, PromptFormDataItem>;
 export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
 export declare type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
-export interface BlueprintInstallationToSave {
+export interface BlueprintPack {
+    blueprintId: string;
     blueprintInstallationId: string;
-    blueprintTitle: string;
-    hubPluginId?: string;
+    hubBlueprintMetaId: string;
+    hubBlueprintVersionId: string;
+    pipelineGroupId: string;
+    title: string;
+    content: string;
     data: {
         pipelines: FormDataMap;
+        prompts: PromptFormDataMap;
         webhooks: WebhookFormDataMap;
         listeners: ListenerFormDataMap;
     };
