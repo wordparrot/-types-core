@@ -25,6 +25,7 @@ __exportStar(require("./data-store"), exports);
 __exportStar(require("./dynamic-service"), exports);
 __exportStar(require("./entry"), exports);
 __exportStar(require("./featured-group"), exports);
+__exportStar(require("./graph-visual"), exports);
 __exportStar(require("./image"), exports);
 __exportStar(require("./listener"), exports);
 __exportStar(require("./pipeline"), exports);
