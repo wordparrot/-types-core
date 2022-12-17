@@ -3,7 +3,7 @@ import { BlueprintPlugin } from "..";
 import { BlueprintListener } from "..";
 import { BlueprintWebhook } from "..";
 import { BlueprintPrompt } from "..";
-import { GraphVisual } from '..';
+import { GraphVisual } from "..";
 export interface BlueprintStructure<A = string, L = string, W = string> {
     title: string;
     content: string;

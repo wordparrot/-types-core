@@ -9,6 +9,7 @@ export interface FieldItem {
     text: string;
     href: string;
   };
+  displayPanel?: number;
   prerequisites?: FieldPrerequisite[];
   category?: string;
   fromPropertyLabel?: string;

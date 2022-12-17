@@ -1,7 +1,7 @@
-import { Listener, Pipeline, PipelineGroup, Prompt, Webhook } from '..';
-export declare type GraphVisualChildType = 'listener' | 'pipeline' | 'prompt' | 'webhook';
+import { Listener, Pipeline, PipelineGroup, Prompt, Webhook } from "..";
+export declare type GraphVisualChildType = "listener" | "pipeline" | "prompt" | "webhook";
 export interface GraphVisualChild {
-    id: string;
+    id: string | null;
     type: GraphVisualChildType;
     index: string;
     children: GraphVisualChild[];
@@ -12,13 +12,13 @@ export interface GraphVisual {
     content?: string;
     entityType: string;
     entityId: string;
-    orderCollection: GraphVisualChild[];
+    orderCollection?: GraphVisualChild[];
     pipelineGroup?: PipelineGroup;
-    pipelineGroupId: string;
+    pipelineGroupId?: string;
     pipelines?: Pipeline[];
-    listeners: Listener[];
-    webhooks: Webhook[];
-    prompts: Prompt[];
-    createdAt: string;
-    updatedAt: string;
+    listeners?: Listener[];
+    webhooks?: Webhook[];
+    prompts?: Prompt[];
+    createdAt?: string;
+    updatedAt?: string;
 }
