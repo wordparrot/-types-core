@@ -7,12 +7,12 @@ import { PipelineGroup, Prompt } from "..";
 export interface BlueprintInstallation {
   id: string;
   title: string;
-  name: string;
-  author: string;
+  content: string;
   version: string;
-
   status: string;
-  data: any;
+  hubBlueprintVersionId: string;
+
+  pack: BlueprintPack;
 
   blueprintId: string;
   blueprint: Blueprint;
@@ -27,8 +27,6 @@ export interface BlueprintInstallation {
   webhookId: string;
   prompt: Prompt;
   promptId: string;
-
-  hubBlueprintMetaId: string;
 
   createdAt: string;
   updatedAt: string;
