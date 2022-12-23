@@ -26,6 +26,11 @@ export interface BlueprintMeta {
 
   hubUser: any;
   hubUserId: string;
+
+  // If this blueprint is produced in association with a plugin, the id goes here.
+  hubPluginId?: any;
+  hubPlugin?: HubPlugin;
+
   author: any;
   authorId: string;
 

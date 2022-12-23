@@ -19,6 +19,8 @@ export interface BlueprintMeta {
     stats: BlueprintStats[];
     hubUser: any;
     hubUserId: string;
+    hubPluginId?: any;
+    hubPlugin?: HubPlugin;
     author: any;
     authorId: string;
     contributors: any[];
