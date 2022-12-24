@@ -3,6 +3,7 @@ import { Webhook } from "../webhook";
 import { Listener } from "../listener";
 import { Blueprint } from "./Blueprint";
 import { PipelineGroup, Prompt } from "..";
+import { FieldDescriptor } from "..";
 
 export interface BlueprintInstallation {
   id: string;
@@ -37,17 +38,20 @@ export interface FormDataItem {
   title: string;
   content: string;
   type: string;
+  requiredCredentials: string[] | null;
 }
 
 export interface OtherFormDataItem extends FormDataItem {
   values: any;
   isValid: boolean;
+  descriptors?: FieldDescriptor[];
 }
 
 export interface PipelineFormDataInnerValue {
   index: number;
   isValid: boolean;
   values: any;
+  descriptors?: FieldDescriptor[];
 }
 
 export interface PipelineFormDataItem extends FormDataItem {

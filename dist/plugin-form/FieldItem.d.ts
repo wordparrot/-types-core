@@ -1,14 +1,15 @@
 import { FieldPrerequisite } from ".";
+import { FieldDescriptor } from ".";
 export interface FieldItem {
     value: string;
     label: string;
     type?: string;
     options?: FieldOption[] | ((field: FieldItem, props: any) => FieldOption[]);
+    descriptors?: FieldDescriptor[];
     link?: {
         text: string;
         href: string;
     };
-    displayPanel?: number;
     prerequisites?: FieldPrerequisite[];
     category?: string;
     fromPropertyLabel?: string;
