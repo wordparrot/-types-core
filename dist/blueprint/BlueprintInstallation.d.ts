@@ -25,50 +25,50 @@ export interface BlueprintInstallation {
     createdAt: string;
     updatedAt: string;
 }
-export interface FormDataInnerValue {
+export interface FormDataItem {
+    id: string;
+    title: string;
+}
+export interface OtherFormDataItem extends FormDataItem {
+    values: any;
+    isValid: boolean;
+}
+export interface PipelineFormDataInnerValue {
     index: number;
     isValid: boolean;
     values: any;
 }
-export interface FormDataItem {
-    title: string;
+export interface PipelineFormDataItem extends FormDataItem {
     type: "pipeline";
-    inner: Record<string, FormDataInnerValue>;
+    inner: Record<string, PipelineFormDataInnerValue>;
     allReady: boolean;
 }
-export interface WebhookFormDataItem {
-    title: string;
+export interface WebhookFormDataItem extends OtherFormDataItem {
     type: "webhook";
-    values: any;
-    isValid: boolean;
 }
-export interface ListenerFormDataItem {
-    title: string;
+export interface ListenerFormDataItem extends OtherFormDataItem {
     type: "listener";
-    values: any;
-    isValid: boolean;
 }
 export interface PromptFormDataItem {
-    title: string;
     type: "prompt";
-    values: any;
-    isValid: boolean;
 }
-export interface FormDataItemToChange {
+export interface PipelineFormDataItemToChange {
+    id: string;
     title: string;
     nodeTitle: string;
     index: number;
-    innerValue: FormDataInnerValue;
+    innerValue: PipelineFormDataInnerValue;
     allReady: boolean;
 }
-export interface WebhookFormDataItemToChange {
+export interface WebhookFormDataItemToChange extends OtherFormDataItem {
+    id: string;
     title: string;
     index: number;
     isValid: boolean;
     values: any;
 }
 export declare type ListenerFormDataItemToChange = WebhookFormDataItemToChange;
-export declare type FormDataMap = Record<string, FormDataItem>;
+export declare type PipelineFormDataMap = Record<string, PipelineFormDataItem>;
 export declare type PromptFormDataMap = Record<string, PromptFormDataItem>;
 export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
 export declare type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
@@ -81,7 +81,7 @@ export interface BlueprintPack {
     title: string;
     content: string;
     data: {
-        pipelines: FormDataMap;
+        pipelines: PipelineFormDataMap;
         prompts: PromptFormDataMap;
         webhooks: WebhookFormDataMap;
         listeners: ListenerFormDataMap;
