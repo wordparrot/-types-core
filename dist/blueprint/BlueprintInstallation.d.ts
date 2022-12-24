@@ -28,6 +28,8 @@ export interface BlueprintInstallation {
 export interface FormDataItem {
     id: string;
     title: string;
+    content: string;
+    type: string;
 }
 export interface OtherFormDataItem extends FormDataItem {
     values: any;
@@ -49,7 +51,7 @@ export interface WebhookFormDataItem extends OtherFormDataItem {
 export interface ListenerFormDataItem extends OtherFormDataItem {
     type: "listener";
 }
-export interface PromptFormDataItem {
+export interface PromptFormDataItem extends OtherFormDataItem {
     type: "prompt";
 }
 export interface PipelineFormDataItemToChange {
@@ -68,6 +70,7 @@ export interface WebhookFormDataItemToChange extends OtherFormDataItem {
     values: any;
 }
 export declare type ListenerFormDataItemToChange = WebhookFormDataItemToChange;
+export declare type FormDataMap = Record<string, OtherFormDataItem | PipelineFormDataItem>;
 export declare type PipelineFormDataMap = Record<string, PipelineFormDataItem>;
 export declare type PromptFormDataMap = Record<string, PromptFormDataItem>;
 export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
