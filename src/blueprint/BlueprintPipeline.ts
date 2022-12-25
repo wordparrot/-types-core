@@ -3,12 +3,9 @@ import { BlueprintPipelineNode } from "./BlueprintPipelineNode";
 import { InitialValues } from "..";
 import { FieldItem } from "..";
 import { ValidationSchemaItem } from "..";
+import { BlueprintEntity } from "..";
 
-export interface BlueprintPipeline<A = string> {
-  title: string;
-  content: string;
+export interface BlueprintPipeline<A = string> extends BlueprintEntity {
   initialValues: InitialValues<A>;
-  fields?: FieldItem[];
-  validationSchema?: ValidationSchemaItem[];
   nodes: BlueprintPipelineNode[];
 }

@@ -1,4 +1,4 @@
-export * from './FieldDescriptor';
+export * from "./FieldDescriptor";
 export * from "./FieldItem";
 export * from "./FieldPrerequisite";
 export * from "./ActionFormConfiguration";

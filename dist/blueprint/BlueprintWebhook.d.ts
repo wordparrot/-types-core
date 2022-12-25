@@ -1,11 +1,5 @@
-import { ValidationSchemaItem } from "..";
-import { FieldItem } from "..";
+import { BlueprintEntity } from "..";
 import { WebhookInitialValues } from "..";
-export interface BlueprintWebhook<W = string> {
-    title: string;
-    content: string;
+export interface BlueprintWebhook<W = string> extends BlueprintEntity {
     initialValues: WebhookInitialValues<W>;
-    fields?: FieldItem[];
-    validationSchema?: ValidationSchemaItem[];
-    downstreamPipelines?: string[];
 }

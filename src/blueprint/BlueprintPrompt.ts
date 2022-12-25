@@ -1,15 +1,7 @@
-import { ValidationSchemaItem } from "..";
+import { BlueprintEntity, ValidationSchemaItem } from "..";
 import { FieldItem } from "..";
 import { PromptInitialValues } from "..";
 
-export interface BlueprintPrompt {
-  title: string;
-  content: string;
-
-  initialValues: PromptInitialValues;
-  fields?: FieldItem[];
-  validationSchema?: ValidationSchemaItem[];
-
-  downstreamPipelines?: string[];
-  upstreamPipelineNodes?: string[];
+export interface BlueprintPrompt<P = string> extends BlueprintEntity {
+  initialValues: PromptInitialValues<P>;
 }

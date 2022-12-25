@@ -1,3 +1,3 @@
 import { InitialValues } from ".";
-export interface PromptInitialValues extends InitialValues {
+export interface PromptInitialValues<T> extends InitialValues<T> {
 }

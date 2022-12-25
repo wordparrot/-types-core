@@ -1,11 +1,5 @@
-import { ValidationSchemaItem } from "..";
-import { FieldItem } from "..";
+import { BlueprintEntity } from "..";
 import { InitialValues } from "..";
-export interface BlueprintListener<L = string> {
-    title: string;
-    content: string;
+export interface BlueprintListener<L = string> extends BlueprintEntity {
     initialValues: InitialValues<L>;
-    fields?: FieldItem[];
-    validationSchema?: ValidationSchemaItem[];
-    downstreamPipelines?: string[];
 }
