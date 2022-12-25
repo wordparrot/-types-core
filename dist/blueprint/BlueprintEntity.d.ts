@@ -1,7 +1,7 @@
 import { ValidationSchemaItem } from "..";
 import { FieldItem } from "..";
 import { FieldDescriptor } from "..";
-export declare type FieldStatusType = 'edit' | 'readonly' | 'hidden' | 'clear';
+export declare type FieldStatusType = "edit" | "readonly" | "hidden" | "clear";
 export interface FieldStatusMapItem {
     property: string;
     status: FieldStatusType;

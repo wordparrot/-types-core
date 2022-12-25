@@ -4,7 +4,7 @@ import { BlueprintListener } from "..";
 import { BlueprintWebhook } from "..";
 import { BlueprintPrompt } from "..";
 import { GraphVisual } from "..";
-export interface BlueprintStructure<A = string, L = string, W = string> {
+export interface BlueprintStructure<A = string, L = string, W = string, P = string> {
     title: string;
     content: string;
     author?: string;
@@ -16,6 +16,6 @@ export interface BlueprintStructure<A = string, L = string, W = string> {
     pipelines: BlueprintPipeline<A>[];
     listeners?: BlueprintListener<L>[];
     webhooks?: BlueprintWebhook<W>[];
-    prompts?: BlueprintPrompt[];
+    prompts?: BlueprintPrompt<P>[];
     graphVisuals?: GraphVisual[];
 }
