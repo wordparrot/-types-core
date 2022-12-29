@@ -6,6 +6,7 @@ export interface BlueprintSaved {
     status: string;
     version: string;
     structure: BlueprintStructure;
+    preExport: any;
     projectId: string;
     exportId: string;
     createdAt: string;

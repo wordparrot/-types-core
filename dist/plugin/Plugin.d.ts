@@ -1,5 +1,5 @@
 import { HubPlugin, PluginError } from ".";
-import { ActionFormConfiguration, CredentialFormConfiguration, ListenerFormConfiguration, WebhookFormConfiguration } from "..";
+import { ActionFormConfiguration, CredentialFormConfiguration, ListenerFormConfiguration, WebhookFormConfiguration, PromptFormConfiguration } from "..";
 import { Blueprint } from "..";
 export interface Plugin extends HubPlugin {
     id: string;
@@ -16,6 +16,7 @@ export interface Plugin extends HubPlugin {
     credentials: CredentialFormConfiguration[];
     listeners: ListenerFormConfiguration[];
     webhooks: WebhookFormConfiguration[];
+    prompts: PromptFormConfiguration[];
     errors: {
         actions: Record<string, PluginError>;
         listeners: Record<string, PluginError>;

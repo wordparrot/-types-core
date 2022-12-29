@@ -3,4 +3,5 @@ export interface FieldDescriptor {
     index: number;
     type: "header" | "tagline" | "body" | "link";
     text: string;
+    href?: string;
 }

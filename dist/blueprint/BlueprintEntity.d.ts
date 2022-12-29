@@ -8,6 +8,7 @@ export interface FieldStatusMapItem {
     descriptors: FieldDescriptor[];
     ready?: boolean;
 }
+export declare type FieldStatusMap = Record<string, FieldStatusMapItem>;
 export interface BlueprintEntity<InitialValues = any> {
     id: string;
     title: string;
