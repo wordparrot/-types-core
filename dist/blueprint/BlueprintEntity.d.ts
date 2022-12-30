@@ -16,7 +16,7 @@ export interface BlueprintEntity<InitialValues = any> {
     initialValues: InitialValues;
     fields?: FieldItem[];
     validationSchema?: ValidationSchemaItem[];
-    fieldStatusMap: Record<string, FieldStatusMapItem>;
+    fieldStatusMap: FieldStatusMap;
     downstreamPipelines?: string[];
     upstreamPipelineNodes?: string[];
 }
