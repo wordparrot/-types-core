@@ -9,7 +9,6 @@ export interface FieldStatusMapItem {
     ready?: boolean;
 }
 export declare type FieldStatusMap = Record<string, FieldStatusMapItem>;
-export declare type BlueprintExportFieldStatusMap = FieldStatusMap;
 export interface BlueprintEntity<InitialValues = any> {
     id: string;
     title: string;
@@ -20,4 +19,24 @@ export interface BlueprintEntity<InitialValues = any> {
     fieldStatusMap: Record<string, FieldStatusMapItem>;
     downstreamPipelines?: string[];
     upstreamPipelineNodes?: string[];
+}
+export declare type BlueprintEntityMap = Record<string, BlueprintEntity>;
+export declare type BlueprintEntityFormStateType = 'pipeline' | 'prompt' | 'listener' | 'webhook' | '';
+export interface BlueprintEntityFormState {
+    id: string;
+    type: BlueprintEntityFormStateType;
+    providers: {
+        id: string;
+        title: string;
+        name: string;
+        ready: boolean;
+        savedValues?: any;
+        fieldStatusMap?: FieldStatusMap;
+    }[];
+    entity: any | null;
+    currentProviderName?: string;
+    ready?: boolean;
+    savedValues?: any;
+    fieldStatusMap?: FieldStatusMap;
+    lastChange?: number;
 }

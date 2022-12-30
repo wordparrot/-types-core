@@ -12,7 +12,6 @@ export interface FieldStatusMapItem {
 }
 
 export type FieldStatusMap = Record<string, FieldStatusMapItem>;
-export type BlueprintExportFieldStatusMap = FieldStatusMap;
 
 export interface BlueprintEntity<InitialValues = any> {
   id: string;
@@ -26,4 +25,32 @@ export interface BlueprintEntity<InitialValues = any> {
 
   downstreamPipelines?: string[];
   upstreamPipelineNodes?: string[];
+}
+
+export type BlueprintEntityMap = Record<string, BlueprintEntity>;
+
+export type BlueprintEntityFormStateType =
+  | "pipeline"
+  | "prompt"
+  | "listener"
+  | "webhook"
+  | "";
+
+export interface BlueprintEntityFormState {
+  id: string;
+  type: BlueprintEntityFormStateType;
+  providers: {
+    id: string;
+    title: string;
+    name: string;
+    ready: boolean;
+    savedValues?: any;
+    fieldStatusMap?: FieldStatusMap;
+  }[];
+  entity: any | null;
+  currentProviderName?: string;
+  ready?: boolean;
+  savedValues?: any;
+  fieldStatusMap?: FieldStatusMap;
+  lastChange?: number;
 }
