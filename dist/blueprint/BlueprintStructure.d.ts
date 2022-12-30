@@ -5,13 +5,14 @@ import { BlueprintWebhook } from "..";
 import { BlueprintPrompt } from "..";
 import { GraphVisual } from "..";
 export interface BlueprintStructure<A = string, L = string, W = string, P = string> {
-    title: string;
-    content: string;
+    hubBlueprintMetaId?: string;
+    hubBlueprintVersionId?: string;
     author?: string;
     name?: string;
     version?: string;
     logo?: string;
-    pipelineGroupTitle?: string;
+    title: string;
+    content: string;
     dependencies?: BlueprintPlugin[];
     pipelines: BlueprintPipeline<A>[];
     listeners?: BlueprintListener<L>[];

@@ -9,6 +9,7 @@ export interface FieldStatusMapItem {
     ready?: boolean;
 }
 export declare type FieldStatusMap = Record<string, FieldStatusMapItem>;
+export declare type BlueprintExportFieldStatusMap = FieldStatusMap;
 export interface BlueprintEntity<InitialValues = any> {
     id: string;
     title: string;
