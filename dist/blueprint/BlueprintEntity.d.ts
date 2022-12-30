@@ -21,7 +21,7 @@ export interface BlueprintEntity<InitialValues = any> {
     upstreamPipelineNodes?: string[];
 }
 export declare type BlueprintEntityMap = Record<string, BlueprintEntity>;
-export declare type BlueprintEntityFormStateType = 'pipeline' | 'prompt' | 'listener' | 'webhook' | '';
+export declare type BlueprintEntityFormStateType = "pipeline" | "prompt" | "listener" | "webhook" | "";
 export interface BlueprintEntityFormState {
     id: string;
     type: BlueprintEntityFormStateType;
@@ -40,3 +40,4 @@ export interface BlueprintEntityFormState {
     fieldStatusMap?: FieldStatusMap;
     lastChange?: number;
 }
+export declare type BlueprintEntityFormStateMap = Record<string, BlueprintEntityFormState>;

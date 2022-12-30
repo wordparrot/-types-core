@@ -54,3 +54,8 @@ export interface BlueprintEntityFormState {
   fieldStatusMap?: FieldStatusMap;
   lastChange?: number;
 }
+
+export type BlueprintEntityFormStateMap = Record<
+  string,
+  BlueprintEntityFormState
+>;
