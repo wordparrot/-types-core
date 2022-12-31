@@ -1,3 +1,9 @@
+import {
+  BlueprintEntityRequirementMap,
+  BlueprintEntityRequirementType,
+} from ".";
+
+// A list of common UUIDs to be found in pipeline nodes.
 const entityIdNames = [
   "dataStoreId",
   "promptId",
@@ -21,6 +27,7 @@ const entityIdNames = [
   "csvId",
 ];
 
+// These fields should be set to null when blueprints are exported, so they can be set by default by the installer.
 export const setToNull: string[] = [
   "id",
   "active",
@@ -38,15 +45,7 @@ export const setToNull: string[] = [
   "userId",
 ];
 
-export const setBlueprintFieldsToNull = <T>(entity: T): T => {
-  for (const prop in entity) {
-    if (setToNull.includes(prop)) {
-      entity[prop] = null;
-    }
-  }
-  return entity;
-};
-
+// These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 export const excludedFieldValues: string[] = [
   ...entityIdNames,
   ...setToNull,
@@ -57,12 +56,28 @@ export const excludedFieldValues: string[] = [
   "transformations",
 ];
 
+// These field types should be hidden on the export page.
 export const excludedFieldTypes: string[] = [
   "jsonTransformation",
   "space",
   "header",
   "hideFields",
 ];
+
+// These fields should be detected if they have a value, so that the user can be notified that certain entities must first be created before installing.
+export const fieldsMappedToRequirements: Record<
+  string,
+  BlueprintEntityRequirementType
+> = {
+  pipelineId: "pipeline",
+  pipelineNodeId: "pipelineNode",
+  dataStoreId: "dataStore",
+  repositoryId: "repository",
+  repositoryTagId: "repositoryTag",
+  csvId: "csv",
+  csvReportId: "csvReport",
+  userId: "user",
+};
 
 export const ignoreIfNotObject: string[] = ["values", "transformations"];
 
@@ -72,4 +87,30 @@ export const BlueprintExclusions = {
   excludedFieldValues,
   ignoreIfNotObject,
   setToNull,
+};
+
+export const setBlueprintFieldsToNull = <T = any>(entity: T): T => {
+  for (const prop in entity) {
+    if (setToNull.includes(prop)) {
+      entity[prop] = null;
+    }
+  }
+  return entity;
+};
+
+export const createRequirementMap = <T = any>(
+  entity: T
+): BlueprintEntityRequirementMap => {
+  const blueprintEntityRequirementMap: BlueprintEntityRequirementMap = {};
+
+  for (const prop in entity) {
+    if (fieldsMappedToRequirements[prop]) {
+      blueprintEntityRequirementMap[prop] = {
+        property: prop,
+        requirement: fieldsMappedToRequirements[prop],
+      };
+    }
+  }
+
+  return blueprintEntityRequirementMap;
 };

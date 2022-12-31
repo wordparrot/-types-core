@@ -17,6 +17,7 @@ export interface BlueprintEntity<InitialValues = any> {
     fields?: FieldItem[];
     validationSchema?: ValidationSchemaItem[];
     fieldStatusMap: FieldStatusMap;
+    requirementMap: BlueprintEntityRequirementMap;
     downstreamPipelines?: string[];
     upstreamPipelineNodes?: string[];
 }
@@ -41,3 +42,9 @@ export interface BlueprintEntityFormState {
     lastChange?: number;
 }
 export declare type BlueprintEntityFormStateMap = Record<string, BlueprintEntityFormState>;
+export declare type BlueprintEntityRequirementType = 'pipeline' | 'pipelineNode' | 'credential' | 'dataStore' | 'csv' | 'project' | 'pipelineGroup' | 'entry' | 'featuredGroup' | 'csvReport' | 'blueprint' | 'repository' | 'repositoryTag' | 'image' | 'category' | 'subcategory' | 'user' | 'project';
+export interface BlueprintEntityRequirement {
+    property: string;
+    requirement: BlueprintEntityRequirementType;
+}
+export declare type BlueprintEntityRequirementMap = Record<string, BlueprintEntityRequirement>;

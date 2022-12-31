@@ -1,7 +1,8 @@
+import { BlueprintEntityRequirementMap, BlueprintEntityRequirementType } from ".";
 export declare const setToNull: string[];
-export declare const setBlueprintFieldsToNull: <T>(entity: T) => T;
 export declare const excludedFieldValues: string[];
 export declare const excludedFieldTypes: string[];
+export declare const fieldsMappedToRequirements: Record<string, BlueprintEntityRequirementType>;
 export declare const ignoreIfNotObject: string[];
 export declare const BlueprintExclusions: {
     entityIdNames: string[];
@@ -10,3 +11,5 @@ export declare const BlueprintExclusions: {
     ignoreIfNotObject: string[];
     setToNull: string[];
 };
+export declare const setBlueprintFieldsToNull: <T = any>(entity: T) => T;
+export declare const createRequirementMap: <T = any>(entity: T) => BlueprintEntityRequirementMap;

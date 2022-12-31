@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setBlueprintFieldsToNull = exports.setToNull = void 0;
+exports.createRequirementMap = exports.setBlueprintFieldsToNull = exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.fieldsMappedToRequirements = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setToNull = void 0;
+// A list of common UUIDs to be found in pipeline nodes.
 const entityIdNames = [
     "dataStoreId",
     "promptId",
@@ -23,6 +24,7 @@ const entityIdNames = [
     "parentNodeId",
     "csvId",
 ];
+// These fields should be set to null when blueprints are exported, so they can be set by default by the installer.
 exports.setToNull = [
     "id",
     "active",
@@ -39,15 +41,7 @@ exports.setToNull = [
     "siteId",
     "userId",
 ];
-const setBlueprintFieldsToNull = (entity) => {
-    for (const prop in entity) {
-        if (exports.setToNull.includes(prop)) {
-            entity[prop] = null;
-        }
-    }
-    return entity;
-};
-exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
+// These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 exports.excludedFieldValues = [
     ...entityIdNames,
     ...exports.setToNull,
@@ -57,12 +51,24 @@ exports.excludedFieldValues = [
     "provider",
     "transformations",
 ];
+// These field types should be hidden on the export page.
 exports.excludedFieldTypes = [
     "jsonTransformation",
     "space",
     "header",
     "hideFields",
 ];
+// These fields should be detected if they have a value, so that the user can be notified that certain entities must first be created before installing.
+exports.fieldsMappedToRequirements = {
+    'pipelineId': 'pipeline',
+    'pipelineNodeId': 'pipelineNode',
+    'dataStoreId': 'dataStore',
+    'repositoryId': 'repository',
+    'repositoryTagId': 'repositoryTag',
+    'csvId': 'csv',
+    'csvReportId': 'csvReport',
+    'userId': 'user'
+};
 exports.ignoreIfNotObject = ["values", "transformations"];
 exports.BlueprintExclusions = {
     entityIdNames,
@@ -71,3 +77,25 @@ exports.BlueprintExclusions = {
     ignoreIfNotObject: exports.ignoreIfNotObject,
     setToNull: exports.setToNull,
 };
+const setBlueprintFieldsToNull = (entity) => {
+    for (const prop in entity) {
+        if (exports.setToNull.includes(prop)) {
+            entity[prop] = null;
+        }
+    }
+    return entity;
+};
+exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
+const createRequirementMap = (entity) => {
+    const blueprintEntityRequirementMap = {};
+    for (const prop in entity) {
+        if (exports.fieldsMappedToRequirements[prop]) {
+            blueprintEntityRequirementMap[prop] = {
+                property: prop,
+                requirement: exports.fieldsMappedToRequirements[prop]
+            };
+        }
+    }
+    return blueprintEntityRequirementMap;
+};
+exports.createRequirementMap = createRequirementMap;
