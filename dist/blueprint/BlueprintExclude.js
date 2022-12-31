@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.excludedFieldTypes = exports.excludedFieldValues = void 0;
+exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setBlueprintFieldsToNull = exports.setToNull = void 0;
 const entityIdNames = [
     "dataStoreId",
     "promptId",
@@ -23,17 +23,29 @@ const entityIdNames = [
     "parentNodeId",
     "csvId",
 ];
+exports.setToNull = [
+    "id",
+    "status",
+    "nodeStatus",
+    "createdAt",
+    "updatedAt",
+];
+const setBlueprintFieldsToNull = (entity) => {
+    for (const prop in entity) {
+        if (exports.setToNull.includes(prop)) {
+            entity[prop] = null;
+        }
+    }
+    return entity;
+};
+exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
 exports.excludedFieldValues = [
     ...entityIdNames,
-    "id",
+    ...exports.setToNull,
     "title",
     "content",
     "type",
-    "status",
-    "nodeStatus",
     "provider",
-    "createdAt",
-    "updatedAt",
     "transformations",
 ];
 exports.excludedFieldTypes = [
@@ -44,7 +56,9 @@ exports.excludedFieldTypes = [
 ];
 exports.ignoreIfNotObject = ["values", "transformations"];
 exports.BlueprintExclusions = {
+    entityIdNames,
     excludedFieldTypes: exports.excludedFieldTypes,
     excludedFieldValues: exports.excludedFieldValues,
     ignoreIfNotObject: exports.ignoreIfNotObject,
+    setToNull: exports.setToNull,
 };

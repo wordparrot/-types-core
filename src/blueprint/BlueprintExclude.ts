@@ -21,17 +21,30 @@ const entityIdNames = [
   "csvId",
 ];
 
+export const setToNull: string[] = [
+  "id",
+  "status",
+  "nodeStatus",
+  "createdAt",
+  "updatedAt",
+];
+
+export const setBlueprintFieldsToNull = <T>(entity: T): T => {
+  for (const prop in entity) {
+    if (setToNull.includes(prop)) {
+      entity[prop] = null;
+    }
+  }
+  return entity;
+};
+
 export const excludedFieldValues: string[] = [
   ...entityIdNames,
-  "id",
+  ...setToNull,
   "title",
   "content",
   "type",
-  "status",
-  "nodeStatus",
   "provider",
-  "createdAt",
-  "updatedAt",
   "transformations",
 ];
 
@@ -45,7 +58,9 @@ export const excludedFieldTypes: string[] = [
 export const ignoreIfNotObject: string[] = ["values", "transformations"];
 
 export const BlueprintExclusions = {
+  entityIdNames,
   excludedFieldTypes,
   excludedFieldValues,
   ignoreIfNotObject,
+  setToNull,
 };
