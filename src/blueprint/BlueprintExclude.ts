@@ -23,10 +23,19 @@ const entityIdNames = [
 
 export const setToNull: string[] = [
   "id",
+  "active",
   "status",
   "nodeStatus",
+  "queueStatus",
   "createdAt",
   "updatedAt",
+  "nextRun",
+  "recordReports",
+  "downstreamPipelines",
+  "nodes",
+  "dataStatus",
+  "siteId",
+  "userId",
 ];
 
 export const setBlueprintFieldsToNull = <T>(entity: T): T => {

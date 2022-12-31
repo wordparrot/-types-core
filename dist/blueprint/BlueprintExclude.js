@@ -25,10 +25,19 @@ const entityIdNames = [
 ];
 exports.setToNull = [
     "id",
+    "active",
     "status",
     "nodeStatus",
+    "queueStatus",
     "createdAt",
     "updatedAt",
+    "nextRun",
+    "recordReports",
+    "downstreamPipelines",
+    "nodes",
+    "dataStatus",
+    "siteId",
+    "userId",
 ];
 const setBlueprintFieldsToNull = (entity) => {
     for (const prop in entity) {
