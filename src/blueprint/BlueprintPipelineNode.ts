@@ -16,6 +16,5 @@ export interface BlueprintPipelineNode {
   fieldStatusMap: FieldStatusMap;
   requirementMap: BlueprintEntityRequirementMap;
 
-  parentNodeTitle: string | null;
   downstreamPipelines?: string[];
 }

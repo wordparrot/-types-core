@@ -69,14 +69,11 @@ export const fieldsMappedToRequirements: Record<
   string,
   BlueprintEntityRequirementType
 > = {
-  pipelineId: "pipeline",
-  pipelineNodeId: "pipelineNode",
+  credentialId: "credential",
   dataStoreId: "dataStore",
   repositoryId: "repository",
-  repositoryTagId: "repositoryTag",
   csvId: "csv",
   csvReportId: "csvReport",
-  userId: "user",
 };
 
 export const ignoreIfNotObject: string[] = ["values", "transformations"];

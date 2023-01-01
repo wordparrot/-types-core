@@ -60,14 +60,11 @@ exports.excludedFieldTypes = [
 ];
 // These fields should be detected if they have a value, so that the user can be notified that certain entities must first be created before installing.
 exports.fieldsMappedToRequirements = {
-    'pipelineId': 'pipeline',
-    'pipelineNodeId': 'pipelineNode',
-    'dataStoreId': 'dataStore',
-    'repositoryId': 'repository',
-    'repositoryTagId': 'repositoryTag',
-    'csvId': 'csv',
-    'csvReportId': 'csvReport',
-    'userId': 'user'
+    credentialId: "credential",
+    dataStoreId: "dataStore",
+    repositoryId: "repository",
+    csvId: "csv",
+    csvReportId: "csvReport",
 };
 exports.ignoreIfNotObject = ["values", "transformations"];
 exports.BlueprintExclusions = {
@@ -92,7 +89,7 @@ const createRequirementMap = (entity) => {
         if (exports.fieldsMappedToRequirements[prop]) {
             blueprintEntityRequirementMap[prop] = {
                 property: prop,
-                requirement: exports.fieldsMappedToRequirements[prop]
+                requirement: exports.fieldsMappedToRequirements[prop],
             };
         }
     }

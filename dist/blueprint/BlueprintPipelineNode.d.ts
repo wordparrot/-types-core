@@ -13,6 +13,5 @@ export interface BlueprintPipelineNode {
     validationSchema?: ValidationSchemaItem[];
     fieldStatusMap: FieldStatusMap;
     requirementMap: BlueprintEntityRequirementMap;
-    parentNodeTitle: string | null;
     downstreamPipelines?: string[];
 }
