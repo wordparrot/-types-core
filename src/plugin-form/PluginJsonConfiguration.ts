@@ -8,6 +8,7 @@ export interface PluginJsonConfiguration {
   platform: string;
   website: string;
   version: string;
+  sourceVersion?: string;
   repository: string;
   license: string;
   logo: string;
