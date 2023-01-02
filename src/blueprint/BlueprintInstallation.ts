@@ -3,7 +3,7 @@ import { Webhook } from "../webhook";
 import { Listener } from "../listener";
 import { Blueprint } from "./Blueprint";
 import { PipelineGroup, Prompt } from "..";
-import { BlueprintPack } from "..";
+import { BlueprintEntityFormStateMap } from "..";
 
 export interface BlueprintInstallation {
   id: string;
@@ -13,7 +13,7 @@ export interface BlueprintInstallation {
   status: string;
   hubBlueprintVersionId: string;
 
-  pack: BlueprintPack;
+  pack: BlueprintEntityFormStateMap;
 
   blueprintId: string;
   blueprint: Blueprint;

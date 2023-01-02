@@ -23,22 +23,24 @@ export interface BlueprintEntity<InitialValues = any> {
 }
 export declare type BlueprintEntityMap = Record<string, BlueprintEntity>;
 export declare type BlueprintEntityFormStateType = "pipeline" | "prompt" | "listener" | "webhook" | "";
+export interface BlueprintEntityFormStateProvider {
+    id: string;
+    title: string;
+    name: string;
+    ready: boolean;
+    savedValues?: any;
+    fieldStatusMap?: FieldStatusMap;
+}
 export interface BlueprintEntityFormState {
     id: string;
     type: BlueprintEntityFormStateType;
-    providers: {
-        id: string;
-        title: string;
-        name: string;
-        ready: boolean;
-        savedValues?: any;
-        fieldStatusMap?: FieldStatusMap;
-    }[];
+    providers: BlueprintEntityFormStateProvider[];
     entity: any | null;
     currentProviderName?: string;
     ready?: boolean;
     savedValues?: any;
     fieldStatusMap?: FieldStatusMap;
+    requirementMap?: BlueprintEntityRequirementMap;
     lastChange?: number;
 }
 export declare type BlueprintEntityFormStateMap = Record<string, BlueprintEntityFormState>;
