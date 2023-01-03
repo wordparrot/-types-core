@@ -1,11 +1,9 @@
-import { Axios } from "axios";
-import { FileUtility, FileUtilityConfig } from "..";
 import { ConstructableWithConfig } from "..";
-export declare type SandboxLib = {
-    axios: Axios;
+export declare type SandboxLib<A = any, F = any, C = any> = {
+    axios: A;
     _: any;
     qs: any;
     FormData: any;
     crypto?: any;
-    FileUtility: ConstructableWithConfig<FileUtilityConfig, FileUtility>;
+    FileUtility: ConstructableWithConfig<F, C>;
 };
