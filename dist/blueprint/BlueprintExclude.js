@@ -41,6 +41,8 @@ exports.setToNull = [
     "dataStatus",
     "siteId",
     "userId",
+    "credentialId",
+    "credential",
 ];
 // These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 exports.excludedFieldValues = [
@@ -99,6 +101,18 @@ const createRequirementMap = (entity) => {
                 property: prop,
                 requirement: exports.fieldsMappedToRequirements[prop],
             };
+            if (prop === "credentialId") {
+                try {
+                    // Extract the credential provider so the user can go to credential creation page.
+                    const { provider } = (entity['credential'] || {});
+                    if (provider) {
+                        blueprintEntityRequirementMap[prop].provider = provider;
+                    }
+                }
+                catch (e) {
+                    // provider not found, skip
+                }
+            }
         }
     }
     return blueprintEntityRequirementMap;
