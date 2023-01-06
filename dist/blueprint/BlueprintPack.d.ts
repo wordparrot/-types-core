@@ -52,24 +52,3 @@ export declare type PipelineFormDataMap = Record<string, PipelineFormDataItem>;
 export declare type PromptFormDataMap = Record<string, PromptFormDataItem>;
 export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
 export declare type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
-export interface BlueprintPackState {
-    pipelines: PipelineFormDataMap;
-    prompts: PromptFormDataMap;
-    webhooks: WebhookFormDataMap;
-    listeners: ListenerFormDataMap;
-}
-export interface BlueprintPack {
-    blueprintId: string;
-    blueprintInstallationId: string;
-    hubBlueprintMetaId: string;
-    hubBlueprintVersionId: string;
-    pipelineGroupId?: string;
-    projectId?: string;
-    author?: string;
-    name?: string;
-    version?: string;
-    logo?: string;
-    title: string;
-    content: string;
-    state: BlueprintPackState;
-}

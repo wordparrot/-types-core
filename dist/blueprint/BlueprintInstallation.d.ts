@@ -11,7 +11,7 @@ export interface BlueprintInstallation {
     version: string;
     status: string;
     hubBlueprintVersionId: string;
-    pack: BlueprintEntityFormStateMap;
+    entityStateMap: BlueprintEntityFormStateMap;
     blueprintId: string;
     blueprint: Blueprint;
     pipelineGroup: PipelineGroup;

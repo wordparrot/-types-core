@@ -1,5 +1,6 @@
 import { FieldPrerequisite } from ".";
 import { FieldDescriptor } from ".";
+import { FieldStatusMapItem } from "..";
 export interface FieldItem {
     value: string;
     label: string;
@@ -24,6 +25,7 @@ export interface FieldItem {
         uiSchema?: any;
     };
     hiddenFields?: FieldItem[];
+    fieldStatus?: FieldStatusMapItem;
 }
 export interface FieldOption {
     value: string | boolean;
