@@ -93,7 +93,7 @@ const setBlueprintFieldsToNull = (entity) => {
     return entity;
 };
 exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
-const createRequirementMap = (entity) => {
+const createRequirementMap = (entity, addedRequirements = []) => {
     const blueprintEntityRequirementMap = {};
     for (const prop in entity) {
         if (exports.fieldsMappedToRequirements[prop]) {
@@ -101,20 +101,11 @@ const createRequirementMap = (entity) => {
                 property: prop,
                 requirement: exports.fieldsMappedToRequirements[prop],
             };
-            if (prop === "credentialId") {
-                try {
-                    // Extract the credential provider so the user can go to credential creation page.
-                    const { provider } = (entity['credential'] || {});
-                    if (provider) {
-                        blueprintEntityRequirementMap[prop].provider = provider;
-                    }
-                }
-                catch (e) {
-                    // provider not found, skip
-                }
-            }
         }
     }
+    addedRequirements.forEach((requirement) => {
+        blueprintEntityRequirementMap[requirement.property] = requirement;
+    });
     return blueprintEntityRequirementMap;
 };
 exports.createRequirementMap = createRequirementMap;

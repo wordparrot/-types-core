@@ -1,6 +1,7 @@
 import {
   BlueprintEntityRequirementMap,
   BlueprintEntityRequirementType,
+  BlueprintEntityRequirement,
 } from ".";
 
 // A list of common UUIDs to be found in pipeline nodes.
@@ -106,7 +107,8 @@ export const setBlueprintFieldsToNull = <T = any>(entity: T): T => {
 };
 
 export const createRequirementMap = <T = any>(
-  entity: T
+  entity: T,
+  addedRequirements: BlueprintEntityRequirement[] = []
 ): BlueprintEntityRequirementMap => {
   const blueprintEntityRequirementMap: BlueprintEntityRequirementMap = {};
 
@@ -116,19 +118,12 @@ export const createRequirementMap = <T = any>(
         property: prop,
         requirement: fieldsMappedToRequirements[prop],
       };
-      if (prop === "credentialId") {
-        try {
-          // Extract the credential provider so the user can go to credential creation page.
-          const { provider } = (entity["credential"] || {}) as any;
-          if (provider) {
-            blueprintEntityRequirementMap[prop].provider = provider;
-          }
-        } catch (e) {
-          // provider not found, skip
-        }
-      }
     }
   }
+
+  addedRequirements.forEach((requirement) => {
+    blueprintEntityRequirementMap[requirement.property] = requirement;
+  });
 
   return blueprintEntityRequirementMap;
 };
