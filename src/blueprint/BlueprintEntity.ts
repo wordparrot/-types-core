@@ -2,7 +2,12 @@ import { ValidationSchemaItem } from "..";
 import { FieldItem } from "..";
 import { FieldDescriptor } from "..";
 
-export type FieldStatusType = "edit" | "readonly" | "hidden" | "clear";
+export type FieldStatusType =
+  | "edit"
+  | "advise"
+  | "readonly"
+  | "hidden"
+  | "clear";
 
 export interface FieldStatusMapItem {
   property: string;
@@ -87,6 +92,7 @@ export type BlueprintEntityRequirementType =
 export interface BlueprintEntityRequirement {
   property: string;
   requirement: BlueprintEntityRequirementType;
+  provider?: string;
 }
 
 export type BlueprintEntityRequirementMap = Record<

@@ -1,7 +1,7 @@
 import { ValidationSchemaItem } from "..";
 import { FieldItem } from "..";
 import { FieldDescriptor } from "..";
-export declare type FieldStatusType = "edit" | "readonly" | "hidden" | "clear";
+export declare type FieldStatusType = "edit" | "advise" | "readonly" | "hidden" | "clear";
 export interface FieldStatusMapItem {
     property: string;
     status: FieldStatusType;
@@ -48,5 +48,6 @@ export declare type BlueprintEntityRequirementType = "pipeline" | "pipelineNode"
 export interface BlueprintEntityRequirement {
     property: string;
     requirement: BlueprintEntityRequirementType;
+    provider?: string;
 }
 export declare type BlueprintEntityRequirementMap = Record<string, BlueprintEntityRequirement>;

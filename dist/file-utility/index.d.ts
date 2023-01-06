@@ -1,1 +1,1 @@
-export * from './FileUtilityConfig';
+export * from "./FileUtilityConfig";

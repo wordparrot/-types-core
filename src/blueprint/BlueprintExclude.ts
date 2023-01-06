@@ -24,6 +24,7 @@ const entityIdNames = [
   "repositoryId",
   "repositoryTagIds",
   "parentNodeId",
+  "linkedNodeId",
   "csvId",
 ];
 
@@ -49,11 +50,18 @@ export const setToNull: string[] = [
 export const excludedFieldValues: string[] = [
   ...entityIdNames,
   ...setToNull,
+  "id",
   "title",
   "content",
   "type",
   "provider",
+  "status",
+  "nodeStatus",
+  "provider",
+  "createdAt",
+  "updatedAt",
   "transformations",
+  "linkedNode",
 ];
 
 // These field types should be hidden on the export page.
