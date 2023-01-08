@@ -49,6 +49,7 @@ export interface BlueprintEntityFormStateProvider {
   ready: boolean;
   savedValues?: any;
   fieldStatusMap?: FieldStatusMap;
+  requirementMap?: BlueprintEntityRequirementMap;
 }
 
 export interface BlueprintEntityFormState {

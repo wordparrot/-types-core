@@ -67,6 +67,7 @@ exports.excludedFieldTypes = [
     "space",
     "header",
     "hideFields",
+    "jsonSchemaForm",
 ];
 // These fields should be detected if they have a value, so that the user can be notified that certain entities must first be created before installing.
 exports.fieldsMappedToRequirements = {
@@ -94,13 +95,26 @@ const setBlueprintFieldsToNull = (entity) => {
 };
 exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
 const createRequirementMap = (entity, addedRequirements = []) => {
+    var _a, _b;
     const blueprintEntityRequirementMap = {};
     for (const prop in entity) {
-        if (exports.fieldsMappedToRequirements[prop]) {
+        if (!exports.fieldsMappedToRequirements[prop]) {
+            continue;
+        }
+        if (!!(entity[prop])) {
+            // Value must be truthy
             blueprintEntityRequirementMap[prop] = {
                 property: prop,
                 requirement: exports.fieldsMappedToRequirements[prop],
             };
+            // If there is both ID and related entity, get the related entity's provider value.
+            // This is most useful for credentials.
+            if (prop.endsWith('Id')) {
+                const relatedEntityName = prop.replace('Id', '');
+                if (entity[relatedEntityName] && ((_a = entity[relatedEntityName]) === null || _a === void 0 ? void 0 : _a.provider)) {
+                    blueprintEntityRequirementMap[prop].provider = (_b = entity[relatedEntityName]) === null || _b === void 0 ? void 0 : _b.provider;
+                }
+            }
         }
     }
     addedRequirements.forEach((requirement) => {
