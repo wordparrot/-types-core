@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createRequirementMap = exports.setBlueprintFieldsToNull = exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.fieldsMappedToRequirements = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setToNull = void 0;
+exports.createRequirementMap = exports.setBlueprintFieldsToUndefined = exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.fieldsMappedToRequirements = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setToUndefined = void 0;
 // A list of common UUIDs to be found in pipeline nodes.
 const entityIdNames = [
     "dataStoreId",
@@ -25,36 +25,32 @@ const entityIdNames = [
     "linkedNodeId",
     "csvId",
 ];
-// These fields should be set to null when blueprints are exported, so they can be set by default by the installer.
-exports.setToNull = [
+// These fields should be set to undefined when blueprints are exported, so they can be set by default by the installer.
+exports.setToUndefined = [
     "id",
-    "active",
-    "status",
-    "nodeStatus",
-    "queueStatus",
-    "createdAt",
-    "updatedAt",
-    "nextRun",
-    "recordReports",
     "downstreamPipelines",
     "nodes",
-    "dataStatus",
     "siteId",
     "userId",
     "credentialId",
     "credential",
+    "createdAt",
+    "updatedAt",
+    "nextRun",
+    "recordReports",
+    "queueStatus",
+    "dataStatus",
 ];
 // These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 exports.excludedFieldValues = [
     ...entityIdNames,
-    ...exports.setToNull,
+    ...exports.setToUndefined,
     "id",
     "title",
     "content",
     "type",
     "provider",
     "status",
-    "nodeStatus",
     "provider",
     "createdAt",
     "updatedAt",
@@ -83,17 +79,17 @@ exports.BlueprintExclusions = {
     excludedFieldTypes: exports.excludedFieldTypes,
     excludedFieldValues: exports.excludedFieldValues,
     ignoreIfNotObject: exports.ignoreIfNotObject,
-    setToNull: exports.setToNull,
+    setToUndefined: exports.setToUndefined,
 };
-const setBlueprintFieldsToNull = (entity) => {
+const setBlueprintFieldsToUndefined = (entity) => {
     for (const prop in entity) {
-        if (exports.setToNull.includes(prop)) {
-            entity[prop] = null;
+        if (exports.setToUndefined.includes(prop)) {
+            entity[prop] = undefined;
         }
     }
     return entity;
 };
-exports.setBlueprintFieldsToNull = setBlueprintFieldsToNull;
+exports.setBlueprintFieldsToUndefined = setBlueprintFieldsToUndefined;
 const createRequirementMap = (entity, addedRequirements = []) => {
     var _a, _b;
     const blueprintEntityRequirementMap = {};
@@ -101,7 +97,7 @@ const createRequirementMap = (entity, addedRequirements = []) => {
         if (!exports.fieldsMappedToRequirements[prop]) {
             continue;
         }
-        if (!!(entity[prop])) {
+        if (!!entity[prop]) {
             // Value must be truthy
             blueprintEntityRequirementMap[prop] = {
                 property: prop,
@@ -109,10 +105,11 @@ const createRequirementMap = (entity, addedRequirements = []) => {
             };
             // If there is both ID and related entity, get the related entity's provider value.
             // This is most useful for credentials.
-            if (prop.endsWith('Id')) {
-                const relatedEntityName = prop.replace('Id', '');
+            if (prop.endsWith("Id")) {
+                const relatedEntityName = prop.replace("Id", "");
                 if (entity[relatedEntityName] && ((_a = entity[relatedEntityName]) === null || _a === void 0 ? void 0 : _a.provider)) {
-                    blueprintEntityRequirementMap[prop].provider = (_b = entity[relatedEntityName]) === null || _b === void 0 ? void 0 : _b.provider;
+                    blueprintEntityRequirementMap[prop].provider =
+                        (_b = entity[relatedEntityName]) === null || _b === void 0 ? void 0 : _b.provider;
                 }
             }
         }

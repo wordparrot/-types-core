@@ -12,7 +12,6 @@ import { DataStore } from "..";
 import { Prompt } from "..";
 import { AbstractPipelineNode } from ".";
 export interface PipelineNode extends AbstractPipelineNode {
-    nodeStatus: string;
     transformations: JsonTransformation[];
     pipeline: Pipeline;
     pipelineId: string;

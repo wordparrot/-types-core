@@ -46,10 +46,12 @@ export interface BlueprintEntityFormStateProvider {
   id: string;
   title: string;
   name: string;
+  parentNodeId?: string;
   ready: boolean;
   savedValues?: any;
   fieldStatusMap?: FieldStatusMap;
   requirementMap?: BlueprintEntityRequirementMap;
+  downstreamPipelines?: string[];
 }
 
 export interface BlueprintEntityFormState {
@@ -62,6 +64,7 @@ export interface BlueprintEntityFormState {
   savedValues?: any;
   fieldStatusMap?: FieldStatusMap;
   requirementMap?: BlueprintEntityRequirementMap;
+  downstreamPipelines?: string[];
   lastChange?: number;
 }
 

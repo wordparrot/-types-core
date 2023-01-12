@@ -29,37 +29,33 @@ const entityIdNames = [
   "csvId",
 ];
 
-// These fields should be set to null when blueprints are exported, so they can be set by default by the installer.
-export const setToNull: string[] = [
+// These fields should be set to undefined when blueprints are exported, so they can be set by default by the installer.
+export const setToUndefined: string[] = [
   "id",
-  "active",
-  "status",
-  "nodeStatus",
-  "queueStatus",
-  "createdAt",
-  "updatedAt",
-  "nextRun",
-  "recordReports",
   "downstreamPipelines",
   "nodes",
-  "dataStatus",
   "siteId",
   "userId",
   "credentialId",
   "credential",
+  "createdAt",
+  "updatedAt",
+  "nextRun",
+  "recordReports",
+  "queueStatus",
+  "dataStatus",
 ];
 
 // These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 export const excludedFieldValues: string[] = [
   ...entityIdNames,
-  ...setToNull,
+  ...setToUndefined,
   "id",
   "title",
   "content",
   "type",
   "provider",
   "status",
-  "nodeStatus",
   "provider",
   "createdAt",
   "updatedAt",
@@ -95,13 +91,13 @@ export const BlueprintExclusions = {
   excludedFieldTypes,
   excludedFieldValues,
   ignoreIfNotObject,
-  setToNull,
+  setToUndefined,
 };
 
-export const setBlueprintFieldsToNull = <T = any>(entity: T): T => {
+export const setBlueprintFieldsToUndefined = <T = any>(entity: T): T => {
   for (const prop in entity) {
-    if (setToNull.includes(prop)) {
-      entity[prop] = null;
+    if (setToUndefined.includes(prop)) {
+      entity[prop] = undefined;
     }
   }
   return entity;
