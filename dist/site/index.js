@@ -18,5 +18,6 @@ __exportStar(require("./Dns"), exports);
 __exportStar(require("./DnsChange"), exports);
 __exportStar(require("./Seo"), exports);
 __exportStar(require("./Site"), exports);
+__exportStar(require("./SiteSummary"), exports);
 __exportStar(require("./Social"), exports);
 __exportStar(require("./Theme"), exports);

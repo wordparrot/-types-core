@@ -6,7 +6,10 @@ export interface ValidationSchemaItem {
   nullable?: boolean;
   min?: number;
   max?: number;
-  matches?: any;
+  matches?: {
+    regex: string;
+    error: string;
+  };
   lowercase?: boolean;
   uppercase?: boolean;
   integer?: boolean;
