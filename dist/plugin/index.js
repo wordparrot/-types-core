@@ -17,5 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./HubPlugin"), exports);
 __exportStar(require("./HubPluginVersion"), exports);
 __exportStar(require("./Plugin"), exports);
+__exportStar(require("./PluginCondensed"), exports);
 __exportStar(require("./PluginError"), exports);
 __exportStar(require("./PluginMeta"), exports);
