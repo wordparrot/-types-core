@@ -7,6 +7,7 @@ export interface HubPlugin {
   name: string;
   title: string;
   content: string;
+  body: string;
   active?: boolean;
   description?: string;
   version: string;

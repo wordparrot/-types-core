@@ -1,5 +1,5 @@
 import { PluginCondensed } from ".";
-import { BlueprintVersion } from '..';
+import { BlueprintVersion } from "..";
 export interface HubPluginVersion {
     id: string;
     folderName: string;
