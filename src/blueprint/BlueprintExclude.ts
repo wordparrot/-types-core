@@ -27,6 +27,7 @@ const entityIdNames = [
   "parentNodeId",
   "linkedNodeId",
   "csvId",
+  "dataStoreId",
 ];
 
 // These fields should be set to undefined when blueprints are exported, so they can be set by default by the installer.
@@ -38,9 +39,16 @@ export const setToUndefined: string[] = [
   "userId",
   "parentNodeId",
   "pipelineId",
+  "pipelineGroupId",
+  "dataStoreId",
+  "repositoryId",
+  "repositoryItemId",
+  "projectId",
   "credentialId",
   "credential",
   "createdAt",
+  "csvId",
+  "csvReportId",
   "updatedAt",
   "nextRun",
   "recordReports",
@@ -53,16 +61,13 @@ export const excludedFieldValues: string[] = [
   ...entityIdNames,
   ...setToUndefined,
   "id",
-  "title",
-  "content",
   "type",
-  "provider",
-  "status",
   "provider",
   "createdAt",
   "updatedAt",
   "transformations",
   "linkedNode",
+  "namespace",
 ];
 
 // These field types should be hidden on the export page.
