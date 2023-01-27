@@ -32,6 +32,8 @@ exports.setToUndefined = [
     "nodes",
     "siteId",
     "userId",
+    "parentNodeId",
+    "pipelineId",
     "credentialId",
     "credential",
     "createdAt",

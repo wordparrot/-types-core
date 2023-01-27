@@ -6,6 +6,7 @@ import { FieldStatusMap } from "..";
 export interface BlueprintPipelineNode {
     id: string;
     parentNodeId: string | null;
+    linkedNodeId: string | null;
     title: string;
     content: string;
     initialValues: InitialValues;

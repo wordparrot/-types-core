@@ -36,6 +36,8 @@ export const setToUndefined: string[] = [
   "nodes",
   "siteId",
   "userId",
+  "parentNodeId",
+  "pipelineId",
   "credentialId",
   "credential",
   "createdAt",

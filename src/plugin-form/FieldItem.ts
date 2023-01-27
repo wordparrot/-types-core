@@ -20,6 +20,7 @@ export interface FieldItem {
   defaultTransformation?: string;
   multiple?: boolean;
   self?: boolean;
+  readonly?: boolean;
   forPlatform?: string[];
   jsonSchemaForm?: {
     schema: any;
