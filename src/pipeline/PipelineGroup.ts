@@ -1,5 +1,5 @@
 import { Pipeline } from ".";
-import { Site } from "..";
+import { BlueprintInstallation, Site } from "..";
 import { User } from "..";
 import { Prompt } from "..";
 import { Webhook } from "..";
@@ -15,6 +15,7 @@ export interface PipelineGroup {
   prompts?: Prompt[];
   listeners?: Listener[];
   webhooks?: Webhook[];
+  blueprintInstallations?: BlueprintInstallation[];
 
   site: Site;
   user: User;

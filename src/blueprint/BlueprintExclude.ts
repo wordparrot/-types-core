@@ -5,50 +5,48 @@ import {
 } from ".";
 
 // A list of common UUIDs to be found in pipeline nodes.
-const entityIdNames = [
-  "dataStoreId",
+const excludedEntityIds = [
   "promptId",
   "chartId",
-  "csvReportId",
-  "dataStoreId",
-  "chartId",
+  "siteId",
   "userId",
   "projectId",
   "pipelineGroupId",
-  "credentialId",
   "policyId",
   "pipelineId",
   "categoryId",
   "subcategoryId",
   "featuredGroupId",
   "linkedNodeId",
-  "repositoryId",
   "repositoryTagIds",
+  "repositoryItemId",
   "parentNodeId",
   "linkedNodeId",
-  "csvId",
+];
+
+const nonExcludedEntityIds = [
+  "credentialId",
   "dataStoreId",
+  "repositoryId",
+  "csvId",
+  "csvReportId",
 ];
 
 // These fields should be set to undefined when blueprints are exported, so they can be set by default by the installer.
 export const setToUndefined: string[] = [
+  ...excludedEntityIds,
+  ...nonExcludedEntityIds,
   "id",
+  "pipelines",
   "downstreamPipelines",
+  "upstreamPipelineNodes",
   "nodes",
-  "siteId",
-  "userId",
-  "parentNodeId",
-  "pipelineId",
-  "pipelineGroupId",
-  "dataStoreId",
-  "repositoryId",
-  "repositoryItemId",
-  "projectId",
-  "credentialId",
   "credential",
+  "csv",
+  "dataStore",
+  "csvReport",
+  "repository",
   "createdAt",
-  "csvId",
-  "csvReportId",
   "updatedAt",
   "nextRun",
   "recordReports",
@@ -58,8 +56,7 @@ export const setToUndefined: string[] = [
 
 // These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 export const excludedFieldValues: string[] = [
-  ...entityIdNames,
-  ...setToUndefined,
+  ...excludedEntityIds,
   "id",
   "type",
   "provider",
@@ -94,7 +91,7 @@ export const fieldsMappedToRequirements: Record<
 export const ignoreIfNotObject: string[] = ["values", "transformations"];
 
 export const BlueprintExclusions = {
-  entityIdNames,
+  excludedEntityIds,
   excludedFieldTypes,
   excludedFieldValues,
   ignoreIfNotObject,

@@ -5,7 +5,7 @@ export declare const excludedFieldTypes: string[];
 export declare const fieldsMappedToRequirements: Record<string, BlueprintEntityRequirementType>;
 export declare const ignoreIfNotObject: string[];
 export declare const BlueprintExclusions: {
-    entityIdNames: string[];
+    excludedEntityIds: string[];
     excludedFieldTypes: string[];
     excludedFieldValues: string[];
     ignoreIfNotObject: string[];

@@ -2,49 +2,46 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createRequirementMap = exports.setBlueprintFieldsToUndefined = exports.BlueprintExclusions = exports.ignoreIfNotObject = exports.fieldsMappedToRequirements = exports.excludedFieldTypes = exports.excludedFieldValues = exports.setToUndefined = void 0;
 // A list of common UUIDs to be found in pipeline nodes.
-const entityIdNames = [
-    "dataStoreId",
+const excludedEntityIds = [
     "promptId",
     "chartId",
-    "csvReportId",
-    "dataStoreId",
-    "chartId",
+    "siteId",
     "userId",
     "projectId",
     "pipelineGroupId",
-    "credentialId",
     "policyId",
     "pipelineId",
     "categoryId",
     "subcategoryId",
     "featuredGroupId",
     "linkedNodeId",
-    "repositoryId",
     "repositoryTagIds",
+    "repositoryItemId",
     "parentNodeId",
     "linkedNodeId",
-    "csvId",
+];
+const nonExcludedEntityIds = [
+    "credentialId",
     "dataStoreId",
+    "repositoryId",
+    "csvId",
+    "csvReportId",
 ];
 // These fields should be set to undefined when blueprints are exported, so they can be set by default by the installer.
 exports.setToUndefined = [
+    ...excludedEntityIds,
+    ...nonExcludedEntityIds,
     "id",
+    "pipelines",
     "downstreamPipelines",
+    "upstreamPipelineNodes",
     "nodes",
-    "siteId",
-    "userId",
-    "parentNodeId",
-    "pipelineId",
-    "pipelineGroupId",
-    "dataStoreId",
-    "repositoryId",
-    "repositoryItemId",
-    "projectId",
-    "credentialId",
     "credential",
+    "csv",
+    "dataStore",
+    "csvReport",
+    "repository",
     "createdAt",
-    "csvId",
-    "csvReportId",
     "updatedAt",
     "nextRun",
     "recordReports",
@@ -53,8 +50,7 @@ exports.setToUndefined = [
 ];
 // These fields should be hidden on the export sites page, but the last properties in the list should be preserved without changing.
 exports.excludedFieldValues = [
-    ...entityIdNames,
-    ...exports.setToUndefined,
+    ...excludedEntityIds,
     "id",
     "type",
     "provider",
@@ -82,7 +78,7 @@ exports.fieldsMappedToRequirements = {
 };
 exports.ignoreIfNotObject = ["values", "transformations"];
 exports.BlueprintExclusions = {
-    entityIdNames,
+    excludedEntityIds,
     excludedFieldTypes: exports.excludedFieldTypes,
     excludedFieldValues: exports.excludedFieldValues,
     ignoreIfNotObject: exports.ignoreIfNotObject,

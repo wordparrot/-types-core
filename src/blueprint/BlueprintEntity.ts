@@ -46,6 +46,7 @@ export interface BlueprintEntityFormStateProvider {
   id: string;
   title: string;
   name: string;
+  linkedNodeId?: string;
   parentNodeId?: string;
   ready: boolean;
   savedValues?: any;
