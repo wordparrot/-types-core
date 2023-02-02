@@ -47,6 +47,7 @@ export interface BlueprintEntityFormState {
     requirementMap?: BlueprintEntityRequirementMap;
     downstreamPipelines?: string[];
     lastChange?: number;
+    substituteWith?: string;
 }
 export declare type BlueprintEntityFormStateMap = Record<string, BlueprintEntityFormState>;
 export declare type BlueprintEntityRequirementType = "pipeline" | "pipelineNode" | "credential" | "dataStore" | "csv" | "project" | "pipelineGroup" | "entry" | "featuredGroup" | "csvReport" | "blueprint" | "repository" | "repositoryTag" | "image" | "category" | "subcategory" | "user" | "project";

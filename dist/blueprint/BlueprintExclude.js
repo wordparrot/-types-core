@@ -59,6 +59,7 @@ exports.excludedFieldValues = [
     "transformations",
     "linkedNode",
     "namespace",
+    "status",
 ];
 // These field types should be hidden on the export page.
 exports.excludedFieldTypes = [

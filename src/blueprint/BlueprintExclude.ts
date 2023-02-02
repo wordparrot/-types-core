@@ -65,6 +65,7 @@ export const excludedFieldValues: string[] = [
   "transformations",
   "linkedNode",
   "namespace",
+  "status",
 ];
 
 // These field types should be hidden on the export page.

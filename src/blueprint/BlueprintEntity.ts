@@ -67,6 +67,7 @@ export interface BlueprintEntityFormState {
   requirementMap?: BlueprintEntityRequirementMap;
   downstreamPipelines?: string[];
   lastChange?: number;
+  substituteWith?: string;
 }
 
 export type BlueprintEntityFormStateMap = Record<
