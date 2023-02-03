@@ -10,6 +10,7 @@ import { DynamicServiceBodyContext } from ".";
 import { PromptToPassOn } from "..";
 import { PromptInstance } from "..";
 import { BatchResults } from "../_classes/batch-manager";
+import { UpdateCredential } from "..";
 export interface DynamicServiceTrackedValues {
     messagesToPassOn: PipelineMessage[];
     tokensToPassOn: PipelineToken[];
@@ -31,6 +32,7 @@ export interface DynamicServiceTrackedValues {
     contextToPassOn?: DynamicServiceBodyContext;
     policy?: Partial<DynamicServiceOutputPolicy>;
     batchResults?: BatchResults;
+    updateCredential?: UpdateCredential;
     operationsFailed: PipelineOperationFailed[];
     conditionsFailed: string[];
 }

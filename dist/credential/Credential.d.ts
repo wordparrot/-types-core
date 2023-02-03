@@ -27,6 +27,7 @@ export interface Credential extends BaseCredentialTerms {
     url: string;
     credentialName: string;
     type: string;
+    values: Record<string, any>;
     providerConfig: any;
     apiKey: string;
     scopes: string[];
@@ -45,4 +46,11 @@ export interface Credential extends BaseCredentialTerms {
     entryItems: EntryItem[];
     createdAt: string;
     updatedAt: string;
+}
+export interface UpdateCredential {
+    credentialId: string;
+    accessToken?: string;
+    refreshToken?: string;
+    tokenType?: string;
+    scopes?: string[];
 }
