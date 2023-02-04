@@ -41,6 +41,7 @@ export interface Credential extends BaseCredentialTerms {
   rootFolderId: string;
   redirectURI: string;
   redirectId: string;
+  redirectTimestamp: number;
   hasAuthCallback: boolean;
   hasAuthTest: boolean;
   authMethod: string;
