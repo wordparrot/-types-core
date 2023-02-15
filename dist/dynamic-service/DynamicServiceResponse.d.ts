@@ -23,6 +23,11 @@ export interface DynamicServiceResponseListener extends Omit<DynamicServiceRespo
 export interface DynamicServiceResponseDataAuthCallback extends Omit<DynamicServiceResponseData, "output"> {
     output: DynamicServiceResponseOutputAuthCallback;
 }
+export interface DynamicServiceResponseDataGenerateAuthURI extends Omit<DynamicServiceResponseData, "output"> {
+    output: {
+        authURI: string;
+    };
+}
 export interface DynamicServiceResponseAuthCallback extends Omit<DynamicServiceResponse, "data"> {
     data: DynamicServiceResponseDataAuthCallback;
 }
