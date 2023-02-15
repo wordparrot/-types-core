@@ -33,6 +33,7 @@ export interface Credential extends BaseCredentialTerms {
     apiKey: string;
     scopes: string[];
     rootFolderId: string;
+    authURI: string;
     redirectURI: string;
     redirectId: string;
     redirectTimestamp: number;

@@ -40,6 +40,7 @@ export interface Credential extends BaseCredentialTerms {
 
   scopes: string[];
   rootFolderId: string;
+  authURI: string;
   redirectURI: string;
   redirectId: string;
   redirectTimestamp: number;
