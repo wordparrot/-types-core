@@ -1,7 +1,11 @@
-import { CredentialReturnFunction } from "..";
+import {
+  CredentialReturnFunction,
+  CredentialGenerateAuthURIFunction,
+} from "..";
 
 export interface CredentialRegisterMethods {
   authCallback: CredentialReturnFunction;
+  generateAuthURI?: CredentialGenerateAuthURIFunction;
   test?: CredentialReturnFunction;
 }
 

@@ -39,19 +39,21 @@ export interface Credential extends BaseCredentialTerms {
   apiKey: string;
 
   scopes: string[];
-  rootFolderId: string;
+
   authURI: string;
   redirectURI: string;
   redirectId: string;
   redirectTimestamp: number;
   hasAuthCallback: boolean;
-  hasAuthTest: boolean;
+  hasTest: boolean;
   authMethod: string;
   authResponse: string;
   restrictions: string[];
   useServiceAccount: boolean;
   default: boolean;
   storage: any;
+
+  rootFolderId: string;
 
   user: User;
   nodes: PipelineNode[];
