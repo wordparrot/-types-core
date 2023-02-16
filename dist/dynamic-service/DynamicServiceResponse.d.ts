@@ -28,6 +28,9 @@ export interface DynamicServiceResponseDataGenerateAuthURI extends Omit<DynamicS
         authURI: string;
     };
 }
+export interface DynamicServiceResponseGenerateAuthURI extends Omit<DynamicServiceResponse, "data"> {
+    data: DynamicServiceResponseDataGenerateAuthURI;
+}
 export interface DynamicServiceResponseAuthCallback extends Omit<DynamicServiceResponse, "data"> {
     data: DynamicServiceResponseDataAuthCallback;
 }

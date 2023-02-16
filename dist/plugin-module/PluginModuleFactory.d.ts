@@ -4,6 +4,7 @@ export declare type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 export declare type ActionReturnFunction = (body: DynamicServiceBody, lib: SandboxLib) => ActionReturnValue | ListenerReturnValue;
 export declare type CredentialReturnValue = Promise<DynamicServiceResponseOutputAuthCallback>;
 export declare type CredentialReturnFunction = (body: DynamicServiceBody, lib: SandboxLib) => CredentialReturnValue;
+export declare type CredentialReturnAuthURIValue = Promise<DynamicServiceResponseOutputAuthCallback>;
 export declare type CredentialGenerateAuthURIFunction = (body: DynamicServiceBody, lib: SandboxLib) => Promise<string>;
 export declare type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>;
 export declare type ListenerReturnFunction = (body: DynamicServiceBody, lib: SandboxLib) => ListenerReturnValue;
