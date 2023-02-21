@@ -11,7 +11,8 @@ export interface BaseCredentialTerms {
   authType: string;
   tokenSecret: string;
   timestamp: number;
-  expiresAt: string;
+  tokenExpiration: number;
+  expiresIn: number;
   clientId: string;
   clientSecret: string;
   username: string;
