@@ -9,6 +9,7 @@ export interface Image {
     uniqId: string;
     title: string;
     subtitle: string;
+    filename: string;
     url: string;
     size: number;
     height: number;
