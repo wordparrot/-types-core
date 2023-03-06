@@ -3,6 +3,7 @@ import { User } from "..";
 import { Entry } from "..";
 import { Banner } from "..";
 import { FeaturedImage } from "..";
+import { Repository } from "..";
 
 export type ImageType = "hosted" | "external";
 
@@ -21,10 +22,14 @@ export interface Image {
   type: ImageType;
 
   site: Site;
+  siteId: string;
   user: User;
+  userId: string;
   entries: Entry[];
   banners: Banner[];
   featuredImages: FeaturedImage[];
+  repositoryId: string;
+  repository: Repository;
 
   createdAt?: string;
   updatedAt?: string;
