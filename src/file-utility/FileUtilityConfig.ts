@@ -1,3 +1,5 @@
+import { FileMetadataContentFolder } from "..";
+
 export interface FileUtilityConfig<E = any> {
   pipelineJobId: string;
   pipelineNodeId: string;
@@ -10,6 +12,8 @@ export interface FileUtilityConfig<E = any> {
   repositoryId?: string;
   repositoryFileId?: string;
   predefinedPath?: string;
+  imageId?: string;
+  contentFolder?: FileMetadataContentFolder;
   parentRepositoryItem?: {
     nodeUniqId: string;
     uniqId: string;
