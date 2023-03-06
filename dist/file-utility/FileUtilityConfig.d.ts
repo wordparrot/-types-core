@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { FileMetadataContentFolder } from '..';
+import { FileMetadataContentFolder } from "..";
 export interface FileUtilityConfig<E = any> {
     pipelineJobId: string;
     pipelineNodeId: string;

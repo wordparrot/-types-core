@@ -10,6 +10,7 @@ import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
 import { Prompt } from "..";
+import { Image } from '..';
 import { AbstractPipelineNode } from ".";
 export interface PipelineNode extends AbstractPipelineNode {
     transformations: JsonTransformation[];
@@ -25,6 +26,8 @@ export interface PipelineNode extends AbstractPipelineNode {
     csvReportId: string;
     dataStore: DataStore;
     dataStoreId: string;
+    images: Image[];
+    imageIds: string[];
     category: Category;
     subcategory: Subcategory;
     featuredGroup: FeaturedGroup;

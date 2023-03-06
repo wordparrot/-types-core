@@ -4,6 +4,7 @@ import { Entry } from "..";
 import { Banner } from "..";
 import { FeaturedImage } from "..";
 import { Repository } from "..";
+import { PipelineNode } from "..";
 
 export type ImageType = "hosted" | "external";
 
@@ -30,6 +31,8 @@ export interface Image {
   featuredImages: FeaturedImage[];
   repositoryId: string;
   repository: Repository;
+
+  pipelineNodes?: PipelineNode[];
 
   createdAt?: string;
   updatedAt?: string;

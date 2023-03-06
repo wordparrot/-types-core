@@ -11,6 +11,7 @@ import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
 import { Prompt } from "..";
+import { Image } from "..";
 import { AbstractPipelineNode } from ".";
 
 export interface PipelineNode extends AbstractPipelineNode {
@@ -33,6 +34,9 @@ export interface PipelineNode extends AbstractPipelineNode {
 
   dataStore: DataStore;
   dataStoreId: string;
+
+  images: Image[];
+  imageIds: string[];
 
   category: Category;
   subcategory: Subcategory;
