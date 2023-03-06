@@ -1,10 +1,10 @@
 /// <reference types="node" />
 import { WriteFileOptions } from "fs";
+export declare type FileMetadataContentFolder = "images" | "media" | "temp" | "repositories";
 export interface FileMetadata {
     uniqId: string;
     filename: string;
     path: string;
-    contentFolder?: 'images' | 'media';
     buffer?: Buffer;
     type?: string;
     mimeType?: string;
@@ -14,6 +14,7 @@ export interface FileMetadata {
     repositoryId?: string;
     repositoryFileId?: string;
     imageId?: string;
+    contentFolder?: FileMetadataContentFolder;
     parentRepositoryItem?: {
         nodeUniqId: string;
         uniqId: string;
