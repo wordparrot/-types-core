@@ -10,7 +10,7 @@ import { Csv } from "..";
 import { CsvReport } from "..";
 import { DataStore } from "..";
 import { Prompt } from "..";
-import { Image } from '..';
+import { Image } from "..";
 import { AbstractPipelineNode } from ".";
 export interface PipelineNode extends AbstractPipelineNode {
     transformations: JsonTransformation[];
