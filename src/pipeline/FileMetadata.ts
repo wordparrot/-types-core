@@ -10,6 +10,9 @@ export interface FileMetadata {
   uniqId: string;
   filename: string;
   path: string;
+  header: string;
+  caption: string;
+  publicURI: string;
   buffer?: Buffer;
   type?: string;
   mimeType?: string;
@@ -24,6 +27,4 @@ export interface FileMetadata {
     nodeUniqId: string;
     uniqId: string;
   };
-  header?: string;
-  tagline?: string;
 }

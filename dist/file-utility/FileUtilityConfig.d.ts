@@ -18,6 +18,6 @@ export interface FileUtilityConfig<E = any> {
         nodeUniqId: string;
         uniqId: string;
     };
-    header?: string;
-    tagline?: string;
+    header: string;
+    caption: string;
 }
