@@ -7,7 +7,7 @@ export interface FileMetadata {
     path: string;
     header: string;
     caption: string;
-    publicURI: string;
+    publicURL: string | null;
     buffer?: Buffer;
     type?: string;
     mimeType?: string;
