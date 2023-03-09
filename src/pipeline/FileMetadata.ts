@@ -24,4 +24,6 @@ export interface FileMetadata {
     nodeUniqId: string;
     uniqId: string;
   };
+  header?: string;
+  tagline?: string;
 }
