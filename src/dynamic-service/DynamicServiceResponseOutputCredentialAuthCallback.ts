@@ -2,7 +2,7 @@ import { DynamicServiceResponseOutput } from ".";
 import { AuthCallbackStatus } from "..";
 import { BaseCredentialTerms } from "..";
 
-export interface DynamicServiceResponseOutputAuthCallback
+export interface DynamicServiceResponseOutputCredentialAuthCallback
   extends Partial<BaseCredentialTerms> {
   id?: string;
   status: AuthCallbackStatus;

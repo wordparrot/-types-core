@@ -1,7 +1,9 @@
 import {
   DynamicServiceBody,
   DynamicServiceResponseOutput,
-  DynamicServiceResponseOutputAuthCallback,
+  DynamicServiceResponseOutputCredentialAuthCallback,
+  DynamicServiceResponseOutputCredentialGenerateAuthURI,
+  DynamicServiceResponseOutputCredentialTest,
   DynamicServiceResponseOutputListener,
   DynamicServiceResponseOutputWebhook,
 } from "..";
@@ -15,25 +17,23 @@ export type ActionReturnFunction = (
 ) => ActionReturnValue | ListenerReturnValue;
 
 export type CredentialReturnValue =
-  Promise<DynamicServiceResponseOutputAuthCallback>;
+  Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
 
 export type CredentialReturnFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
 ) => CredentialReturnValue;
 
-export type CredentialGenerateAuthURIReturnValue = Promise<{
-  authURI: string;
-}>;
+export type CredentialGenerateAuthURIReturnValue =
+  Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
 
 export declare type CredentialGenerateAuthURIFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
 ) => CredentialGenerateAuthURIReturnValue;
 
-export type CredentialTestReturnValue = Promise<{
-  valid: boolean;
-}>;
+export type CredentialTestReturnValue =
+  Promise<DynamicServiceResponseOutputCredentialTest>;
 
 export declare type CredentialTestFunction = (
   body: DynamicServiceBody,

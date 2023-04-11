@@ -1,6 +1,6 @@
 import { AuthCallbackStatus } from "..";
 import { BaseCredentialTerms } from "..";
-export interface DynamicServiceResponseOutputAuthCallback extends Partial<BaseCredentialTerms> {
+export interface DynamicServiceResponseOutputCredentialAuthCallback extends Partial<BaseCredentialTerms> {
     id?: string;
     status: AuthCallbackStatus;
     tokenExpiration?: number;

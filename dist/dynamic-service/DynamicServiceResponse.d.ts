@@ -1,4 +1,4 @@
-import { DynamicServiceResponseOutputListener, DynamicServiceResponseOutput, DynamicServiceResponseOutputAuthCallback, DynamicServiceResponseOutputWebhook } from ".";
+import { DynamicServiceResponseOutputListener, DynamicServiceResponseOutput, DynamicServiceResponseOutputCredentialAuthCallback, DynamicServiceResponseOutputCredentialGenerateAuthURI, DynamicServiceResponseOutputCredentialTest, DynamicServiceResponseOutputWebhook } from ".";
 export interface DynamicServiceResponseData {
     name?: string;
     type?: string;
@@ -20,19 +20,23 @@ export interface DynamicServiceResponseDataListener extends Omit<DynamicServiceR
 export interface DynamicServiceResponseListener extends Omit<DynamicServiceResponse, "data"> {
     data: DynamicServiceResponseDataListener;
 }
-export interface DynamicServiceResponseDataAuthCallback extends Omit<DynamicServiceResponseData, "output"> {
-    output: DynamicServiceResponseOutputAuthCallback;
+export interface DynamicServiceResponseDataCredentialAuthCallback extends Omit<DynamicServiceResponseData, "output"> {
+    output: DynamicServiceResponseOutputCredentialAuthCallback;
 }
-export interface DynamicServiceResponseAuthCallback extends Omit<DynamicServiceResponse, "data"> {
-    data: DynamicServiceResponseDataAuthCallback;
+export interface DynamicServiceResponseCredentialAuthCallback extends Omit<DynamicServiceResponse, "data"> {
+    data: DynamicServiceResponseDataCredentialAuthCallback;
 }
-export interface DynamicServiceResponseDataGenerateAuthURI extends Omit<DynamicServiceResponseData, "output"> {
-    output: {
-        authURI: string;
-    };
+export interface DynamicServiceResponseDataCredentialGenerateAuthURI extends Omit<DynamicServiceResponseData, "output"> {
+    output: DynamicServiceResponseOutputCredentialGenerateAuthURI;
 }
-export interface DynamicServiceResponseGenerateAuthURI extends Omit<DynamicServiceResponse, "data"> {
-    data: DynamicServiceResponseDataGenerateAuthURI;
+export interface DynamicServiceResponseCredentialGenerateAuthURI extends Omit<DynamicServiceResponse, "data"> {
+    data: DynamicServiceResponseDataCredentialGenerateAuthURI;
+}
+export interface DynamicServiceResponseDataCredentialTest extends Omit<DynamicServiceResponseData, "output"> {
+    output: DynamicServiceResponseOutputCredentialTest;
+}
+export interface DynamicServiceResponseCredentialTest extends Omit<DynamicServiceResponse, "data"> {
+    data: DynamicServiceResponseDataCredentialTest;
 }
 export interface DynamicServiceResponseDataWebhook extends Omit<DynamicServiceResponseData, "output"> {
     output: DynamicServiceResponseOutputWebhook;

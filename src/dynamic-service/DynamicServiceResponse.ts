@@ -1,7 +1,9 @@
 import {
   DynamicServiceResponseOutputListener,
   DynamicServiceResponseOutput,
-  DynamicServiceResponseOutputAuthCallback,
+  DynamicServiceResponseOutputCredentialAuthCallback,
+  DynamicServiceResponseOutputCredentialGenerateAuthURI,
+  DynamicServiceResponseOutputCredentialTest,
   DynamicServiceResponseOutputWebhook,
 } from ".";
 
@@ -32,26 +34,34 @@ export interface DynamicServiceResponseListener
   data: DynamicServiceResponseDataListener;
 }
 
-export interface DynamicServiceResponseDataAuthCallback
+export interface DynamicServiceResponseDataCredentialAuthCallback
   extends Omit<DynamicServiceResponseData, "output"> {
-  output: DynamicServiceResponseOutputAuthCallback;
+  output: DynamicServiceResponseOutputCredentialAuthCallback;
 }
 
-export interface DynamicServiceResponseAuthCallback
+export interface DynamicServiceResponseCredentialAuthCallback
   extends Omit<DynamicServiceResponse, "data"> {
-  data: DynamicServiceResponseDataAuthCallback;
+  data: DynamicServiceResponseDataCredentialAuthCallback;
 }
 
-export interface DynamicServiceResponseDataGenerateAuthURI
+export interface DynamicServiceResponseDataCredentialGenerateAuthURI
   extends Omit<DynamicServiceResponseData, "output"> {
-  output: {
-    authURI: string;
-  };
+  output: DynamicServiceResponseOutputCredentialGenerateAuthURI;
 }
 
-export interface DynamicServiceResponseGenerateAuthURI
+export interface DynamicServiceResponseCredentialGenerateAuthURI
   extends Omit<DynamicServiceResponse, "data"> {
-  data: DynamicServiceResponseDataGenerateAuthURI;
+  data: DynamicServiceResponseDataCredentialGenerateAuthURI;
+}
+
+export interface DynamicServiceResponseDataCredentialTest
+  extends Omit<DynamicServiceResponseData, "output"> {
+  output: DynamicServiceResponseOutputCredentialTest;
+}
+
+export interface DynamicServiceResponseCredentialTest
+  extends Omit<DynamicServiceResponse, "data"> {
+  data: DynamicServiceResponseDataCredentialTest;
 }
 
 export interface DynamicServiceResponseDataWebhook
