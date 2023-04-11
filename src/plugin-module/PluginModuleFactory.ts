@@ -22,13 +22,23 @@ export type CredentialReturnFunction = (
   lib: SandboxLib
 ) => CredentialReturnValue;
 
-export type CredentialReturnAuthURIValue =
-  Promise<DynamicServiceResponseOutputAuthCallback>;
+export type CredentialGenerateAuthURIReturnValue = Promise<{
+  authURI: string;
+}>;
 
 export declare type CredentialGenerateAuthURIFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => Promise<string>;
+) => CredentialGenerateAuthURIReturnValue;
+
+export type CredentialTestReturnValue = Promise<{
+  valid: boolean;
+}>;
+
+export declare type CredentialTestFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => CredentialTestReturnValue;
 
 export type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>;
 

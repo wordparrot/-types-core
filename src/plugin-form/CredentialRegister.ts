@@ -1,12 +1,13 @@
 import {
   CredentialReturnFunction,
   CredentialGenerateAuthURIFunction,
+  CredentialTestFunction,
 } from "..";
 
 export interface CredentialRegisterMethods {
   authCallback: CredentialReturnFunction;
   generateAuthURI?: CredentialGenerateAuthURIFunction;
-  test?: CredentialReturnFunction;
+  test?: CredentialTestFunction;
 }
 
 export interface CredentialRegisterValues {
