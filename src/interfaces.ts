@@ -17,6 +17,7 @@ export * from "./pipeline";
 export * from "./plugin";
 export * from "./plugin-form";
 export * from "./plugin-module";
+export * from "./project";
 export * from "./prompt";
 export * from "./repository";
 export * from "./role";

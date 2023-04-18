@@ -1,1 +1,1 @@
-export * from "./ProjectUserConfiguration";
+export * from "./ProjectMobileUserConfiguration";
