@@ -28,6 +28,7 @@ __exportStar(require("./FormConfigurationUsingActionForm"), exports);
 __exportStar(require("./PluginConfiguration"), exports);
 __exportStar(require("./PluginFormConfiguration"), exports);
 __exportStar(require("./PluginJsonConfiguration"), exports);
+__exportStar(require("./PluginJsonAttachment"), exports);
 __exportStar(require("./PluginTranslationConfiguration"), exports);
 __exportStar(require("./WebhookFormConfiguration"), exports);
 __exportStar(require("./WebhookInitialValues"), exports);

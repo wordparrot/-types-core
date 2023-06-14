@@ -12,6 +12,7 @@ export * from "./FormConfigurationUsingActionForm";
 export * from "./PluginConfiguration";
 export * from "./PluginFormConfiguration";
 export * from "./PluginJsonConfiguration";
+export * from "./PluginJsonAttachment";
 export * from "./PluginTranslationConfiguration";
 export * from "./WebhookFormConfiguration";
 export * from "./WebhookInitialValues";

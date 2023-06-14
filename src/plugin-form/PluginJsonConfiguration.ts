@@ -1,3 +1,5 @@
+import { PluginJsonAttachment } from ".";
+
 export interface PluginJsonConfiguration {
   name: string;
   title: string;
@@ -19,4 +21,5 @@ export interface PluginJsonConfiguration {
   webhookLogo?: string;
   categories?: string[];
   subcategories?: string[];
+  attachments?: PluginJsonAttachment[];
 }

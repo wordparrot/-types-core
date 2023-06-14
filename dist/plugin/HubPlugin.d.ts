@@ -1,6 +1,6 @@
 import { HubPluginVersion } from ".";
 import { BlueprintMeta } from "..";
-import { Image } from '..';
+import { Image } from "..";
 export interface HubPlugin {
     id: string;
     author: string;
