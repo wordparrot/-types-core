@@ -19,6 +19,7 @@ export interface PipelineRedis {
   nodeTitles: Record<string, string>;
   remaining: string[];
   pipelineStatus: string;
+  runOnce?: boolean;
   dataStatus: string;
   upstreamErrors: string[];
   upstreamDisabled: string[];

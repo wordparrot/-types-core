@@ -5,6 +5,7 @@ export declare type PipelineJobOutcome = "completed" | "partial" | "failure";
 export interface PipelineJob {
     id: string;
     status: string;
+    runOnce: boolean;
     linkedRedisKey: string | null;
     pipeline: Pipeline;
     pipelineId: string;
