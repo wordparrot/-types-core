@@ -15,6 +15,8 @@ export interface BaseCredentialTerms {
   expiresIn: number;
   clientId: string;
   clientSecret: string;
+  appId: string;
+  appSecret: string;
   username: string;
   password: string;
   status: AuthCallbackStatus;
