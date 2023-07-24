@@ -12,13 +12,14 @@ export interface BaseCredentialTerms {
     timestamp: number;
     tokenExpiration: number;
     expiresIn: number;
-    clientId: string;
-    clientSecret: string;
     appId: string;
     appSecret: string;
+    clientId: string;
+    clientSecret: string;
     username: string;
     password: string;
     status: AuthCallbackStatus;
+    values: Record<string, any>;
 }
 export interface Credential extends BaseCredentialTerms {
     id: string;
@@ -31,7 +32,6 @@ export interface Credential extends BaseCredentialTerms {
     url: string;
     credentialName: string;
     type: string;
-    values: Record<string, any>;
     providerConfig: any;
     apiKey: string;
     scopes: string[];
@@ -61,4 +61,5 @@ export interface UpdateCredential {
     refreshToken?: string;
     tokenType?: string;
     scopes?: string[];
+    values?: Record<string, any>;
 }
