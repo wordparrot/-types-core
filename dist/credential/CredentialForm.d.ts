@@ -1,5 +1,5 @@
 import { Credential } from ".";
-export declare type CredentialFormStatus = 'pending' | 'submitted' | 'rejected';
+export declare type CredentialFormStatus = "pending" | "submitted" | "rejected";
 export interface CredentialForm {
     id: string;
     provider: string;

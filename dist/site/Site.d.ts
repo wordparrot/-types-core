@@ -2,7 +2,6 @@ import { Dns, Seo, Social, Theme } from '.';
 import { Role } from '..';
 import { Banner } from '..';
 import { Category } from '..';
-import { Storage } from '..';
 import { Entry } from '..';
 import { Image } from '..';
 import { Pipeline } from '..';
@@ -32,7 +31,6 @@ export interface Site {
     dns: Dns;
     seo: Seo;
     social: Social;
-    storage: Storage;
     theme: Theme;
     banners?: Banner[];
     categories?: Category[];
