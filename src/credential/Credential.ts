@@ -54,7 +54,6 @@ export interface Credential extends BaseCredentialTerms {
   restrictions: string[];
   useServiceAccount: boolean;
   default: boolean;
-  storage: any;
 
   rootFolderId: string;
 
