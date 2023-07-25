@@ -2,7 +2,7 @@ import { User } from "..";
 import { PipelineNode } from "..";
 import { EntryItem } from "..";
 import { AuthCallbackStatus } from "..";
-import { CredentialQRCode } from ".";
+import { CredentialForm } from ".";
 
 export interface BaseCredentialTerms {
   accessToken: string;
@@ -61,7 +61,7 @@ export interface Credential extends BaseCredentialTerms {
   user: User;
   nodes: PipelineNode[];
   entryItems: EntryItem[];
-  qrCodes?: CredentialQRCode[];
+  forms?: CredentialForm[];
 
   createdAt: string;
   updatedAt: string;
