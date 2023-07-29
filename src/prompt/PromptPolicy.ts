@@ -1,3 +1,5 @@
+export type PromptPolicySchemaType = "jsonSchema" | "fieldList";
+
 export interface PromptPolicy {
   id: string;
   enable: boolean;
@@ -14,6 +16,7 @@ export interface PromptPolicy {
   saveDataToContext: boolean;
 
   schema: any;
+  schemaType: PromptPolicySchemaType;
   uiSchema: any;
 
   createdAt: string;
