@@ -8,6 +8,7 @@ export interface PromptRecipient {
     fileMetadata: FileMetadata[];
     csv: Csv[];
     json: any[];
+    name: string;
     email: string;
     userId: string;
     createdAt: string;

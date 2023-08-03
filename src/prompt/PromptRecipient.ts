@@ -13,6 +13,7 @@ export interface PromptRecipient {
   csv: Csv[];
   json: any[];
 
+  name: string;
   email: string;
   userId: string;
 
