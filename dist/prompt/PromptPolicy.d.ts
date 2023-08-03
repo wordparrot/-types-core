@@ -1,4 +1,4 @@
-export declare type PromptPolicySchemaType = 'jsonSchema' | 'fieldList';
+export declare type PromptPolicySchemaType = "jsonSchema" | "fieldList";
 export interface PromptPolicy {
     id: string;
     enable: boolean;

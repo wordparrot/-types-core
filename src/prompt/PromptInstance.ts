@@ -11,6 +11,7 @@ export interface PromptInstance {
   content: string;
   status: string;
   passEvent: boolean;
+  allowEntities: string[];
 
   token: string;
 
