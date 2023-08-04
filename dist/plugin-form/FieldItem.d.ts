@@ -6,6 +6,8 @@ export interface FieldItem {
     label: string;
     type?: string;
     options?: FieldOption[] | ((field: FieldItem, props: any) => FieldOption[]);
+    allowList?: Record<string, any>[];
+    blockList?: Record<string, any>[];
     descriptors?: FieldDescriptor[];
     link?: {
         text: string;
