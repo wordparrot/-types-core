@@ -24,6 +24,10 @@ export interface PipelineRedis {
     upstreamErrors: string[];
     upstreamDisabled: string[];
     upstreamConditionFailed: string[];
+    eventFromPromptId?: string;
+    eventFromListenerId?: string;
+    eventFromWebhookId?: string;
+    eventFromPipelineNodeId?: string;
     recordReports: boolean;
     hasDownstreamPipelines: boolean;
     batchProcesses?: Record<string, string>;
