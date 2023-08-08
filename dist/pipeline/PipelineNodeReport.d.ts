@@ -13,9 +13,11 @@ export interface PipelineNodeReport {
     id?: string;
     status: string;
     errorMessage?: string;
-    pipelineNodeId: string;
-    pipelineJobId: string;
     provider: string;
+    pipelineNodeId: string;
+    pipelineNode?: PipelineNode;
+    pipelineJobId: string;
+    pipelineJob?: PipelineJob;
     toPassOn: {
         messages: PipelineMessage[];
         messagesTotal: number;
@@ -80,8 +82,10 @@ export interface PipelineNodeReport {
         csv: string[];
         csvTotal: number;
     };
-    pipelineNode?: PipelineNode;
-    pipelineJob?: PipelineJob;
+    eventFromPromptId: string;
+    eventFromListenerId: string;
+    eventFromWebhookId: string;
+    eventFromPipelineNodeId: string;
     downstreamPipelineEvents?: string[];
     createdAt?: string;
     updatedAt?: string;
