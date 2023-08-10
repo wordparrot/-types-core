@@ -83,8 +83,13 @@ export interface PipelineNodeReport {
         csvTotal: number;
     };
     eventFromPromptId: string;
+    eventFromPromptInstanceId: string;
+    eventFromPromptRecipientId: string;
     eventFromListenerId: string;
+    eventFromHttpOrigin: string;
+    eventFromHttpRequest: string;
     eventFromWebhookId: string;
+    eventFromPipelineId: string;
     eventFromPipelineNodeId: string;
     downstreamPipelineEvents?: string[];
     createdAt?: string;
