@@ -1,7 +1,7 @@
 import { DataStore } from ".";
 import { PromptRecipient } from "../prompt";
 
-export interface DataStoreSaved {
+export interface DataStoreVersion {
   id: string;
   filename: string;
   data: any;
@@ -11,6 +11,8 @@ export interface DataStoreSaved {
 
   promptRecipient: PromptRecipient;
   promptRecipientId: string;
+
+  pipelineJobId: string;
 
   createdAt: string;
   updatedAt: string;

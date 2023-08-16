@@ -1,8 +1,9 @@
 import { RepositoryTag, RepositoryItem } from ".";
-import { Tile } from "..";
+import { CsvReport, Tile } from "..";
 import { Role } from "..";
-import { Site } from "..";
+import { Csv } from "..";
 import { User } from "..";
+import { DataStore } from "..";
 export interface Repository {
     id: string;
     banner: string;
@@ -10,10 +11,13 @@ export interface Repository {
     content: string;
     repositoryTags: RepositoryTag[];
     repositoryItems: RepositoryItem[];
+    dataStores: DataStore[];
+    csv: Csv[];
+    csvReports: CsvReport[];
     tiles: Tile[];
     roles: Role[];
-    site: Site;
     user: User;
+    userId: string;
     createdAt: string;
     updatedAt: string;
 }

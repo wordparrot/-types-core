@@ -1,4 +1,4 @@
-import { DataStoreSaved } from ".";
+import { DataStoreVersion } from ".";
 import { PipelineNode } from "..";
 import { Repository } from "..";
 import { Prompt, PromptInstance } from "..";
@@ -14,11 +14,15 @@ export interface DataStore {
   version: string;
   saveBackups: boolean;
 
-  saved: DataStoreSaved[];
+  versions: DataStoreVersion[];
+
   pipelineNodes: PipelineNode[];
-  repositories: Repository[];
+
   prompts: Prompt[];
   promptInstances: PromptInstance[];
+
+  repositoryId: string;
+  repository: Repository;
 
   createdAt: string;
   updatedAt: string;
