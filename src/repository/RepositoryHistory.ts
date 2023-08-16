@@ -1,4 +1,4 @@
-import { Repository, RepositoryTag, RepositoryItem } from ".";
+import { Repository, RepositoryTag, RepositoryItem, RepositoryFile } from ".";
 import { PipelineFlow } from "..";
 import { CsvReport } from "..";
 import { Csv } from "..";
@@ -12,6 +12,7 @@ export interface RepositoryHistory {
   repositoryId: string;
 
   repositoryTags: RepositoryTag[];
+  repositoryFiles: RepositoryFile[];
   repositoryItems: RepositoryItem[];
   dataStores: DataStore[];
   csv: Csv[];
