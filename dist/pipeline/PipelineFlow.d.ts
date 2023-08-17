@@ -4,7 +4,7 @@ import { RepositoryItem } from "..";
 import { RepositoryFile } from "..";
 import { Repository } from "..";
 import { RepositoryHistory } from "..";
-import { User } from '..';
+import { User } from "..";
 import { CsvReport } from "..";
 import { Csv } from "..";
 import { DataStore } from "..";

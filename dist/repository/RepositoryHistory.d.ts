@@ -1,9 +1,13 @@
 import { Repository, RepositoryTag } from ".";
 import { PipelineFlow } from "..";
-export declare type RepositoryHistoryOperation = 'add' | 'remove' | 'move';
+export declare type RepositoryHistoryOperation = "add" | "remove" | "move" | "copy";
 export interface RepositoryHistory {
     id: string;
     operation: RepositoryHistoryOperation;
+    destination?: string;
+    title?: string;
+    content?: string;
+    filename?: string;
     repository: Repository;
     repositoryId: string;
     repositoryTags: RepositoryTag[];

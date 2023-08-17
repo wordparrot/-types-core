@@ -1,6 +1,6 @@
 import { RepositoryTag, Repository, RepositoryItem } from ".";
-import { PipelineJob } from '..';
-import { Entry } from '..';
+import { PipelineJob } from "..";
+import { Entry } from "..";
 export interface RepositoryFile {
     id?: string;
     title?: string;

@@ -1,8 +1,8 @@
 import { RepositoryTag, RepositoryFile } from ".";
-import { Credential } from '..';
+import { Credential } from "..";
 import { PipelineJob } from "..";
 import { Repository } from "..";
-import { Entry } from '..';
+import { Entry } from "..";
 import { FeaturedThreadRelease } from "..";
 export interface RepositoryItem {
     id?: string;

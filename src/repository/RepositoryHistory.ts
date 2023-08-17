@@ -4,11 +4,15 @@ import { CsvReport } from "..";
 import { Csv } from "..";
 import { DataStore } from "..";
 
-export type RepositoryHistoryOperation = "add" | "remove" | "move";
+export type RepositoryHistoryOperation = "add" | "remove" | "move" | "copy";
 
 export interface RepositoryHistory {
   id: string;
   operation: RepositoryHistoryOperation;
+  destination?: string;
+  title?: string;
+  content?: string;
+  filename?: string;
 
   repository: Repository;
   repositoryId: string;
