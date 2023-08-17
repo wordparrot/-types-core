@@ -1,7 +1,6 @@
 import { RepositoryTag, Repository, RepositoryItem } from ".";
 import { PipelineJob } from '..';
 import { Entry } from '..';
-import { PipelineFlow } from "..";
 export interface RepositoryFile {
     id?: string;
     title?: string;
@@ -18,11 +17,13 @@ export interface RepositoryFile {
     url?: string;
     language?: string;
     pipelineJob?: PipelineJob;
-    repository?: Repository;
     parentRepositoryItem?: RepositoryItem;
     entries?: Entry[];
     repositoryTags?: RepositoryTag[];
-    pipelineFlow?: PipelineFlow;
+    repository?: Repository;
+    repositoryId?: string;
+    pipelineFlow?: string;
+    pipelineFlowId?: string;
     createdAt?: string;
     updatedAt?: string;
 }

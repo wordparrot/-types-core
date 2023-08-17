@@ -4,22 +4,26 @@ import { CsvReport } from "..";
 import { Csv } from "..";
 import { DataStore } from "..";
 
+export type RepositoryHistoryOperation = "add" | "remove" | "move";
+
 export interface RepositoryHistory {
   id: string;
-  operation: string;
+  operation: RepositoryHistoryOperation;
 
   repository: Repository;
   repositoryId: string;
-
   repositoryTags: RepositoryTag[];
-  repositoryFiles: RepositoryFile[];
-  repositoryItems: RepositoryItem[];
-  dataStores: DataStore[];
-  csv: Csv[];
-  csvReports: CsvReport[];
 
   pipelineFlow: PipelineFlow;
   pipelineFlowId: string;
+
+  count?: {
+    items: number;
+    files: number;
+    csv: number;
+    csvReports: number;
+    dataStores: number;
+  };
 
   createdAt: string;
   updatedAt: string;

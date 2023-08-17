@@ -21,8 +21,11 @@ export interface DataStore {
   prompts: Prompt[];
   promptInstances: PromptInstance[];
 
-  repositoryId: string;
-  repository: Repository;
+  repository?: Repository;
+  repositoryId?: string;
+
+  pipelineFlow?: string;
+  pipelineFlowId?: string;
 
   createdAt: string;
   updatedAt: string;

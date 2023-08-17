@@ -23,7 +23,12 @@ export interface CsvReport {
 
   rows: CsvReportRow[];
   pipelineNodes: PipelineNode[];
-  repositories: Repository[];
+
+  repository?: Repository;
+  repositoryId?: string;
+
+  pipelineFlow?: string;
+  pipelineFlowId?: string;
 
   createdAt: string;
   updatedAt: string;

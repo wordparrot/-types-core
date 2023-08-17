@@ -4,7 +4,6 @@ import { PipelineJob } from "..";
 import { Repository } from "..";
 import { Entry } from '..';
 import { FeaturedThreadRelease } from "..";
-import { PipelineFlow } from "..";
 export interface RepositoryItem {
     id?: string;
     uniqId?: string;
@@ -38,12 +37,14 @@ export interface RepositoryItem {
     subgroup?: string;
     credential?: Credential;
     pipelineJob?: PipelineJob;
-    repository?: Repository;
     entries?: Entry[];
     repositoryTags?: RepositoryTag[];
     repositoryFiles?: RepositoryFile[];
     featuredThreadRelease?: FeaturedThreadRelease;
-    pipelineFlow?: PipelineFlow;
+    repository?: Repository;
+    repositoryId?: string;
+    pipelineFlow?: string;
+    pipelineFlowId?: string;
     json?: any;
     originalCreatedAt?: string;
     createdAt?: string;

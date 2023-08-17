@@ -1,25 +1,34 @@
 import { PipelineNode, PipelineJob } from ".";
 import { FeaturedThreadRelease } from "..";
 import { RepositoryItem } from "..";
+import { RepositoryFile } from "..";
 import { Repository } from "..";
 import { RepositoryHistory } from "..";
-import { Site } from "..";
-import { User } from '..'
+import { User } from "..";
+import { CsvReport } from "..";
+import { Csv } from "..";
+import { DataStore } from "..";
 
 export interface PipelineFlow {
-    id: string
-    platforms: string[]
+  id: string;
 
-    pipelineJob: PipelineJob
-    pipelineJobId: string
-    pipelineNode: PipelineNode
-    featuredThreadRelease: FeaturedThreadRelease
-    repository: Repository
-    repositoryItems: RepositoryItem[]
-    repositoryHistory: RepositoryHistory
-    site: Site
-    user: User
-    
-    createdAt?: string
-    updatedAt?: string
+  pipelineJob: PipelineJob;
+  pipelineJobId: string;
+  pipelineNode: PipelineNode;
+  featuredThreadRelease: FeaturedThreadRelease;
+
+  repository: Repository;
+  repositoryId: string;
+
+  repositoryFiles: RepositoryFile[];
+  repositoryItems: RepositoryItem[];
+  dataStores: DataStore[];
+  csv: Csv[];
+  csvReports: CsvReport[];
+
+  repositoryHistory: RepositoryHistory;
+  user: User;
+
+  createdAt?: string;
+  updatedAt?: string;
 }
