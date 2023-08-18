@@ -9,7 +9,6 @@ export interface DataStoreVersion {
     dataStoreId: string;
     promptRecipient: PromptRecipient;
     promptRecipientId: string;
-    pipelineFlowId: string;
     pipelineFlow?: PipelineFlow;
     createdAt: string;
     updatedAt: string;
