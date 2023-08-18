@@ -18,7 +18,6 @@ export interface DataStore {
     repository?: Repository;
     repositoryId?: string;
     pipelineFlow?: string;
-    pipelineFlowId?: string;
     createdAt: string;
     updatedAt: string;
 }

@@ -16,10 +16,8 @@ export interface RepositoryHistory {
 
   repository: Repository;
   repositoryId: string;
-  repositoryTags: RepositoryTag[];
 
   pipelineFlow: PipelineFlow;
-  pipelineFlowId: string;
 
   count?: {
     items: number;

@@ -20,7 +20,6 @@ export interface CsvReport {
     repository?: Repository;
     repositoryId?: string;
     pipelineFlow?: string;
-    pipelineFlowId?: string;
     createdAt: string;
     updatedAt: string;
 }

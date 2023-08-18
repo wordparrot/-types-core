@@ -28,7 +28,6 @@ export interface RepositoryFile {
   repositoryId?: string;
 
   pipelineFlow?: string;
-  pipelineFlowId?: string;
 
   createdAt?: string;
   updatedAt?: string;

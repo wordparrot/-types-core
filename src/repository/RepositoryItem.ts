@@ -51,7 +51,6 @@ export interface RepositoryItem {
   repositoryId?: string;
 
   pipelineFlow?: string;
-  pipelineFlowId?: string;
 
   json?: any;
 

@@ -1,5 +1,6 @@
 import { DataStore } from ".";
-import { PromptRecipient } from "../prompt";
+import { PipelineFlow } from "..";
+import { PromptRecipient } from "..";
 export interface DataStoreVersion {
     id: string;
     filename: string;
@@ -8,7 +9,8 @@ export interface DataStoreVersion {
     dataStoreId: string;
     promptRecipient: PromptRecipient;
     promptRecipientId: string;
-    pipelineJobId: string;
+    pipelineFlowId: string;
+    pipelineFlow?: PipelineFlow;
     createdAt: string;
     updatedAt: string;
 }

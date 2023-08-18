@@ -25,7 +25,6 @@ export interface DataStore {
   repositoryId?: string;
 
   pipelineFlow?: string;
-  pipelineFlowId?: string;
 
   createdAt: string;
   updatedAt: string;
