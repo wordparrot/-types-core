@@ -8,6 +8,8 @@ export interface Prompt {
     id: string;
     title: string;
     content: string;
+    enable: boolean;
+    urlName: string;
     provider: string;
     type: string;
     delay: number;

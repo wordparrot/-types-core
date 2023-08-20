@@ -4,7 +4,7 @@ import { PromptRecipient } from ".";
 import { Prompt } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
-export declare type PromptInstanceStatus = 'open' | 'closed' | 'completed' | 'error' | 'hidden';
+export declare type PromptInstanceStatus = "open" | "closed" | "completed" | "error" | "hidden";
 export interface PromptInstance {
     id: string;
     title: string;
@@ -12,6 +12,7 @@ export interface PromptInstance {
     status: PromptInstanceStatus;
     passEvent: boolean;
     token: string;
+    uniqId: string;
     prompt: Prompt;
     promptId: string;
     policy: PromptPolicy;

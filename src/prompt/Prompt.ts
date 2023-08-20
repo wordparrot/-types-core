@@ -11,6 +11,8 @@ export interface Prompt {
   title: string;
   content: string;
 
+  enable: boolean;
+  urlName: string;
   provider: string;
   type: string;
 

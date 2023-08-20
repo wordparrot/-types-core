@@ -1,8 +1,6 @@
 export declare type PromptPolicySchemaType = "jsonSchema" | "fieldList";
 export interface PromptPolicy {
     id: string;
-    enable: boolean;
-    urlName: string;
     successMsg: string;
     allowEntities: string[];
     enableDownloads: boolean;

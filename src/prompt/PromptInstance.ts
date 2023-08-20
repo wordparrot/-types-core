@@ -20,6 +20,7 @@ export interface PromptInstance {
   passEvent: boolean;
 
   token: string;
+  uniqId: string;
 
   prompt: Prompt;
   promptId: string;
