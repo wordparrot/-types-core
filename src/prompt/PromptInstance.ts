@@ -5,11 +5,18 @@ import { Prompt } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
 
+export type PromptInstanceStatus =
+  | "open"
+  | "closed"
+  | "completed"
+  | "error"
+  | "hidden";
+
 export interface PromptInstance {
   id: string;
   title: string;
   content: string;
-  status: string;
+  status: PromptInstanceStatus;
   passEvent: boolean;
 
   token: string;
