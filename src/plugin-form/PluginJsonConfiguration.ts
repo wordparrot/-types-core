@@ -15,6 +15,7 @@ export interface PluginJsonConfiguration {
   license: string;
   logo: string;
   serverRuntime?: "node" | "php" | "ruby";
+  authLogo?: string;
   actionLogo?: string;
   listenerLogo?: string;
   credentialLogo?: string;

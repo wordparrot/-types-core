@@ -13,6 +13,7 @@ export interface Image {
   uniqId: string;
   title: string;
   subtitle: string;
+  owner: string;
   filename: string;
   url: string;
   size: number;

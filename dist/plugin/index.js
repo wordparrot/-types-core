@@ -19,4 +19,3 @@ __exportStar(require("./HubPluginVersion"), exports);
 __exportStar(require("./Plugin"), exports);
 __exportStar(require("./PluginCondensed"), exports);
 __exportStar(require("./PluginError"), exports);
-__exportStar(require("./PluginMeta"), exports);
