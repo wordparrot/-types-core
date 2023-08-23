@@ -19,6 +19,7 @@ export interface Plugin extends HubPlugin {
   listenerLogo?: string;
   credentialLogo?: string;
   webhookLogo?: string;
+  authLogo?: string;
 
   blueprints?: Blueprint[];
   actions: ActionFormConfiguration[];
