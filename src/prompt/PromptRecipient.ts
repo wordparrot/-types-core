@@ -1,4 +1,4 @@
-import { FileMetadata, Csv } from "..";
+import { FileMetadata, Csv, Prompt, PromptInstance } from "..";
 
 export interface PromptRecipient {
   id: string;
@@ -8,6 +8,12 @@ export interface PromptRecipient {
   enableUploads?: boolean;
 
   data: any;
+
+  prompt: Prompt;
+  promptId: string;
+
+  promptInstance: PromptInstance;
+  promptInstanceId: string;
 
   fileMetadata: FileMetadata[];
   csv: Csv[];
