@@ -45,44 +45,65 @@ export type CredentialReturnFunction<T = any> =
 export type CredentialGenerateAuthURIReturnValue =
   Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
 
-export declare type CredentialGenerateAuthURIFunction =
-  | ((
-      body: DynamicServiceBody,
-      lib: SandboxLib
-    ) => CredentialGenerateAuthURIReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => CredentialGenerateAuthURIReturnValue);
+export type UntypedCredentialGenerateAuthURIFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => CredentialGenerateAuthURIReturnValue;
+export type TypedCredentialGenerateAuthURIFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => CredentialGenerateAuthURIReturnValue;
+
+export declare type CredentialGenerateAuthURIFunction<T = any> =
+  | UntypedCredentialGenerateAuthURIFunction
+  | TypedCredentialGenerateAuthURIFunction<T>;
 
 export type CredentialTestReturnValue =
   Promise<DynamicServiceResponseOutputCredentialTest>;
 
-export declare type CredentialTestFunction =
-  | ((body: DynamicServiceBody, lib: SandboxLib) => CredentialTestReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => CredentialTestReturnValue);
+export type UntypedCredentialTestFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => CredentialTestReturnValue;
+export type TypedCredentialTestFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => CredentialTestReturnValue;
+
+export declare type CredentialTestFunction<T = any> =
+  | UntypedCredentialTestFunction
+  | TypedCredentialTestFunction<T>;
 
 export type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>;
 
-export type ListenerReturnFunction =
-  | ((body: DynamicServiceBody, lib: SandboxLib) => ListenerReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => ListenerReturnValue);
+export type UntypedListenerReturnFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => ListenerReturnValue;
+export type TypedListenerReturnFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => ListenerReturnValue;
+
+export type ListenerReturnFunction<T = any> =
+  | UntypedListenerReturnFunction
+  | TypedListenerReturnFunction<T>;
 
 export type WebhookReturnValue = Promise<DynamicServiceResponseOutputWebhook>;
 
-export type WebhookReturnFunction =
-  | ((body: DynamicServiceBody, lib: SandboxLib) => WebhookReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => WebhookReturnValue);
+export type UntypedWebhookReturnFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => WebhookReturnValue;
+export type TypedWebhookReturnFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => WebhookReturnValue;
+
+export type WebhookReturnFunction<T = any> =
+  | UntypedWebhookReturnFunction
+  | TypedWebhookReturnFunction<T>;
