@@ -1,9 +1,13 @@
 import { DynamicServiceBody, DynamicServiceResponseOutput, DynamicServiceResponseOutputCredentialAuthCallback, DynamicServiceResponseOutputCredentialGenerateAuthURI, DynamicServiceResponseOutputCredentialTest, DynamicServiceResponseOutputListener, DynamicServiceResponseOutputWebhook } from "..";
 import { SandboxLib } from "..";
 export declare type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
-export declare type ActionReturnFunction = ((body: DynamicServiceBody, lib: SandboxLib) => ActionReturnValue | ListenerReturnValue) | (<T = any>(body: DynamicServiceBody, lib: SandboxLib, config: T) => (ActionReturnValue | ListenerReturnValue));
+export declare type UntypedActionReturnFunction = ((body: DynamicServiceBody, lib: SandboxLib) => ActionReturnValue | ListenerReturnValue);
+export declare type TypedActionReturnFunction<T> = (body: DynamicServiceBody, lib: SandboxLib, config: T) => ActionReturnValue | ListenerReturnValue;
+export declare type ActionReturnFunction<T = any> = UntypedActionReturnFunction | TypedActionReturnFunction<T>;
 export declare type CredentialReturnValue = Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
-export declare type CredentialReturnFunction = ((body: DynamicServiceBody, lib: SandboxLib) => CredentialReturnValue) | (<T = any>(body: DynamicServiceBody, lib: SandboxLib, config: T) => CredentialReturnValue);
+export declare type UntypedCredentialReturnFunction = ((body: DynamicServiceBody, lib: SandboxLib) => ActionReturnValue | ListenerReturnValue);
+export declare type TypedCredentialReturnFunction<T> = (body: DynamicServiceBody, lib: SandboxLib, config: T) => CredentialReturnValue;
+export declare type CredentialReturnFunction<T = any> = UntypedCredentialReturnFunction | TypedCredentialReturnFunction<T>;
 export declare type CredentialGenerateAuthURIReturnValue = Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
 export declare type CredentialGenerateAuthURIFunction = ((body: DynamicServiceBody, lib: SandboxLib) => CredentialGenerateAuthURIReturnValue) | (<T = any>(body: DynamicServiceBody, lib: SandboxLib, config: T) => CredentialGenerateAuthURIReturnValue);
 export declare type CredentialTestReturnValue = Promise<DynamicServiceResponseOutputCredentialTest>;

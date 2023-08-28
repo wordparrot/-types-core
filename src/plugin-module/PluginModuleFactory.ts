@@ -11,27 +11,36 @@ import { SandboxLib } from "..";
 
 export type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 
-export type ActionReturnFunction =
-  | ((
-      body: DynamicServiceBody,
-      lib: SandboxLib
-    ) => ActionReturnValue | ListenerReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => ActionReturnValue | ListenerReturnValue);
+export type UntypedActionReturnFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => ActionReturnValue | ListenerReturnValue;
+export type TypedActionReturnFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => ActionReturnValue | ListenerReturnValue;
+
+export type ActionReturnFunction<T = any> =
+  | UntypedActionReturnFunction
+  | TypedActionReturnFunction<T>;
 
 export type CredentialReturnValue =
   Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
 
-export type CredentialReturnFunction =
-  | ((body: DynamicServiceBody, lib: SandboxLib) => CredentialReturnValue)
-  | (<T = any>(
-      body: DynamicServiceBody,
-      lib: SandboxLib,
-      config: T
-    ) => CredentialReturnValue);
+export type UntypedCredentialReturnFunction = (
+  body: DynamicServiceBody,
+  lib: SandboxLib
+) => ActionReturnValue | ListenerReturnValue;
+export type TypedCredentialReturnFunction<T> = (
+  body: DynamicServiceBody,
+  lib: SandboxLib,
+  config: T
+) => CredentialReturnValue;
+
+export type CredentialReturnFunction<T = any> =
+  | UntypedCredentialReturnFunction
+  | TypedCredentialReturnFunction<T>;
 
 export type CredentialGenerateAuthURIReturnValue =
   Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
