@@ -14,7 +14,14 @@ export type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 export type ActionReturnFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => ActionReturnValue | ListenerReturnValue;
+) =>
+  | ActionReturnValue
+  | ListenerReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => ActionReturnValue | ListenerReturnValue);
 
 export type CredentialReturnValue =
   Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
@@ -22,7 +29,13 @@ export type CredentialReturnValue =
 export type CredentialReturnFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => CredentialReturnValue;
+) =>
+  | CredentialReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => CredentialReturnValue);
 
 export type CredentialGenerateAuthURIReturnValue =
   Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
@@ -30,7 +43,13 @@ export type CredentialGenerateAuthURIReturnValue =
 export declare type CredentialGenerateAuthURIFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => CredentialGenerateAuthURIReturnValue;
+) =>
+  | CredentialGenerateAuthURIReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => CredentialGenerateAuthURIReturnValue);
 
 export type CredentialTestReturnValue =
   Promise<DynamicServiceResponseOutputCredentialTest>;
@@ -38,18 +57,36 @@ export type CredentialTestReturnValue =
 export declare type CredentialTestFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => CredentialTestReturnValue;
+) =>
+  | CredentialTestReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => CredentialTestReturnValue);
 
 export type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>;
 
 export type ListenerReturnFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => ListenerReturnValue;
+) =>
+  | ListenerReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => ListenerReturnValue);
 
 export type WebhookReturnValue = Promise<DynamicServiceResponseOutputWebhook>;
 
 export type WebhookReturnFunction = (
   body: DynamicServiceBody,
   lib: SandboxLib
-) => WebhookReturnValue;
+) =>
+  | WebhookReturnValue
+  | (<T = any>(
+      config: T,
+      body: DynamicServiceBody,
+      lib: SandboxLib
+    ) => WebhookReturnValue);
