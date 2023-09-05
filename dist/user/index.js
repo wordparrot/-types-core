@@ -17,3 +17,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Device"), exports);
 __exportStar(require("./Profile"), exports);
 __exportStar(require("./User"), exports);
+__exportStar(require("./MobileUser"), exports);

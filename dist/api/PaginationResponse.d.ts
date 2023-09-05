@@ -3,7 +3,7 @@ export interface PaginationResponse<E> {
     perPage: number;
     lastPage: number;
     data: E[];
-    total?: number;
+    total: number;
     from?: number;
     to?: number;
     pageControls?: number[];

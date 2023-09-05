@@ -1,5 +1,4 @@
-import { Project } from "..";
-export interface ProjectMobileUserConfiguration {
+export interface MobileUser {
     hubUserId: string;
     hubProjectId: string;
     userId: string;
@@ -7,6 +6,4 @@ export interface ProjectMobileUserConfiguration {
     username?: string;
     email: string;
     domains: string[];
-    pluginIds: string[];
-    projects: Project[];
 }
