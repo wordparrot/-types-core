@@ -1,3 +1,4 @@
+import { DynamicFormSpecification } from "..";
 export declare type PromptPolicySchemaType = "jsonSchema" | "fieldList";
 export interface PromptPolicy {
     id: string;
@@ -14,6 +15,8 @@ export interface PromptPolicy {
     schema: any;
     schemaType: PromptPolicySchemaType;
     uiSchema: any;
+    dynamicFormSpecificationId?: string;
+    dynamicFormSpecification?: DynamicFormSpecification;
     createdAt: string;
     updatedAt: string;
 }
