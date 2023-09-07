@@ -1,19 +1,18 @@
 import { DynamicFormField } from ".";
 import { User } from "..";
 
+export type DynamicFormSpecificationEntityType = "pipeline" | "p";
+
 export interface DynamicFormSpecification {
   id: string;
+
+  title: string;
+  content: string;
+
   hideReadonly: boolean;
   fields: DynamicFormField[];
 
-  entityType: "pipeline" | "prompt";
-
-  promptId: string;
-  repositoryId: string;
-  projectId: string;
-  pipelineNodeId: string;
-
-  users: User[];
+  promptPolicyId: string;
 
   createdAt: string;
   updatedAt: string;

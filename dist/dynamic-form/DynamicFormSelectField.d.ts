@@ -10,7 +10,7 @@ export interface DynamicFormSelectFieldOption {
     addOptionResponse?: AddOptionResponse;
     status: DynamicFormFieldStatus;
 }
-export declare type DynamicFormSelectFieldEntity = 'image' | 'repositoryFile' | 'repositoryItem' | 'dataStore' | 'pipeline' | 'credential';
+export declare type DynamicFormSelectFieldEntity = "image" | "repositoryFile" | "repositoryItem" | "dataStore" | "pipeline" | "credential";
 export interface DynamicFormSelectField {
     type: DynamicFormFieldType;
     entity?: DynamicFormSelectFieldEntity;
