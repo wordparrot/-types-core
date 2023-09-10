@@ -1,3 +1,4 @@
+export * from './DynamicForm';
 export * from "./DynamicFormSpecification";
 export * from "./DynamicFormTextField";
 export * from "./DynamicFormSelectField";
