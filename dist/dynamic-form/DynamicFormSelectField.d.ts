@@ -12,7 +12,7 @@ export interface DynamicFormSelectFieldOption {
 }
 export declare type DynamicFormSelectFieldEntity = "image" | "repositoryFile" | "repositoryItem" | "dataStore" | "pipeline" | "credential";
 export interface DynamicFormSelectField extends DynamicFormAbstractField {
-    type: 'select';
+    type: "select";
     entity?: DynamicFormSelectFieldEntity;
     options: DynamicFormSelectFieldOption[];
     minOptions: number;
