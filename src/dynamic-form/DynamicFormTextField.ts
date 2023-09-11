@@ -1,12 +1,7 @@
 import { FieldDescriptor } from "..";
 import { DynamicFormFieldType, DynamicFormFieldStatus } from ".";
+import { DynamicFormAbstractField } from ".";
 
-export interface DynamicFormTextField {
-  type: DynamicFormFieldType;
-  fieldName: string;
-  label: string;
-  value: string;
-  required: boolean;
-  descriptors: FieldDescriptor[];
-  status: DynamicFormFieldStatus;
+export interface DynamicFormTextField extends DynamicFormAbstractField {
+  type: "text";
 }

@@ -1,6 +1,6 @@
 import { DynamicFormField } from ".";
 import { PromptPolicy } from "..";
-export declare type DynamicFormSpecificationEntityType = "pipeline" | "p";
+export declare type DynamicFormSpecificationEntityType = "pipeline" | "prompt";
 export interface DynamicFormSpecification {
     id: string;
     title: string;

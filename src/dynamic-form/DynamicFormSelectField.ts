@@ -1,5 +1,5 @@
-import { FieldDescriptor } from "..";
-import { DynamicFormFieldType, DynamicFormFieldStatus } from ".";
+import { DynamicFormFieldStatus } from ".";
+import { DynamicFormAbstractField } from ".";
 
 export type AddOptionResponse = "image" | "upload";
 
@@ -21,16 +21,10 @@ export type DynamicFormSelectFieldEntity =
   | "pipeline"
   | "credential";
 
-export interface DynamicFormSelectField {
-  type: DynamicFormFieldType;
+export interface DynamicFormSelectField extends DynamicFormAbstractField {
+  type: "select";
   entity?: DynamicFormSelectFieldEntity;
-  readonly: boolean;
-  fieldName: string;
-  label: string;
   options: DynamicFormSelectFieldOption[];
   minOptions: number;
   maxOptions: number;
-  required: boolean;
-  descriptors: FieldDescriptor[];
-  repositoryFileId?: string;
 }

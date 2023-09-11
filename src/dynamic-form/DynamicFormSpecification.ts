@@ -1,7 +1,7 @@
 import { DynamicFormField } from ".";
 import { PromptPolicy } from "..";
 
-export type DynamicFormSpecificationEntityType = "pipeline" | "p";
+export type DynamicFormSpecificationEntityType = "pipeline" | "prompt";
 
 export interface DynamicFormSpecification {
   id: string;

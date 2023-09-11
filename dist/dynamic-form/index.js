@@ -15,6 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./DynamicForm"), exports);
+__exportStar(require("./DynamicFormAbstractField"), exports);
 __exportStar(require("./DynamicFormSpecification"), exports);
 __exportStar(require("./DynamicFormTextField"), exports);
 __exportStar(require("./DynamicFormSelectField"), exports);
