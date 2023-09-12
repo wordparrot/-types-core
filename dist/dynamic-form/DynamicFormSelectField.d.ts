@@ -17,4 +17,5 @@ export interface DynamicFormSelectField extends DynamicFormAbstractField {
     options: DynamicFormSelectFieldOption[];
     minOptions: number;
     maxOptions: number;
+    buttonText?: string;
 }

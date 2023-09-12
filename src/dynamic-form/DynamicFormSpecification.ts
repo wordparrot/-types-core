@@ -11,7 +11,6 @@ export interface DynamicFormSpecification {
   displayTitle: string;
   displayContent: string;
 
-  hideReadonly: boolean;
   fields: DynamicFormField[];
 
   promptPolicy: PromptPolicy;
