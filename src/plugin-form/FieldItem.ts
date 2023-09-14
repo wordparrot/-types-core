@@ -58,13 +58,25 @@ export type FieldItemType =
   | "collection";
 
 export interface FieldItem {
+  // The value to be input in the form.
   value: string;
+  // Label to be shown on the ihput.
   label: string;
+  // Governs how an input will be rendered. For example, 'images', will render a select menu containing searchable set of images.
   type?: FieldItemType;
+  // Option values for a select dropdown. Adding this property will automatically convert the input to a select menu type.
   options?: FieldOption[] | ((field: FieldItem, props: any) => FieldOption[]);
+  // Forces the FormikSelect component to attempt to look up corresponding images in the media gallery, if the value is a uuid.
+  optionsHaveImage?: boolean;
+  // Descriptors allow one or more preceding blocks of text to be rendered in different styles above the input.
+  // Examples include header, tagline, link, and even youtube video.
+  descriptors?: FieldDescriptor[];
+  // Enable users to provide a nested schema of input values, adding that schema to an array at runtime.
+  collection?: FieldItem[];
+
   allowList?: Record<string, any>[];
   blockList?: Record<string, any>[];
-  descriptors?: FieldDescriptor[];
+
   link?: {
     text: string;
     href: string;
@@ -85,7 +97,6 @@ export interface FieldItem {
   };
   hiddenFields?: FieldItem[];
   fieldStatus?: FieldStatusMapItem;
-  collection?: FieldItem[];
 }
 
 export interface FieldOption {
