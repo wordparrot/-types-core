@@ -8,4 +8,5 @@ export interface DynamicFormAbstractField {
     required: boolean;
     readonly: boolean;
     status: DynamicFormFieldStatus;
+    defaultValue: string;
 }

@@ -7,6 +7,7 @@ export interface DynamicFormSpecification {
     content: string;
     displayTitle: string;
     displayContent: string;
+    displayButton: string;
     fields: DynamicFormField[];
     promptPolicy: PromptPolicy;
     promptPolicyId: string;
