@@ -4,6 +4,7 @@ import { PromptRecipient } from ".";
 import { Prompt } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
+import { DynamicForm } from "..";
 export declare type PromptInstanceStatus = "open" | "closed" | "completed" | "error" | "hidden";
 export interface PromptInstance {
     id: string;
@@ -22,6 +23,7 @@ export interface PromptInstance {
     dataStores: DataStore[];
     files: RepositoryFile[];
     csv: Csv[];
+    dynamicForms: DynamicForm[];
     passedEventAt: string;
     createdAt: string;
     updatedAt: string;
