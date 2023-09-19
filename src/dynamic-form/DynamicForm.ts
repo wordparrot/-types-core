@@ -1,5 +1,5 @@
 import { DynamicFormField, DynamicFormSpecification } from ".";
-import { PromptInstance } from "..";
+import { PipelineNode, PromptInstance } from "..";
 
 export interface DynamicForm {
   id: string;
@@ -11,6 +11,9 @@ export interface DynamicForm {
 
   promptInstance: PromptInstance;
   promptInstanceId: string;
+
+  pipelineNode: PipelineNode;
+  pipelineNodeId: string;
 
   createdAt: string;
   updatedAt: string;
