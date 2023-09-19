@@ -8,9 +8,11 @@ export interface DynamicFormSpecification {
 
   title: string;
   content: string;
+
   displayTitle: string;
   displayContent: string;
   displayButton: string;
+  displayLink: string;
 
   fields: DynamicFormField[];
 
