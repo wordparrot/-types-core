@@ -1,4 +1,4 @@
-export * from './ACL';
+export * from "./ACL";
 export * from "./AuthorizedProfile";
 export * from "./Device";
 export * from "./JwtAccess";

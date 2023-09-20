@@ -1,3 +1,3 @@
 export declare enum ACL {
-    ADMIN = "ADMIN"
+    ADMIN_SUPER = "admin.super"
 }

@@ -1,10 +1,10 @@
-import { User } from '..';
-import { Entry } from '..';
-import { Category, Subcategory } from '..';
-import { Site } from '..';
-import { Repository } from '..';
-import { ACL } from '..';
-export declare type RoleType = 'default' | 'custom' | 'shareable';
+import { User } from "..";
+import { Entry } from "..";
+import { Category, Subcategory } from "..";
+import { Site } from "..";
+import { Repository } from "..";
+import { ACL } from "..";
+export declare type RoleType = "default" | "custom" | "shareable";
 export interface Role {
     id: string;
     title: string;
