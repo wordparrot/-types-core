@@ -3,6 +3,7 @@ import { Entry } from '..';
 import { Category, Subcategory } from '..';
 import { Site } from '..';
 import { Repository } from '..';
+import { ACL } from '..';
 export declare type RoleType = 'default' | 'custom' | 'shareable';
 export interface Role {
     id: string;
@@ -12,7 +13,7 @@ export interface Role {
     order: number;
     authScheme: string;
     shortUrl: string;
-    permissions: string[];
+    acl: ACL[];
     site: Site;
     entries: Entry[];
     users: User[];

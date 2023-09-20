@@ -1,11 +1,15 @@
-import { Role, JwtConfig } from "..";
+import { Role, JwtAccess, Profile } from "..";
 
-export interface AuthorizedProfile extends JwtConfig {
+export interface AuthorizedProfile extends JwtAccess {
   name: string;
   timezone: string;
-  permissions: string[];
-  roles: Role[];
-  profile?: Record<string, unknown>;
-  createdAt: string;
-  updatedAt: string;
+
+  hubProjectId: string;
+
+  domains: string[];
+  roles?: Role[];
+
+  profile?: Profile;
+  createdAt?: string;
+  updatedAt?: string;
 }
