@@ -6,7 +6,8 @@ export enum ACL {
   DASHBOARD_READ = "dashboard.read",
 
   // Project ACL
-  PROJECT_READ = "project.create",
+  PROJECT_READ = "project.read",
+  PROJECT_CREATE = "project.create",
 
   // Plugin ACL
   PLUGIN_INSTALL = "plugin.install",

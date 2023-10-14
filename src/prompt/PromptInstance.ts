@@ -17,6 +17,9 @@ export interface PromptInstance {
   id: string;
   title: string;
   content: string;
+
+  default: boolean;
+
   status: PromptInstanceStatus;
   passEvent: boolean;
 

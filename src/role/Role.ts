@@ -1,31 +1,41 @@
 import { User } from "..";
-import { Entry } from "..";
-import { Category, Subcategory } from "..";
-import { Site } from "..";
-import { Repository } from "..";
 import { ACL } from "..";
 
-export type RoleType = "default" | "custom" | "shareable";
+export type RoleType = "administrator" | "editor" | "subscriber";
 
 export interface Role {
   id: string;
   title: string;
   content: string;
-  type: string;
+  type: RoleType;
   order: number;
-  authScheme: string;
-  shortUrl: string;
   acl: ACL[];
 
-  site: Site;
-  entries: Entry[];
   users: User[];
-  __users__?: User[];
-  categories: Category[];
-  subcategories: Subcategory[];
-  repositories: Repository[];
 
-  date: number;
   createdAt: string;
   updatedAt: string;
+}
+
+export type AdministratorRoleACL = [ACL.ADMIN_SUPER];
+
+export interface AdministratorRole extends Role {
+  acl: AdministratorRoleACL;
+}
+
+export type EditorRoleACL = [
+  ACL.DASHBOARD_READ,
+  ACL.PROJECT_CREATE,
+  ACL.PROJECT_READ,
+  ACL.PLUGIN_INSTALL
+];
+
+export interface EditorRole extends Role {
+  acl: EditorRoleACL;
+}
+
+export type SubscriberRoleACL = [ACL.PROJECT_READ];
+
+export interface SubscriberRole extends Role {
+  acl: SubscriberRoleACL;
 }
