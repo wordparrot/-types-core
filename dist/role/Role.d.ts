@@ -1,6 +1,6 @@
 import { User } from "..";
 import { ACL } from "..";
-export declare type RoleType = 'administrator' | 'editor' | 'subscriber';
+export declare type RoleType = "administrator" | "editor" | "subscriber";
 export interface Role {
     id: string;
     title: string;
@@ -12,9 +12,7 @@ export interface Role {
     createdAt: string;
     updatedAt: string;
 }
-export declare type AdministratorRoleACL = [
-    ACL.ADMIN_SUPER
-];
+export declare type AdministratorRoleACL = [ACL.ADMIN_SUPER];
 export interface AdministratorRole extends Role {
     acl: AdministratorRoleACL;
 }
@@ -27,9 +25,7 @@ export declare type EditorRoleACL = [
 export interface EditorRole extends Role {
     acl: EditorRoleACL;
 }
-export declare type SubscriberRoleACL = [
-    ACL.PROJECT_READ
-];
+export declare type SubscriberRoleACL = [ACL.PROJECT_READ];
 export interface SubscriberRole extends Role {
     acl: SubscriberRoleACL;
 }

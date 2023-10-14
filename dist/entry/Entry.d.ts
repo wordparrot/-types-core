@@ -1,6 +1,5 @@
 import { EntryItem, EntryLink } from ".";
 import { RepositoryItem } from "..";
-import { Role } from '..';
 import { Image } from "..";
 import { Site } from '..';
 import { Category, Subcategory } from "..";
@@ -26,7 +25,6 @@ export interface Entry {
     bookmarks: Bookmark[];
     pipelineJob: PipelineJob;
     pipelineNode: PipelineNode;
-    roles: Role[];
     repositoryItems: RepositoryItem[];
     date: number;
     createdAt: string;

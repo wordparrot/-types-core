@@ -1,6 +1,5 @@
 import { RepositoryTag, RepositoryItem } from ".";
 import { CsvReport, Tile } from "..";
-import { Role } from "..";
 import { Csv } from "..";
 import { User } from "..";
 import { DataStore } from "..";
@@ -15,7 +14,6 @@ export interface Repository {
     csv: Csv[];
     csvReports: CsvReport[];
     tiles: Tile[];
-    roles: Role[];
     user: User;
     userId: string;
     createdAt: string;

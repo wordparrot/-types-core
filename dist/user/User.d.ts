@@ -7,10 +7,11 @@ export interface User {
     emailVerified: boolean;
     password?: string;
     locale: string;
-    roles: Role[];
     locked: boolean;
     banned: boolean;
     profile: Profile;
+    roleId: string;
+    role: Role;
     createdAt: string;
     updatedAt: string;
 }

@@ -1,5 +1,4 @@
 import { Dns, Seo, Social, Theme } from ".";
-import { Role } from "..";
 import { Banner } from "..";
 import { Category } from "..";
 import { Entry } from "..";
@@ -39,7 +38,6 @@ export interface Site {
     entries?: Entry[];
     images?: Image[];
     redirects?: any[];
-    roles?: Role[];
     pipelines?: Pipeline[];
     featuredGroups?: FeaturedGroup[];
     createdAt?: string;

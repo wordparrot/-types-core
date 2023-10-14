@@ -18,7 +18,6 @@ export interface Repository {
   csvReports: CsvReport[];
 
   tiles: Tile[];
-  roles: Role[];
 
   user: User;
   userId: string;

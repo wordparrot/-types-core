@@ -46,7 +46,6 @@ export interface Site {
   entries?: Entry[];
   images?: Image[];
   redirects?: any[];
-  roles?: Role[];
   pipelines?: Pipeline[];
   featuredGroups?: FeaturedGroup[];
 
