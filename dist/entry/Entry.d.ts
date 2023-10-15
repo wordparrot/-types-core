@@ -1,7 +1,7 @@
 import { EntryItem, EntryLink } from ".";
 import { RepositoryItem } from "..";
 import { Image } from "..";
-import { Site } from '..';
+import { Site } from "..";
 import { Category, Subcategory } from "..";
 import { Bookmark } from ".";
 import { PipelineNode, PipelineJob } from "..";

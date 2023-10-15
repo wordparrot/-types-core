@@ -1,14 +1,13 @@
 import { Role } from "..";
 import { Profile } from ".";
+export declare type UserStatus = 'verify' | 'ok' | 'locked' | 'banned' | 'deleted';
 export interface User {
     id: string;
     name: string;
     email: string;
-    emailVerified: boolean;
+    status: UserStatus;
     password?: string;
     locale: string;
-    locked: boolean;
-    banned: boolean;
     profile: Profile;
     roleId: string;
     role: Role;
