@@ -12,9 +12,6 @@ export interface DynamicForm {
   promptInstance: PromptInstance;
   promptInstanceId: string;
 
-  pipelineNode: PipelineNode;
-  pipelineNodeId: string;
-
   createdAt: string;
   updatedAt: string;
 }
