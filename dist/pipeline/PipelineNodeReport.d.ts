@@ -3,7 +3,7 @@ import { PipelineMessage } from "./PipelineMessage";
 import { PipelineToken } from "./PipelineToken";
 import { RepositoryItem } from "../repository";
 import { CsvMetadata } from "../csv";
-import { FileMetadata } from "./FileMetadata";
+import { FileMetadata } from "../file-metadata/FileMetadata";
 import { PipelineOperationFailed } from "./PipelineOperationFailed";
 import { EmailMetadata } from "./EmailMetadata";
 import { PromptToPassOn, PromptInstance } from "../prompt";

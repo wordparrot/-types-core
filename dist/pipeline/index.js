@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./AbstractPipelineNode"), exports);
 __exportStar(require("./Pipeline"), exports);
 __exportStar(require("./EmailMetadata"), exports);
-__exportStar(require("./FileMetadata"), exports);
+__exportStar(require("../file-metadata/FileMetadata"), exports);
 __exportStar(require("./PipelineFlow"), exports);
 __exportStar(require("./PipelineGroup"), exports);
 __exportStar(require("./PipelineGroupTag"), exports);

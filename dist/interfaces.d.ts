@@ -12,7 +12,7 @@ export * from "./dynamic-service";
 export * from "./entry";
 export * from "./featured-group";
 export * from "./graph-visual";
-export * from "./file-utility";
+export * from "./file-metadata";
 export * from "./image";
 export * from "./listener";
 export * from "./pipeline";

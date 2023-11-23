@@ -8,6 +8,7 @@ export interface FileMetadata {
     header: string;
     caption: string;
     publicURL: string | null;
+    predefinedPath?: string;
     buffer?: Buffer;
     type?: string;
     mimeType?: string;

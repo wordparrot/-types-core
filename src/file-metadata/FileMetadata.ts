@@ -12,7 +12,8 @@ export interface FileMetadata {
   path: string;
   header: string;
   caption: string;
-  publicURL: string | null;
+  publicURL: string | null; // URL exposed to third party APIs for access or verification purposes.
+  predefinedPath?: string; // Property lets you pre-define a folder where the application should look for this file.
   buffer?: Buffer;
   type?: string;
   mimeType?: string;
