@@ -19,7 +19,6 @@ export interface DynamicServiceBody {
   parameters: DynamicServiceBodyParameters;
   webhook: DynamicServiceBodyWebhook;
   listener: DynamicServiceBodyListener;
-  lib?: SandboxLib;
 }
 
 export interface DynamicServiceBodyWithLib extends DynamicServiceBody {
