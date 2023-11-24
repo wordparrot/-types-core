@@ -1,8 +1,11 @@
+import axios, { Axios } from "axios";
+import * as _ from "lodash";
+
 import { ConstructableWithConfig } from "..";
 
-export type SandboxLib<A = any, F = any, C = any> = {
+export type SandboxLib<F = any, C = any, A = typeof axios, L = typeof _> = {
   axios: A;
-  _: any;
+  _: L;
   qs: any;
   FormData: any;
   crypto?: any;
