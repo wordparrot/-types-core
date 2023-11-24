@@ -8,6 +8,7 @@ import {
   DynamicServiceBodyWebhook,
   DynamicServiceBodyListener,
 } from ".";
+import { SandboxLib } from "..";
 
 export interface DynamicServiceBody {
   run: DynamicServiceBodyRun;
@@ -18,4 +19,9 @@ export interface DynamicServiceBody {
   parameters: DynamicServiceBodyParameters;
   webhook: DynamicServiceBodyWebhook;
   listener: DynamicServiceBodyListener;
+  lib?: SandboxLib;
+}
+
+export interface DynamicServiceBodyWithLib extends DynamicServiceBody {
+  lib: SandboxLib;
 }

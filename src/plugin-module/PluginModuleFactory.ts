@@ -1,5 +1,5 @@
 import {
-  DynamicServiceBody,
+  DynamicServiceBodyWithLib,
   DynamicServiceResponseOutput,
   DynamicServiceResponseOutputCredentialAuthCallback,
   DynamicServiceResponseOutputCredentialGenerateAuthURI,
@@ -7,17 +7,14 @@ import {
   DynamicServiceResponseOutputListener,
   DynamicServiceResponseOutputWebhook,
 } from "..";
-import { SandboxLib } from "..";
 
 export type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 
 export type UntypedActionReturnFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => ActionReturnValue | ListenerReturnValue;
 export type TypedActionReturnFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => ActionReturnValue | ListenerReturnValue;
 
@@ -29,12 +26,10 @@ export type CredentialReturnValue =
   Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
 
 export type UntypedCredentialReturnFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => ActionReturnValue | ListenerReturnValue;
 export type TypedCredentialReturnFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => CredentialReturnValue;
 
@@ -46,12 +41,10 @@ export type CredentialGenerateAuthURIReturnValue =
   Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
 
 export type UntypedCredentialGenerateAuthURIFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => CredentialGenerateAuthURIReturnValue;
 export type TypedCredentialGenerateAuthURIFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => CredentialGenerateAuthURIReturnValue;
 
@@ -63,12 +56,10 @@ export type CredentialTestReturnValue =
   Promise<DynamicServiceResponseOutputCredentialTest>;
 
 export type UntypedCredentialTestFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => CredentialTestReturnValue;
 export type TypedCredentialTestFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => CredentialTestReturnValue;
 
@@ -79,12 +70,10 @@ export declare type CredentialTestFunction<T = any> =
 export type ListenerReturnValue = Promise<DynamicServiceResponseOutputListener>;
 
 export type UntypedListenerReturnFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => ListenerReturnValue;
 export type TypedListenerReturnFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => ListenerReturnValue;
 
@@ -95,12 +84,10 @@ export type ListenerReturnFunction<T = any> =
 export type WebhookReturnValue = Promise<DynamicServiceResponseOutputWebhook>;
 
 export type UntypedWebhookReturnFunction = (
-  body: DynamicServiceBody,
-  lib: SandboxLib
+  body: DynamicServiceBodyWithLib
 ) => WebhookReturnValue;
 export type TypedWebhookReturnFunction<T> = (
-  body: DynamicServiceBody,
-  lib: SandboxLib,
+  body: DynamicServiceBodyWithLib,
   config: T
 ) => WebhookReturnValue;
 
