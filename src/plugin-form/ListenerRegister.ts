@@ -19,4 +19,4 @@ export type ListenerRegisterFactory = <T>(
   ListenerRegisterItemArray: ListenerRegisterItem<T>[]
 ) => ListenerRegister<T>;
 
-export type ListenerFactory<T = any> = ListenerRegister<T>;
+export type ListenerFactory<T = any> = () => ListenerRegister<T>;

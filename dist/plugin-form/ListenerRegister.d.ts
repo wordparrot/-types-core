@@ -10,4 +10,4 @@ export interface ListenerRegisterItem<T = string> extends ListenerRegisterValues
 }
 export declare type ListenerRegister<T> = Record<string, ListenerRegisterItem<T>>;
 export declare type ListenerRegisterFactory = <T>(ListenerRegisterItemArray: ListenerRegisterItem<T>[]) => ListenerRegister<T>;
-export declare type ListenerFactory<T = any> = ListenerRegister<T>;
+export declare type ListenerFactory<T = any> = () => ListenerRegister<T>;

@@ -24,4 +24,4 @@ export type CredentialRegisterFactory = <T>(
   credentialRegisterItemArray: CredentialRegisterItem<T>[]
 ) => CredentialRegister<T>;
 
-export type CredentialFactory<T = any> = CredentialRegister<T>;
+export type CredentialFactory<T = any> = () => CredentialRegister<T>;

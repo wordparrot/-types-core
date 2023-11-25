@@ -12,4 +12,4 @@ export interface CredentialRegisterItem<T> extends CredentialRegisterValues {
 }
 export declare type CredentialRegister<T> = Record<string, CredentialRegisterItem<T>>;
 export declare type CredentialRegisterFactory = <T>(credentialRegisterItemArray: CredentialRegisterItem<T>[]) => CredentialRegister<T>;
-export declare type CredentialFactory<T = any> = CredentialRegister<T>;
+export declare type CredentialFactory<T = any> = () => CredentialRegister<T>;

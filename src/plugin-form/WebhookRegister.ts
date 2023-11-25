@@ -18,4 +18,4 @@ export type WebhookRegisterFactory = <T>(
   WebhookRegisterItemArray: WebhookRegisterItem<T>[]
 ) => WebhookRegister<T>;
 
-export type WebhookFactory<T = any> = WebhookRegister<T>;
+export type WebhookFactory<T = any> = () => WebhookRegister<T>;

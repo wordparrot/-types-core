@@ -1,2 +1,2 @@
-export * from './PluginFactory';
-export * from './PluginModuleFactory';
+export * from "./PluginFactory";
+export * from "./PluginModuleFactory";

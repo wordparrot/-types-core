@@ -5,9 +5,11 @@ import {
   WebhookFactory,
 } from "..";
 
-export interface PluginFactory {
+export interface PluginFactoryObject {
   actions: ActionFactory;
   listeners: ListenerFactory;
   credentials: CredentialFactory;
   webhooks: WebhookFactory;
 }
+
+export type PluginFactory = () => PluginFactoryObject;

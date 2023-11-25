@@ -1,7 +1,8 @@
 import { ActionFactory, CredentialFactory, ListenerFactory, WebhookFactory } from "..";
-export interface PluginFactory {
+export interface PluginFactoryObject {
     actions: ActionFactory;
     listeners: ListenerFactory;
     credentials: CredentialFactory;
     webhooks: WebhookFactory;
 }
+export declare type PluginFactory = () => PluginFactoryObject;
