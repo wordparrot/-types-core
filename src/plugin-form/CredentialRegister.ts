@@ -14,11 +14,14 @@ export interface CredentialRegisterValues {
   methods: CredentialRegisterMethods;
 }
 
-export interface CredentialRegisterItem<T = string>
-  extends CredentialRegisterValues {
+export interface CredentialRegisterItem<T> extends CredentialRegisterValues {
   provider: T;
 }
 
-export type CredentialRegister = <T = string>(
+export type CredentialRegister<T> = Record<string, CredentialRegisterItem<T>>;
+
+export type CredentialRegisterFactory = <T>(
   credentialRegisterItemArray: CredentialRegisterItem<T>[]
-) => Record<string, CredentialRegisterValues>;
+) => CredentialRegister<T>;
+
+export type CredentialFactory<T = any> = CredentialRegister<T>;

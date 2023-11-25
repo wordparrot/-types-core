@@ -12,6 +12,10 @@ export interface WebhookRegisterItem<T = string> extends WebhookRegisterValues {
   provider: T;
 }
 
-export type WebhookRegister = <T = string>(
-  webhookRegisterItemArray: WebhookRegisterItem<T>[]
-) => Record<string, WebhookRegisterValues>;
+export type WebhookRegister<T> = Record<string, WebhookRegisterItem<T>>;
+
+export type WebhookRegisterFactory = <T>(
+  WebhookRegisterItemArray: WebhookRegisterItem<T>[]
+) => WebhookRegister<T>;
+
+export type WebhookFactory<T = any> = WebhookRegister<T>;

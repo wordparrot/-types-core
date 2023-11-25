@@ -7,7 +7,9 @@ export interface CredentialRegisterMethods {
 export interface CredentialRegisterValues {
     methods: CredentialRegisterMethods;
 }
-export interface CredentialRegisterItem<T = string> extends CredentialRegisterValues {
+export interface CredentialRegisterItem<T> extends CredentialRegisterValues {
     provider: T;
 }
-export declare type CredentialRegister = <T = string>(credentialRegisterItemArray: CredentialRegisterItem<T>[]) => Record<string, CredentialRegisterValues>;
+export declare type CredentialRegister<T> = Record<string, CredentialRegisterItem<T>>;
+export declare type CredentialRegisterFactory = <T>(credentialRegisterItemArray: CredentialRegisterItem<T>[]) => CredentialRegister<T>;
+export declare type CredentialFactory<T = any> = CredentialRegister<T>;

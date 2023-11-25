@@ -13,6 +13,10 @@ export interface ListenerRegisterItem<T = string>
   provider: T;
 }
 
-export type ListenerRegister = <T = string>(
-  listenerRegisterItemArray: ListenerRegisterItem<T>[]
-) => Record<string, ListenerRegisterValues>;
+export type ListenerRegister<T> = Record<string, ListenerRegisterItem<T>>;
+
+export type ListenerRegisterFactory = <T>(
+  ListenerRegisterItemArray: ListenerRegisterItem<T>[]
+) => ListenerRegister<T>;
+
+export type ListenerFactory<T = any> = ListenerRegister<T>;

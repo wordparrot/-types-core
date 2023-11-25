@@ -6,7 +6,9 @@ export interface ActionRegisterValues {
     methods: ActionRegisterMethods;
     isBatchProcess?: boolean;
 }
-export interface ActionRegisterItem<T = string> extends ActionRegisterValues {
+export interface ActionRegisterItem<T> extends ActionRegisterValues {
     provider: T;
 }
-export declare type ActionRegister = <T = string>(actionRegisterItemArray: ActionRegisterItem<T>[]) => Record<string, ActionRegisterValues>;
+export declare type ActionRegister<T> = Record<string, ActionRegisterItem<T>>;
+export declare type ActionRegisterFactory<T> = (actionRegisterItemArray: ActionRegisterItem<T>[]) => ActionRegister<T>;
+export declare type ActionFactory<T = any> = () => ActionRegister<T>;

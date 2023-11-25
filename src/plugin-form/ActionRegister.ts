@@ -9,10 +9,14 @@ export interface ActionRegisterValues {
   isBatchProcess?: boolean;
 }
 
-export interface ActionRegisterItem<T = string> extends ActionRegisterValues {
+export interface ActionRegisterItem<T> extends ActionRegisterValues {
   provider: T;
 }
 
-export type ActionRegister = <T = string>(
+export type ActionRegister<T> = Record<string, ActionRegisterItem<T>>;
+
+export type ActionRegisterFactory<T> = (
   actionRegisterItemArray: ActionRegisterItem<T>[]
-) => Record<string, ActionRegisterValues>;
+) => ActionRegister<T>;
+
+export type ActionFactory<T = any> = () => ActionRegister<T>;
