@@ -9,9 +9,6 @@ import {
 import { Blueprint } from "..";
 
 export interface Plugin extends HubPlugin {
-  id: string;
-  name: string;
-  active: boolean;
   hubPluginId: string;
   official: boolean;
 
@@ -21,7 +18,7 @@ export interface Plugin extends HubPlugin {
   webhookLogo?: string;
   authLogo?: string;
 
-  blueprints?: Blueprint[];
+  blueprints: Blueprint[];
   actions: ActionFormConfiguration[];
   credentials: CredentialFormConfiguration[];
   listeners: ListenerFormConfiguration[];
@@ -37,7 +34,4 @@ export interface Plugin extends HubPlugin {
   translations: {
     languages: Record<string, Record<string, string>>;
   };
-
-  createdAt: string;
-  updatedAt: string;
 }

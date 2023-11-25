@@ -7,9 +7,9 @@ export interface HubPlugin {
     name: string;
     title: string;
     content: string;
+    description: string;
     body: string;
-    active?: boolean;
-    description?: string;
+    active: boolean;
     version: string;
     image: Image | undefined;
     logo: string;
@@ -25,4 +25,6 @@ export interface HubPlugin {
     hubPluginVersions: HubPluginVersion[];
     rootBlueprints: BlueprintMeta[];
     connectedBlueprints: BlueprintMeta[];
+    createdAt: string;
+    updatedAt: string;
 }

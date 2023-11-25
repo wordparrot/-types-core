@@ -2,9 +2,6 @@ import { HubPlugin, PluginError } from ".";
 import { ActionFormConfiguration, CredentialFormConfiguration, ListenerFormConfiguration, WebhookFormConfiguration, PromptFormConfiguration } from "..";
 import { Blueprint } from "..";
 export interface Plugin extends HubPlugin {
-    id: string;
-    name: string;
-    active: boolean;
     hubPluginId: string;
     official: boolean;
     actionLogo?: string;
@@ -12,7 +9,7 @@ export interface Plugin extends HubPlugin {
     credentialLogo?: string;
     webhookLogo?: string;
     authLogo?: string;
-    blueprints?: Blueprint[];
+    blueprints: Blueprint[];
     actions: ActionFormConfiguration[];
     credentials: CredentialFormConfiguration[];
     listeners: ListenerFormConfiguration[];
@@ -26,6 +23,4 @@ export interface Plugin extends HubPlugin {
     translations: {
         languages: Record<string, Record<string, string>>;
     };
-    createdAt: string;
-    updatedAt: string;
 }
