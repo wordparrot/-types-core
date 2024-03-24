@@ -46,9 +46,9 @@ export interface WebhookFormDataItemToChange extends OtherFormDataItem {
     isValid: boolean;
     values: any;
 }
-export declare type ListenerFormDataItemToChange = WebhookFormDataItemToChange;
-export declare type FormDataMap = Record<string, OtherFormDataItem | PipelineFormDataItem>;
-export declare type PipelineFormDataMap = Record<string, PipelineFormDataItem>;
-export declare type PromptFormDataMap = Record<string, PromptFormDataItem>;
-export declare type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
-export declare type ListenerFormDataMap = Record<string, ListenerFormDataItem>;
+export type ListenerFormDataItemToChange = WebhookFormDataItemToChange;
+export type FormDataMap = Record<string, OtherFormDataItem | PipelineFormDataItem>;
+export type PipelineFormDataMap = Record<string, PipelineFormDataItem>;
+export type PromptFormDataMap = Record<string, PromptFormDataItem>;
+export type WebhookFormDataMap = Record<string, WebhookFormDataItem>;
+export type ListenerFormDataMap = Record<string, ListenerFormDataItem>;

@@ -1,2 +1,2 @@
-export declare type DynamicFormFieldType = "text" | "select";
-export declare type DynamicFormFieldStatus = "pending" | "ready";
+export type DynamicFormFieldType = "text" | "select";
+export type DynamicFormFieldStatus = "pending" | "ready";

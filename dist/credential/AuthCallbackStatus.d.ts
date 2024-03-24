@@ -1,1 +1,1 @@
-export declare type AuthCallbackStatus = "unverified" | "valid" | "invalid" | "expired" | "revoked" | "disabled";
+export type AuthCallbackStatus = "unverified" | "valid" | "invalid" | "expired" | "revoked" | "disabled";

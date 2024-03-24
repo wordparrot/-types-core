@@ -1,6 +1,6 @@
 import { Role } from "..";
 import { Profile } from ".";
-export declare type UserStatus = "verify" | "ok" | "locked" | "banned" | "deleted";
+export type UserStatus = "verify" | "ok" | "locked" | "banned" | "deleted";
 export interface User {
     id: string;
     name: string;

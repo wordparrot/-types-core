@@ -8,6 +8,6 @@ export interface ListenerRegisterValues {
 export interface ListenerRegisterItem<T = string> extends ListenerRegisterValues {
     provider: T;
 }
-export declare type ListenerRegister<T> = Record<string, ListenerRegisterItem<T>>;
-export declare type ListenerRegisterFactory = <T>(ListenerRegisterItemArray: ListenerRegisterItem<T>[]) => ListenerRegister<T>;
-export declare type ListenerFactory<T = any> = () => ListenerRegister<T>;
+export type ListenerRegister<T> = Record<string, ListenerRegisterItem<T>>;
+export type ListenerRegisterFactory = <T>(ListenerRegisterItemArray: ListenerRegisterItem<T>[]) => ListenerRegister<T>;
+export type ListenerFactory<T = any> = () => ListenerRegister<T>;

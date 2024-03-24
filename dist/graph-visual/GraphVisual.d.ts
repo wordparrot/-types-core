@@ -1,5 +1,5 @@
 import { Listener, Pipeline, PipelineGroup, Prompt, Webhook } from "..";
-export declare type GraphVisualChildType = "listener" | "pipeline" | "prompt" | "webhook";
+export type GraphVisualChildType = "listener" | "pipeline" | "prompt" | "webhook";
 export interface GraphVisualChild {
     id: string | null;
     type: GraphVisualChildType;

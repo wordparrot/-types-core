@@ -5,7 +5,7 @@ import { Prompt } from ".";
 import { Csv, RepositoryFile } from "..";
 import { PromptPolicy } from ".";
 import { DynamicForm } from "..";
-export declare type PromptInstanceStatus = "open" | "closed" | "completed" | "error" | "hidden";
+export type PromptInstanceStatus = "open" | "closed" | "completed" | "error" | "hidden";
 export interface PromptInstance {
     id: string;
     title: string;

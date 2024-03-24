@@ -5,7 +5,7 @@ import { Banner } from "..";
 import { FeaturedImage } from "..";
 import { Repository } from "..";
 import { PipelineNode } from "..";
-export declare type ImageType = "hosted" | "external";
+export type ImageType = "hosted" | "external";
 export interface Image {
     id: string;
     uniqId: string;

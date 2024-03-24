@@ -8,6 +8,6 @@ export interface WebhookRegisterValues {
 export interface WebhookRegisterItem<T = string> extends WebhookRegisterValues {
     provider: T;
 }
-export declare type WebhookRegister<T> = Record<string, WebhookRegisterItem<T>>;
-export declare type WebhookRegisterFactory = <T>(WebhookRegisterItemArray: WebhookRegisterItem<T>[]) => WebhookRegister<T>;
-export declare type WebhookFactory<T = any> = () => WebhookRegister<T>;
+export type WebhookRegister<T> = Record<string, WebhookRegisterItem<T>>;
+export type WebhookRegisterFactory = <T>(WebhookRegisterItemArray: WebhookRegisterItem<T>[]) => WebhookRegister<T>;
+export type WebhookFactory<T = any> = () => WebhookRegister<T>;

@@ -27,5 +27,5 @@ interface EmailMetadataBase {
         queryParams: Record<string, string>;
     }[];
 }
-export declare type EmailMetadata = RequireAtLeastOne<EmailMetadataBase, "body" | "template">;
+export type EmailMetadata = RequireAtLeastOne<EmailMetadataBase, "body" | "template">;
 export {};

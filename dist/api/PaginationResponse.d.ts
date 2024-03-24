@@ -8,4 +8,4 @@ export interface PaginationResponse<E> {
     to?: number;
     pageControls?: number[];
 }
-export declare type ServerPaginationResponse<E> = PaginationResponse<E>;
+export type ServerPaginationResponse<E> = PaginationResponse<E>;

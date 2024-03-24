@@ -3,4 +3,4 @@ export interface ApiResponse<T> {
     data: T;
     message?: string;
 }
-export declare type ServerApiResponse<T> = ApiResponse<T>;
+export type ServerApiResponse<T> = ApiResponse<T>;

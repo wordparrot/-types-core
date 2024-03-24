@@ -24,3 +24,5 @@ export interface DynamicServiceBody {
 export interface DynamicServiceBodyWithLib extends DynamicServiceBody {
   lib: SandboxLib;
 }
+
+export type Body = DynamicServiceBodyWithLib;

@@ -1,2 +1,2 @@
 import { DynamicFormTextField, DynamicFormSelectField } from ".";
-export declare type DynamicFormField = DynamicFormTextField | DynamicFormSelectField;
+export type DynamicFormField = DynamicFormTextField | DynamicFormSelectField;

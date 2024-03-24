@@ -1,6 +1,6 @@
 import { Repository } from ".";
 import { PipelineFlow } from "..";
-export declare type RepositoryHistoryOperation = "add" | "remove" | "move" | "copy";
+export type RepositoryHistoryOperation = "add" | "remove" | "move" | "copy";
 export interface RepositoryHistory {
     id: string;
     operation: RepositoryHistoryOperation;

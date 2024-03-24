@@ -1,5 +1,5 @@
-export declare type BlueprintDependencyMessage = "update" | "install" | "ok";
-export declare type BlueprintDependencyStatus = "current" | "pending" | "installing" | "completed" | "failed";
+export type BlueprintDependencyMessage = "update" | "install" | "ok";
+export type BlueprintDependencyStatus = "current" | "pending" | "installing" | "completed" | "failed";
 export interface BlueprintDependency {
     hubPluginId: string;
     hubPluginVersionId: string;

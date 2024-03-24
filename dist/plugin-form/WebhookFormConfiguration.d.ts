@@ -3,7 +3,7 @@ import { WebhookInitialValues } from ".";
 import { ValidationSchemaItem } from ".";
 import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
-export declare type WebhookMethod = "head" | "options" | "get" | "post" | "put" | "patch" | "delete";
+export type WebhookMethod = "head" | "options" | "get" | "post" | "put" | "patch" | "delete";
 export interface WebhookFormConfiguration<T = string> extends BaseFormConfiguration<T> {
     initialValues: WebhookInitialValues<T>;
     validationSchema: ValidationSchemaItem[];

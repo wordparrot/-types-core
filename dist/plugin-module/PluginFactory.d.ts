@@ -5,4 +5,4 @@ export interface PluginFactoryObject {
     credentials: CredentialFactory;
     webhooks: WebhookFactory;
 }
-export declare type PluginFactory = () => PluginFactoryObject;
+export type PluginFactory = () => PluginFactoryObject;

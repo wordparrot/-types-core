@@ -1,6 +1,6 @@
 import { DynamicFormFieldStatus } from ".";
 import { DynamicFormAbstractField } from ".";
-export declare type AddOptionResponse = "image" | "upload";
+export type AddOptionResponse = "image" | "upload";
 export interface DynamicFormSelectFieldOption {
     label: string;
     description: string;
@@ -11,7 +11,7 @@ export interface DynamicFormSelectFieldOption {
     addOptionResponse?: AddOptionResponse;
     status: DynamicFormFieldStatus;
 }
-export declare type DynamicFormSelectFieldEntity = "image" | "repositoryFile";
+export type DynamicFormSelectFieldEntity = "image" | "repositoryFile";
 export interface DynamicFormSelectField extends DynamicFormAbstractField {
     type: "select";
     entity?: DynamicFormSelectFieldEntity;

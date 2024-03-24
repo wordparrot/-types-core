@@ -1,7 +1,7 @@
 import { RepositoryItem } from "..";
 import { Entry } from "..";
 import { Pipeline, PipelineNodeReport, PipelineFlow, PipelineJobSequence, PipelineGroup } from ".";
-export declare type PipelineJobOutcome = "completed" | "partial" | "failure";
+export type PipelineJobOutcome = "completed" | "partial" | "failure";
 export interface PipelineJob {
     id: string;
     status: string;

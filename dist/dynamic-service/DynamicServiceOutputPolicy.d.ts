@@ -1,4 +1,4 @@
-export declare type POLICY_TYPE = "append" | "prepend" | "replace" | "merge";
+export type POLICY_TYPE = "append" | "prepend" | "replace" | "merge";
 export interface DynamicServiceOutputPolicy {
     jsonToPassOn?: POLICY_TYPE;
     csvToPassOn?: POLICY_TYPE;

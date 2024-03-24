@@ -1,1 +1,1 @@
-export declare type DynamicServiceBodyContext = Record<string, any>;
+export type DynamicServiceBodyContext = Record<string, any>;
