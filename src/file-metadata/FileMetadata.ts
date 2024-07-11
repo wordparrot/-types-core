@@ -28,4 +28,5 @@ export interface FileMetadata {
     nodeUniqId: string;
     uniqId: string;
   };
+  context?: Record<string, any>;
 }
