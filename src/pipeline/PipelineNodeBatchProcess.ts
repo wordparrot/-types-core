@@ -4,14 +4,20 @@ import {
   PipelineNodeReport,
   PipelineRedis,
 } from ".";
-import { DynamicServiceTrackedValues } from "..";
+import {
+  DynamicServiceTrackedValues,
+  PipelineNodeBatchProcessConfigType,
+  PipelineNodeBatchProcessConfigErrorHandling,
+} from "..";
 import { BatchResults } from "../_classes";
 
 export interface PipelineNodeBatchProcess {
   id: string;
   status: string;
   batchIndex: number;
-  batchSize?: number;
+  batchSize: number;
+  type: PipelineNodeBatchProcessConfigType;
+  onError: PipelineNodeBatchProcessConfigErrorHandling;
 
   batchResults: BatchResults;
   parentTrackedValues: DynamicServiceTrackedValues;

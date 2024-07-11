@@ -12,6 +12,7 @@ import { DataStore } from "..";
 import { Prompt } from "..";
 import { Image } from "..";
 import { AbstractPipelineNode } from ".";
+import { PipelineNodeBatchProcessConfig } from "./PipelineNodeBatchProcessConfig";
 export interface PipelineNode extends AbstractPipelineNode {
     transformations: JsonTransformation[];
     pipeline: Pipeline;
@@ -42,4 +43,5 @@ export interface PipelineNode extends AbstractPipelineNode {
     childNodes: PipelineNode[];
     conditions: PipelineNodeCondition[];
     entries: Entry[];
+    batchProcessConfig?: PipelineNodeBatchProcessConfig;
 }
