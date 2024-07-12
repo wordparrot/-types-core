@@ -11,7 +11,6 @@ export interface DynamicServiceResponseData {
   name?: string;
   type?: string;
   message?: string;
-  isBatchProcess?: boolean;
   statusCode?: number;
   url?: string;
   error?: any;

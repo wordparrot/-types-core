@@ -4,7 +4,6 @@ export type ActionRegisterMethods = {
 };
 export interface ActionRegisterValues {
     methods: ActionRegisterMethods;
-    isBatchProcess?: boolean;
 }
 export interface ActionRegisterItem<T> extends ActionRegisterValues {
     provider: T;
