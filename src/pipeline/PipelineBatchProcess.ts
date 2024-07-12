@@ -7,7 +7,7 @@ import {
   PipelineBatchProcessConfigType,
 } from ".";
 
-export interface PipelineNodeBatchProcess {
+export interface PipelineBatchProcess {
   id: string;
   status: string;
   batchIndex: number;
