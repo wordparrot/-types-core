@@ -2,7 +2,7 @@ import { PipelineJob, PipelineNodeReport, PipelineRedis, Pipeline } from ".";
 import { DynamicServiceTrackedValues } from "..";
 import { BatchResults } from "../_classes";
 import { PipelineBatchProcessConfigErrorHandling, PipelineBatchProcessConfigType } from ".";
-export interface PipelineNodeBatchProcess {
+export interface PipelineBatchProcess {
     id: string;
     status: string;
     batchIndex: number;
