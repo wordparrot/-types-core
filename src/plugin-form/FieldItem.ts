@@ -1,6 +1,7 @@
 import { FieldPrerequisite } from ".";
 import { FieldDescriptor } from ".";
 import { FieldStatusMapItem } from "..";
+import { ValidationSchemaItem } from ".";
 
 export type FieldItemType =
   | "text"
@@ -95,6 +96,7 @@ export interface FieldItem {
     schema: any;
     uiSchema?: any;
   };
+  validation: ValidationSchemaItem;
   hiddenFields?: FieldItem[];
   fieldStatus?: FieldStatusMapItem;
 }
