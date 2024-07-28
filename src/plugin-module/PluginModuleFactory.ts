@@ -27,11 +27,15 @@ export type CredentialReturnValue =
 
 export type UntypedCredentialReturnFunction = (
   body: DynamicServiceBodyWithLib
-) => ActionReturnValue | ListenerReturnValue;
+) => CredentialReturnValue;
 export type TypedCredentialReturnFunction<T> = (
   body: DynamicServiceBodyWithLib,
   config: T
 ) => CredentialReturnValue;
+
+export type CredentialFormTransformFunction<T = any> = (
+  body: DynamicServiceBodyWithLib
+) => Partial<Credential>;
 
 export type CredentialReturnFunction<T = any> =
   | UntypedCredentialReturnFunction

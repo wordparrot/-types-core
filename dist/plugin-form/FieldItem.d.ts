@@ -1,6 +1,7 @@
 import { FieldPrerequisite } from ".";
 import { FieldDescriptor } from ".";
 import { FieldStatusMapItem } from "..";
+import { ValidationSchemaItem } from ".";
 export type FieldItemType = "text" | "number" | "custom" | "conditional" | "select" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "header" | "subheader" | "category" | "subcategory" | "credential" | "pipeline" | "featuredGroup" | "featuredThread" | "repository" | "repositoryFiles" | "repositoryTag" | "user" | "component" | "space" | "checkbox" | "colorPicker" | "wysiwyg" | "date" | "roles" | "link" | "selectionHandler" | "selectionHandlerId" | "platforms" | "password" | "timezone" | "chart" | "csv" | "csvReport" | "dataStore" | "json-transformation" | "jsonTransformation" | "jsonSchemaForm" | "jsonView" | "hideFields" | "prompt" | "webhookRoute" | "descriptors" | "empty" | "image" | "listener" | "webhook" | "collection";
 export interface FieldItem {
     value: string;
@@ -30,6 +31,7 @@ export interface FieldItem {
         schema: any;
         uiSchema?: any;
     };
+    validation: ValidationSchemaItem;
     hiddenFields?: FieldItem[];
     fieldStatus?: FieldStatusMapItem;
 }

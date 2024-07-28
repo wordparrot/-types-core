@@ -4,8 +4,9 @@ export type UntypedActionReturnFunction = (body: DynamicServiceBodyWithLib) => A
 export type TypedActionReturnFunction<T> = (body: DynamicServiceBodyWithLib, config: T) => ActionReturnValue | ListenerReturnValue;
 export type ActionReturnFunction<T = any> = UntypedActionReturnFunction | TypedActionReturnFunction<T>;
 export type CredentialReturnValue = Promise<DynamicServiceResponseOutputCredentialAuthCallback>;
-export type UntypedCredentialReturnFunction = (body: DynamicServiceBodyWithLib) => ActionReturnValue | ListenerReturnValue;
+export type UntypedCredentialReturnFunction = (body: DynamicServiceBodyWithLib) => CredentialReturnValue;
 export type TypedCredentialReturnFunction<T> = (body: DynamicServiceBodyWithLib, config: T) => CredentialReturnValue;
+export type CredentialFormTransformFunction<T = any> = (body: DynamicServiceBodyWithLib) => Partial<Credential>;
 export type CredentialReturnFunction<T = any> = UntypedCredentialReturnFunction | TypedCredentialReturnFunction<T>;
 export type CredentialGenerateAuthURIReturnValue = Promise<DynamicServiceResponseOutputCredentialGenerateAuthURI>;
 export type UntypedCredentialGenerateAuthURIFunction = (body: DynamicServiceBodyWithLib) => CredentialGenerateAuthURIReturnValue;

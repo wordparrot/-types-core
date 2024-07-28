@@ -5,7 +5,6 @@ import { FieldItem } from ".";
 import { DynamicServiceBodyParameters } from "..";
 export interface CredentialFormConfiguration<T = string> extends BaseFormConfiguration<T> {
     initialValues: CredentialInitialValues<T>;
-    validationSchema: ValidationSchemaItem[];
     fields: FieldItem[];
     test?: {
         name: string;
@@ -14,4 +13,5 @@ export interface CredentialFormConfiguration<T = string> extends BaseFormConfigu
         parameters?: DynamicServiceBodyParameters;
     }[];
     forPlatform?: string[];
+    validationSchema?: ValidationSchemaItem[];
 }
