@@ -5,8 +5,8 @@ export interface DynamicServiceBodyPipeline {
     pipelineId: string;
     pipelineNodeId: string;
     pipelineNode: PipelineNode;
-    pipelineJobId?: string;
-    pipelineRedis?: PipelineRedis;
+    pipelineJobId: string;
+    pipelineRedis: PipelineRedis;
     dataStore?: any;
     pipelineNodeBatchProcess?: PipelineNodeBatchProcess;
 }
