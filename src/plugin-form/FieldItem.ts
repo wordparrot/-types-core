@@ -96,7 +96,7 @@ export interface FieldItem {
     schema: any;
     uiSchema?: any;
   };
-  validation: ValidationSchemaItem;
+  validation?: ValidationSchemaItem;
   hiddenFields?: FieldItem[];
   fieldStatus?: FieldStatusMapItem;
 }
