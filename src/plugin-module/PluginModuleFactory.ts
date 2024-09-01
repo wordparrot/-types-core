@@ -1,4 +1,5 @@
 import {
+  Credential,
   DynamicServiceBodyWithLib,
   DynamicServiceResponseOutput,
   DynamicServiceResponseOutputCredentialAuthCallback,

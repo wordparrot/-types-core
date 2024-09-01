@@ -1,4 +1,4 @@
-import { DynamicServiceBodyWithLib, DynamicServiceResponseOutput, DynamicServiceResponseOutputCredentialAuthCallback, DynamicServiceResponseOutputCredentialGenerateAuthURI, DynamicServiceResponseOutputCredentialTest, DynamicServiceResponseOutputListener, DynamicServiceResponseOutputWebhook } from "..";
+import { Credential, DynamicServiceBodyWithLib, DynamicServiceResponseOutput, DynamicServiceResponseOutputCredentialAuthCallback, DynamicServiceResponseOutputCredentialGenerateAuthURI, DynamicServiceResponseOutputCredentialTest, DynamicServiceResponseOutputListener, DynamicServiceResponseOutputWebhook } from "..";
 export type ActionReturnValue = Promise<DynamicServiceResponseOutput>;
 export type UntypedActionReturnFunction = (body: DynamicServiceBodyWithLib) => ActionReturnValue | ListenerReturnValue;
 export type TypedActionReturnFunction<T> = (body: DynamicServiceBodyWithLib, config: T) => ActionReturnValue | ListenerReturnValue;
