@@ -11,15 +11,22 @@ export interface BlueprintStructure<
   W = string,
   P = string
 > {
-  hubBlueprintMetaId?: string;
-  hubBlueprintVersionId?: string;
-  author?: string;
-  name?: string;
-  version?: string;
-  logo?: string;
-
   title: string;
   content: string;
+  author: string;
+  name: string;
+
+  version: string;
+  exportDate: string;
+
+  createdAt: string;
+  updatedAt: string;
+
+  projectTitle: string;
+  projectContent: string;
+  logo?: string;
+  hubBlueprintMetaId?: string;
+  hubBlueprintVersionId?: string;
 
   dependencies?: BlueprintPlugin[];
   pipelines: BlueprintPipeline<A>[];
