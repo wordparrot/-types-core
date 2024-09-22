@@ -1,4 +1,4 @@
-import { DynamicFormSpecification } from "..";
+import { FieldItem } from "..";
 
 export type PromptPolicySchemaType = "jsonSchema" | "fieldList";
 
@@ -15,13 +15,7 @@ export interface PromptPolicy {
   requireAllResponses: boolean;
   viewAfterSubmit: boolean;
   saveDataToContext: boolean;
-
-  schema: any;
-  schemaType: PromptPolicySchemaType;
-  uiSchema: any;
-
-  dynamicFormSpecificationId?: string;
-  dynamicFormSpecification?: DynamicFormSpecification;
+  fields: FieldItem[];
 
   createdAt: string;
   updatedAt: string;
