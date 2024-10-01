@@ -95,10 +95,6 @@ export interface FieldItem {
   self?: boolean;
   readonly?: boolean;
   forPlatform?: string[];
-  jsonSchemaForm?: {
-    schema: any;
-    uiSchema?: any;
-  };
   validation?: ValidationSchemaItem;
   hiddenFields?: FieldItem[];
   fieldStatus?: FieldStatusMapItem;
