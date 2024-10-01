@@ -56,12 +56,15 @@ export type FieldItemType =
   | "image"
   | "listener"
   | "webhook"
-  | "collection";
+  | "collection"
+  | "markdown";
 
 export interface FieldItem {
-  // The value to be input in the form.
+  // The property value to be input into the form - corresponds to 'value' property in html.
   value: string;
-  // Label to be shown on the ihput.
+  // Default value of form field - optional.
+  defaultValue?: string;
+  // Label to be shown on the input.
   label: string;
   // Governs how an input will be rendered. For example, 'images', will render a select menu containing searchable set of images.
   type?: FieldItemType;
