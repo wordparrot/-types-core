@@ -2,7 +2,7 @@ import {
   PipelineNode,
   PipelineJob,
   PipelineGroup,
-  PipelineBatchProcessConfig,
+  PipelineBatchProcess,
 } from ".";
 import { Listener } from "..";
 import { Site } from "..";
@@ -39,7 +39,7 @@ export interface Pipeline {
   listeners?: Listener[];
   webhooks?: Webhook[];
 
-  batchProcess?: PipelineBatchProcessConfig;
+  batchProcesses?: PipelineBatchProcess[];
 
   createdAt: string;
   updatedAt: string;

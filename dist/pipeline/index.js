@@ -28,6 +28,7 @@ __exportStar(require("./PipelineNode"), exports);
 __exportStar(require("./PipelineNodeCondition"), exports);
 __exportStar(require("./PipelineBatchProcess"), exports);
 __exportStar(require("./PipelineBatchProcessConfig"), exports);
+__exportStar(require("./PipelineBatchProcessJob"), exports);
 __exportStar(require("./PipelineNodeReport"), exports);
 __exportStar(require("./PipelineOperationFailed"), exports);
 __exportStar(require("./PipelineOperationFailedData"), exports);
