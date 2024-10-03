@@ -1,34 +1,16 @@
-import { PipelineJob, PipelineNodeReport, PipelineRedis, Pipeline } from ".";
-import { DynamicServiceTrackedValues } from "..";
-import { BatchResults } from "../_classes";
+import { Pipeline, PipelineBatchProcessConfig } from ".";
 
-import {
-  PipelineBatchProcessConfigErrorHandling,
-  PipelineBatchProcessConfigType,
-} from ".";
+import { PipelineBatchProcessStatus } from ".";
 
 export interface PipelineBatchProcess {
   id: string;
-  status: string;
-  batchIndex: number;
+  status: PipelineBatchProcessStatus;
 
-  type: PipelineBatchProcessConfigType;
-  batchSize: number; // By default, 1.
-  onError: PipelineBatchProcessConfigErrorHandling;
-  nodes: string[]; // An array of strings denoting action provider names.
+  pipelineId: string;
+  pipeline: Pipeline;
 
-  batchResults: BatchResults;
-  parentTrackedValues: DynamicServiceTrackedValues;
-  pipelineRedis?: PipelineRedis;
-  diff?: PipelineNodeReport["diff"];
+  config: PipelineBatchProcessConfig;
 
-  pipelineJob?: PipelineJob;
-  pipelineJobId: string;
-
-  pipeline?: Pipeline;
-  pipelineId?: string;
-
-  latestBatchAt?: string;
   createdAt?: string;
   updatedAt?: string;
 }

@@ -1,4 +1,4 @@
-import { PipelineNode, PipelineJob, PipelineGroup, PipelineBatchProcessConfig } from ".";
+import { PipelineNode, PipelineJob, PipelineGroup, PipelineBatchProcess } from ".";
 import { Listener } from "..";
 import { Site } from "..";
 import { User } from "..";
@@ -31,7 +31,7 @@ export interface Pipeline {
     featuredThreadPreferences?: FeaturedThreadPreference[];
     listeners?: Listener[];
     webhooks?: Webhook[];
-    batchProcess?: PipelineBatchProcessConfig;
+    batchProcesses?: PipelineBatchProcess[];
     createdAt: string;
     updatedAt: string;
 }
