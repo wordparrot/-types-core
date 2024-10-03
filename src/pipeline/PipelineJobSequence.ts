@@ -1,6 +1,6 @@
-import { PipelineJob } from ".";
+import { PipelineGroup, PipelineJob } from ".";
 import { Listener } from "../listener";
-import { PromptInstance } from "../prompt";
+import { PromptInstance, PromptRecipient } from "../prompt";
 import { Webhook } from "../webhook";
 
 export interface PipelineJobSequence {
@@ -8,8 +8,14 @@ export interface PipelineJobSequence {
   status: string;
   delay: number;
 
+  project: PipelineGroup;
+  projectId: string;
+
   promptInstance: PromptInstance;
   promptInstanceId: string;
+
+  promptRecipient: PromptRecipient;
+  promptRecipientId: string;
 
   listener: Listener;
   listenerId: string;
