@@ -3,7 +3,7 @@ export type PipelineBatchProcessConfigType = "json" | "csv" | "fileMetadata";
 export type PipelineBatchProcessConfigErrorHandling =
   | "ignore"
   | "warn"
-  | "error";
+  | "stop";
 
 export type PipelineBatchProcessStatus = "enabled" | "disabled";
 

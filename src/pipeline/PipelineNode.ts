@@ -13,9 +13,11 @@ import { DataStore } from "..";
 import { Prompt } from "..";
 import { Image } from "..";
 import { AbstractPipelineNode } from ".";
+import { ValidationRule } from "../validation/ValidationRule";
 
 export interface PipelineNode extends AbstractPipelineNode {
   transformations: JsonTransformation[];
+  validations: ValidationRule[];
 
   pipeline: Pipeline;
   pipelineId: string;

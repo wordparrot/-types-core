@@ -14,6 +14,7 @@ export * from "./PipelineBatchProcess";
 export * from "./PipelineBatchProcessConfig";
 export * from "./PipelineBatchProcessJob";
 export * from "./PipelineNodeReport";
+export * from "./PipelineNodeReportLog";
 export * from "./PipelineOperationFailed";
 export * from "./PipelineOperationFailedData";
 export * from "./PipelineRedis";
