@@ -3,7 +3,22 @@ export type PipelineBatchProcessConfigType = "json" | "csv" | "fileMetadata";
 export type PipelineBatchProcessConfigErrorHandling =
   | "ignore"
   | "warn"
-  | "error";
+  | "stop";
+
+export type PipelineBatchProcessStatus = "enabled" | "disabled";
+
+export type PipelineBatchProcessJobStatus =
+  | "pending"
+  | "running"
+  | "stopped"
+  | "completed"
+  | "partial"
+  | "failure";
+
+export interface PipelineBatchProcessNodeMeta {
+  provider: string;
+  pipelineNodeId: string;
+}
 
 export type PipelineBatchProcessStatus = "enabled" | "disabled";
 

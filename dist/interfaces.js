@@ -44,5 +44,6 @@ __exportStar(require("./smtp"), exports);
 __exportStar(require("./tile"), exports);
 __exportStar(require("./transformation"), exports);
 __exportStar(require("./trending"), exports);
+__exportStar(require("./validation"), exports);
 __exportStar(require("./user"), exports);
 __exportStar(require("./webhook"), exports);

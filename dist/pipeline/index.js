@@ -30,6 +30,7 @@ __exportStar(require("./PipelineBatchProcess"), exports);
 __exportStar(require("./PipelineBatchProcessConfig"), exports);
 __exportStar(require("./PipelineBatchProcessJob"), exports);
 __exportStar(require("./PipelineNodeReport"), exports);
+__exportStar(require("./PipelineNodeReportLog"), exports);
 __exportStar(require("./PipelineOperationFailed"), exports);
 __exportStar(require("./PipelineOperationFailedData"), exports);
 __exportStar(require("./PipelineRedis"), exports);

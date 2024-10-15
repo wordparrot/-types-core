@@ -28,5 +28,6 @@ export * from "./smtp";
 export * from "./tile";
 export * from "./transformation";
 export * from "./trending";
+export * from "./validation";
 export * from "./user";
 export * from "./webhook";
