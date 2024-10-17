@@ -3,10 +3,12 @@ export type ValidationRuleType = "json" | "csv" | "fileMetadata";
 export type ValidationCondition =
   | "equals"
   | "notEquals"
-  | "isDefined"
-  | "isUndefined"
+  | "isTruthy"
+  | "isFalsey"
   | "lessThan"
+  | "lessThanOrEquals"
   | "greaterThan"
+  | "greaterThanOrEquals"
   | "isType"
   | "isNotType"
   | "always";
@@ -24,6 +26,8 @@ export type ValidationComparisonValue =
 
 export type ValidationRule = {
   ruleType: ValidationRuleType;
+  idProperty?: string;
+  property: string;
   condition: ValidationCondition;
   separator?: ValidationValueSeparator;
   value: ValidationComparisonValue;

@@ -2,8 +2,10 @@ import { ValidationRule } from "..";
 import { PipelineNode, PipelineJob } from ".";
 export type PipelineNodeReportLog = {
     id: string;
+    rule: ValidationRule;
     meta: {
-        rule: ValidationRule;
+        idProperty?: string;
+        message?: string;
         data: unknown;
     }[];
     pipelineNodeId: string;

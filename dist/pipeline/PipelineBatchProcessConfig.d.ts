@@ -6,6 +6,10 @@ export interface PipelineBatchProcessNodeMeta {
     provider: string;
     pipelineNodeId: string;
 }
+export interface PipelineBatchProcessNodeMeta {
+    provider: string;
+    pipelineNodeId: string;
+}
 export interface PipelineBatchProcessConfig {
     startIndex: number;
     endIndex: number;

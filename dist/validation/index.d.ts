@@ -1,1 +1,1 @@
-export * from './ValidationRule';
+export * from "./ValidationRule";
