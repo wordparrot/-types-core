@@ -30,6 +30,7 @@ export type ValidationRule = {
   property: string;
   condition: ValidationCondition;
   separator?: ValidationValueSeparator;
+  allowEmpty?: boolean;
   value: ValidationComparisonValue;
   onInvalid: ValidationHandler;
 };
