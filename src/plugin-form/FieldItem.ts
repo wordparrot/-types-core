@@ -57,7 +57,8 @@ export type FieldItemType =
   | "listener"
   | "webhook"
   | "collection"
-  | "markdown";
+  | "markdown"
+  | "dataValidator";
 
 export interface FieldItem {
   // The property value to be input into the form - corresponds to 'value' property in html.
