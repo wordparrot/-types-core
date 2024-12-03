@@ -16,7 +16,7 @@ class BatchManager {
         this.startingIndex = 0;
         this.batchItems = config.batchItems;
         this.batchSize = config.batchSize;
-        this.stopOnFailure = config.stopOnFailure;
+        this.stopOnFailure = config.onError === 'stop';
         this.allowEmpty = config.allowEmpty || false;
         this.maxIterations = config.maxIterations;
         if (!(config === null || config === void 0 ? void 0 : config.defaultHandler)) {

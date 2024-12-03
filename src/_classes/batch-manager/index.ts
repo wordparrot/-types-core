@@ -1,3 +1,5 @@
+import { PipelineBatchProcessConfig } from "../..";
+
 export class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
   private batchItems: BatchItem[];
   private batchSize: number;
@@ -15,7 +17,7 @@ export class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
   constructor(config: BatchManagerConfig<BatchItem, BatchItemReturnValue>) {
     this.batchItems = config.batchItems;
     this.batchSize = config.batchSize;
-    this.stopOnFailure = config.stopOnFailure;
+    this.stopOnFailure = config.onError === "stop";
     this.allowEmpty = config.allowEmpty || false;
     this.maxIterations = config.maxIterations;
 
@@ -341,6 +343,7 @@ export interface BatchItemResponse<BatchItem = any> {
 export interface BatchResults<BatchItem = any> {
   numItems: number;
   startingIndex: number;
+  currentIndex?: number;
   batchSize: number;
   stopOnFailure: boolean;
   totalSuccess: number;
@@ -351,13 +354,9 @@ export interface BatchResults<BatchItem = any> {
   unsent: BatchItemResponse<BatchItem>[][];
 }
 
-interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
+interface BatchManagerConfig<BatchItem, BatchItemReturnValue>
+  extends PipelineBatchProcessConfig {
   batchItems: BatchItem[];
-  batchSize: number;
-  stopOnFailure: boolean;
-  allowEmpty?: boolean;
-  startingIndex?: number;
-  maxIterations?: number;
   defaultHandler: (
     batch: BatchItem,
     index: number

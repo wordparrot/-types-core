@@ -1,3 +1,4 @@
+import { PipelineBatchProcessConfig } from "../..";
 export declare class BatchManager<BatchItem = any, BatchItemReturnValue = any> {
     private batchItems;
     private batchSize;
@@ -38,6 +39,7 @@ export interface BatchItemResponse<BatchItem = any> {
 export interface BatchResults<BatchItem = any> {
     numItems: number;
     startingIndex: number;
+    currentIndex?: number;
     batchSize: number;
     stopOnFailure: boolean;
     totalSuccess: number;
@@ -47,13 +49,8 @@ export interface BatchResults<BatchItem = any> {
     failed: BatchItemResponse<BatchItem>[][];
     unsent: BatchItemResponse<BatchItem>[][];
 }
-interface BatchManagerConfig<BatchItem, BatchItemReturnValue> {
+interface BatchManagerConfig<BatchItem, BatchItemReturnValue> extends PipelineBatchProcessConfig {
     batchItems: BatchItem[];
-    batchSize: number;
-    stopOnFailure: boolean;
-    allowEmpty?: boolean;
-    startingIndex?: number;
-    maxIterations?: number;
     defaultHandler: (batch: BatchItem, index: number) => Promise<BatchItemReturnValue>;
 }
 export {};
