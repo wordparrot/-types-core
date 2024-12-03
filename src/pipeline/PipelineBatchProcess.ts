@@ -1,16 +1,18 @@
-import { Pipeline, PipelineBatchProcessConfig } from ".";
-
-import { PipelineBatchProcessStatus } from ".";
+import { Pipeline } from "./Pipeline";
+import {
+  PipelineBatchProcessConfig,
+  PipelineBatchProcessStatus,
+} from "./PipelineBatchProcessConfig";
 
 export interface PipelineBatchProcess {
   id: string;
   status: PipelineBatchProcessStatus;
+  config: PipelineBatchProcessConfig;
 
   pipelineId: string;
   pipeline: Pipeline;
 
-  config: PipelineBatchProcessConfig;
-
-  createdAt?: string;
-  updatedAt?: string;
+  latestBatchAt: string;
+  createdAt: string;
+  updatedAt: string;
 }

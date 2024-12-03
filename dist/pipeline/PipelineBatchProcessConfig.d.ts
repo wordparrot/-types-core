@@ -11,8 +11,10 @@ export interface PipelineBatchProcessNodeMeta {
     pipelineNodeId: string;
 }
 export interface PipelineBatchProcessConfig {
-    startIndex: number;
-    endIndex: number;
+    startingIndex: number;
+    endingIndex?: number;
+    maxIterations?: number;
+    allowEmpty?: boolean;
     type: PipelineBatchProcessConfigType;
     batchSize: number;
     onError: PipelineBatchProcessConfigErrorHandling;

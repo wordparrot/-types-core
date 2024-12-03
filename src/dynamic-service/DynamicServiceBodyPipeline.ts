@@ -1,6 +1,5 @@
 import { PipelineNode } from "..";
 import { PipelineRedis } from "..";
-import { PipelineBatchProcess } from "..";
 
 export interface DynamicServiceBodyPipeline {
   pipelineId: string;
@@ -9,5 +8,4 @@ export interface DynamicServiceBodyPipeline {
   pipelineJobId: string;
   pipelineRedis: PipelineRedis;
   dataStore?: any;
-  pipelineBatchProcess?: PipelineBatchProcess;
 }

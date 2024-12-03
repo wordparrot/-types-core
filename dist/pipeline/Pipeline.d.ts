@@ -1,11 +1,11 @@
-import { PipelineNode, PipelineJob, PipelineGroup, PipelineBatchProcess } from ".";
+import { PipelineNode, PipelineJob, PipelineGroup } from ".";
 import { Listener } from "..";
 import { Site } from "..";
 import { User } from "..";
 import { Role } from "..";
-import { FeaturedThreadPreference } from "..";
 import { Webhook } from "..";
 import { Prompt } from "..";
+import { PipelineBatchProcess } from "..";
 export interface Pipeline {
     id: string | null;
     title: string;
@@ -28,7 +28,6 @@ export interface Pipeline {
     roles?: Role[];
     upstreamPipelineNodes?: PipelineNode[];
     upstreamPrompts?: Prompt[];
-    featuredThreadPreferences?: FeaturedThreadPreference[];
     listeners?: Listener[];
     webhooks?: Webhook[];
     batchProcesses?: PipelineBatchProcess[];
