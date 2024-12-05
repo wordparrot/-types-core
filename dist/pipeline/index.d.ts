@@ -13,7 +13,7 @@ export * from "./PipelineNodeCondition";
 export * from "./PipelineBatchProcessState";
 export * from "./PipelineBatchProcessConfig";
 export * from "./PipelineBatchProcessJob";
-export * from './PipelineBatchProcess';
+export * from "./PipelineBatchProcess";
 export * from "./PipelineNodeReport";
 export * from "./PipelineNodeReportLog";
 export * from "./PipelineOperationFailed";

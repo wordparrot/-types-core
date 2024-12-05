@@ -1,6 +1,4 @@
-import { PipelineJob, PipelineNodeReport, PipelineRedis } from ".";
-import { DynamicServiceTrackedValues } from "..";
-import { BatchResults } from "../_classes";
+import { PipelineJob, PipelineBatchProcessState } from ".";
 import { PipelineBatchProcessJobStatus, PipelineBatchProcessConfig } from ".";
 export interface PipelineBatchProcessJob {
     id: string;
@@ -9,10 +7,7 @@ export interface PipelineBatchProcessJob {
     pipelineJob?: PipelineJob;
     pipelineJobId: string;
     config: PipelineBatchProcessConfig;
-    batchResults: BatchResults;
-    parentTrackedValues: DynamicServiceTrackedValues;
-    pipelineRedis?: PipelineRedis;
-    diff?: PipelineNodeReport["diff"];
+    state: PipelineBatchProcessState;
     createdAt?: string;
     updatedAt?: string;
     completedAt?: string;
