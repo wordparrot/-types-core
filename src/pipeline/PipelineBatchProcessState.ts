@@ -2,7 +2,18 @@ import { FileMetadata, Pipeline, PipelineBatchProcessConfig } from ".";
 
 import { PipelineBatchProcessJobStatus } from ".";
 import { BatchResults } from "../_classes";
-import { Csv } from "../csv";
+import { ActionReturnValue } from "..";
+
+export interface BatchOutput {
+  index: number;
+  start: number;
+  data: {
+    pipelineNodeId: string;
+    end: number;
+    output: ActionReturnValue;
+    status: PipelineBatchProcessJobStatus;
+  }[];
+}
 
 export interface PipelineBatchProcessState {
   batchProcessId: string;
@@ -13,10 +24,10 @@ export interface PipelineBatchProcessState {
   config: PipelineBatchProcessConfig;
 
   currentNodeId: string;
-  currentIndex: string;
+  currentIndex: number;
   hasMoreIndexes: boolean;
 
-  results: BatchResults[];
+  batchOutputs: BatchOutput[];
 
   error: {
     pipelineNodeId: string;
