@@ -1,13 +1,13 @@
 import { PipelineBatchProcessConfig } from ".";
 import { PipelineBatchProcessJobStatus } from ".";
-import { ActionReturnValue } from "..";
+import { DynamicServiceResponseOutput } from "..";
 export interface BatchOutput {
     index: number;
     start: number;
     data: {
         pipelineNodeId: string;
         end: number;
-        output: ActionReturnValue;
+        output: DynamicServiceResponseOutput;
         status: PipelineBatchProcessJobStatus;
     }[];
 }

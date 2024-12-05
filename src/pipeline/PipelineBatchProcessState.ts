@@ -2,7 +2,7 @@ import { FileMetadata, Pipeline, PipelineBatchProcessConfig } from ".";
 
 import { PipelineBatchProcessJobStatus } from ".";
 import { BatchResults } from "../_classes";
-import { ActionReturnValue } from "..";
+import { DynamicServiceResponseOutput } from "..";
 
 export interface BatchOutput {
   index: number;
@@ -10,7 +10,7 @@ export interface BatchOutput {
   data: {
     pipelineNodeId: string;
     end: number;
-    output: ActionReturnValue;
+    output: DynamicServiceResponseOutput;
     status: PipelineBatchProcessJobStatus;
   }[];
 }
