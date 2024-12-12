@@ -11,6 +11,7 @@ export interface PipelineRedis {
         linkedRedisKey?: string;
     };
     progressVisualMap?: Record<string, string>;
+    batchProcessStartingNodeMap?: Record<string, boolean>;
     parentNodeMap: Record<string, string[]>;
     nodeTitles: Record<string, string>;
     config: {
