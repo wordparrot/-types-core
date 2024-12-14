@@ -21,12 +21,14 @@ export interface PipelineRedis {
     state: {
         timeToRun: number;
         currentIndex: number;
-        hasDownstreamPipelines: boolean;
-        remaining: string[];
         pipelineStatus: string;
         dataStatus: string;
-        pipelinesByLevel?: string[];
+        currentLevel: string[];
+        previousLevel: string[];
+        parentBlocklist: string[];
         nodesByLevel: string[][];
+        pipelinesByLevel?: string[];
+        hasDownstreamPipelines: boolean;
         upstreamErrors: string[];
         upstreamDisabled: string[];
         upstreamConditionFailed: string[];
