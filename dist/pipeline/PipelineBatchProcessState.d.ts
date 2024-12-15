@@ -1,15 +1,16 @@
 import { PipelineBatchProcessConfig } from ".";
 import { PipelineBatchProcessJobStatus } from ".";
 import { DynamicServiceResponseOutput } from "..";
+export interface BatchOutputDatum {
+    pipelineNodeId: string;
+    end: number;
+    output: DynamicServiceResponseOutput;
+    status: PipelineBatchProcessJobStatus;
+}
 export interface BatchOutput {
     index: number;
     start: number;
-    data: {
-        pipelineNodeId: string;
-        end: number;
-        output: DynamicServiceResponseOutput;
-        status: PipelineBatchProcessJobStatus;
-    }[];
+    data: BatchOutputDatum[];
 }
 export interface PipelineBatchProcessState {
     batchProcessId: string;
